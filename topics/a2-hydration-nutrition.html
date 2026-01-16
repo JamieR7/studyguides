@@ -4,283 +4,683 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A.2 Hydration & Nutrition | IB SEHS 2026</title>
-    <link rel="icon" href="../data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23004587'/><text x='50' y='70' font-size='60' text-anchor='middle' font-weight='bold' fill='%23fbba07'>S</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Enhanced topic-specific styles */
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbba07 0%, #e0a800 100%);
+            color: #004587;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .key-term-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid #004587;
+            padding: 1rem 1.5rem;
+            margin: 0.75rem 0;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .key-term-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,69,135,0.2);
+        }
+
+        .term-title {
+            color: #004587;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .term-definition {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .subsection-header {
+            background: linear-gradient(135deg, #004587 0%, #003366 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .mcq-container {
+            background: #fff;
+            border: 3px solid #004587;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,69,135,0.15);
+        }
+
+        .mcq-number {
+            background: #004587;
+            color: #fbba07;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .mcq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .mcq-options {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .mcq-options li {
+            background: #f8f9fa;
+            padding: 1rem 1.25rem;
+            margin: 0.75rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #dee2e6;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .mcq-options li:hover {
+            background: #e9ecef;
+            border-left-color: #004587;
+            transform: translateX(5px);
+        }
+
+        .mcq-answer-box {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 5px solid #28a745;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .mcq-answer-label {
+            color: #155724;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .mcq-explanation {
+            color: #155724;
+            line-height: 1.7;
+        }
+
+        .mcq-explanation strong {
+            color: #0d4318;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-left: 5px solid #fbba07;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(251,186,7,0.2);
+        }
+
+        .tip-box::before {
+            content: "💡 TIP";
+            display: block;
+            font-weight: 700;
+            color: #856404;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .note-box {
+            background: linear-gradient(135deg, #e6f3ff 0%, #cce5ff 100%);
+            border-left: 5px solid #004587;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,69,135,0.2);
+        }
+
+        .note-box::before {
+            content: "📌 NOTE";
+            display: block;
+            font-weight: 700;
+            color: #004085;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .data-table thead {
+            background: linear-gradient(135deg, #004587 0%, #003366 100%);
+            color: white;
+        }
+
+        .data-table th {
+            padding: 1.25rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .data-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .data-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .formula-box {
+            background: #f0f0f0;
+            border: 2px solid #004587;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .working-steps {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .working-steps ol {
+            margin-left: 0;
+            padding-left: 1.5rem;
+        }
+
+        .working-steps li {
+            margin: 0.75rem 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .hl-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .mechanism-steps {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .mechanism-steps ol {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+
+        .mechanism-steps li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 3.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .mechanism-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: -5px;
+            background: #004587;
+            color: #fbba07;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .real-world-example {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+            border-left: 5px solid #dc3545;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .real-world-example::before {
+            content: "🌍 REAL-WORLD EXAMPLE";
+            display: block;
+            font-weight: 700;
+            color: #721c24;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .progress-indicator {
+            background: #e9ecef;
+            height: 8px;
+            border-radius: 10px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #004587 0%, #fbba07 100%);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.75rem 0.75rem 0.75rem 3rem;
+            position: relative;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0.75rem;
+            font-size: 1.5rem;
+            color: #004587;
+        }
+
+        @media (max-width: 768px) {
+            .mcq-container {
+                padding: 1.5rem 1rem;
+            }
+            
+            .mechanism-steps li {
+                padding-left: 3rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Navigation -->
         <nav class="topic-nav">
             <a href="../index.html" class="back-link">← Back to All Topics</a>
             <div class="topic-title-nav">A.2 Hydration & Nutrition</div>
         </nav>
 
-        <!-- Main Content -->
         <div class="topic-content-wrapper">
             
-<!-- PASTE NOTEBOOKLM CONTENT HERE -->
-<!-- Everything from "# IB SEHS 2026 Study Guide" onwards -->
-<p>IB SEHS 2026 Study Guide: Topic A.2 Hydration and Nutrition</p>
-<ol>
-<li>QUICK REFERENCE KEY TERMS</li>
-</ol>
-<p>Mastering the key terminology of any topic is the first step toward achieving clarity and precision in your exam responses. These terms are not merely vocabulary words; they are the foundational concepts upon which complex physiological and nutritional principles are built. A confident command of this language allows you to articulate your understanding accurately and concisely, which is essential for scoring highly. The following list provides a flashcard-style reference for the essential terms in Topic A.2.</p>
-<p>A.2.1 Water and Electrolyte Balance Dehydration: A state of net water loss from the body, leading to a negative water balance that can impair physiological function and performance. Hypernatremia: A state of electrolyte imbalance characterized by an abnormally high concentration of sodium in the blood. Hyponatremia: A state of electrolyte imbalance, characterized by low serum sodium, that can occur if water and electrolyte balance is not maintained. Cardiovascular Drift: A phenomenon caused by water loss or increased core body temperature during prolonged submaximal exercise, characterized by a progressive increase in heart rate to compensate for a reduced stroke volume.</p>
-<p>A.2.2 Fuelling for Health and Performance Macronutrients: Carbohydrates, proteins, and lipids that provide sources of energy to maintain bodily functions. Low Energy Availability (LEA): A state in which the body has insufficient energy to support the physiological functions needed for optimal health. Relative Energy Deficiency in Sport (RED-S): A syndrome that is a consequence of prolonged Low Energy Availability (LEA).</p>
-<p>A.2.3 Energy Systems Energy Continuum: A concept used to describe the relative contribution of each of the three energy systems to ATP production depending on the nature of the activity. VO₂ max (Maximal Oxygen Consumption): The maximum rate of oxygen consumption, which influences endurance performance. Lactate Inflection Point (HL Only): The maximum intensity at which the body can metabolize lactate at the same rate as its production. Excess Post-exercise Oxygen Consumption (EPOC) (HL Only): The increased rate of oxygen intake required after strenuous activity to return the body to a state of homeostasis.</p>
-<p>Understanding these terms is fundamental, but to apply them effectively, you must also understand the structure of the examination itself.</p>
-<ol>
-<li>EXAM FORMAT TABLE</li>
-</ol>
-<p>A crucial component of strategic preparation is a clear understanding of the examination structure. Knowing the format, weighting, and timing of each paper allows you to manage your time effectively during the exam and tailor your revision to the specific demands of each assessment component. The table below outlines the structure for both Standard Level (SL) and Higher Level (HL) examinations.</p>
-<p>Paper    Standard Level (SL)    Higher Level (HL)
-Paper 1A    20 marks <br> 30 minutes <br> Multiple-choice questions    30 marks <br> 45 minutes <br> Multiple-choice questions
-Paper 1B    35 marks <br> 1 hour <br> Data-based questions    45 marks <br> 1 hour 15 minutes <br> Data-based questions
-Paper 2    40 marks <br> 1 hour 15 minutes <br> Short-answer &amp; extended-response    60 marks <br> 1 hour 45 minutes <br> Short-answer &amp; extended-response</p>
-<p>Success in these papers depends not just on what you know, but on how you answer the questions. This is determined by the command terms used in each question.</p>
-<ol>
-<li>COMMAND TERMS TABLE</li>
-</ol>
-<p>Command terms are the instructional words used in exam questions that signal the required depth and type of response. Mastering these terms is essential for unlocking marks, as they tell you precisely what the examiner is looking for. An Explain question requires a different approach than a Describe question. The following table breaks down key command terms with examples and model answers specific to Topic A.2.</p>
-<p>Command Term    IB Definition    Topic A.2 Example and Model Answer
-State    Give a specific name, value, or other brief answer without explanation or calculation.    Example: State one method used to measure an individual&#39;s hydration status. <br><br> Model Answer: A method to measure hydration status is by tracking changes in body weight before and after exercise.
-Outline    Give a brief account or summary.    Example: Outline the role of macronutrients in the body. <br><br> Model Answer: Macronutrients, which include carbohydrates, proteins, and lipids, provide the necessary sources of energy to maintain all bodily functions during periods of growth, rest, and physical activity.
-Describe    Give a detailed account.    Example: Describe the condition of the 23-year-old soldier as presented in the case study. <br><br> Model Answer: The soldier was initially found unresponsive and face down in the field. Upon arrival at the medical station, his core temperature was a life-threatening 42°C. After being placed in an ice water immersion tub, his core temperature was lowered to 38°C. He was then alert but exhibited persistent altered mental status, and his serum sodium level of 132 mmol/l confirmed a diagnosis of hyponatremia.
-Explain    Give a detailed account including reasons or causes.    Example: Explain why the oxidative system is the dominant supplier of ATP at rest. <br><br> Model Answer: The oxidative system is the dominant supplier of ATP at rest and during extended submaximal activity because it can metabolize fuel sources like fats and carbohydrates in the presence of oxygen to produce large amounts of ATP. This process is highly efficient and sustainable for prolonged periods, meeting the body&#39;s low-intensity energy demands without producing fatiguing by-products like lactate.
-Analyse    Break down in order to bring out the essential elements or structure.    Example: Analyse the factors that contribute to cardiovascular drift during prolonged exercise. <br><br> Model Answer: Cardiovascular drift is a multifactorial phenomenon. One key factor is increased core body temperature, which leads to peripheral displacement of blood to the skin for cooling. This reduces the volume of blood returning to the heart. A second factor is dehydration from sweating, which decreases total blood volume. Together, these factors reduce ventricular filling time and stroke volume. To maintain cardiac output, heart rate must increase, which is the defining characteristic of the drift. The magnitude is also modulated by exercise intensity, duration, and environmental conditions.
-Evaluate    Make an appraisal by weighing up the strengths and limitations.    Example: Evaluate the use of urine colour charts to assess hydration status. <br><br> Model Answer: <br> Strengths: <br> 1. It is a simple, low-cost, and non-invasive method that requires no specialized equipment, making it highly accessible to athletes in field settings. <br> 2. It provides immediate, qualitative feedback that is easy for individuals to interpret and act upon to adjust their fluid intake. <br><br> Limitations: <br> 1. Its accuracy can be confounded by the consumption of certain vitamins (e.g., B vitamins), medications, or foods, which can alter urine colour independently of hydration status. <br> 2. It is a subjective measure that can be influenced by ambient lighting and individual perception, and it may not accurately reflect rapid changes in hydration status.
-Calculate    Obtain a numerical answer showing the relevant stages in the working.    Example: An athlete&#39;s body mass was 75.0 kg before a training session and 73.5 kg after. Calculate the percentage change in their body mass. <br><br> Model Answer: <br> Formula: Percentage Change = ((Final Mass - Initial Mass) / Initial Mass) × 100 <br> Working: <br> ((73.5 kg - 75.0 kg) / 75.0 kg) × 100 <br> = (-1.5 kg / 75.0 kg) × 100 <br> = -0.02 × 100 <br> = -2.0% <br> Answer: The athlete&#39;s body mass decreased by 2.0%.</p>
-<p>Now that you are equipped with an understanding of the exam format and question types, let&#39;s delve into the core content of the topic.</p>
-<ol>
-<li>CONTENT SUMMARY</li>
-</ol>
-<p>A.2.1 Water and Electrolyte Balance</p>
-<p>Maintaining a stable internal environment, or homeostasis, is fundamental to human life. Water and electrolyte balance is a critical component of this, directly impacting everything from cellular function to cardiovascular performance. For an athlete, particularly one competing in challenging environmental conditions, the ability to manage hydration status can be the difference between success and failure, and is essential for safety.</p>
-<ul>
-<li>Key Concepts<ul>
-<li>Intake and Loss: Water and electrolytes are primarily taken in via the large intestine from food and drink. They are lost from the body through evaporation from the skin (sweat) and respiratory tract, as well as excretion via osmosis in the kidneys.</li>
-<li>Imbalance States: Failure to maintain this balance can lead to three critical states: dehydration (net water loss), hypernatremia (abnormally high blood sodium), and hyponatremia (abnormally low blood sodium).</li>
-<li>Measurement: Hydration status can be assessed through various methods, including monitoring changes in body weight, observing urine colour, and measuring urine osmolarity.</li>
-</ul>
-</li>
-<li>Mechanism Explained: Regulation of Water Balance The body has a sophisticated negative feedback system to maintain water balance:<ol>
-<li>The hypothalamus in the brain continuously monitors the concentration of solutes in the blood.</li>
-<li>If blood becomes too concentrated (indicating dehydration), the hypothalamus signals the pituitary gland.</li>
-<li>The pituitary gland releases antidiuretic hormone (ADH) into the bloodstream.</li>
-<li>ADH travels to the kidneys and acts to increase water reabsorption, resulting in more concentrated urine and the conservation of body water.</li>
-</ol>
-</li>
-<li>Mechanism Explained: Cardiovascular Drift During prolonged, steady-state exercise, a phenomenon known as cardiovascular drift occurs:<ol>
-<li>As exercise continues, core body temperature rises. To cool down, the body diverts more blood to the skin (vasodilation).</li>
-<li>This peripheral displacement of blood means less blood is available to return to the heart, reducing venous return and ventricular filling time.</li>
-<li>Simultaneously, fluid is lost as sweat, which reduces total blood plasma volume.</li>
-<li>These factors combine to cause a progressive decrease in stroke volume (the amount of blood pumped per beat).</li>
-<li>To maintain a constant cardiac output (blood flow) and supply the working muscles with oxygen, the heart rate gradually increases to compensate for the falling stroke volume.</li>
-</ol>
-</li>
-<li>Real-World Example The case of a 23-year-old soldier illustrates the severe consequences of hydration imbalance. During training in a hot environment (30°C), he collapsed. The likely cause of his subsequent hyponatremia (a low serum sodium of 132 mmol/l) was the excessive consumption of plain water without sufficient electrolyte replacement during intense exertion. His severe symptoms, including being unresponsive and having persistent altered mental status, demonstrate how critical electrolyte balance is for neurological function and survival in high-stress situations.</li>
-<li>Data Booklet Reference While water intake occurs via the large intestine, a detailed diagram of the Digestive System (Section 5) can be found in the SEHS data booklet for anatomical context.</li>
-</ul>
-<p>NOTE: Exam Tip
-Note that while the sensation of thirst is a signal to drink, it is often an unreliable and delayed indicator of the body&#39;s actual hydration needs. For exams, focus on objective measures like body weight change or urine colour.</p>
-<p>Maintaining fluid balance is critical, but performance also depends on the fuel available to power the body&#39;s systems.</p>
-<p>A.2.2 Fuelling for Health and Performance</p>
-<p>Proper nutrition is the cornerstone of both general health and elite athletic performance. Macronutrients provide the essential fuel for energy production, while micronutrients act as the regulators for countless metabolic processes. Understanding how to strategically manage nutritional intake allows an individual to optimize performance, enhance recovery, and maintain long-term well-being.</p>
-<ul>
-<li>Key Concepts (SL &amp; HL)<ul>
-<li>Macronutrient Roles: Carbohydrates, proteins, and lipids are the body&#39;s primary energy sources, and their relative contribution to energy production depends on factors like an individual’s age, sex, body composition, and activity level.</li>
-<li>Nutritional Strategies: The timing and composition of macronutrient intake before and during exercise can significantly impact performance and minimize gastrointestinal (GI) discomfort.</li>
-<li>Low Energy Availability (LEA): This is a state where the body has insufficient energy intake to meet the demands of exercise and support basic physiological functions.</li>
-<li>Relative Energy Deficiency in Sport (RED-S): This is a syndrome of impaired physiological function including, but not limited to, metabolic rate, menstrual function, bone health, immunity, and cardiovascular health, which is caused by prolonged LEA.</li>
-</ul>
-</li>
-<li>Real-World Example A marathon runner&#39;s nutritional strategy is meticulously planned. In the days leading up to the race, they might &quot;carbohydrate load&quot; to maximize muscle glycogen stores. On race day, a pre-race meal high in carbohydrates and low in fat and fibre ensures readily available energy without causing GI distress. During the race, they will consume carbohydrate gels or drinks at regular intervals to maintain blood glucose levels, spare their limited glycogen stores, and delay the onset of fatigue.</li>
-<li>Mechanism Explained: LEA and RED-S When an individual consistently expends more energy than they consume, they enter a state of Low Energy Availability (LEA). The body responds to this energy deficit by suppressing non-essential physiological processes to conserve energy for survival. If this state is prolonged, it leads to the clinical syndrome of RED-S, where multiple body systems (e.g., endocrine, skeletal, immune) are negatively affected, severely compromising both health and performance.</li>
-</ul>
-<p>TIP: Nuanced Application
-When discussing nutritional strategies, always link your points to the specific demands of the activity (e.g., intensity, duration) and the individual (e.g., age, sex, training status) to demonstrate a nuanced understanding.</p>
-<p>Additional Higher Level Content</p>
-<p>A.2.2.2 Micronutrients (HL Only)</p>
-<p>Micronutrients do not provide energy directly but are vital for facilitating energy transfer and tissue synthesis.</p>
-<ul>
-<li>Iron: A crucial component of haemoglobin (in red blood cells) and myoglobin (in muscle cells), essential for transporting oxygen for aerobic respiration.</li>
-<li>Calcium: A primary component of bones and connective tissue, and also plays a key role in the process of muscle contraction.</li>
-<li>Sodium and Potassium: These key electrolytes are essential for maintaining the body&#39;s water balance and are critical for proper muscle and nerve function.</li>
-<li>Vitamins: Act as regulators of the metabolic reactions that release energy from food and support the synthesis of new tissues.</li>
-</ul>
-<p>A.2.2.3 The Gut Microbiome (HL Only)</p>
-<p>The gut microbiome, the vast community of microorganisms residing in our digestive tract, is a key influencer of health and performance. Its composition is affected by an individual&#39;s genetics, diet, medications, and overall lifestyle. A healthy and diverse microbiome affects the availability and uptake of nutrients from food, thereby influencing an individual&#39;s energy levels, immune function, and overall well-being.</p>
-<p>The fuel provided by nutrition is converted into a usable form of energy, ATP, through three distinct energy systems.</p>
-<p>A.2.3 Energy Systems</p>
-<p>The body&#39;s capacity to perform any physical task, from an explosive jump to a multi-hour endurance event, is dictated by its ability to produce adenosine triphosphate (ATP), the universal energy currency of the cell. This is accomplished through three distinct but interconnected energy systems, which work together along a continuum to meet the energy demands of any given activity.</p>
-<ul>
-<li>Key Concepts (SL &amp; HL)<ul>
-<li>Three Systems:<ol>
-<li>Phosphagen System: Provides immediate ATP from stored phosphocreatine. It is powerful but has a very limited capacity (lasts for seconds) and is dominant in short, explosive activities.</li>
-<li>Glycolytic System: Breaks down carbohydrates (glycogen and glucose) anaerobically to produce ATP. It is dominant in high-intensity activities lasting from 30 seconds to about 2 minutes. Its primary limitation is the production of metabolic by-products that contribute to fatigue.</li>
-<li>Oxidative System: Uses oxygen to break down carbohydrates and fats to produce large amounts of ATP. It is the dominant system at rest and during submaximal, long-duration activities, with limitations related to the rate of oxygen delivery.</li>
-</ol>
-</li>
-<li>Energy Continuum: This concept explains that all three energy systems are always active, but their relative contribution changes based on the intensity and duration of the physical activity.</li>
-<li>VO₂ max: Defined as an individual&#39;s maximal oxygen consumption, it represents the upper limit of the oxidative system and is a key determinant of endurance performance.</li>
-</ul>
-</li>
-<li>Mechanism Explained: The Energy Continuum The interplay between the energy systems is dynamic. For example:<ul>
-<li>A 100m sprint is fueled almost exclusively by the phosphagen system due to the immediate, high-power demand.</li>
-<li>A 400m race begins with the phosphagen system, but the sustained high intensity quickly makes the glycolytic system the dominant contributor.</li>
-<li>A marathon is performed at a submaximal intensity and is fueled primarily by the oxidative system, which can sustainably produce ATP for hours.</li>
-</ul>
-</li>
-<li>Real-World Example A professional soccer player seamlessly transitions between all three energy systems during a 90-minute match. A sudden sprint to intercept a pass relies on the phosphagen system. A sustained dribbling run past defenders is powered by the glycolytic system. The vast majority of the game, including jogging into position and walking, is supported by the oxidative system, which also facilitates recovery between high-intensity bursts.</li>
-</ul>
-<p>Additional Higher Level Content</p>
-<p>A.2.3.3 Lactate Inflection Point (HL Only)</p>
-<p>The lactate inflection point (LIP) is defined as the maximum exercise intensity at which the body can clear or metabolize lactate at the same rate at which it is being produced. For an endurance athlete, exercising at or just below the LIP represents the highest sustainable intensity. Training to increase one&#39;s LIP is a key goal as it allows the athlete to maintain a higher pace for longer before fatiguing metabolic by-products accumulate rapidly.</p>
-<p>A.2.3.4 Excess Post-exercise Oxygen Consumption (EPOC) (HL Only)</p>
-<p>Following exercise, the body&#39;s oxygen consumption remains elevated above resting levels. This is known as EPOC. Its purpose is to restore the body to its pre-exercise state (homeostasis). EPOC is divided into two parts: a fast component, which involves restoring ATP and phosphocreatine stores and re-oxygenating myoglobin, and a slow component, which deals with tasks like lactate removal, elevated body temperature, and circulating hormones. The magnitude and duration of EPOC are dependent on the oxygen deficit incurred during the exercise bout.</p>
-<p>With a firm grasp of the theoretical content, the next step is to apply this knowledge to practical exam-style questions.</p>
-<ol>
-<li>PRACTICE QUESTIONS</li>
-</ol>
-<p>Applying your knowledge to exam-style questions is the most effective way to consolidate your learning and prepare for assessments. The following questions are designed to test your understanding of the core concepts, your ability to analyze data, and your skill in applying principles to unfamiliar scenarios across all three paper formats.</p>
-<p>Paper 1A: Multiple Choice Questions</p>
-<p>Specimen-style generated question</p>
-<hr>
-<ol>
-<li>In the case study of the 23-year-old soldier, which clinical finding was the primary indicator of hyponatremia? A. Core temperature of 42°C B. Unresponsive state upon being found C. Serum sodium of 132 mmol/l D. Performing intense drills in full uniform</li>
-</ol>
-<p>Correct Answer: C</p>
-<p>Explanation: Why C is correct: Hyponatremia is clinically defined as a low concentration of sodium in the blood. The soldier&#39;s serum sodium level of 132 mmol/l is below the normal range, directly confirming this diagnosis. Why A is wrong: A core temperature of 42°C is a sign of hyperthermia or heat stroke, which can be related to hydration status but is not the specific indicator of hyponatremia. Why B is wrong: An unresponsive state is a symptom that can result from various conditions, including heat stroke, severe dehydration, or hyponatremia. While it is a serious symptom, it is not the specific clinical measure that diagnoses hyponatremia. Why D is wrong: Performing intense drills in uniform is a risk factor or cause that could lead to a hydration imbalance, not a clinical finding or indicator of the condition itself.</p>
-<hr>
-<ol>
-<li>What is the primary cause of the decrease in stroke volume associated with cardiovascular drift during prolonged exercise in a hot environment? A. A decrease in heart rate B. An increase in blood plasma volume C. Vasoconstriction of blood vessels in the skin D. Peripheral displacement of blood to the skin</li>
-</ol>
-<p>Correct Answer: D</p>
-<p>Explanation: Why D is correct: The textbook explains that a primary cause of cardiovascular drift is the peripheral displacement of blood to the skin to facilitate heat loss. This reduces the volume of blood returning to the heart (venous return), leading to a lower stroke volume. Why A is wrong: Heart rate increases, not decreases, during cardiovascular drift to compensate for the falling stroke volume. Why B is wrong: Blood plasma volume decreases due to sweating, which contributes to the reduction in stroke volume, it does not increase. Why C is wrong: Vasodilation (widening) of skin blood vessels occurs to promote heat loss, not vasoconstriction (narrowing).</p>
-<hr>
-<ol>
-<li>An elite weightlifter performs a single, maximal &quot;snatch,&quot; which takes less than 2 seconds to complete. Which energy system is predominantly responsible for producing the required ATP? A. Glycolytic B. Oxidative C. Phosphagen D. Lactic acid system</li>
-</ol>
-<p>Correct Answer: C</p>
-<p>Explanation: Why C is correct: The phosphagen system is the body&#39;s source for immediate, high-power energy production for activities lasting only a few seconds. A single, explosive lift like the snatch falls squarely into this category. Why A is wrong: The glycolytic system becomes dominant in activities lasting longer, typically from around 30 seconds to 2 minutes. It would not be the primary system for a 2-second effort. Why B is wrong: The oxidative system is the primary system for low-intensity, long-duration activities and at rest. Its rate of ATP production is too slow for a maximal, explosive lift. Why D is wrong: The &quot;lactic acid system&quot; is another name for the anaerobic glycolytic system. As with option A, it is not the dominant system for such a short, maximal effort.</p>
-<hr>
-<ol>
-<li>(HL Only) What does the slow component of EPOC primarily address? A. The immediate replenishment of ATP and phosphocreatine stores. B. The removal of lactate and reduction of elevated core body temperature. C. The re-oxygenation of myoglobin in the muscles. D. The initial increase in oxygen uptake at the start of exercise.</li>
-</ol>
-<p>Correct Answer: B</p>
-<p>Explanation: Why B is correct: The slow component of EPOC involves metabolic processes that take longer to complete, including the conversion of lactate to glycogen, lowering the elevated core body temperature, and clearing hormones like epinephrine, all of which require sustained oxygen consumption. Why A is wrong: Replenishing ATP and phosphocreatine stores is part of the fast component of EPOC. Why C is wrong: The re-oxygenation of myoglobin is also part of the fast component of EPOC. Why D is wrong: The initial increase in oxygen uptake at the start of exercise is known as the oxygen deficit, not EPOC.</p>
-<p>Paper 1B: Data-Based Questions</p>
-<p>Specimen-style generated question</p>
-<p>Question 5: Hydration and Performance A study investigated the effect of dehydration on 5km running performance. Ten trained runners completed a 5km time trial. Their body mass was measured before and after the run to determine the level of dehydration, and their run times were recorded. Data for five of the athletes are shown below.</p>
-<p>Athlete    Body Mass (Pre-Run) [kg]    Body Mass (Post-Run) [kg]    Run Time [min:sec]
-1    70.0    68.6    20:45
-2    65.0    63.5    20:10
-3    75.0    73.1    22:05
-4    62.0    60.5    19:20
-5    68.0    66.5    21:10</p>
-<p>a. Calculate the mean percentage change in body mass for the five athletes. Show all your working. b. Using the data, explain the relationship between dehydration (body mass loss) and running performance. c. Evaluate the methodology of this study, considering its validity and reliability.</p>
-<p>Model Answer: a. Formula: Percentage Change = ((Final Mass - Initial Mass) / Initial Mass) × 100 Working: Athlete 1: ((68.6 - 70.0) / 70.0) × 100 = -2.00% Athlete 2: ((63.5 - 65.0) / 65.0) × 100 = -2.31% Athlete 3: ((73.1 - 75.0) / 75.0) × 100 = -2.53% Athlete 4: ((60.5 - 62.0) / 62.0) × 100 = -2.42% Athlete 5: ((66.5 - 68.0) / 68.0) × 100 = -2.21% Mean Calculation: (-2.00 + -2.31 + -2.53 + -2.42 + -2.21) / 5 = -11.47 / 5 = -2.294% Answer: The mean percentage change in body mass was a decrease of 2.29%.</p>
-<p>b. Dehydration, indicated by a loss of body mass, is associated with impaired running performance. All athletes lost over 2% of their body mass, and their run times reflect a level of performance that is negatively impacted by this fluid loss. For example, the athlete with the greatest percentage body mass loss (Athlete 3 at -2.53%) also had the slowest run time (22:05). This suggests a negative correlation where greater dehydration leads to slower performance.</p>
-<p>c. Validity Limitation: The study lacks a control condition (e.g., the same run performed while fully hydrated). Without this comparison, we cannot validly conclude that the observed run times are a direct result of the dehydration level, as other factors could be at play. Reliability Strength: Using a digital scale to measure body mass and electronic timing for the run increases the reliability of the measurements. Repeating the trial would further strengthen the reliability of the results.</p>
-<p>Specimen-style generated question</p>
-<p>Question 6: Energy System Contribution A study measured the estimated percentage contribution of the three energy systems during a maximal 400m run lasting approximately 50 seconds. Key data points are shown in the table below.</p>
-<p>Time (seconds)    Phosphagen System (%)    Glycolytic System (%)    Oxidative System (%)
-0    95    3    2
-10    50    45    5
-30    5    70    25
-50    2    50    48</p>
-<p>a. State the dominant energy system at the 10-second mark. b. Describe the trend in the contribution of the oxidative system over the 50-second period. c. Explain why the contribution of the phosphagen system decreases so rapidly after the start of the run.</p>
-<p>Model Answer: a. The dominant energy system at the 10-second mark is the phosphagen system (50% contribution). b. The contribution of the oxidative system begins at a very low level (2%) and increases steadily throughout the entire 50-second run, reaching 48% by the end. Despite its continuous increase, it is not the dominant system at any point during this high-intensity activity. c. The contribution of the phosphagen system decreases rapidly because its fuel source, stored phosphocreatine (PCr), is extremely limited in quantity within the muscle. The high rate of ATP production required for a maximal sprint depletes these stores within seconds, after which its ability to contribute to energy production falls dramatically.</p>
-<p>Specimen-style generated question</p>
-<p>Question 7: Nutritional Strategies A study compared the effects of a carbohydrate (CHO) drink versus a water-only placebo on blood glucose levels during a 90-minute cycling session.</p>
-<p>Time (minutes)    Group A (CHO Drink) Blood Glucose (mmol/L)    Group B (Water Only) Blood Glucose (mmol/L)
-0    5.0    5.1
-30    5.8    4.8
-60    6.0    4.2
-90    5.9    3.5</p>
-<p>a. Calculate the percentage difference in blood glucose levels between Group A and Group B at 90 minutes. Show all working. b. Outline the likely consequence of the trend seen in Group B for their cycling performance. c. Suggest two variables that must be controlled to ensure the validity of this experiment. d. A conclusion was made that &quot;carbohydrate drinks enhance endurance performance.&quot; Evaluate the extent to which the provided data supports this conclusion.</p>
-<p>Model Answer: a. Formula: Percentage Difference = ((Value A - Value B) / Value B) × 100 Working: ((5.9 mmol/L - 3.5 mmol/L) / 3.5 mmol/L) × 100 = (2.4 / 3.5) × 100 = 0.6857 × 100 ≈ 68.6%. Answer: At 90 minutes, the blood glucose level of Group A was approximately 68.6% higher than that of Group B.</p>
-<p>b. The blood glucose level for Group B shows a steady decline, dropping to 3.5 mmol/L by 90 minutes. This state, approaching hypoglycemia, would likely lead to a significant decline in performance due to increased perception of effort, impaired cognitive function, and an inability to maintain the required exercise intensity as the central nervous system and working muscles are deprived of their primary fuel source.</p>
-<p>c. Controlled Variable 1: The participants&#39; pre-exercise meal should have been standardized in terms of composition and timing to ensure they all started the trial with similar baseline muscle glycogen and blood glucose levels. Controlled Variable 2: The exercise intensity (e.g., power output on the bike) and environmental conditions (temperature and humidity) must be kept identical for all participants and across both trials to ensure that any differences in blood glucose are due to the drink consumed and not other external factors.</p>
-<p>d. The data shows that the CHO drink was effective at maintaining higher blood glucose levels compared to water. This physiological outcome strongly suggests a performance benefit, as low blood glucose is a known cause of fatigue. However, the study did not measure performance itself (e.g., time to exhaustion, power output). Therefore, while the data supports the physiological mechanism by which performance could be enhanced, it does not directly prove it. The conclusion is a reasonable inference but is not fully supported without direct performance data.</p>
-<p>Specimen-style generated question</p>
-<p>Question 8 (HL Only): Lactate Threshold Testing An elite cyclist performed a graded exercise test where the power output was increased every 3 minutes. Blood lactate was measured at the end of each stage.</p>
-<p>Power Output (Watts)    Blood Lactate (mmol/L)
-150    1.1
-200    1.2
-250    1.9
-300    2.8
-350    4.5
-400    7.9</p>
-<p>a. Using the data, estimate the cyclist&#39;s lactate inflection point (LIP). b. Explain the physiological significance of training at or near the lactate inflection point for an endurance athlete. c. Outline one limitation of using this laboratory-based test to predict performance in a real-world cycling race.</p>
-<p>Model Answer: a. The lactate inflection point is the point where blood lactate begins to accumulate exponentially. In the data, the increase from 250W to 300W is 0.9 mmol/L, but the increase from 300W to 350W is much larger at 1.7 mmol/L. The LIP can therefore be estimated to occur between 300 and 350 Watts, as this is where the rate of production begins to significantly outpace the rate of clearance.</p>
-<p>b. Training at or near the LIP is physiologically significant because it stimulates adaptations that improve the body&#39;s ability to clear and tolerate lactate. This enhances the oxidative capacity of muscles, increases the density of capillaries and mitochondria, and ultimately raises the LIP. A higher LIP allows the athlete to sustain a higher intensity of exercise before significant metabolic fatigue sets in, which is a crucial determinant of endurance performance.</p>
-<p>c. One limitation is the lack of ecological validity. A laboratory test on a stationary bike involves a controlled environment with steady power output increases, which does not replicate the dynamic conditions of a real race, such as changes in gradient, wind resistance, drafting behind other riders, and tactical surges in pace. Therefore, while it is a good measure of physiological capacity, it may not perfectly predict how an athlete performs under variable race conditions.</p>
-<p>Paper 2: Extended Response Questions</p>
-<p>Specimen-style generated question</p>
-<p>Question 9 (4 marks) An athlete is competing in a triathlon in a hot and humid environment. Explain two distinct physiological reasons why maintaining water and electrolyte balance is critical for their performance and safety.</p>
-<p>Model Answer: One reason is for effective thermoregulation. In hot and humid conditions, the primary mechanism for heat loss is the evaporation of sweat. If an athlete becomes dehydrated, their plasma volume decreases, which impairs their ability to sweat effectively [1 mark]. This can lead to a dangerous increase in core body temperature, significantly impairing performance and increasing the risk of heat-related illnesses such as heat stroke [1 mark].</p>
-<p>A second reason is to maintain cardiovascular function. Dehydration leads to a reduction in blood plasma volume, which lowers stroke volume and causes cardiovascular drift [1 mark]. Furthermore, the loss of key electrolytes like sodium and potassium through sweat is critical, as these are essential for proper nerve impulse transmission and muscle contraction. A severe imbalance can lead to muscle cramps, cardiac arrhythmias, and a significant drop in performance [1 mark].</p>
-<p>Specimen-style generated question</p>
-<p>Question 10 (HL Only, 8 marks) A coach is designing a nutrition and recovery plan for a long-distance runner in the week leading up to a marathon. Analyse the nutritional strategies the coach should recommend for pre-race fuelling and post-race recovery. Your answer should refer to both macronutrients and micronutrients.</p>
-<p>Model Answer: Pre-Race Fuelling Strategy: The primary pre-race goal is to maximize muscle glycogen stores, which is the main fuel for a marathon. The coach should recommend a carbohydrate-loading strategy, where the runner consumes a very high carbohydrate diet (e.g., 8-10g per kg of body weight) for the 2-3 days prior to the race [1 mark]. This should be combined with a taper in training volume to allow glycogen to be stored rather than used [1 mark]. The final pre-race meal, consumed 3-4 hours before the start, should be rich in carbohydrates but low in fat and fibre to ensure rapid gastric emptying and prevent gastrointestinal distress [1 mark]. Adequate hydration is also essential, and consuming fluids with electrolytes like sodium can help with fluid retention [1 mark].</p>
-<p>Post-Race Recovery Strategy: Post-race recovery should begin immediately to replenish depleted stores and repair damaged tissue. The coach should advise the runner to consume a source of high-glycaemic index carbohydrates within the first 30-60 minutes post-race to rapidly restock muscle glycogen [1 mark]. This should be combined with a source of protein (approx. 20-25g) to initiate the repair of muscle fibres damaged during the race [1 mark]. Rehydration is critical and should involve consuming fluids containing electrolytes, particularly sodium and potassium, to replace what was lost in sweat and restore water balance [1 mark]. For micronutrients, consuming polyphenol-rich foods like berries can help reduce inflammation, while ensuring adequate iron intake in the long term is vital for restoring haemoglobin levels for oxygen transport, aiding long-term recovery [1 mark].</p>
-<ol>
-<li>MATHEMATICAL SKILLS</li>
-</ol>
-<p>While SEHS is a science course, not a mathematics course, the ability to perform key calculations, handle data, and understand quantitative relationships is essential. This skill allows you to interpret experimental results and apply theoretical principles in a practical context. One of the most common calculations you will encounter is percentage change.</p>
-<ul>
-<li>Formula: Percentage Change Percentage Change = ((Final Value - Initial Value) / Initial Value) × 100</li>
-<li>Worked Example Scenario: An athlete&#39;s body mass decreases from 75.0 kg before a training session to 72.9 kg after the session due to fluid loss. We want to calculate the percentage change in their body mass.<ul>
-<li>Initial Value = 75.0 kg</li>
-<li>Final Value = 72.9 kg</li>
-</ul>
-</li>
-<li>Calculation Steps<ol>
-<li>Substitute the values into the formula: Percentage Change = ((72.9 kg - 75.0 kg) / 75.0 kg) × 100</li>
-<li>Calculate the difference (the change in mass): 72.9 - 75.0 = -2.1 kg</li>
-<li>Divide the change by the initial value: -2.1 kg / 75.0 kg = -0.028</li>
-<li>Multiply by 100 to express as a percentage: -0.028 × 100 = -2.8%</li>
-</ol>
-</li>
-<li><p>Final Answer with Correct Units: The athlete experienced a 2.8% decrease in body mass.</p>
-</li>
-<li><p>COMMON ERRORS</p>
-</li>
-</ul>
-<p>Awareness of common misconceptions can significantly strengthen your understanding and help you avoid pitfalls in exam questions. Addressing these errors directly in your answers can demonstrate a higher level of insight.</p>
-<ul>
-<li>Error: Energy systems work in isolation, not as a continuum. Explanation: This is incorrect. All three energy systems (phosphagen, glycolytic, oxidative) are always contributing to ATP production. The &quot;energy continuum&quot; concept highlights that their relative contribution changes based on the intensity and duration of the activity, but they never work completely in isolation.</li>
-<li>Error: Thirst is a reliable and early indicator of dehydration. Explanation: The sensation of thirst is a delayed response. By the time an individual feels thirsty, they are often already in a state of dehydration, and performance may have already been compromised. This is why structured hydration plans are emphasized over simply drinking to thirst during prolonged exercise.</li>
-<li>Error: Confusing the causes and symptoms of dehydration and hyponatremia. Explanation: Dehydration is primarily caused by excessive fluid loss, leading to a net deficit of body water. Hyponatremia is caused by abnormally low blood sodium levels, often from drinking excessive amounts of plain water without adequate electrolyte replacement, which dilutes blood sodium. While both can occur in athletes, their causes and treatments are very different.</li>
-<li>Error: Cardiovascular drift is caused only by dehydration. Explanation: While dehydration is a major contributor, cardiovascular drift is multifactorial. A primary cause is the rise in core body temperature, which leads to vasodilation of skin blood vessels to promote cooling. As stated in the textbook, some researchers also suggest that a reduction in cardiac performance (contractility) may be a contributing factor. The phenomenon cannot be explained by a single cause.</li>
-<li>Error: RED-S is a condition that only affects female athletes. Explanation: Relative Energy Deficiency in Sport (RED-S) is a consequence of prolonged Low Energy Availability and affects athletes of all genders. While some consequences, such as menstrual dysfunction, are specific to females, males can experience impaired physiological functions including reduced testosterone levels, poor bone health, and decreased metabolic rate.</li>
-<li><p>Error (HL Only): EPOC is simply &quot;repaying an oxygen debt.&quot; Explanation: This is an outdated and oversimplified term. Excess Post-exercise Oxygen Consumption (EPOC) is a complex process involving multiple physiological functions to restore the body to homeostasis. It includes a fast component (restoring ATP/PCr stores) and a slow component (removing lactate, reducing body temperature, etc.), reflecting a broad range of recovery processes, not just repaying a simple debt.</p>
-</li>
-<li><p>LINKING QUESTIONS</p>
-</li>
-</ul>
-<p>A key skill in the IB Diploma Programme is the ability to make connections between different topics. This demonstrates a holistic and networked understanding of Sports, Exercise, and Health Science, moving beyond isolated facts. The following questions challenge you to link concepts from Topic A.2 with other areas of the syllabus.</p>
-<ul>
-<li>Linking Question: How does A.2.1 (Water and electrolyte balance) link to Topic A.1.2 HL (The body&#39;s response to the environment)? Model Answer: The body&#39;s response to a hot and humid environment (A.1.2 HL) directly impacts water and electrolyte balance (A.2.1). In such an environment, the primary mechanism for thermoregulation is sweating, which causes a significant loss of both water and electrolytes like sodium. This makes maintaining hydration status much more challenging and critical for performance and safety, and is a key driver for the long-term adaptations seen with heat acclimatization.</li>
-<li>Linking Question: How does A.2.2 (Fuelling for health and performance) link to Topic A.3.1 (Qualities of training)? Model Answer: The training principle of periodization (A.3.1), which involves varying training volume and intensity in macro-, meso-, and microcycles, must be aligned with nutritional periodization (A.2.2). An athlete&#39;s energy and macronutrient requirements will be significantly higher during a high-volume &quot;overload&quot; microcycle compared to a &quot;recovery&quot; or &quot;taper&quot; microcycle. Failing to match nutritional intake to training demands can lead to Low Energy Availability (LEA), impairing adaptation and increasing the risk of overtraining.</li>
-<li><p>Linking Question: How do A.2.3 (Energy systems) link to Topic B.1.3 (Muscular function)? Model Answer: The process of muscular contraction, explained by the sliding filament theory (B.1.3), is fundamentally dependent on the availability of ATP to power the cross-bridge cycle between actin and myosin filaments. The three energy systems (A.2.3) are the metabolic pathways responsible for continuously resynthesizing this ATP. The specific energy system that is dominant dictates the rate and sustainability of ATP production, thereby determining the intensity and duration of muscular work that can be performed.</p>
-</li>
-<li><p>SELF-TEST CHECKLIST</p>
-</li>
-</ul>
-<p>Use this checklist to reflect on your understanding and identify areas that may require further review. This is an active learning tool to help you self-assess your confidence and mastery of the content and skills covered in Topic A.2.</p>
-<ul>
-<li>[ ] Can I define all the key terms for this topic, such as cardiovascular drift, LEA, and EPOC?</li>
-<li>[ ] Can I explain the key physiological mechanisms step-by-step, such as water balance regulation and the energy continuum?</li>
-<li>[ ] Can I perform and interpret relevant calculations, such as percentage change, from experimental data?</li>
-<li>[ ] Can I apply my knowledge to unfamiliar scenarios presented in Paper 2-style questions?</li>
-<li>[ ] Can I evaluate methodologies and theories, providing balanced arguments with strengths and limitations?</li>
-<li>[ ] Have I completed all the practice questions in this guide and understood the model answers?</li>
-<li>[ ] Can I identify where information from the SEHS Data Booklet would be relevant to a question on this topic?</li>
+<h1>🥤 Topic A.2: Hydration and Nutrition</h1>
+
+<p style="font-size: 1.15rem; color: #666; margin-bottom: 2rem;">Master the science of fueling performance and maintaining optimal hydration for health and athletic success.</p>
+
+<!-- Section 1: Key Terms -->
+<span class="section-badge">📚 Section 1</span>
+<h2>Quick Reference: Key Terms</h2>
+
+<p>Mastering the key terminology of any topic is the first step toward achieving clarity and precision in your exam responses. These terms are the foundational concepts upon which complex physiological and nutritional principles are built.</p>
+
+<div class="subsection-header">💧 A.2.1 Water and Electrolyte Balance</div>
+
+<div class="key-term-card">
+    <div class="term-title">Dehydration</div>
+    <div class="term-definition">A state of net water loss from the body, leading to a negative water balance that can impair physiological function and performance.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Hypernatremia</div>
+    <div class="term-definition">A state of electrolyte imbalance characterized by an abnormally high concentration of sodium in the blood.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Hyponatremia</div>
+    <div class="term-definition">A state of electrolyte imbalance, characterized by low serum sodium, that can occur if water and electrolyte balance is not maintained.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Cardiovascular Drift</div>
+    <div class="term-definition">A phenomenon caused by water loss or increased core body temperature during prolonged submaximal exercise, characterized by a progressive increase in heart rate to compensate for a reduced stroke volume.</div>
+</div>
+
+<div class="subsection-header">🍎 A.2.2 Fuelling for Health and Performance</div>
+
+<div class="key-term-card">
+    <div class="term-title">Macronutrients</div>
+    <div class="term-definition">Carbohydrates, proteins, and lipids that provide sources of energy to maintain bodily functions.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Low Energy Availability (LEA)</div>
+    <div class="term-definition">A state in which the body has insufficient energy to support the physiological functions needed for optimal health.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Relative Energy Deficiency in Sport (RED-S)</div>
+    <div class="term-definition">A syndrome that is a consequence of prolonged Low Energy Availability (LEA).</div>
+</div>
+
+<div class="subsection-header">⚡ A.2.3 Energy Systems</div>
+
+<div class="key-term-card">
+    <div class="term-title">Energy Continuum</div>
+    <div class="term-definition">A concept used to describe the relative contribution of each of the three energy systems to ATP production depending on the nature of the activity.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">VO₂ max (Maximal Oxygen Consumption)</div>
+    <div class="term-definition">The maximum rate of oxygen consumption, which influences endurance performance.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Lactate Inflection Point <span class="hl-badge">HL ONLY</span></div>
+    <div class="term-definition">The maximum intensity at which the body can metabolize lactate at the same rate as its production.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Excess Post-exercise Oxygen Consumption (EPOC) <span class="hl-badge">HL ONLY</span></div>
+    <div class="term-definition">The increased rate of oxygen intake required after strenuous activity to return the body to a state of homeostasis.</div>
+</div>
+
+<!-- Section 2: Exam Format -->
+<span class="section-badge">📝 Section 2</span>
+<h2>Exam Format & Timing</h2>
+
+<p>A crucial component of strategic preparation is a clear understanding of the examination structure. Knowing the format, weighting, and timing of each paper allows you to manage your time effectively during the exam.</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Paper</th>
+            <th>Standard Level (SL)</th>
+            <th>Higher Level (HL)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Paper 1A</strong></td>
+            <td>30 marks<br>45 minutes<br><em>Multiple-choice questions</em></td>
+            <td>40 marks<br>52 minutes<br><em>Multiple-choice questions</em></td>
+        </tr>
+        <tr>
+            <td><strong>Paper 1B</strong></td>
+            <td>25 marks<br>38 minutes<br><em>Data-based questions</em></td>
+            <td>25 marks<br>53 minutes<br><em>Data-based questions</em></td>
+        </tr>
+        <tr>
+            <td><strong>Paper 2</strong></td>
+            <td>50 marks<br>90 minutes<br><em>Short-answer & extended-response</em></td>
+            <td>80 marks<br>150 minutes<br><em>Short-answer & extended-response</em></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Section 3: Command Terms - Shortened for space, include full version -->
+<span class="section-badge">🎯 Section 3</span>
+<h2>Command Terms Mastery</h2>
+
+<p>Command terms are the instructional words used in exam questions that signal the required depth and type of response. Mastering these terms is essential for unlocking marks.</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th style="width: 15%;">Command Term</th>
+            <th style="width: 30%;">IB Definition</th>
+            <th>Topic A.2 Example & Model Answer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>State</strong></td>
+            <td>Give a specific name, value, or other brief answer without explanation.</td>
+            <td>
+                <strong>Example:</strong> State one method used to measure hydration status.<br><br>
+                <strong>Model Answer:</strong> Tracking changes in body weight before and after exercise.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Calculate</strong></td>
+            <td>Obtain a numerical answer showing the relevant stages in the working.</td>
+            <td>
+                <strong>Example:</strong> An athlete's body mass was 75.0 kg before training and 73.5 kg after. Calculate the percentage change.<br><br>
+                <strong>Model Answer:</strong><br>
+                <em>Formula:</em> Percentage Change = ((Final - Initial) / Initial) × 100<br>
+                <em>Working:</em> ((73.5 - 75.0) / 75.0) × 100 = -2.0%<br>
+                <em>Answer:</em> The athlete's body mass decreased by <strong>2.0%</strong>.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Section 4: Content Summary -->
+<span class="section-badge">📖 Section 4</span>
+<h2>Content Summary</h2>
+
+<h3>A.2.1 Water and Electrolyte Balance</h3>
+
+<p>Maintaining a stable internal environment, or homeostasis, is fundamental to human life. Water and electrolyte balance is a critical component of this, directly impacting everything from cellular function to cardiovascular performance.</p>
+
+<div class="mechanism-steps">
+    <h4 style="margin-top: 0;">🔄 Regulation of Water Balance</h4>
+    <ol>
+        <li>The <strong>hypothalamus</strong> in the brain continuously monitors the concentration of solutes in the blood.</li>
+        <li>If blood becomes too concentrated (indicating dehydration), the hypothalamus signals the <strong>pituitary gland</strong>.</li>
+        <li>The pituitary gland releases <strong>antidiuretic hormone (ADH)</strong> into the bloodstream.</li>
+        <li>ADH travels to the <strong>kidneys</strong> and acts to increase water reabsorption, resulting in more concentrated urine and conservation of body water.</li>
+    </ol>
+</div>
+
+<div class="real-world-example">
+    <p>The case of a 23-year-old soldier illustrates the severe consequences of hydration imbalance. During training in a hot environment (30°C), he collapsed. The likely cause of his subsequent <strong>hyponatremia</strong> (serum sodium of 132 mmol/l) was the excessive consumption of plain water without sufficient electrolyte replacement during intense exertion. His severe symptoms demonstrate how critical electrolyte balance is for neurological function and survival.</p>
+</div>
+
+<div class="note-box">
+    While the sensation of thirst is a signal to drink, it is often an unreliable and delayed indicator of the body's actual hydration needs. For exams, focus on objective measures like body weight change or urine colour.
+</div>
+
+<!-- Section 5: Practice Questions -->
+<span class="section-badge">✍️ Section 5</span>
+<h2>Practice Questions</h2>
+
+<h3>Paper 1A: Multiple Choice Questions</h3>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 1</span>
+    <div class="mcq-question">
+        In the case study of the 23-year-old soldier, which clinical finding was the primary indicator of hyponatremia?
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> Core temperature of 42°C</li>
+        <li><strong>B.</strong> Unresponsive state upon being found</li>
+        <li><strong>C.</strong> Serum sodium of 132 mmol/l</li>
+        <li><strong>D.</strong> Performing intense drills in full uniform</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: C</span>
+        <div class="mcq-explanation">
+            <strong>Why C is correct:</strong> Hyponatremia is clinically defined as a low concentration of sodium in the blood. The soldier's serum sodium level of 132 mmol/l is below the normal range, directly confirming this diagnosis.<br><br>
+            <strong>Why A is wrong:</strong> A core temperature of 42°C is a sign of hyperthermia or heat stroke, not the specific indicator of hyponatremia.<br><br>
+            <strong>Why B is wrong:</strong> An unresponsive state is a symptom that can result from various conditions. It's not the specific clinical measure that diagnoses hyponatremia.<br><br>
+            <strong>Why D is wrong:</strong> Performing intense drills is a risk factor, not a clinical finding or indicator of the condition itself.
+        </div>
+    </div>
+</div>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 2</span>
+    <div class="mcq-question">
+        What is the primary cause of the decrease in stroke volume associated with cardiovascular drift during prolonged exercise in a hot environment?
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> A decrease in heart rate</li>
+        <li><strong>B.</strong> An increase in blood plasma volume</li>
+        <li><strong>C.</strong> Vasoconstriction of blood vessels in the skin</li>
+        <li><strong>D.</strong> Peripheral displacement of blood to the skin</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: D</span>
+        <div class="mcq-explanation">
+            <strong>Why D is correct:</strong> A primary cause of cardiovascular drift is the peripheral displacement of blood to the skin to facilitate heat loss. This reduces venous return, leading to lower stroke volume.<br><br>
+            <strong>Why A is wrong:</strong> Heart rate <em>increases</em>, not decreases, to compensate for falling stroke volume.<br><br>
+            <strong>Why B is wrong:</strong> Blood plasma volume <em>decreases</em> due to sweating, contributing to reduced stroke volume.<br><br>
+            <strong>Why C is wrong:</strong> <em>Vasodilation</em> (widening) of skin blood vessels occurs to promote heat loss, not vasoconstriction.
+        </div>
+    </div>
+</div>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 3</span>
+    <div class="mcq-question">
+        An elite weightlifter performs a single, maximal "snatch," which takes less than 2 seconds to complete. Which energy system is predominantly responsible for producing the required ATP?
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> Glycolytic</li>
+        <li><strong>B.</strong> Oxidative</li>
+        <li><strong>C.</strong> Phosphagen</li>
+        <li><strong>D.</strong> Lactic acid system</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: C</span>
+        <div class="mcq-explanation">
+            <strong>Why C is correct:</strong> The phosphagen system is the body's source for immediate, high-power energy production for activities lasting only a few seconds. A single, explosive lift like the snatch falls squarely into this category.<br><br>
+            <strong>Why A is wrong:</strong> The glycolytic system becomes dominant in activities lasting longer, typically 30 seconds to 2 minutes.<br><br>
+            <strong>Why B is wrong:</strong> The oxidative system is for low-intensity, long-duration activities. Its rate of ATP production is too slow for a maximal, explosive lift.<br><br>
+            <strong>Why D is wrong:</strong> The "lactic acid system" is another name for the anaerobic glycolytic system. It is not the dominant system for such a short, maximal effort.
+        </div>
+    </div>
+</div>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 4 <span class="hl-badge">HL ONLY</span></span>
+    <div class="mcq-question">
+        What does the slow component of EPOC primarily address?
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> The immediate replenishment of ATP and phosphocreatine stores</li>
+        <li><strong>B.</strong> The removal of lactate and reduction of elevated core body temperature</li>
+        <li><strong>C.</strong> The re-oxygenation of myoglobin in the muscles</li>
+        <li><strong>D.</strong> The initial increase in oxygen uptake at the start of exercise</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: B</span>
+        <div class="mcq-explanation">
+            <strong>Why B is correct:</strong> The slow component of EPOC involves metabolic processes that take longer to complete, including the conversion of lactate to glycogen, lowering the elevated core body temperature, and clearing hormones like epinephrine.<br><br>
+            <strong>Why A is wrong:</strong> Replenishing ATP and phosphocreatine stores is part of the <em>fast</em> component of EPOC.<br><br>
+            <strong>Why C is wrong:</strong> The re-oxygenation of myoglobin is also part of the <em>fast</em> component of EPOC.<br><br>
+            <strong>Why D is wrong:</strong> The initial increase in oxygen uptake at the start of exercise is known as the oxygen deficit, not EPOC.
+        </div>
+    </div>
+</div>
+
+<!-- Section 6: Mathematical Skills -->
+<span class="section-badge">🔢 Section 6</span>
+<h2>Mathematical Skills</h2>
+
+<p>The ability to perform key calculations and handle data is essential for interpreting experimental results and applying theoretical principles in practical contexts.</p>
+
+<div class="formula-box">
+    Percentage Change = ((Final Value - Initial Value) / Initial Value) × 100
+</div>
+
+<div class="working-steps">
+    <h4>Worked Example</h4>
+    <p><strong>Scenario:</strong> An athlete's body mass decreases from 75.0 kg before training to 72.9 kg after.</p>
+    <ol>
+        <li>Substitute values: ((72.9 kg - 75.0 kg) / 75.0 kg) × 100</li>
+        <li>Calculate the difference: 72.9 - 75.0 = -2.1 kg</li>
+        <li>Divide by initial value: -2.1 kg / 75.0 kg = -0.028</li>
+        <li>Multiply by 100: -0.028 × 100 = -2.8%</li>
+    </ol>
+    <p><strong>Final Answer:</strong> The athlete experienced a <strong>2.8% decrease</strong> in body mass.</p>
+</div>
+
+<!-- Section 7: Common Errors -->
+<span class="section-badge">⚠️ Section 7</span>
+<h2>Common Errors & Misconceptions</h2>
+
+<div class="key-term-card" style="border-left-color: #dc3545;">
+    <div class="term-title" style="color: #dc3545;">❌ Error: Energy systems work in isolation</div>
+    <div class="term-definition">This is incorrect. All three energy systems (phosphagen, glycolytic, oxidative) are always contributing to ATP production. The "energy continuum" concept highlights that their <em>relative contribution</em> changes based on intensity and duration, but they never work completely in isolation.</div>
+</div>
+
+<div class="key-term-card" style="border-left-color: #dc3545;">
+    <div class="term-title" style="color: #dc3545;">❌ Error: Thirst is a reliable indicator of dehydration</div>
+    <div class="term-definition">The sensation of thirst is a <em>delayed</em> response. By the time an individual feels thirsty, they are often already in a state of dehydration, and performance may have already been compromised. This is why structured hydration plans are emphasized over simply drinking to thirst.</div>
+</div>
+
+<div class="key-term-card" style="border-left-color: #dc3545;">
+    <div class="term-title" style="color: #dc3545;">❌ Error: Confusing dehydration and hyponatremia</div>
+    <div class="term-definition">Dehydration is primarily caused by excessive fluid loss. Hyponatremia is caused by abnormally low blood sodium levels, often from drinking excessive amounts of plain water without adequate electrolyte replacement. While both can occur in athletes, their causes and treatments are very different.</div>
+</div>
+
+<!-- Section 8: Linking Questions -->
+<span class="section-badge">🔗 Section 8</span>
+<h2>Linking Questions Across Topics</h2>
+
+<div class="tip-box">
+    <strong>How does A.2.2 (Fuelling) link to Topic A.3.1 (Training Principles)?</strong><br><br>
+    The training principle of periodization (A.3.1) must be aligned with nutritional periodization (A.2.2). An athlete's energy and macronutrient requirements will be significantly higher during a high-volume "overload" phase compared to a "recovery" or "taper" phase. Failing to match nutritional intake to training demands can lead to Low Energy Availability (LEA), impairing adaptation and increasing the risk of overtraining.
+</div>
+
+<!-- Section 9: Self-Test Checklist -->
+<span class="section-badge">✅ Section 9</span>
+<h2>Self-Test Checklist</h2>
+
+<p>Use this checklist to reflect on your understanding and identify areas that may require further review.</p>
+
+<ul class="checklist">
+    <li>Can I define all the key terms for this topic, such as cardiovascular drift, LEA, and EPOC?</li>
+    <li>Can I explain the key physiological mechanisms step-by-step, such as water balance regulation?</li>
+    <li>Can I perform and interpret relevant calculations, such as percentage change, from experimental data?</li>
+    <li>Can I apply my knowledge to unfamiliar scenarios presented in Paper 2-style questions?</li>
+    <li>Can I evaluate methodologies and theories, providing balanced arguments with strengths and limitations?</li>
+    <li>Have I completed all the practice questions in this guide and understood the model answers?</li>
+    <li>Can I identify where information from the SEHS Data Booklet would be relevant to this topic?</li>
 </ul>
 
+<div style="text-align: center; margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, #004587 0%, #002a52 100%); border-radius: 12px; color: white;">
+    <h3 style="color: #fbba07; margin-bottom: 1rem;">🎓 Ready to Excel!</h3>
+    <p style="margin: 0;">You've covered all essential content for Topic A.2. Practice regularly, review your weak areas, and connect concepts across topics for exam success!</p>
+</div>
 
         </div>
     </div>
