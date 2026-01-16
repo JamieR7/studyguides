@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.1 Communication | IB SEHS 2026</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23004587'/><text x='50' y='70' font-size='60' text-anchor='middle' font-weight='bold' fill='%23fbba07'>S</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Enhanced topic-specific styles */
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbba07 0%, #e0a800 100%);
+            color: #004587;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .key-term-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid #004587;
+            padding: 1rem 1.5rem;
+            margin: 1.25rem 0;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .key-term-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,69,135,0.2);
+        }
+
+        .term-title {
+            color: #004587;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .term-definition {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .subsection-header {
+            background: linear-gradient(135deg, #004587 0%, #003366 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            margin: 2.5rem 0 1.5rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .mcq-container {
+            background: #fff;
+            border: 3px solid #004587;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,69,135,0.15);
+        }
+
+        .mcq-number {
+            background: #004587;
+            color: #fbba07;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .mcq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .mcq-options {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .mcq-options li {
+            background: #f8f9fa;
+            padding: 1rem 1.25rem;
+            margin: 0.75rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #dee2e6;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .mcq-options li:hover {
+            background: #e9ecef;
+            border-left-color: #004587;
+            transform: translateX(5px);
+        }
+
+        .mcq-options li.selected {
+            background: #cce5ff !important;
+            border-left-color: #004587 !important;
+            font-weight: 600;
+            transform: translateX(5px);
+        }
+
+        .mcq-options li.selected::before {
+            content: "➤ ";
+            color: #004587;
+            font-weight: bold;
+        }
+
+        .mcq-answer-box {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 5px solid #28a745;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .mcq-answer-label {
+            color: #155724;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .mcq-explanation {
+            color: #155724;
+            line-height: 1.7;
+        }
+
+        .mcq-explanation strong {
+            color: #0d4318;
+        }
+
+        .dbq-container {
+            background: #fff;
+            border: 3px solid #6c757d;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(108,117,125,0.15);
+        }
+
+        .dbq-number {
+            background: #6c757d;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .dbq-intro {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #6c757d;
+            line-height: 1.7;
+        }
+
+        .dbq-data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .dbq-data-table thead {
+            background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+            color: white;
+        }
+
+        .dbq-data-table th,
+        .dbq-data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .dbq-data-table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .dbq-data-table tbody tr:hover {
+            background: #e9ecef;
+        }
+
+        .dbq-part {
+            margin: 2rem 0;
+        }
+
+        .dbq-part-label {
+            background: #e9ecef;
+            color: #495057;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .model-answer {
+            background: linear-gradient(135deg, #e7f3ff 0%, #d4e9ff 100%);
+            border-left: 5px solid #004587;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .model-answer-label {
+            color: #004587;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .model-answer-content {
+            color: #212529;
+            line-height: 1.8;
+        }
+
+        .paper2-container {
+            background: #fff;
+            border: 3px solid #28a745;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(40,167,69,0.15);
+        }
+
+        .paper2-number {
+            background: #28a745;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .marks-badge {
+            background: #ffc107;
+            color: #000;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-left: 5px solid #fbba07;
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(251,186,7,0.2);
+        }
+
+        .tip-box::before {
+            content: "💡 TIP";
+            display: block;
+            font-weight: 700;
+            color: #856404;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .note-box {
+            background: linear-gradient(135deg, #e6f3ff 0%, #cce5ff 100%);
+            border-left: 5px solid #004587;
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,69,135,0.2);
+        }
+
+        .note-box::before {
+            content: "📌 NOTE";
+            display: block;
+            font-weight: 700;
+            color: #004085;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .data-table thead {
+            background: linear-gradient(135deg, #004587 0%, #003366 100%);
+            color: white;
+        }
+
+        .data-table th {
+            padding: 1.25rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .data-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .data-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .formula-box {
+            background: #f0f0f0;
+            border: 2px solid #004587;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            margin: 2.5rem 0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .working-steps {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .working-steps ol {
+            margin-left: 0;
+            padding-left: 1.5rem;
+        }
+
+        .working-steps li {
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .mechanism-steps {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2.5rem 0;
+        }
+
+        .mechanism-steps ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mechanism-steps li {
+            position: relative;
+            padding-left: 3rem;
+            margin: 1.5rem 0;
+        }
+
+        .mechanism-steps li::before {
+            content: "→";
+            position: absolute;
+            left: 0.5rem;
+            color: #004587;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .real-world-example {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+            border-left: 5px solid #dc3545;
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            border-radius: 8px;
+        }
+
+        .real-world-example::before {
+            content: "🌍 REAL-WORLD EXAMPLE";
+            display: block;
+            font-weight: 700;
+            color: #721c24;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 1rem 0.75rem 1rem 3rem;
+            position: relative;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0.75rem;
+            font-size: 1.5rem;
+            color: #004587;
+        }
+
+        .error-card {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe9e9 100%);
+            border-left: 4px solid #dc3545;
+            padding: 1rem 1.5rem;
+            margin: 1.25rem 0;
+            border-radius: 8px;
+        }
+
+        .error-title {
+            color: #dc3545;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-explanation {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .linking-card {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
+            border-left: 4px solid #0066cc;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .linking-question {
+            color: #0066cc;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .linking-answer {
+            color: #333;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .mcq-container, .dbq-container, .paper2-container {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="topic-nav">
+            <a href="../index.html" class="back-link">← Back to All Topics</a>
+            <div class="topic-title-nav">A.1 Communication</div>
+        </nav>
+
+        <div class="topic-content-wrapper">
+            
+<h1>📡 Topic A.1: Communication</h1>
+
+<p style="font-size: 1.15rem; color: #666; margin-bottom: 2rem;">Understanding how the body sends and receives information to maintain optimal functioning and respond to changing demands.</p>
+
+<!-- Section 1: Key Terms -->
+<span class="section-badge">📚 Section 1</span>
+<h2>Quick Reference: Key Terms</h2>
+
+<p>Mastering precise terminology is a critical first step for success in any IB Sports, Exercise and Health Science examination. The correct application of scientific terms demonstrates a clear and unambiguous understanding of complex physiological concepts.</p>
+
+<div class="subsection-header">🔗 Inter-system Communication</div>
+
+<div class="key-term-card">
+    <div class="term-title">System Integration</div>
+    <div class="term-definition">The process whereby different body systems work together to perform a function, recognizing that they do not operate in isolation.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Neuroendocrine System</div>
+    <div class="term-definition">The combined and integrated functions of the nervous and endocrine systems to control and regulate physiological processes.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Hormone</div>
+    <div class="term-definition">A chemical messenger produced by an endocrine gland and transported via the bloodstream to a target organ to exert a specific effect.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Up-regulation</div>
+    <div class="term-definition">An increase in the number of receptors on the surface of target cells, making the cells more sensitive to a hormone or other agent.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Down-regulation</div>
+    <div class="term-definition">A decrease in the number of receptors on the surface of target cells, making the cells less sensitive to a hormone or other agent.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Feedback</div>
+    <div class="term-definition">Information sent from a sensor back to a control center, allowing for the continuous monitoring and regulation of a physiological variable.</div>
+</div>
+
+<div class="subsection-header">⚖️ Maintaining Homeostasis</div>
+
+<div class="key-term-card">
+    <div class="term-title">Homeostasis</div>
+    <div class="term-definition">The maintenance of a constant and stable internal environment within the body, despite changes in external conditions.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Negative Feedback Loop</div>
+    <div class="term-definition">A regulatory mechanism in which a change in a physiological variable triggers a response that counteracts the initial change, returning the variable to its set point.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Insulin</div>
+    <div class="term-definition">A hormone secreted by the pancreas that lowers blood glucose levels by promoting its uptake into cells and its conversion to glycogen.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Glucagon</div>
+    <div class="term-definition">A hormone secreted by the pancreas that raises blood glucose levels by stimulating the breakdown of glycogen in the liver.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Glycogen</div>
+    <div class="term-definition">The storage form of glucose in animals, primarily found in the liver and muscles.</div>
+</div>
+
+<!-- Section 2: Exam Format -->
+<span class="section-badge">📝 Section 2</span>
+<h2>Exam Format & Timing</h2>
+
+<p>A crucial element of strategic revision is a clear understanding of the structure, timing, and weighting of each examination paper.</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Paper</th>
+            <th>Level</th>
+            <th>Marks</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Paper 1A</strong></td>
+            <td>SL</td>
+            <td>30 marks</td>
+            <td>45 mins</td>
+        </tr>
+        <tr>
+            <td><strong>Paper 1A</strong></td>
+            <td>HL</td>
+            <td>40 marks</td>
+            <td>52 mins</td>
+        </tr>
+        <tr>
+            <td><strong>Paper 1B</strong></td>
+            <td>SL</td>
+            <td>25 marks</td>
+            <td>38 mins</td>
+        </tr>
+        <tr>
+            <td><strong>Paper 1B</strong></td>
+            <td>HL</td>
+            <td>25 marks</td>
+            <td>53 mins</td>
+        </tr>
+        <tr>
+            <td><strong>Paper 2</strong></td>
+            <td>SL</td>
+            <td>50 marks</td>
+            <td>90 mins</td>
+        </tr>
+        <tr>
+            <td><strong>Paper 2</strong></td>
+            <td>HL</td>
+            <td>80 marks</td>
+            <td>150 mins</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Section 3: Command Terms -->
+<span class="section-badge">🎯 Section 3</span>
+<h2>Command Terms Explained</h2>
+
+<p>IB command terms are the specific instructions that dictate the depth and type of response required for a question. Correctly decoding these terms is non-negotiable for accessing the full range of marks available.</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th style="width: 12%;">Term</th>
+            <th style="width: 28%;">IB Definition</th>
+            <th>Topic A.1 Model Answer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>State</strong></td>
+            <td>Give a specific name, value or other brief answer without explanation.</td>
+            <td>
+                <strong>Question:</strong> State the primary hormone responsible for lowering blood glucose levels.<br><br>
+                <strong>Answer:</strong> Insulin.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Outline</strong></td>
+            <td>Give a brief account or summary.</td>
+            <td>
+                <strong>Question:</strong> Outline the key components of a negative feedback loop.<br><br>
+                <strong>Answer:</strong> A negative feedback loop consists of a receptor that detects a change from the set point, a control center that processes this information, and an effector that carries out a response to counteract the initial change and restore homeostasis.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Explain</strong></td>
+            <td>Give a detailed account including reasons or causes.</td>
+            <td>
+                <strong>Question:</strong> Explain why insulin release is limited during moderate- to high-intensity exercise.<br><br>
+                <strong>Answer:</strong> During exercise, the body needs to mobilize stored glucose to fuel working muscles. Insulin's primary role is to promote the uptake and storage of glucose, which would be counterproductive. Therefore, insulin release is limited to prevent blood glucose levels from dropping too low (hypoglycemia) and to prioritize the uptake of glucose into the active muscle tissues, ensuring a steady supply of energy for performance.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Evaluate</strong></td>
+            <td>Make an appraisal by weighing up the strengths and limitations.</td>
+            <td>
+                <strong>Question:</strong> Evaluate the use of wearable technology for monitoring homeostatic balance.<br><br>
+                <strong>Strengths:</strong><br>
+                • Provides continuous, real-time data outside laboratory settings<br>
+                • Enhances user awareness and promotes proactive health behaviors<br><br>
+                <strong>Limitations:</strong><br>
+                • Validity and accuracy can be questionable in consumer-grade devices<br>
+                • Measures limited range of variables, not complete homeostatic picture
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Section 4: Content Summary -->
+<span class="section-badge">📖 Section 4</span>
+<h2>Content Summary</h2>
+
+<h3>The Principle of Inter-system Communication</h3>
+
+<p>Although each body system has a unique function, <strong>integration between systems is essential</strong> for homeostasis, and for health and performance to be developed and maintained.</p>
+
+<div class="mechanism-steps">
+    <h4 style="margin-top: 0;">🔄 Communication Pathway</h4>
+    <ul>
+        <li><strong>Stimulus & Receptor:</strong> An internal or external change (stimulus) is detected by a specialized sensor (receptor)</li>
+        <li><strong>Afferent Pathway:</strong> The receptor sends a signal to a control center, most often the brain or a specific endocrine gland</li>
+        <li><strong>Integration:</strong> The control center processes the incoming signal and determines the appropriate response</li>
+        <li><strong>Efferent Pathway:</strong> The control center sends an output signal, often a nerve impulse or a hormone, to an effector</li>
+        <li><strong>Effector & Response:</strong> The effector (e.g., a muscle or gland) carries out the response, which alters the original condition</li>
+    </ul>
+</div>
+
+<div class="real-world-example">
+    <p>During the initial phase of a warm-up, proprioceptors in the muscles and joints sense movement. They send nerve signals to the brain (nervous system), which in turn signals the cardiovascular center to increase heart rate and the endocrine system to begin releasing adrenaline. This demonstrates direct communication between the muscular, nervous, cardiovascular, and endocrine systems to meet the rising demand for oxygen and fuel.</p>
+</div>
+
+<div class="tip-box">
+    <strong>Data Booklet Reference:</strong> Familiarize yourself with the diagrams of the major anatomical systems, particularly the endocrine system, provided in the Sports, exercise and health science data booklet. You may need to identify glands or organs from these diagrams in an exam.
+</div>
+
+<h3>The Mechanism of Homeostasis</h3>
+
+<p>The body uses <strong>negative feedback loops</strong> as the primary mechanism for maintaining homeostasis. Each body system can be up-regulated or down-regulated depending on environmental conditions.</p>
+
+<div class="mechanism-steps">
+    <h4 style="margin-top: 0;">🩸 Blood Glucose Regulation</h4>
+    <ul>
+        <li><strong>High Blood Glucose:</strong> After a meal, blood glucose rises and is detected by beta cells in the pancreas</li>
+        <li><strong>Insulin Release:</strong> The pancreas releases insulin into the bloodstream</li>
+        <li><strong>Cellular Uptake:</strong> Insulin promotes glucose uptake by cells and stimulates liver to convert glucose to glycogen</li>
+        <li><strong>Restoration:</strong> As glucose is removed, its concentration returns to normal range and insulin secretion decreases</li>
+        <li><strong>Low Blood Glucose:</strong> During exercise, blood glucose falls and is detected by alpha cells in the pancreas</li>
+        <li><strong>Glucagon Release:</strong> The pancreas releases glucagon, which stimulates the liver to break down glycogen and release glucose</li>
+    </ul>
+</div>
+
+<div class="note-box">
+    <strong>Important Concept:</strong> Homeostasis is not a static, unchanging state. It is a highly dynamic process of equilibrium where physiological variables are maintained within a narrow, acceptable range through constant monitoring and adjustments.
+</div>
+
+<!-- Section 5: Practice Questions -->
+<span class="section-badge">✍️ Section 5</span>
+<h2>Practice Questions</h2>
+
+<h3>Paper 1A: Multiple Choice Questions</h3>
+
+<p><strong>📌 Click on any answer option to reveal the correct answer and explanation!</strong></p>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 1</span>
+    <div class="mcq-question">
+        Which statement best describes homeostasis?
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> A static state where all physiological variables are kept at a fixed value</li>
+        <li><strong>B.</strong> The process of hormonal communication between the brain and the body</li>
+        <li><strong>C.</strong> The maintenance of a stable internal environment within a narrow range</li>
+        <li><strong>D.</strong> The breakdown of glucose to provide energy for muscular contraction</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: C</span>
+        <div class="mcq-explanation">
+            <strong>Why C is correct:</strong> This is the precise definition of homeostasis. It emphasizes the "stable" internal environment and the concept of a "narrow range," highlighting its dynamic nature rather than being fixed.<br><br>
+            <strong>Why A is wrong:</strong> Homeostasis is a dynamic process, not a static state. Variables fluctuate around a set point.<br><br>
+            <strong>Why B is wrong:</strong> Hormonal communication is a mechanism used to achieve homeostasis, but it is not the definition of homeostasis itself.<br><br>
+            <strong>Why D is wrong:</strong> This describes a part of cellular respiration (glycolysis), which is a metabolic process, not the overarching concept of maintaining internal stability.
+        </div>
+    </div>
+</div>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 2</span>
+    <div class="mcq-question">
+        Following the consumption of a large meal rich in carbohydrates, which hormonal response would be expected?
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> Increased glucagon secretion from the pancreas</li>
+        <li><strong>B.</strong> Increased insulin secretion from the pancreas</li>
+        <li><strong>C.</strong> Increased adrenaline secretion from the adrenal gland</li>
+        <li><strong>D.</strong> Decreased insulin secretion from the pancreas</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: B</span>
+        <div class="mcq-explanation">
+            <strong>Why B is correct:</strong> A carbohydrate-rich meal leads to a rise in blood glucose levels. The pancreas detects this increase and secretes insulin to promote the uptake of glucose by cells and its storage in the liver, thereby lowering blood glucose back to its homeostatic range.<br><br>
+            <strong>Why A is wrong:</strong> Glucagon is secreted in response to low blood glucose to raise it, which is the opposite of the situation described.<br><br>
+            <strong>Why C is wrong:</strong> Adrenaline is primarily released in response to stress or exercise, not directly in response to high blood glucose from a meal.<br><br>
+            <strong>Why D is wrong:</strong> Insulin secretion would increase, not decrease, to manage the influx of glucose into the blood.
+        </div>
+    </div>
+</div>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 3</span>
+    <div class="mcq-question">
+        What is the term for the integration of the nervous and endocrine systems to maintain physiological balance?
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> Cardiorespiratory system</li>
+        <li><strong>B.</strong> Musculoskeletal system</li>
+        <li><strong>C.</strong> Homeostatic system</li>
+        <li><strong>D.</strong> Neuroendocrine system</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: D</span>
+        <div class="mcq-explanation">
+            <strong>Why D is correct:</strong> The term neuroendocrine specifically refers to the interaction and integration of the nervous system (neuro-) and the endocrine system (-endocrine). This system is essential for homeostasis and coordinating responses to stimuli.<br><br>
+            <strong>Why A is wrong:</strong> The cardiorespiratory system refers to the heart, blood vessels, and lungs working together for gas transport.<br><br>
+            <strong>Why B is wrong:</strong> The musculoskeletal system refers to the bones, muscles, and connective tissues responsible for movement.<br><br>
+            <strong>Why C is wrong:</strong> "Homeostatic system" is a general, non-specific term. While the neuroendocrine system is a key part of maintaining homeostasis, D is the more precise and correct term.
+        </div>
+    </div>
+</div>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 4</span>
+    <div class="mcq-question">
+        A decrease in the number of hormone receptors on a target cell, making it less sensitive to that hormone, is known as what?
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> Up-regulation</li>
+        <li><strong>B.</strong> Negative feedback</li>
+        <li><strong>C.</strong> Down-regulation</li>
+        <li><strong>D.</strong> System integration</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: C</span>
+        <div class="mcq-explanation">
+            <strong>Why C is correct:</strong> Down-regulation is the specific process where target cells reduce the number of receptors in response to high concentrations of a hormone, thereby decreasing their sensitivity to it.<br><br>
+            <strong>Why A is wrong:</strong> Up-regulation is the opposite process, where receptor numbers increase, enhancing sensitivity.<br><br>
+            <strong>Why B is wrong:</strong> Negative feedback is a control mechanism for the entire homeostatic loop, not the specific change in receptor numbers on a cell.<br><br>
+            <strong>Why D is wrong:</strong> System integration is the broad concept of body systems working together, not a specific cellular process.
+        </div>
+    </div>
+</div>
+
+<h3>Paper 1B: Data-Based Questions</h3>
+
+<div class="dbq-container">
+    <span class="dbq-number">Question 1</span>
+    <div class="mcq-question">Blood Glucose Response to Exercise</div>
+    
+    <div class="dbq-intro">
+        An experiment was conducted to measure the effect of a 30-minute moderate-intensity cycling session on the blood glucose concentration of a healthy individual. The results are shown in the table below.
+    </div>
+
+    <table class="dbq-data-table">
+        <thead>
+            <tr>
+                <th>Time Point</th>
+                <th>Blood Glucose (mmol·L⁻¹)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pre-exercise (0 minutes)</td>
+                <td>5.0</td>
+            </tr>
+            <tr>
+                <td>Post-exercise (30 minutes)</td>
+                <td>4.2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (a)</span>
+        <p><strong>Calculate</strong> the percentage change in blood glucose concentration from pre-exercise to post-exercise. Show your working.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            <strong>Formula:</strong> Percentage Change = [(Final - Initial) / Initial] × 100<br><br>
+            <strong>Working:</strong><br>
+            Percentage Change = [(4.2 - 5.0) / 5.0] × 100<br>
+            Percentage Change = [-0.8 / 5.0] × 100<br>
+            Percentage Change = -0.16 × 100<br>
+            = -16%<br><br>
+            <strong>Answer:</strong> The blood glucose concentration <strong>decreased by 16%</strong>.
+        </div>
+    </div>
+</div>
+
+<div class="dbq-container">
+    <span class="dbq-number">Question 2</span>
+    <div class="mcq-question">Heart Rate Response to Stress</div>
+    
+    <div class="dbq-intro">
+        Researchers investigated the heart rate response to a standardized cognitive stress test in two groups: 10 trained athletes and 10 untrained individuals. The table below shows the mean peak heart rate and standard deviation for each group during the test.
+    </div>
+
+    <table class="dbq-data-table">
+        <thead>
+            <tr>
+                <th>Group</th>
+                <th>Mean Peak Heart Rate (bpm)</th>
+                <th>Standard Deviation (SD)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Trained Athletes</td>
+                <td>105</td>
+                <td>5.2</td>
+            </tr>
+            <tr>
+                <td>Untrained Individuals</td>
+                <td>125</td>
+                <td>10.8</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (a)</span>
+        <p><strong>Compare</strong> the heart rate response of the trained athletes to the untrained individuals.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            The untrained individuals had a <strong>higher mean peak heart rate</strong> (125 bpm) compared to the trained athletes (105 bpm) during the cognitive stress test. Furthermore, the standard deviation for the untrained group (10.8) was <strong>more than double</strong> that of the trained group (5.2), indicating that the heart rate responses were <strong>more variable and less consistent</strong> among the untrained individuals compared to the trained athletes.
+        </div>
+    </div>
+</div>
+
+<div class="dbq-container">
+    <span class="dbq-number">Question 3</span>
+    <div class="mcq-question">Methodology Evaluation</div>
+    
+    <div class="dbq-intro">
+        A student designed an investigation to see if listening to calming music affects heart rate. The student measured their own heart rate using a smartwatch while sitting quietly for 5 minutes. Then, they listened to calming music for 15 minutes and measured their heart rate again at the end. They concluded that calming music lowers heart rate.
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (a)</span>
+        <p><strong>Evaluate</strong> the methodology of this investigation.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            The methodology has significant limitations affecting its validity and reliability.<br><br>
+            
+            <strong>Limitation 1 (Lack of Control):</strong> There is no control group or condition; the student did not perform a trial sitting for 15 minutes without music to compare against. The observed change could be due to simply sitting for a longer period, not the music itself.<br><br>
+            
+            <strong>Limitation 2 (Reliability/Validity):</strong> The use of a single measurement from a consumer-grade smartwatch may lack accuracy and reliability. The validity of such devices can be questionable, and a single data point is not sufficient.<br><br>
+            
+            <strong>Limitation 3 (Sample Size):</strong> The experiment was conducted on only one subject (n=1). This makes it impossible to generalize the findings to a wider population, as individual responses can vary greatly.<br><br>
+            
+            <strong>Improvement:</strong> To improve the study, the student should use a larger sample of participants, randomly assign them to either a music (experimental) or no-music (control) group, and take multiple, more precise heart rate measurements throughout the period.
+        </div>
+    </div>
+</div>
+
+<h3>Paper 2: Extended Response Questions</h3>
+
+<div class="paper2-container">
+    <span class="paper2-number">Question 1</span>
+    <span class="marks-badge">4 MARKS</span>
+    <div class="mcq-question">Homeostatic Response to Carbohydrate Consumption</div>
+    
+    <div class="dbq-intro">
+        An athlete finishes a long training session and consumes a recovery drink containing a high concentration of simple sugars. <strong>Explain</strong> the homeostatic response that will return their blood glucose levels to a normal range.
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            Award [1] for each of the following points, up to a maximum of [4]:<br><br>
+            
+            • The high concentration of sugar from the drink causes a rapid <strong>increase in blood glucose levels / hyperglycemia</strong>. <strong>[1]</strong><br><br>
+            
+            • This increase is detected by <strong>receptors (beta cells) in the pancreas</strong>. <strong>[1]</strong><br><br>
+            
+            • In response, the pancreas secretes the hormone <strong>insulin</strong> into the bloodstream. <strong>[1]</strong><br><br>
+            
+            • Insulin acts on target cells (e.g., muscle and liver) to <strong>increase their uptake of glucose</strong> from the blood and stimulates the <strong>conversion of glucose to glycogen</strong> for storage, thereby lowering blood glucose levels back to the normal homeostatic range. <strong>[1]</strong>
+        </div>
+    </div>
+</div>
+
+<div class="paper2-container">
+    <span class="paper2-number">Question 2</span>
+    <span class="marks-badge">8 MARKS</span>
+    <div class="mcq-question">Wearable Technology for Athlete Monitoring</div>
+    
+    <div class="dbq-intro">
+        A sports science department is considering implementing a program that uses wearable technology to monitor athletes' physiological data (such as heart rate and skin temperature) 24 hours a day. The goal is to better manage training load and recovery to optimize performance. <strong>Analyse</strong> the potential impact of this program on health and performance.
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            Award up to [4 marks] for points explaining positive impacts and up to [4 marks] for points explaining negative impacts or limitations.<br><br>
+
+            <strong>Potential Positive Impacts:</strong><br><br>
+            
+            • <strong>Objective Data for Training Load:</strong> Provides quantitative, objective data on physiological stress, allowing coaches to move beyond subjective feedback and tailor training intensity and volume more precisely to an individual's response. <strong>[1]</strong><br><br>
+            
+            • <strong>Early Detection of Overtraining/Illness:</strong> Continuous monitoring can identify abnormal patterns, such as an elevated resting heart rate, which can be an early indicator of fatigue, overtraining, or impending illness, allowing for preventative interventions. <strong>[1]</strong><br><br>
+            
+            • <strong>Improved Recovery Strategies:</strong> By monitoring metrics related to sleep quality and autonomic nervous system balance (e.g., heart rate variability), the program can help athletes and coaches identify and implement more effective recovery strategies. <strong>[1]</strong><br><br>
+            
+            • <strong>Enhanced Athlete Autonomy:</strong> The data can empower athletes to better understand their own bodies and take more ownership of their health and recovery processes, fostering better self-management skills. <strong>[1]</strong><br><br>
+
+            <strong>Potential Negative Impacts/Limitations:</strong><br><br>
+            
+            • <strong>Data Validity and Reliability:</strong> The accuracy of consumer-grade wearable devices can be questionable; technical issues or improper use can lead to flawed data, resulting in poor decision-making regarding training. <strong>[1]</strong><br><br>
+            
+            • <strong>Over-reliance on Data:</strong> Coaches and athletes may become overly reliant on the technology and ignore important subjective feedback (e.g., perceived exertion, mood), leading to a reductionist view of a complex biopsychosocial state. <strong>[1]</strong><br><br>
+            
+            • <strong>Increased Anxiety/Stress:</strong> Constant monitoring and data analysis could become a source of stress or anxiety for athletes, who may feel pressured to achieve certain "scores" for recovery, which could be counterproductive. <strong>[1]</strong><br><br>
+            
+            • <strong>Ignores Other Factors:</strong> The technology primarily measures physiological data and may fail to account for other critical factors affecting performance, such as psychological stress, nutritional status, or external life events. <strong>[1]</strong>
+        </div>
+    </div>
+</div>
+
+<!-- Section 6: Mathematical Skills -->
+<span class="section-badge">🔢 Section 6</span>
+<h2>Mathematical Skills for A.1</h2>
+
+<p>The ability to quantify, analyze, and interpret data is essential. Calculating percentage change is a fundamental skill for measuring physiological changes.</p>
+
+<div class="formula-box">
+    Percentage Change = ((Final Value - Initial Value) / Initial Value) × 100
+</div>
+
+<div class="working-steps">
+    <h4>Worked Example</h4>
+    <p><strong>Scenario:</strong> A researcher is monitoring heart rate response to mild exercise.</p>
+    <ul style="list-style: none; padding-left: 0;">
+        <li>• Initial resting heart rate: 60 bpm</li>
+        <li>• Final heart rate after exercise: 90 bpm</li>
+    </ul>
+    
+    <h4 style="margin-top: 1.5rem;">Calculation Steps:</h4>
+    <ol>
+        <li>Substitute values: Percentage Change = [(90 - 60) / 60] × 100</li>
+        <li>Calculate difference: Percentage Change = [30 / 60] × 100</li>
+        <li>Perform division: Percentage Change = 0.5 × 100</li>
+        <li>Complete calculation: Percentage Change = 50</li>
+    </ol>
+    <p><strong>Final Answer:</strong> The heart rate increased by <strong>50%</strong> from its resting value.</p>
+</div>
+
+<!-- Section 7: Common Errors -->
+<span class="section-badge">⚠️ Section 7</span>
+<h2>Common Errors to Avoid</h2>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Homeostasis Means 'Static'</div>
+    <div class="error-explanation">A frequent misconception is viewing homeostasis as a fixed, unchanging state. In reality, it is a highly dynamic process of equilibrium. Physiological variables are maintained within a narrow, acceptable range through constant adjustments, not at one exact number.</div>
+</div>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Treating Body Systems as Isolated Units</div>
+    <div class="error-explanation">A significant error is to describe a physiological response by only referring to one system. Always think about how systems communicate and work together through system integration. The neuroendocrine system exemplifies this interconnection.</div>
+</div>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Blindly Trusting Wearable Technology Data</div>
+    <div class="error-explanation">The validity, reliability, and accuracy of wearable device data can be questionable. Demonstrate critical thinking by acknowledging the limitations of such technology rather than treating its output as infallible scientific fact.</div>
+</div>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Confusing Correlation with Causation</div>
+    <div class="error-explanation">Just because two variables change together does not mean one causes the other. Scientific research often identifies strong correlations, but proving direct causation requires controlled experiments that eliminate confounding variables.</div>
+</div>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Confusing Up-regulation with Down-regulation</div>
+    <div class="error-explanation">Up-regulation is an <em>increase</em> in receptor numbers (making cells more sensitive), typically in response to low hormone concentrations. Down-regulation is a <em>decrease</em> in receptor numbers (making cells less sensitive), typically in response to high hormone concentrations.</div>
+</div>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Negative Feedback is 'Bad'</div>
+    <div class="error-explanation">The term "negative" does not imply something harmful. It simply means the response opposes or negates the original stimulus. This is the body's primary and most essential mechanism for maintaining stability and health.</div>
+</div>
+
+<!-- Section 8: Linking Questions -->
+<span class="section-badge">🔗 Section 8</span>
+<h2>Linking Questions Across Topics</h2>
+
+<div class="linking-card">
+    <div class="linking-question">How does Topic A.1 Communication link to Topic A.2 Fuelling for health and performance?</div>
+    <div class="linking-answer">
+        The link is fundamental and is best exemplified by blood glucose regulation. Topic A.1 explains the communication system (the endocrine system and its hormones, insulin and glucagon) and the control mechanism (negative feedback). Topic A.2 describes the fuel itself (glucose/carbohydrates) and its use in the energy systems. When an athlete fuels during exercise (A.2), the endocrine system (A.1) must precisely regulate the release of insulin and glucagon to ensure this fuel is transported from the blood to the working muscles efficiently, without causing dangerous spikes or drops in overall blood glucose. The communication system of A.1 is what makes the fuelling strategies of A.2 physiologically possible and effective.
+    </div>
+</div>
+
+<div class="linking-card">
+    <div class="linking-question">How do the feedback mechanisms in Topic A.1 Communication relate to the causes of injury in Topic B.3 Injury?</div>
+    <div class="linking-answer">
+        Feedback mechanisms from Topic A.1 are critical for injury prevention. Proprioceptors in muscles and joints constantly send feedback to the central nervous system about body position, muscle tension, and joint angles. This communication allows for unconscious adjustments in movement patterns to maintain stability and prevent joints from moving into dangerous ranges of motion. A breakdown in this neuromuscular communication—for example, due to fatigue—can lead to poor movement mechanics. This faulty feedback can cause the abnormal application of forces on tissues, a primary cause of musculoskeletal injury as described in Topic B.3. Therefore, the integrity of the body's internal communication system is a key factor in mitigating injury risk.
+    </div>
+</div>
+
+<div class="linking-card">
+    <div class="linking-question">How does the concept of system integration from Topic A.1 Communication help explain the biopsychosocial nature of recovery from injury (Topic B.3)?</div>
+    <div class="linking-answer">
+        Topic A.1 establishes that biological systems do not function in isolation. This principle extends to the biopsychosocial model of injury recovery. An injury (the biological component) triggers a stress response via the neuroendocrine system (A.1), leading to the release of hormones like cortisol. These hormones can impact mood and motivation (the psychological component). Furthermore, the athlete's social environment (e.g., support from a team) can influence their psychological state, which in turn can modulate their hormonal stress response. This demonstrates a complex, multi-directional communication network where biological communication systems (A.1) are influenced by, and in turn influence, psychological and social factors, all of which are critical for a holistic recovery process.
+    </div>
+</div>
+
+<!-- Section 9: Self-Test Checklist -->
+<span class="section-badge">✅ Section 9</span>
+<h2>Self-Test Checklist</h2>
+
+<p>Use this checklist to audit your understanding of Topic A.1. Answering "yes" to these questions indicates strong preparation for assessment.</p>
+
+<ul class="checklist">
+    <li>Can I define all key terms related to homeostasis and inter-system communication with scientific precision?</li>
+    <li>Can I draw and fully label a diagram illustrating the negative feedback loop for blood glucose regulation?</li>
+    <li>Can I explain the importance of system integration, using the neuroendocrine response to exercise as a detailed example?</li>
+    <li>Can I apply my knowledge of A.1 to analyze and interpret unfamiliar data presented in tables or graphs?</li>
+    <li>Can I evaluate the strengths and limitations of using wearable technology to monitor physiological data?</li>
+    <li>Can I confidently answer exam questions using a range of command terms, from "State" to "Evaluate"?</li>
+    <li>Can I clearly explain the physiological links between Topic A.1 and other syllabus areas, such as Fuelling (A.2) and Injury (B.3)?</li>
+    <li>Have I completed and marked all practice questions in this guide to identify my specific areas for targeted revision?</li>
+</ul>
+
+<div style="text-align: center; margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, #004587 0%, #002a52 100%); border-radius: 12px; color: white;">
+    <h3 style="color: #fbba07; margin-bottom: 1rem;">🎓 Foundation Complete!</h3>
+    <p style="margin: 0;">You've mastered the communication systems that underpin all physiological processes. This foundational knowledge will connect to every other topic in SEHS!</p>
+</div>
+
+        </div>
+    </div>
+
+    <!-- MCQ Interactive Script -->
+    <script src="../mcq-interaction.js"></script>
+</body>
+</html>
