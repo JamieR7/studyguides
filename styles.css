@@ -461,6 +461,7 @@ body {
    MECHANISM STEPS
    ===================================================== */
 
+/* Box */
 .mechanism-steps {
     background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
     padding: 2rem;
@@ -468,34 +469,42 @@ body {
     margin: 2.5rem 0;
 }
 
+/* NUMBERED steps – use <ol> in HTML for these */
 .mechanism-steps ol {
     counter-reset: step-counter;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.mechanism-steps li {
+.mechanism-steps ol li {
     counter-increment: step-counter;
     position: relative;
     padding-left: 3.5rem;
     margin: 2rem 0;
 }
 
-.mechanism-steps li::before {
+.mechanism-steps ol li::before {
     content: counter(step-counter);
     position: absolute;
     left: 0;
     top: -5px;
     background: #004587;
     color: #fbba07;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.1rem;
+    height: 2.1rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+/* NORMAL bullet lists inside mechanism-steps */
+.mechanism-steps ul {
+    list-style: disc;
+    margin-left: 1.5rem;
 }
 
 /* =====================================================
@@ -659,7 +668,7 @@ hr {
         padding: 1.5rem 1rem;
     }
     
-    .mechanism-steps li {
+    .mechanism-steps ol li {
         padding-left: 3rem;
     }
 }
@@ -678,44 +687,4 @@ hr {
     .topic-content-wrapper {
         padding: 1.5rem 1rem;
     }
-}
-
-
-/* Smaller bullets for all lists - GLOBAL FIX */
-.mechanism-steps li::before {
-    font-size: 1rem !important;
-}
-
-.mechanism-steps ul,
-.real-world-example ul,
-.tip-box ul,
-.note-box ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.mechanism-steps ul li,
-.real-world-example ul li,
-.tip-box ul li,
-.note-box ul li {
-    position: relative;
-    padding-left: 1.8rem;
-    margin: 0.8rem 0;
-}
-
-.mechanism-steps ul li::before,
-.real-world-example ul li::before,
-.tip-box ul li::before,
-.note-box ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0.3rem;
-    color: #004587;
-    font-size: 0.9rem;
-    font-weight: 700;
-}
-
-.mechanism-steps ul ul li::before {
-    font-size: 0.7rem;
-    left: 0.5rem;
 }
