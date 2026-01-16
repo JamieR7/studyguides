@@ -7,6 +7,13 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23004587'/><text x='50' y='70' font-size='60' text-anchor='middle' font-weight='bold' fill='%23fbba07'>S</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(','\\)'], ['\\[','\\]']] }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 <div class="container">
@@ -259,13 +266,17 @@
             </ul>
         </div>
 
-       <div class="formula-box">
-    <strong>Calculate (using female athlete data p.637):</strong>
-    <ul style="list-style-type: circle; margin-left: 2rem; margin-top: 1rem;">
-        <li style="margin-bottom: 0.75rem;"><strong>Formula:</strong> \( \frac{\text{Initial Value} - \text{Final Value}}{\text{Initial Value}} \times 100 \)</li>
-        <li style="margin-bottom: 0.75rem;"><strong>Working:</strong> \( \frac{40.05 \text{ min} - 38.98 \text{ min}}{40.05 \text{ min}} \times 100 = \frac{1.07}{40.05} \times 100 = 2.6716... \)</li>
-        <li><strong>Final Answer:</strong> 2.67%</li>
-    </ul>
+       <div class="mechanism-steps">
+<h4>Calculate (using female athlete data p.637):</h4>
+<p>
+<strong>Formula:</strong> \( \frac{\text{Initial Value} - \text{Final Value}}{\text{Initial Value}} \times 100 \)
+</p>
+<div class="working-steps">
+<ol>
+<li><strong>Working:</strong> \( \frac{40.05 \text{ min} - 38.98 \text{ min}}{40.05 \text{ min}} \times 100 = \frac{1.07}{40.05} \times 100 = 2.6716... \)</li>
+<li><strong>Final Answer:</strong> 2.67%</li>
+</ol>
+</div>
 </div>
 
         <div class="mechanism-steps">
