@@ -1,0 +1,338 @@
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', Arial, 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #004587 0%, #002a52 100%);
+    color: #fff;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    line-height: 1.6;
+}
+
+.container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+
+/* Header */
+.site-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.site-header h1 {
+    font-size: 2.5rem;
+    color: #fbba07;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 300;
+}
+
+/* Instructions Box */
+.instructions {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #fbba07;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+.instructions strong {
+    color: #fbba07;
+    font-weight: 500;
+}
+
+/* Topic Grid */
+.topic-section {
+    margin-bottom: 2rem;
+}
+
+.topic-section h2 {
+    color: #fbba07;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(251, 186, 7, 0.3);
+}
+
+.topic-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.topic-card {
+    background: #fff;
+    color: #004587;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(251, 186, 7, 0.4);
+}
+
+.topic-number {
+    background: #fbba07;
+    color: #004587;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.topic-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+    color: #004587;
+}
+
+.topic-desc {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+}
+
+/* ======================== */
+/* TOPIC PAGE STYLES */
+/* ======================== */
+
+/* Navigation Bar */
+.topic-nav {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.back-link {
+    color: #fbba07;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.topic-title-nav {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Content Container */
+.topic-content-wrapper {
+    background: #fff;
+    color: #333;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    line-height: 1.7;
+}
+
+/* Typography */
+.topic-content-wrapper h1 {
+    color: #004587;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.topic-content-wrapper h2 {
+    color: #004587;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #fbba07;
+}
+
+.topic-content-wrapper h3 {
+    color: #004587;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.topic-content-wrapper p {
+    margin-bottom: 1rem;
+}
+
+.topic-content-wrapper strong {
+    color: #004587;
+    font-weight: 600;
+}
+
+/* Lists */
+.topic-content-wrapper ul,
+.topic-content-wrapper ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.topic-content-wrapper li {
+    margin-bottom: 0.5rem;
+}
+
+/* Tables */
+.topic-content-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.topic-content-wrapper th {
+    background: #004587;
+    color: #fff;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.topic-content-wrapper td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.topic-content-wrapper tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Tip/Note Boxes */
+.tip-box, .note-box {
+    background: #fff9e6;
+    border-left: 4px solid #fbba07;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.note-box {
+    background: #e6f3ff;
+    border-left-color: #004587;
+}
+
+/* MCQ Styling */
+.mcq-question {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border-left: 4px solid #004587;
+}
+
+.mcq-options {
+    margin: 1rem 0;
+    list-style: none;
+    padding: 0;
+}
+
+.mcq-options li {
+    padding: 0.5rem 0;
+    margin-left: 0;
+}
+
+.mcq-answer {
+    background: #e6f9e6;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    border-left: 4px solid #28a745;
+}
+
+.mcq-explanation {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Horizontal Rule */
+hr {
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+    
+    .site-header h1 {
+        font-size: 2rem;
+    }
+    
+    .topic-content-wrapper {
+        padding: 2rem 1.5rem;
+    }
+    
+    .topic-content-wrapper h1 {
+        font-size: 1.8rem;
+    }
+    
+    .topic-content-wrapper h2 {
+        font-size: 1.5rem;
+    }
+    
+    .topic-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .topic-content-wrapper table {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .topic-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .topic-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+}
