@@ -679,3 +679,43 @@ hr {
         padding: 1.5rem 1rem;
     }
 }
+
+
+/* Smaller bullets for all lists - GLOBAL FIX */
+.mechanism-steps li::before {
+    font-size: 1rem !important;
+}
+
+.mechanism-steps ul,
+.real-world-example ul,
+.tip-box ul,
+.note-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.mechanism-steps ul li,
+.real-world-example ul li,
+.tip-box ul li,
+.note-box ul li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin: 0.8rem 0;
+}
+
+.mechanism-steps ul li::before,
+.real-world-example ul li::before,
+.tip-box ul li::before,
+.note-box ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0.3rem;
+    color: #004587;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.mechanism-steps ul ul li::before {
+    font-size: 0.7rem;
+    left: 0.5rem;
+}
