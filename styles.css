@@ -744,3 +744,227 @@ hr {
     line-height: 1.7;
 }
 
+/* ============================================
+   PAPER 1B: DATA-BASED QUESTIONS (DBQ)
+   ============================================ */
+
+.dbq-container {
+    background: #ffffff;
+    border: 3px solid #28a745;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
+}
+
+.dbq-number {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dbq-intro {
+    background: #f8f9fa;
+    padding: 1.25rem;
+    border-left: 4px solid #28a745;
+    margin: 1.5rem 0;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #2c3e50;
+}
+
+.dbq-part {
+    margin: 1.5rem 0 1rem 0;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.dbq-part-label {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    margin-right: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.dbq-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.dbq-data-table thead {
+    background: #28a745;
+    color: white;
+}
+
+.dbq-data-table th,
+.dbq-data-table td {
+    padding: 0.9rem;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.dbq-data-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.dbq-data-table tbody tr:hover {
+    background: #e9f7ef;
+}
+
+/* ============================================
+   PAPER 2: EXTENDED RESPONSE QUESTIONS
+   ============================================ */
+
+.paper2-container {
+    background: #ffffff;
+    border: 3px solid #28a745;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 6px 16px rgba(40, 167, 69, 0.2);
+    position: relative;
+}
+
+.paper2-number {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-right: 1rem;
+}
+
+.marks-badge {
+    display: inline-block;
+    background: #fbba07;
+    color: #1a1a1a;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   MODEL ANSWERS (Used in both DBQ and Paper 2)
+   ============================================ */
+
+.model-answer {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
+    border: 2px solid #004587;
+    border-radius: 10px;
+    padding: 1.75rem;
+    margin: 1.5rem 0;
+}
+
+.model-answer-label {
+    display: inline-block;
+    background: #004587;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.model-answer-content {
+    color: #1a1a1a;
+    line-height: 1.8;
+    font-size: 0.98rem;
+}
+
+.model-answer-content strong {
+    color: #004587;
+    font-weight: 600;
+}
+
+/* Mark allocation styling within model answers */
+.model-answer-content strong[style*="[1 mark]"]::after {
+    content: " ";
+}
+
+/* ============================================
+   WORKING STEPS BOX (for calculations)
+   ============================================ */
+
+.working-steps {
+    background: #f8f9fa;
+    border: 2px solid #6c757d;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.working-steps h4 {
+    color: #004587;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.working-steps ol {
+    margin-left: 1.5rem;
+    line-height: 1.9;
+}
+
+.working-steps li {
+    margin: 0.75rem 0;
+    color: #2c3e50;
+}
+
+.working-steps li strong {
+    color: #004587;
+    font-weight: 600;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .dbq-container,
+    .paper2-container {
+        padding: 1.25rem;
+        margin: 1.5rem 0;
+    }
+    
+    .dbq-number,
+    .paper2-number {
+        display: block;
+        margin-bottom: 0.75rem;
+        text-align: center;
+    }
+    
+    .marks-badge {
+        display: block;
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+    
+    .model-answer {
+        padding: 1.25rem;
+    }
+    
+    .dbq-data-table {
+        font-size: 0.85rem;
+    }
+    
+    .dbq-data-table th,
+    .dbq-data-table td {
+        padding: 0.6rem;
+    }
+}
