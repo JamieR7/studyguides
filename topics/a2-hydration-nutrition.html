@@ -109,7 +109,6 @@
             transform: translateX(5px);
         }
 
-        /* Selected option styling */
         .mcq-options li.selected {
             background: #cce5ff !important;
             border-left-color: #004587 !important;
@@ -146,6 +145,131 @@
 
         .mcq-explanation strong {
             color: #0d4318;
+        }
+
+        /* Data-Based Question Styling */
+        .dbq-container {
+            background: #fff;
+            border: 3px solid #6c757d;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(108,117,125,0.15);
+        }
+
+        .dbq-number {
+            background: #6c757d;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .dbq-intro {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #6c757d;
+            line-height: 1.7;
+        }
+
+        .dbq-data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .dbq-data-table thead {
+            background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+            color: white;
+        }
+
+        .dbq-data-table th,
+        .dbq-data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .dbq-data-table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .dbq-data-table tbody tr:hover {
+            background: #e9ecef;
+        }
+
+        .dbq-part {
+            margin: 2rem 0;
+        }
+
+        .dbq-part-label {
+            background: #e9ecef;
+            color: #495057;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .model-answer {
+            background: linear-gradient(135deg, #e7f3ff 0%, #d4e9ff 100%);
+            border-left: 5px solid #004587;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .model-answer-label {
+            color: #004587;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .model-answer-content {
+            color: #212529;
+            line-height: 1.8;
+        }
+
+        /* Paper 2 Extended Response Styling */
+        .paper2-container {
+            background: #fff;
+            border: 3px solid #28a745;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(40,167,69,0.15);
+        }
+
+        .paper2-number {
+            background: #28a745;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .marks-badge {
+            background: #ffc107;
+            color: #000;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
         }
 
         .tip-box {
@@ -332,7 +456,7 @@
         }
 
         @media (max-width: 768px) {
-            .mcq-container {
+            .mcq-container, .dbq-container, .paper2-container {
                 padding: 1.5rem 1rem;
             }
             
@@ -538,9 +662,9 @@
 <span class="section-badge">✍️ Section 5</span>
 <h2>Practice Questions</h2>
 
-<p><strong>📌 Click on any answer option to reveal the correct answer and explanation!</strong></p>
-
 <h3>Paper 1A: Multiple Choice Questions</h3>
+
+<p><strong>📌 Click on any answer option to reveal the correct answer and explanation!</strong></p>
 
 <div class="mcq-container">
     <span class="mcq-number">Question 1</span>
@@ -630,6 +754,414 @@
     </div>
 </div>
 
+<h3>Paper 1B: Data-Based Questions</h3>
+
+<div class="dbq-container">
+    <span class="dbq-number">Question 5</span>
+    <div class="mcq-question">Hydration and Performance</div>
+    
+    <div class="dbq-intro">
+        A study investigated the effect of dehydration on 5km running performance. Ten trained runners completed a 5km time trial. Their body mass was measured before and after the run to determine the level of dehydration, and their run times were recorded. Data for five of the athletes are shown below.
+    </div>
+
+    <table class="dbq-data-table">
+        <thead>
+            <tr>
+                <th>Athlete</th>
+                <th>Body Mass (Pre-Run) [kg]</th>
+                <th>Body Mass (Post-Run) [kg]</th>
+                <th>Run Time [min:sec]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>70.0</td>
+                <td>68.6</td>
+                <td>20:45</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>65.0</td>
+                <td>63.5</td>
+                <td>20:10</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>75.0</td>
+                <td>73.1</td>
+                <td>22:05</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>62.0</td>
+                <td>60.5</td>
+                <td>19:20</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>68.0</td>
+                <td>66.5</td>
+                <td>21:10</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (a)</span>
+        <p><strong>Calculate</strong> the mean percentage change in body mass for the five athletes. Show all your working.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (a):</span>
+        <div class="model-answer-content">
+            <strong>Formula:</strong> Percentage Change = ((Final Mass - Initial Mass) / Initial Mass) × 100<br><br>
+            <strong>Working:</strong><br>
+            Athlete 1: ((68.6 - 70.0) / 70.0) × 100 = -2.00%<br>
+            Athlete 2: ((63.5 - 65.0) / 65.0) × 100 = -2.31%<br>
+            Athlete 3: ((73.1 - 75.0) / 75.0) × 100 = -2.53%<br>
+            Athlete 4: ((60.5 - 62.0) / 62.0) × 100 = -2.42%<br>
+            Athlete 5: ((66.5 - 68.0) / 68.0) × 100 = -2.21%<br><br>
+            <strong>Mean Calculation:</strong><br>
+            (-2.00 + -2.31 + -2.53 + -2.42 + -2.21) / 5 = -11.47 / 5 = -2.294%<br><br>
+            <strong>Answer:</strong> The mean percentage change in body mass was a decrease of <strong>2.29%</strong>.
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (b)</span>
+        <p>Using the data, <strong>explain</strong> the relationship between dehydration (body mass loss) and running performance.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (b):</span>
+        <div class="model-answer-content">
+            Dehydration, indicated by a loss of body mass, is associated with impaired running performance. All athletes lost over 2% of their body mass, and their run times reflect a level of performance that is negatively impacted by this fluid loss. For example, the athlete with the greatest percentage body mass loss (Athlete 3 at -2.53%) also had the slowest run time (22:05). This suggests a negative correlation where greater dehydration leads to slower performance.
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (c)</span>
+        <p><strong>Evaluate</strong> the methodology of this study, considering its validity and reliability.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (c):</span>
+        <div class="model-answer-content">
+            <strong>Validity Limitation:</strong> The study lacks a control condition (e.g., the same run performed while fully hydrated). Without this comparison, we cannot validly conclude that the observed run times are a direct result of the dehydration level, as other factors could be at play.<br><br>
+            <strong>Reliability Strength:</strong> Using a digital scale to measure body mass and electronic timing for the run increases the reliability of the measurements. Repeating the trial would further strengthen the reliability of the results.
+        </div>
+    </div>
+</div>
+
+<div class="dbq-container">
+    <span class="dbq-number">Question 6</span>
+    <div class="mcq-question">Energy System Contribution</div>
+    
+    <div class="dbq-intro">
+        A study measured the estimated percentage contribution of the three energy systems during a maximal 400m run lasting approximately 50 seconds. Key data points are shown in the table below.
+    </div>
+
+    <table class="dbq-data-table">
+        <thead>
+            <tr>
+                <th>Time (seconds)</th>
+                <th>Phosphagen System (%)</th>
+                <th>Glycolytic System (%)</th>
+                <th>Oxidative System (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>95</td>
+                <td>3</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>50</td>
+                <td>45</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>5</td>
+                <td>70</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>2</td>
+                <td>50</td>
+                <td>48</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (a)</span>
+        <p><strong>State</strong> the dominant energy system at the 10-second mark.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (a):</span>
+        <div class="model-answer-content">
+            The dominant energy system at the 10-second mark is the <strong>phosphagen system</strong> (50% contribution).
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (b)</span>
+        <p><strong>Describe</strong> the trend in the contribution of the oxidative system over the 50-second period.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (b):</span>
+        <div class="model-answer-content">
+            The contribution of the oxidative system begins at a very low level (2%) and increases steadily throughout the entire 50-second run, reaching 48% by the end. Despite its continuous increase, it is not the dominant system at any point during this high-intensity activity.
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (c)</span>
+        <p><strong>Explain</strong> why the contribution of the phosphagen system decreases so rapidly after the start of the run.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (c):</span>
+        <div class="model-answer-content">
+            The contribution of the phosphagen system decreases rapidly because its fuel source, stored phosphocreatine (PCr), is extremely limited in quantity within the muscle. The high rate of ATP production required for a maximal sprint depletes these stores within seconds, after which its ability to contribute to energy production falls dramatically.
+        </div>
+    </div>
+</div>
+
+<div class="dbq-container">
+    <span class="dbq-number">Question 7</span>
+    <div class="mcq-question">Nutritional Strategies</div>
+    
+    <div class="dbq-intro">
+        A study compared the effects of a carbohydrate (CHO) drink versus a water-only placebo on blood glucose levels during a 90-minute cycling session.
+    </div>
+
+    <table class="dbq-data-table">
+        <thead>
+            <tr>
+                <th>Time (minutes)</th>
+                <th>Group A (CHO Drink) Blood Glucose (mmol/L)</th>
+                <th>Group B (Water Only) Blood Glucose (mmol/L)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>5.0</td>
+                <td>5.1</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>5.8</td>
+                <td>4.8</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>6.0</td>
+                <td>4.2</td>
+            </tr>
+            <tr>
+                <td>90</td>
+                <td>5.9</td>
+                <td>3.5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (a)</span>
+        <p><strong>Calculate</strong> the percentage difference in blood glucose levels between Group A and Group B at 90 minutes. Show all working.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (a):</span>
+        <div class="model-answer-content">
+            <strong>Formula:</strong> Percentage Difference = ((Value A - Value B) / Value B) × 100<br><br>
+            <strong>Working:</strong><br>
+            ((5.9 mmol/L - 3.5 mmol/L) / 3.5 mmol/L) × 100<br>
+            = (2.4 / 3.5) × 100<br>
+            = 0.6857 × 100<br>
+            ≈ 68.6%<br><br>
+            <strong>Answer:</strong> At 90 minutes, the blood glucose level of Group A was approximately <strong>68.6% higher</strong> than that of Group B.
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (b)</span>
+        <p><strong>Outline</strong> the likely consequence of the trend seen in Group B for their cycling performance.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (b):</span>
+        <div class="model-answer-content">
+            The blood glucose level for Group B shows a steady decline, dropping to 3.5 mmol/L by 90 minutes. This state, approaching hypoglycemia, would likely lead to a significant decline in performance due to increased perception of effort, impaired cognitive function, and an inability to maintain the required exercise intensity as the central nervous system and working muscles are deprived of their primary fuel source.
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (c)</span>
+        <p><strong>Suggest</strong> two variables that must be controlled to ensure the validity of this experiment.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (c):</span>
+        <div class="model-answer-content">
+            <strong>Controlled Variable 1:</strong> The participants' pre-exercise meal should have been standardized in terms of composition and timing to ensure they all started the trial with similar baseline muscle glycogen and blood glucose levels.<br><br>
+            <strong>Controlled Variable 2:</strong> The exercise intensity (e.g., power output on the bike) and environmental conditions (temperature and humidity) must be kept identical for all participants and across both trials to ensure that any differences in blood glucose are due to the drink consumed and not other external factors.
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (d)</span>
+        <p>A conclusion was made that "carbohydrate drinks enhance endurance performance." <strong>Evaluate</strong> the extent to which the provided data supports this conclusion.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (d):</span>
+        <div class="model-answer-content">
+            The data shows that the CHO drink was effective at maintaining higher blood glucose levels compared to water. This physiological outcome strongly suggests a performance benefit, as low blood glucose is a known cause of fatigue. However, the study did not measure performance itself (e.g., time to exhaustion, power output). Therefore, while the data supports the physiological mechanism by which performance could be enhanced, it does not directly prove it. The conclusion is a reasonable inference but is not fully supported without direct performance data.
+        </div>
+    </div>
+</div>
+
+<div class="dbq-container">
+    <span class="dbq-number">Question 8 <span class="hl-badge">HL ONLY</span></span>
+    <div class="mcq-question">Lactate Threshold Testing</div>
+    
+    <div class="dbq-intro">
+        An elite cyclist performed a graded exercise test where the power output was increased every 3 minutes. Blood lactate was measured at the end of each stage.
+    </div>
+
+    <table class="dbq-data-table">
+        <thead>
+            <tr>
+                <th>Power Output (Watts)</th>
+                <th>Blood Lactate (mmol/L)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>150</td>
+                <td>1.1</td>
+            </tr>
+            <tr>
+                <td>200</td>
+                <td>1.2</td>
+            </tr>
+            <tr>
+                <td>250</td>
+                <td>1.9</td>
+            </tr>
+            <tr>
+                <td>300</td>
+                <td>2.8</td>
+            </tr>
+            <tr>
+                <td>350</td>
+                <td>4.5</td>
+            </tr>
+            <tr>
+                <td>400</td>
+                <td>7.9</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (a)</span>
+        <p>Using the data, <strong>estimate</strong> the cyclist's lactate inflection point (LIP).</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (a):</span>
+        <div class="model-answer-content">
+            The lactate inflection point is the point where blood lactate begins to accumulate exponentially. In the data, the increase from 250W to 300W is 0.9 mmol/L, but the increase from 300W to 350W is much larger at 1.7 mmol/L. The LIP can therefore be estimated to occur <strong>between 300 and 350 Watts</strong>, as this is where the rate of production begins to significantly outpace the rate of clearance.
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (b)</span>
+        <p><strong>Explain</strong> the physiological significance of training at or near the lactate inflection point for an endurance athlete.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (b):</span>
+        <div class="model-answer-content">
+            Training at or near the LIP is physiologically significant because it stimulates adaptations that improve the body's ability to clear and tolerate lactate. This enhances the oxidative capacity of muscles, increases the density of capillaries and mitochondria, and ultimately raises the LIP. A higher LIP allows the athlete to sustain a higher intensity of exercise before significant metabolic fatigue sets in, which is a crucial determinant of endurance performance.
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (c)</span>
+        <p><strong>Outline</strong> one limitation of using this laboratory-based test to predict performance in a real-world cycling race.</p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer (c):</span>
+        <div class="model-answer-content">
+            One limitation is the lack of ecological validity. A laboratory test on a stationary bike involves a controlled environment with steady power output increases, which does not replicate the dynamic conditions of a real race, such as changes in gradient, wind resistance, drafting behind other riders, and tactical surges in pace. Therefore, while it is a good measure of physiological capacity, it may not perfectly predict how an athlete performs under variable race conditions.
+        </div>
+    </div>
+</div>
+
+<h3>Paper 2: Extended Response Questions</h3>
+
+<div class="paper2-container">
+    <span class="paper2-number">Question 9</span>
+    <span class="marks-badge">4 MARKS</span>
+    <div class="mcq-question">Water and Electrolyte Balance in Endurance Competition</div>
+    
+    <div class="dbq-intro">
+        An athlete is competing in a triathlon in a hot and humid environment. <strong>Explain</strong> two distinct physiological reasons why maintaining water and electrolyte balance is critical for their performance and safety.
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            <strong>Reason 1: Thermoregulation</strong><br>
+            One reason is for effective thermoregulation. In hot and humid conditions, the primary mechanism for heat loss is the evaporation of sweat. If an athlete becomes dehydrated, their plasma volume decreases, which impairs their ability to sweat effectively <strong>[1 mark]</strong>. This can lead to a dangerous increase in core body temperature, significantly impairing performance and increasing the risk of heat-related illnesses such as heat stroke <strong>[1 mark]</strong>.<br><br>
+
+            <strong>Reason 2: Cardiovascular Function and Muscle Contraction</strong><br>
+            A second reason is to maintain cardiovascular function. Dehydration leads to a reduction in blood plasma volume, which lowers stroke volume and causes cardiovascular drift <strong>[1 mark]</strong>. Furthermore, the loss of key electrolytes like sodium and potassium through sweat is critical, as these are essential for proper nerve impulse transmission and muscle contraction. A severe imbalance can lead to muscle cramps, cardiac arrhythmias, and a significant drop in performance <strong>[1 mark]</strong>.
+        </div>
+    </div>
+</div>
+
+<div class="paper2-container">
+    <span class="paper2-number">Question 10 <span class="hl-badge">HL ONLY</span></span>
+    <span class="marks-badge">8 MARKS</span>
+    <div class="mcq-question">Nutritional Planning for Marathon Performance</div>
+    
+    <div class="dbq-intro">
+        A coach is designing a nutrition and recovery plan for a long-distance runner in the week leading up to a marathon. <strong>Analyse</strong> the nutritional strategies the coach should recommend for pre-race fuelling and post-race recovery. Your answer should refer to both macronutrients and micronutrients.
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            <strong>Pre-Race Fuelling Strategy:</strong><br><br>
+            
+            The primary pre-race goal is to maximize muscle glycogen stores, which is the main fuel for a marathon. The coach should recommend a carbohydrate-loading strategy, where the runner consumes a very high carbohydrate diet (e.g., 8-10g per kg of body weight) for the 2-3 days prior to the race <strong>[1 mark]</strong>. This should be combined with a taper in training volume to allow glycogen to be stored rather than used <strong>[1 mark]</strong>.<br><br>
+            
+            The final pre-race meal, consumed 3-4 hours before the start, should be rich in carbohydrates but low in fat and fibre to ensure rapid gastric emptying and prevent gastrointestinal distress <strong>[1 mark]</strong>. Adequate hydration is also essential, and consuming fluids with electrolytes like sodium can help with fluid retention <strong>[1 mark]</strong>.<br><br>
+
+            <strong>Post-Race Recovery Strategy:</strong><br><br>
+            
+            Post-race recovery should begin immediately to replenish depleted stores and repair damaged tissue. The coach should advise the runner to consume a source of high-glycaemic index carbohydrates within the first 30-60 minutes post-race to rapidly restock muscle glycogen <strong>[1 mark]</strong>. This should be combined with a source of protein (approx. 20-25g) to initiate the repair of muscle fibres damaged during the race <strong>[1 mark]</strong>.<br><br>
+            
+            Rehydration is critical and should involve consuming fluids containing electrolytes, particularly sodium and potassium, to replace what was lost in sweat and restore water balance <strong>[1 mark]</strong>. For micronutrients, consuming polyphenol-rich foods like berries can help reduce inflammation, while ensuring adequate iron intake in the long term is vital for restoring haemoglobin levels for oxygen transport, aiding long-term recovery <strong>[1 mark]</strong>.
+        </div>
+    </div>
+</div>
+
 <!-- Section 6: Mathematical Skills -->
 <span class="section-badge">🔢 Section 6</span>
 <h2>Mathematical Skills</h2>
@@ -671,17 +1203,8 @@
     <div class="term-definition">Dehydration is primarily caused by excessive fluid loss. Hyponatremia is caused by abnormally low blood sodium levels, often from drinking excessive amounts of plain water without adequate electrolyte replacement. While both can occur in athletes, their causes and treatments are very different.</div>
 </div>
 
-<!-- Section 8: Linking Questions -->
-<span class="section-badge">🔗 Section 8</span>
-<h2>Linking Questions Across Topics</h2>
-
-<div class="tip-box">
-    <strong>How does A.2.2 (Fuelling) link to Topic A.3.1 (Training Principles)?</strong><br><br>
-    The training principle of periodization (A.3.1) must be aligned with nutritional periodization (A.2.2). An athlete's energy and macronutrient requirements will be significantly higher during a high-volume "overload" phase compared to a "recovery" or "taper" phase. Failing to match nutritional intake to training demands can lead to Low Energy Availability (LEA), impairing adaptation and increasing the risk of overtraining.
-</div>
-
-<!-- Section 9: Self-Test Checklist -->
-<span class="section-badge">✅ Section 9</span>
+<!-- Section 8: Self-Test Checklist -->
+<span class="section-badge">✅ Section 8</span>
 <h2>Self-Test Checklist</h2>
 
 <p>Use this checklist to reflect on your understanding and identify areas that may require further review.</p>
