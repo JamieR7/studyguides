@@ -1,5 +1,13 @@
+/* =====================================================
+   IB SEHS 2026 STUDY GUIDES - COMPLETE STYLESHEET
+   ===================================================== */
+
 /* Reset & Base */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body {
     font-family: 'Inter', Arial, 'Helvetica Neue', sans-serif;
@@ -15,7 +23,10 @@ body {
     margin: 0 auto; 
 }
 
-/* Header */
+/* =====================================================
+   HEADER & NAVIGATION
+   ===================================================== */
+
 .site-header {
     text-align: center;
     margin-bottom: 2rem;
@@ -35,7 +46,42 @@ body {
     font-weight: 300;
 }
 
-/* Instructions Box */
+/* Topic Navigation Bar */
+.topic-nav {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.back-link {
+    color: #fbba07;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.topic-title-nav {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* =====================================================
+   INDEX PAGE COMPONENTS
+   ===================================================== */
+
 .instructions {
     background: rgba(255, 255, 255, 0.1);
     border-left: 4px solid #fbba07;
@@ -52,15 +98,14 @@ body {
     font-weight: 500;
 }
 
-/* Topic Grid */
 .topic-section {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .topic-section h2 {
     color: #fbba07;
     font-size: 1.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid rgba(251, 186, 7, 0.3);
 }
@@ -81,6 +126,11 @@ body {
     gap: 1.5rem;
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    margin-bottom: 1.25rem;
+}
+
+.topic-card:last-child {
+    margin-bottom: 0;
 }
 
 .topic-card:hover {
@@ -114,7 +164,6 @@ body {
     font-weight: 400;
 }
 
-/* Footer */
 .site-footer {
     text-align: center;
     margin-top: 3rem;
@@ -124,43 +173,10 @@ body {
     color: rgba(255,255,255,0.7);
 }
 
-/* ======================== */
-/* TOPIC PAGE STYLES */
-/* ======================== */
+/* =====================================================
+   TOPIC PAGE CONTENT WRAPPER
+   ===================================================== */
 
-/* Navigation Bar */
-.topic-nav {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.back-link {
-    color: #fbba07;
-    text-decoration: none;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.back-link:hover {
-    text-decoration: underline;
-}
-
-.topic-title-nav {
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-/* Content Container */
 .topic-content-wrapper {
     background: #fff;
     color: #333;
@@ -170,7 +186,10 @@ body {
     line-height: 1.7;
 }
 
-/* Typography */
+/* =====================================================
+   TYPOGRAPHY
+   ===================================================== */
+
 .topic-content-wrapper h1 {
     color: #004587;
     font-size: 2.2rem;
@@ -180,8 +199,8 @@ body {
 .topic-content-wrapper h2 {
     color: #004587;
     font-size: 1.8rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #fbba07;
 }
@@ -189,12 +208,20 @@ body {
 .topic-content-wrapper h3 {
     color: #004587;
     font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.topic-content-wrapper h4 {
+    color: #004587;
+    font-size: 1.2rem;
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
 }
 
 .topic-content-wrapper p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
 }
 
 .topic-content-wrapper strong {
@@ -202,97 +229,400 @@ body {
     font-weight: 600;
 }
 
-/* Lists */
+/* =====================================================
+   LISTS
+   ===================================================== */
+
 .topic-content-wrapper ul,
 .topic-content-wrapper ol {
     margin-left: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .topic-content-wrapper li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
 }
 
-/* Tables */
-.topic-content-wrapper table {
+/* =====================================================
+   TABLES
+   ===================================================== */
+
+.topic-content-wrapper table,
+.data-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 2.5rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.topic-content-wrapper th {
-    background: #004587;
+.topic-content-wrapper th,
+.data-table th {
+    background: linear-gradient(135deg, #004587 0%, #003366 100%);
     color: #fff;
-    padding: 1rem;
+    padding: 1.25rem;
     text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.topic-content-wrapper td,
+.data-table td {
+    padding: 1.25rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.topic-content-wrapper tbody tr:hover,
+.data-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.topic-content-wrapper tr:nth-child(even),
+.data-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* =====================================================
+   ENHANCED TOPIC PAGE COMPONENTS
+   ===================================================== */
+
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #fbba07 0%, #e0a800 100%);
+    color: #004587;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.key-term-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 4px solid #004587;
+    padding: 1rem 1.5rem;
+    margin: 1.25rem 0;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.key-term-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0,69,135,0.2);
+}
+
+.term-title {
+    color: #004587;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+}
+
+.term-definition {
+    color: #555;
+    line-height: 1.6;
+}
+
+.subsection-header {
+    background: linear-gradient(135deg, #004587 0%, #003366 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    margin: 2.5rem 0 1.5rem 0;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
-.topic-content-wrapper td {
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
+/* =====================================================
+   MCQ STYLING
+   ===================================================== */
+
+.mcq-container {
+    background: #fff;
+    border: 3px solid #004587;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 4px 12px rgba(0,69,135,0.15);
 }
 
-.topic-content-wrapper tr:nth-child(even) {
-    background: #f9f9f9;
-}
-
-/* Tip/Note Boxes */
-.tip-box, .note-box {
-    background: #fff9e6;
-    border-left: 4px solid #fbba07;
-    padding: 1rem 1.5rem;
-    margin: 1.5rem 0;
-    border-radius: 4px;
-}
-
-.note-box {
-    background: #e6f3ff;
-    border-left-color: #004587;
-}
-
-/* MCQ Styling */
-.mcq-question {
-    background: #f9f9f9;
-    padding: 1.5rem;
+.mcq-number {
+    background: #004587;
+    color: #fbba07;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
-    margin: 1.5rem 0;
-    border-left: 4px solid #004587;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.mcq-question {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .mcq-options {
-    margin: 1rem 0;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.mcq-options li {
+    background: #f8f9fa;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0;
+    border-radius: 8px;
+    border-left: 4px solid #dee2e6;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.mcq-options li:hover {
+    background: #e9ecef;
+    border-left-color: #004587;
+    transform: translateX(5px);
+}
+
+.mcq-answer-box {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border-left: 5px solid #28a745;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.mcq-answer-label {
+    color: #155724;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.mcq-explanation {
+    color: #155724;
+    line-height: 1.7;
+}
+
+.mcq-explanation strong {
+    color: #0d4318;
+}
+
+/* =====================================================
+   TIP & NOTE BOXES
+   ===================================================== */
+
+.tip-box {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+    border-left: 5px solid #fbba07;
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(251,186,7,0.2);
+}
+
+.tip-box::before {
+    content: "💡 TIP";
+    display: block;
+    font-weight: 700;
+    color: #856404;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.note-box {
+    background: linear-gradient(135deg, #e6f3ff 0%, #cce5ff 100%);
+    border-left: 5px solid #004587;
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,69,135,0.2);
+}
+
+.note-box::before {
+    content: "📌 NOTE";
+    display: block;
+    font-weight: 700;
+    color: #004085;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* =====================================================
+   MECHANISM STEPS
+   ===================================================== */
+
+.mechanism-steps {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2.5rem 0;
+}
+
+.mechanism-steps ol {
+    counter-reset: step-counter;
     list-style: none;
     padding: 0;
 }
 
-.mcq-options li {
-    padding: 0.5rem 0;
+.mechanism-steps li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 3.5rem;
+    margin: 2rem 0;
+}
+
+.mechanism-steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: -5px;
+    background: #004587;
+    color: #fbba07;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* =====================================================
+   REAL-WORLD EXAMPLES
+   ===================================================== */
+
+.real-world-example {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+    border-left: 5px solid #dc3545;
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+    border-radius: 8px;
+}
+
+.real-world-example::before {
+    content: "🌍 REAL-WORLD EXAMPLE";
+    display: block;
+    font-weight: 700;
+    color: #721c24;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* =====================================================
+   FORMULA & CALCULATIONS
+   ===================================================== */
+
+.formula-box {
+    background: #f0f0f0;
+    border: 2px solid #004587;
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    margin: 2.5rem 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.working-steps {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.working-steps ol {
     margin-left: 0;
+    padding-left: 1.5rem;
 }
 
-.mcq-answer {
-    background: #e6f9e6;
-    padding: 1rem;
-    border-radius: 4px;
-    margin-top: 1rem;
-    border-left: 4px solid #28a745;
+.working-steps li {
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
 }
 
-.mcq-explanation {
-    margin-top: 0.5rem;
-    font-size: 0.95rem;
+/* =====================================================
+   BADGES & LABELS
+   ===================================================== */
+
+.hl-badge {
+    background: #ff6b6b;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    vertical-align: middle;
 }
 
-/* Horizontal Rule */
+/* =====================================================
+   CHECKLIST
+   ===================================================== */
+
+.checklist {
+    list-style: none;
+    padding: 0;
+}
+
+.checklist li {
+    padding: 1rem 0.75rem 1rem 3rem;
+    position: relative;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0.75rem;
+    font-size: 1.5rem;
+    color: #004587;
+}
+
+/* =====================================================
+   PROGRESS INDICATOR
+   ===================================================== */
+
+.progress-indicator {
+    background: #e9ecef;
+    height: 8px;
+    border-radius: 10px;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #004587 0%, #fbba07 100%);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+/* =====================================================
+   HORIZONTAL RULE
+   ===================================================== */
+
 hr {
     border: none;
     border-top: 2px solid #ddd;
     margin: 2rem 0;
 }
 
-/* Responsive */
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
 @media (max-width: 768px) {
     body {
         padding: 1rem 0.5rem;
@@ -320,8 +650,17 @@ hr {
         font-size: 1.2rem;
     }
     
-    .topic-content-wrapper table {
+    .topic-content-wrapper table,
+    .data-table {
         font-size: 0.9rem;
+    }
+    
+    .mcq-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .mechanism-steps li {
+        padding-left: 3rem;
     }
 }
 
@@ -334,5 +673,9 @@ hr {
     .topic-nav {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .topic-content-wrapper {
+        padding: 1.5rem 1rem;
     }
 }
