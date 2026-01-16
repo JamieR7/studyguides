@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.3 Response | IB SEHS 2026</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23004587'/><text x='50' y='70' font-size='60' text-anchor='middle' font-weight='bold' fill='%23fbba07'>S</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Enhanced topic-specific styles */
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbba07 0%, #e0a800 100%);
+            color: #004587;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .key-term-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid #004587;
+            padding: 1rem 1.5rem;
+            margin: 1.25rem 0;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .key-term-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,69,135,0.2);
+        }
+
+        .term-title {
+            color: #004587;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .term-definition {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .subsection-header {
+            background: linear-gradient(135deg, #004587 0%, #003366 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            margin: 2.5rem 0 1.5rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .mcq-container {
+            background: #fff;
+            border: 3px solid #004587;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,69,135,0.15);
+        }
+
+        .mcq-number {
+            background: #004587;
+            color: #fbba07;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .mcq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .mcq-options {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .mcq-options li {
+            background: #f8f9fa;
+            padding: 1rem 1.25rem;
+            margin: 0.75rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #dee2e6;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .mcq-options li:hover {
+            background: #e9ecef;
+            border-left-color: #004587;
+            transform: translateX(5px);
+        }
+
+        .mcq-options li.selected {
+            background: #cce5ff !important;
+            border-left-color: #004587 !important;
+            font-weight: 600;
+            transform: translateX(5px);
+        }
+
+        .mcq-options li.selected::before {
+            content: "➤ ";
+            color: #004587;
+            font-weight: bold;
+        }
+
+        .mcq-answer-box {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 5px solid #28a745;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .mcq-answer-label {
+            color: #155724;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .mcq-explanation {
+            color: #155724;
+            line-height: 1.7;
+        }
+
+        .mcq-explanation strong {
+            color: #0d4318;
+        }
+
+        .dbq-container {
+            background: #fff;
+            border: 3px solid #6c757d;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(108,117,125,0.15);
+        }
+
+        .dbq-number {
+            background: #6c757d;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .dbq-intro {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #6c757d;
+            line-height: 1.7;
+        }
+
+        .dbq-data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .dbq-data-table thead {
+            background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+            color: white;
+        }
+
+        .dbq-data-table th,
+        .dbq-data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .dbq-data-table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .dbq-data-table tbody tr:hover {
+            background: #e9ecef;
+        }
+
+        .dbq-part {
+            margin: 2rem 0;
+        }
+
+        .dbq-part-label {
+            background: #e9ecef;
+            color: #495057;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .model-answer {
+            background: linear-gradient(135deg, #e7f3ff 0%, #d4e9ff 100%);
+            border-left: 5px solid #004587;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .model-answer-label {
+            color: #004587;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .model-answer-content {
+            color: #212529;
+            line-height: 1.8;
+        }
+
+        .paper2-container {
+            background: #fff;
+            border: 3px solid #28a745;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(40,167,69,0.15);
+        }
+
+        .paper2-number {
+            background: #28a745;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .marks-badge {
+            background: #ffc107;
+            color: #000;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+
+        .hl-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-left: 5px solid #fbba07;
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(251,186,7,0.2);
+        }
+
+        .tip-box::before {
+            content: "💡 TIP";
+            display: block;
+            font-weight: 700;
+            color: #856404;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .note-box {
+            background: linear-gradient(135deg, #e6f3ff 0%, #cce5ff 100%);
+            border-left: 5px solid #004587;
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,69,135,0.2);
+        }
+
+        .note-box::before {
+            content: "📌 NOTE";
+            display: block;
+            font-weight: 700;
+            color: #004085;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .data-table thead {
+            background: linear-gradient(135deg, #004587 0%, #003366 100%);
+            color: white;
+        }
+
+        .data-table th {
+            padding: 1.25rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .data-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .data-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .formula-box {
+            background: #f0f0f0;
+            border: 2px solid #004587;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            margin: 2.5rem 0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .working-steps {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .working-steps ol {
+            margin-left: 0;
+            padding-left: 1.5rem;
+        }
+
+        .working-steps li {
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .mechanism-steps {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2.5rem 0;
+        }
+
+        .mechanism-steps ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mechanism-steps li {
+            position: relative;
+            padding-left: 3rem;
+            margin: 1.5rem 0;
+        }
+
+        .mechanism-steps li::before {
+            content: "→";
+            position: absolute;
+            left: 0.5rem;
+            color: #004587;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .real-world-example {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+            border-left: 5px solid #dc3545;
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            border-radius: 8px;
+        }
+
+        .real-world-example::before {
+            content: "🌍 REAL-WORLD EXAMPLE";
+            display: block;
+            font-weight: 700;
+            color: #721c24;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 1rem 0.75rem 1rem 3rem;
+            position: relative;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0.75rem;
+            font-size: 1.5rem;
+            color: #004587;
+        }
+
+        .error-card {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe9e9 100%);
+            border-left: 4px solid #dc3545;
+            padding: 1rem 1.5rem;
+            margin: 1.25rem 0;
+            border-radius: 8px;
+        }
+
+        .error-title {
+            color: #dc3545;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-explanation {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .linking-card {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
+            border-left: 4px solid #0066cc;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .linking-question {
+            color: #0066cc;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .linking-answer {
+            color: #333;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .mcq-container, .dbq-container, .paper2-container {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="topic-nav">
+            <a href="../index.html" class="back-link">← Back to All Topics</a>
+            <div class="topic-title-nav">A.3 Response</div>
+        </nav>
+
+        <div class="topic-content-wrapper">
+            
+<h1>🏋️ Topic A.3: Response</h1>
+
+<p style="font-size: 1.15rem; color: #666; margin-bottom: 2rem;">Master the science of training principles, health benefits of physical activity, and the physiology of fatigue and recovery.</p>
+
+<!-- Section 1: Key Terms -->
+<span class="section-badge">📚 Section 1</span>
+<h2>Quick Reference: Key Terms</h2>
+
+<p>Mastering the precise language of Sport, Exercise, and Health Science is fundamental to achieving excellence in your examinations. These terms are conceptual tools that allow you to articulate complex physiological principles with clarity and precision.</p>
+
+<div class="subsection-header">💪 Training Principles</div>
+
+<div class="key-term-card">
+    <div class="term-title">Progressive Overload</div>
+    <div class="term-definition">The principle of gradually increasing the training stress (frequency, intensity, or duration) placed on the body to stimulate further adaptation and improvement.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Specificity</div>
+    <div class="term-definition">The principle that training adaptations are specific to the type of exercise performed, the muscle groups involved, and the energy systems utilized.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Reversibility</div>
+    <div class="term-definition">The principle that fitness gains are lost when training is stopped or significantly reduced; also known as detraining.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Periodization</div>
+    <div class="term-definition">The structured planning of training into distinct time blocks (macrocycles, mesocycles, and microcycles), each with a specific goal, to optimize performance and prevent overtraining.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Non-functional Overreaching</div>
+    <div class="term-definition">An excessive training load leading to a temporary performance decrement, from which it can take several weeks or months to recover.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Overtraining Syndrome</div>
+    <div class="term-definition">A state of prolonged performance decrement resulting from an excessive accumulation of training and non-training stress, often taking several months or even years to resolve.</div>
+</div>
+
+<div class="subsection-header">🏃 Health & Adaptation</div>
+
+<div class="key-term-card">
+    <div class="term-title">Energy Balance</div>
+    <div class="term-definition">The relationship between energy intake (from food and drink) and energy consumption (for bodily functions and physical activity), which determines whether body weight is maintained, gained, or lost.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Osteoporosis</div>
+    <div class="term-definition">A medical condition where bones become brittle and fragile from loss of tissue, typically as a result of hormonal changes, or deficiency of calcium or vitamin D, the risk of which can be reduced by an active lifestyle.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Hypertension</div>
+    <div class="term-definition">Abnormally high blood pressure, a condition whose risk can be reduced through regular physical activity.</div>
+</div>
+
+<div class="subsection-header">😓 Fatigue & Recovery <span class="hl-badge">HL ONLY</span></div>
+
+<div class="key-term-card">
+    <div class="term-title">Fatigue</div>
+    <div class="term-definition">A complex phenomenon originating at different levels of the motor or energy pathway that results in an inability to maintain a desired intensity of exercise.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Acidosis</div>
+    <div class="term-definition">A condition characterized by an increased concentration of hydrogen ions (and thus a lower pH) in the blood and muscle tissue, often associated with high-intensity exercise and contributing to fatigue.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Hyperthermia</div>
+    <div class="term-definition">An elevated core body temperature that can impair cardiovascular function and lead to performance decrements and fatigue, particularly during exercise in hot environments.</div>
+</div>
+
+<div class="key-term-card">
+    <div class="term-title">Recovery</div>
+    <div class="term-definition">The multifaceted process of restoring physiological and psychological function to pre-exercise levels, which is critical for adaptation and subsequent performance.</div>
+</div>
+
+<!-- Section 2: Exam Format -->
+<span class="section-badge">📝 Section 2</span>
+<h2>Exam Format & Timing</h2>
+
+<p>A strategic approach to the IB SEHS examination requires thorough understanding of the structure, timing, and weighting of each paper.</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Paper</th>
+            <th>Standard Level (SL)</th>
+            <th>Higher Level (HL)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Paper 1A</strong></td>
+            <td>30 multiple-choice questions<br>30 marks / approx. 45 minutes</td>
+            <td>40 multiple-choice questions<br>40 marks / approx. 52 minutes</td>
+        </tr>
+        <tr>
+            <td><strong>Paper 1B</strong></td>
+            <td>Data-based questions<br>25 marks / approx. 45 minutes</td>
+            <td>Data-based questions<br>25 marks / approx. 53 minutes</td>
+        </tr>
+        <tr>
+            <td><strong>Paper 1 Total</strong></td>
+            <td>55 marks / 1 hour 30 minutes</td>
+            <td>65 marks / 1 hour 45 minutes</td>
+        </tr>
+        <tr>
+            <td><strong>Paper 2</strong></td>
+            <td>Short-answer & extended-response<br>50 marks / 1 hour 30 minutes</td>
+            <td>Short-answer & extended-response<br>80 marks / 2 hours 30 minutes</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="note-box">
+    The IB provides a total time for Paper 1. The time allocation for Paper 1A and 1B shown here is a recommended time management strategy based on the mark distribution.
+</div>
+
+<!-- Section 3: Command Terms -->
+<span class="section-badge">🎯 Section 3</span>
+<h2>Command Terms Deconstructed</h2>
+
+<p>Command terms are the specific instructions within an exam question that dictate the required depth and scope of your response. Misinterpreting a command term is a frequent cause of lost marks.</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th style="width: 12%;">Term</th>
+            <th style="width: 28%;">IB Definition</th>
+            <th>Topic A.3 Model Answer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>State</strong></td>
+            <td>Give a specific name, value, or other brief answer without explanation.</td>
+            <td>
+                <strong>Question:</strong> State one principle of training.<br><br>
+                <strong>Answer:</strong> One principle of training is specificity.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Outline</strong></td>
+            <td>Give a brief account or summary.</td>
+            <td>
+                <strong>Question:</strong> Outline the principle of progressive overload.<br><br>
+                <strong>Answer:</strong> Progressive overload involves gradually increasing the training stress, such as the frequency, intensity, or duration of exercise, over time. This systematic increase in stimulus is necessary to continually challenge the body and promote further physiological adaptations and improvements in fitness.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Explain</strong></td>
+            <td>Give a detailed account including reasons or causes.</td>
+            <td>
+                <strong>Question (HL):</strong> Explain how glycogen depletion contributes to fatigue during prolonged exercise.<br><br>
+                <strong>Answer:</strong> During prolonged endurance exercise, muscle and liver glycogen are primary fuel sources for ATP production via the oxidative system. As these stores become depleted, the rate of ATP resynthesis slows down because the body must increasingly rely on fat metabolism, which is a slower process. This reduced rate of energy production cannot match the demands of the activity, leading to a decrease in exercise intensity and the perception of fatigue. Furthermore, liver glycogen depletion can lead to hypoglycemia, impairing central nervous system function and contributing to central fatigue.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Analyse</strong></td>
+            <td>Break down in order to bring out the essential elements or structure.</td>
+            <td>
+                <strong>Question:</strong> Analyse the use of periodization in a training programme.<br><br>
+                <strong>Answer:</strong> Periodization breaks down a long-term training plan into smaller, manageable phases: macrocycles, mesocycles, and microcycles. The essential element of this structure is the manipulation of training variables—volume and intensity—to achieve specific goals. For instance, a preparatory phase may focus on high volume and low intensity to build a base, while a competition phase will shift to low volume and high intensity to sharpen performance. This systematic variation is critical for preventing burnout and overtraining by ensuring periods of adaptation and recovery are built into the overall programme.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Section 4: Content Summary -->
+<span class="section-badge">📖 Section 4</span>
+<h2>Comprehensive Content Summary</h2>
+
+<h3>A.3.1 Qualities of Training</h3>
+
+<p>Effective training is not a matter of chance; it is a science built on established principles. Understanding these principles is critical for designing programmes that achieve the desired adaptations.</p>
+
+<div class="mechanism-steps">
+    <h4 style="margin-top: 0;">🔑 Key Training Principles</h4>
+    <ul>
+        <li><strong>Specificity:</strong> Adaptations are specific to the demands of the training. A marathon runner must train the aerobic system, while a powerlifter must train the neuromuscular system for maximal force production.</li>
+        <li><strong>Progressive Overload:</strong> To continue improving, the body must be subjected to a gradually increasing load through frequency (how often), intensity (how hard), or duration (how long).</li>
+        <li><strong>Recovery:</strong> When adaptations occur. The body needs adequate time to repair and strengthen itself between training sessions.</li>
+        <li><strong>Variety:</strong> Varying the training routine prevents boredom, maintains motivation, and stimulates new adaptations.</li>
+        <li><strong>Reversibility:</strong> When training ceases, physiological adaptations and performance gains are lost over time.</li>
+    </ul>
+</div>
+
+<div class="mechanism-steps">
+    <h4 style="margin-top: 0;">📅 The Mechanism of Periodization</h4>
+    <ul>
+        <li><strong>Macrocycle:</strong> The longest-term plan, typically covering a full year or an entire season (e.g., an Olympic cycle).</li>
+        <li><strong>Mesocycle:</strong> A medium-term training block within the macrocycle, usually lasting several weeks to a few months. Each has a specific focus.</li>
+        <li><strong>Microcycle:</strong> The shortest training block, typically a week long, with structured training sessions and recovery days.</li>
+    </ul>
+</div>
+
+<div class="real-world-example">
+    <p>A swimming coach designing a 12-week mesocycle for a 1500m freestyle specialist:</p>
+    <strong>Weeks 1-4 (General Preparation):</strong> High-volume, low-intensity swimming to build aerobic base<br>
+    <strong>Weeks 5-8 (Specific Preparation):</strong> Increased intensity, slightly reduced volume with race-pace intervals<br>
+    <strong>Weeks 9-11 (Pre-Competition):</strong> High-intensity, race-specific training with reduced volume<br>
+    <strong>Week 12 (Taper):</strong> Drastically reduced volume and intensity for full recovery and peak performance
+</div>
+
+<div class="note-box">
+    <strong>Critical Distinction:</strong> Non-functional overreaching (NFO) involves severe, short-term performance decline with recovery possible in weeks to months. Overtraining syndrome (OTS) is much more severe and chronic, where performance plummets and may not recover even with extended rest (months to years), often with systemic physiological and psychological symptoms.
+</div>
+
+<h3>A.3.2 Benefits to Health of Being Active</h3>
+
+<p>An active lifestyle is a cornerstone of physical and mental well-being, directly influencing the body's ability to maintain homeostasis and function optimally.</p>
+
+<div class="mechanism-steps">
+    <h4 style="margin-top: 0;">💚 Key Health Benefits</h4>
+    <ul>
+        <li><strong>Energy Balance:</strong> Regular physical activity increases energy expenditure, critical for maintaining healthy body weight and preventing obesity.</li>
+        <li><strong>Reduced Disease Risk:</strong> Significantly lowers risk of chronic diseases:
+            <ul style="list-style: disc; margin-left: 2rem; margin-top: 0.5rem;">
+                <li>Osteoporosis: Weight-bearing activity stimulates bone density</li>
+                <li>Obesity: Helps maintain negative energy balance</li>
+                <li>Hypertension: Lowers resting blood pressure</li>
+                <li>Cardiovascular Diseases: Improves heart function and circulation</li>
+                <li>Type 2 Diabetes: Enhances insulin sensitivity</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="tip-box">
+    <strong>Prescribing Exercise for Specific Populations (HL):</strong> When prescribing exercise for health, careful consideration must be given to unique needs. Children/adolescents need focus on motor skill development; older adults require programs to improve balance and maintain independence; pregnant individuals need modifications to avoid high-risk activities while maintaining cardiovascular health.
+</div>
+
+<div class="real-world-example">
+    <p>An exercise programme for an older adult to reduce osteoporosis risk:</p>
+    <strong>3 days/week:</strong> Brisk walking for 30 minutes (weight-bearing cardiovascular)<br>
+    <strong>2 days/week:</strong> Resistance exercises using light weights (squats, lunges, overhead press)<br>
+    <strong>Daily:</strong> Balance exercises like Tai Chi or single-leg stands to reduce fall risk
+</div>
+
+<h3>A.3.3 Fatigue and Recovery <span class="hl-badge">HL ONLY</span></h3>
+
+<p>Fatigue is a complex physiological event with multiple origins, limiting an athlete's ability to sustain performance. Recovery is equally complex, involving physiological and psychological restoration.</p>
+
+<div class="mechanism-steps">
+    <h4 style="margin-top: 0;">⚡ Sources of Fatigue</h4>
+    <ul>
+        <li><strong>Fuel Depletion:</strong> PCr depletion (short, high-intensity) and glycogen depletion (prolonged endurance)</li>
+        <li><strong>Metabolic By-products:</strong> Acidosis (H⁺ accumulation) and inorganic phosphate accumulation interfere with muscle contraction</li>
+        <li><strong>Thermoregulation Issues:</strong> Dehydration and hyperthermia strain cardiovascular system and impair CNS function</li>
+        <li><strong>Ion Imbalances:</strong> Disrupted Na⁺/K⁺ gradients reduce muscle membrane excitability</li>
+    </ul>
+</div>
+
+<div class="mechanism-steps">
+    <h4 style="margin-top: 0;">🔄 Recovery Indicators</h4>
+    <ul>
+        <li><strong>Physiological:</strong> Restoration of normal heart rate, blood pressure, blood lactate levels</li>
+        <li><strong>Symptomatic:</strong> Reduction in muscle soreness (DOMS), feeling of physical restoration</li>
+        <li><strong>Psychological:</strong> Restored motivation, positive mood, feeling of preparedness</li>
+    </ul>
+</div>
+
+<div class="tip-box">
+    <strong>Recovery Strategies Evaluation:</strong><br>
+    <strong>Nutritional:</strong> Carbohydrate + protein timing post-exercise (strong evidence); creatine supplementation (effective for high-intensity recovery)<br>
+    <strong>Physical:</strong> Cold water immersion (mixed evidence, may reduce perceived soreness); compression garments (inconsistent evidence, possible placebo); myofascial release/foam rolling (may reduce perception of soreness, limited physiological benefit)
+</div>
+
+<div class="note-box">
+    <strong>Sleep:</strong> Arguably the most critical recovery strategy. During sleep, the body releases anabolic hormones like growth hormone, essential for tissue repair and adaptation. Travel, especially across time zones, disrupts circadian rhythms and can severely compromise sleep quality and recovery.
+</div>
+
+<!-- Section 5: Practice Questions -->
+<span class="section-badge">✍️ Section 5</span>
+<h2>Exam-Style Practice Questions</h2>
+
+<h3>Paper 1A: Multiple Choice Questions</h3>
+
+<p><strong>📌 Click on any answer option to reveal the correct answer and explanation!</strong></p>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 1</span>
+    <div class="mcq-question">
+        Which training principle is best demonstrated when a weightlifter increases the weight they are lifting from 80 kg to 85 kg?
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> Specificity</li>
+        <li><strong>B.</strong> Reversibility</li>
+        <li><strong>C.</strong> Progressive Overload</li>
+        <li><strong>D.</strong> Variety</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: C</span>
+        <div class="mcq-explanation">
+            <strong>Why C is correct:</strong> Progressive overload is the gradual increase of stress placed upon the body during exercise. By increasing the weight from 80 kg to 85 kg, the lifter is increasing the intensity, which is a direct application of this principle to stimulate further strength adaptations.<br><br>
+            <strong>Why A is wrong:</strong> Specificity relates to the type of exercise being relevant to the desired adaptation (e.g., lifting weights to get stronger). While relevant, the act of increasing the weight itself is an example of overload.<br><br>
+            <strong>Why B is wrong:</strong> Reversibility describes the loss of fitness when training is stopped, which is not depicted in this scenario.<br><br>
+            <strong>Why D is wrong:</strong> Variety involves changing the exercises or training methods to avoid boredom and stimulate new adaptations. This scenario shows an increase in load for the same exercise, not a change in the exercise itself.
+        </div>
+    </div>
+</div>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 2</span>
+    <div class="mcq-question">
+        An athlete experiences a significant decline in performance and mood that persists for several months despite reducing their training load. This condition is best described as:
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> Non-functional overreaching</li>
+        <li><strong>B.</strong> Reversibility</li>
+        <li><strong>C.</strong> Acute fatigue</li>
+        <li><strong>D.</strong> Overtraining syndrome</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: D</span>
+        <div class="mcq-explanation">
+            <strong>Why D is correct:</strong> Overtraining syndrome is a chronic condition characterized by a long-term performance decrement, mood disturbances, and other physiological issues that are not resolved by short periods of rest. The multi-month duration described is the key indicator of OTS.<br><br>
+            <strong>Why A is wrong:</strong> Non-functional overreaching also involves a performance decline but is typically resolved within several weeks to a couple of months of rest. The extended timeline points towards the more severe OTS.<br><br>
+            <strong>Why B is wrong:</strong> Reversibility is the planned or unplanned loss of training adaptations due to a lack of stimulus, not a condition caused by excessive training stress.<br><br>
+            <strong>Why C is wrong:</strong> Acute fatigue is the temporary tiredness experienced during and immediately after a single exercise session, which recovers quickly.
+        </div>
+    </div>
+</div>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 3</span>
+    <span class="hl-badge">HL ONLY</span>
+    <div class="mcq-question">
+        During a 400-meter sprint, which of the following is a primary contributor to peripheral fatigue?
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> Depletion of liver glycogen stores</li>
+        <li><strong>B.</strong> Accumulation of hydrogen ions</li>
+        <li><strong>C.</strong> Dehydration</li>
+        <li><strong>D.</strong> Depletion of fat stores</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: B</span>
+        <div class="mcq-explanation">
+            <strong>Why B is correct:</strong> A 400-meter sprint is a high-intensity event that relies heavily on anaerobic glycolysis for energy. This process produces lactic acid, which dissociates into lactate and hydrogen ions (H⁺). The accumulation of H⁺ lowers muscle pH (acidosis), which inhibits key glycolytic enzymes and interferes with calcium's ability to bind to troponin, thus impairing muscle contraction and causing fatigue.<br><br>
+            <strong>Why A is wrong:</strong> Liver glycogen depletion is a major factor in fatigue during prolonged, multi-hour endurance events, not a short sprint lasting less than a minute.<br><br>
+            <strong>Why C is wrong:</strong> Significant dehydration takes longer to develop and is a factor in longer-duration events, particularly in the heat. It is not a primary cause of fatigue in a 400m sprint.<br><br>
+            <strong>Why D is wrong:</strong> The body has vast fat stores that are not a limiting factor for exercise of any duration. The rate of energy release from fat is too slow for a 400m sprint.
+        </div>
+    </div>
+</div>
+
+<div class="mcq-container">
+    <span class="mcq-number">Question 4</span>
+    <span class="hl-badge">HL ONLY</span>
+    <div class="mcq-question">
+        Which of the following describes a key consideration when prescribing exercise for older adults?
+    </div>
+    <ul class="mcq-options">
+        <li><strong>A.</strong> Maximizing training volume to accelerate adaptation</li>
+        <li><strong>B.</strong> Focusing primarily on high-intensity interval training</li>
+        <li><strong>C.</strong> Incorporating exercises that challenge balance to reduce fall risk</li>
+        <li><strong>D.</strong> Prioritizing sport-specific skills over general fitness</li>
+    </ul>
+    <div class="mcq-answer-box">
+        <span class="mcq-answer-label">✅ Correct Answer: C</span>
+        <div class="mcq-explanation">
+            <strong>Why C is correct:</strong> A major health risk for older adults is falling, which can lead to fractures and a loss of independence. Therefore, exercise programmes for this population should explicitly include components that improve balance and proprioception, alongside strength and cardiovascular fitness.<br><br>
+            <strong>Why A is wrong:</strong> Older adults have a reduced capacity for recovery, so maximizing training volume is inappropriate and would likely lead to injury or overtraining. Progression must be gradual.<br><br>
+            <strong>Why B is wrong:</strong> While HIIT can be beneficial, it is an advanced modality. A programme for older adults, especially beginners, should first establish a base of fitness with moderate-intensity exercise.<br><br>
+            <strong>Why D is wrong:</strong> For the general health and well-being of older adults, the priority is maintaining functional independence and reducing disease risk through general fitness, not developing sport-specific skills.
+        </div>
+    </div>
+</div>
+
+<h3>Paper 1B: Data-Based Questions</h3>
+
+<div class="dbq-container">
+    <span class="dbq-number">Question 1</span>
+    <div class="mcq-question">Periodized Training Programme Effectiveness</div>
+    
+    <div class="dbq-intro">
+        A study investigated the effect of a 12-week periodized training programme on the 5km run time of amateur runners. The mean performance time was measured before (Pre-test) and after (Post-test) the intervention.
+    </div>
+
+    <table class="dbq-data-table">
+        <thead>
+            <tr>
+                <th>Time Point</th>
+                <th>Mean 5km Run Time (minutes)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pre-test</td>
+                <td>28.5</td>
+            </tr>
+            <tr>
+                <td>Post-test</td>
+                <td>25.2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (a)</span>
+        <p><strong>State</strong> the reduction in the mean 5km run time. <strong>[1]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            The reduction in run time is <strong>3.3 minutes</strong> (28.5 - 25.2).
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (b)</span>
+        <p><strong>Calculate</strong> the percentage improvement in the mean 5km run time. Show your working. <strong>[2]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            <strong>Percentage Improvement = [(Initial Time - Final Time) / Initial Time] × 100</strong> [1 mark]<br><br>
+            = [(28.5 - 25.2) / 28.5] × 100<br>
+            = (3.3 / 28.5) × 100<br>
+            = <strong>11.58% improvement</strong> [1 mark]
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (c)</span>
+        <p>The study used a small sample size (n=10) and had no control group. <strong>Evaluate</strong> the impact of these two limitations on the validity of the conclusion that the programme was effective. <strong>[2]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            The small sample size (n=10) limits the <strong>generalizability</strong> of the findings to a wider population of amateur runners. <strong>[1 mark]</strong><br><br>
+            The absence of a control group severely impacts <strong>internal validity</strong>, as it is impossible to determine if the improvement was due to the training programme itself or other confounding variables like motivation, seasonal changes, or simply the experience of being in a study (the Hawthorne effect). <strong>[1 mark]</strong>
+        </div>
+    </div>
+</div>
+
+<div class="dbq-container">
+    <span class="dbq-number">Question 2</span>
+    <span class="hl-badge">HL ONLY</span>
+    <div class="mcq-question">Recovery Protocols Comparison</div>
+    
+    <div class="dbq-intro">
+        Researchers measured blood lactate concentration in athletes following two different recovery protocols after a high-intensity interval session: active recovery (AR) and passive recovery (PR).
+    </div>
+
+    <table class="dbq-data-table">
+        <thead>
+            <tr>
+                <th>Recovery Protocol</th>
+                <th>Blood Lactate (mmol/L) at 10 mins post-exercise</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Active Recovery (AR)</td>
+                <td>4.5</td>
+            </tr>
+            <tr>
+                <td>Passive Recovery (PR)</td>
+                <td>8.2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (a)</span>
+        <p><strong>Identify</strong> which recovery protocol resulted in a lower blood lactate concentration at 10 minutes. <strong>[1]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            <strong>Active recovery (AR)</strong> resulted in a lower blood lactate concentration.
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (b)</span>
+        <p><strong>Calculate</strong> the percentage difference in blood lactate concentration between the AR and PR protocols. Show your working. <strong>[2]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            <strong>Percentage Difference = [(Value PR - Value AR) / Value PR] × 100</strong> [1 mark]<br><br>
+            = [(8.2 - 4.5) / 8.2] × 100<br>
+            = (3.7 / 8.2) × 100<br>
+            = <strong>45.12% lower for AR compared to PR</strong> [1 mark]
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (c)</span>
+        <p>The study ensured all participants were of a similar fitness level. <strong>Explain</strong> why this was an important control measure. <strong>[2]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            Controlling for fitness level is crucial because an individual's <strong>lactate clearance rate is highly dependent on their training status and aerobic capacity</strong>. <strong>[1 mark]</strong><br><br>
+            More aerobically trained athletes have a greater capacity to metabolize lactate as a fuel source, so failing to control for this would introduce a major <strong>confounding variable</strong>, making it impossible to isolate the effect of the recovery protocols. <strong>[1 mark]</strong>
+        </div>
+    </div>
+</div>
+
+<div class="dbq-container">
+    <span class="dbq-number">Question 3</span>
+    <div class="mcq-question">Training Load Monitoring</div>
+    
+    <div class="dbq-intro">
+        A coach monitors the weekly training load of two amateur cyclists during a 4-week mesocycle designed to build aerobic endurance. Training load is calculated as session RPE (1-10 scale) multiplied by duration in minutes.
+    </div>
+
+    <table class="dbq-data-table">
+        <thead>
+            <tr>
+                <th>Week</th>
+                <th>Athlete A Training Load (AU)</th>
+                <th>Athlete B Training Load (AU)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>1200</td>
+                <td>1250</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>1350</td>
+                <td>1800</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>1500</td>
+                <td>1300</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>1600</td>
+                <td>1850</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (a)</span>
+        <p>Based on the data, <strong>identify</strong> which athlete more consistently applied the principle of progressive overload. <strong>[1]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            <strong>Athlete A</strong> more consistently applied progressive overload, as their training load increased steadily each week.
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (b)</span>
+        <p><strong>Calculate</strong> the percentage increase in training load for Athlete A from Week 1 to Week 4. Show your working. <strong>[2]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            <strong>Percentage Increase = [(Final Load - Initial Load) / Initial Load] × 100</strong> [1 mark]<br><br>
+            = [(1600 - 1200) / 1200] × 100<br>
+            = (400 / 1200) × 100<br>
+            = <strong>33.33% increase</strong> [1 mark]
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (c)</span>
+        <p>Using RPE to determine intensity is a limitation of this monitoring method. <strong>Explain</strong> why this method lacks objectivity. <strong>[2]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            RPE is a <strong>subjective measure</strong> based on an individual's personal feeling of exertion, which can be influenced by factors like mood, stress, or sleep quality. <strong>[1 mark]</strong><br><br>
+            It is not an objective physiological measure (like heart rate or power output), meaning two athletes could be working at the same physiological intensity but report <strong>different RPE values</strong>, reducing the reliability and validity of the load calculation. <strong>[1 mark]</strong>
+        </div>
+    </div>
+</div>
+
+<div class="dbq-container">
+    <span class="dbq-number">Question 4</span>
+    <span class="hl-badge">HL ONLY</span>
+    <div class="mcq-question">Recovery Strategies and DOMS</div>
+    
+    <div class="dbq-intro">
+        A study compared the effect of two recovery strategies on delayed onset muscle soreness (DOMS) in trained weightlifters 24 hours after a strenuous leg workout. DOMS was rated on a 1-10 scale (10 = maximal pain).
+    </div>
+
+    <table class="dbq-data-table">
+        <thead>
+            <tr>
+                <th>Recovery Strategy</th>
+                <th>Mean DOMS Score (1-10 scale)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cold Water Immersion (CWI)</td>
+                <td>3.5</td>
+            </tr>
+            <tr>
+                <td>Passive Recovery (PR)</td>
+                <td>6.2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (a)</span>
+        <p><strong>State</strong> which recovery strategy resulted in lower perceived muscle soreness. <strong>[1]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            <strong>Cold Water Immersion (CWI)</strong> resulted in a lower perceived DOMS score.
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (b)</span>
+        <p><strong>Calculate</strong> the percentage difference in the mean DOMS score between CWI and PR. Show your working. <strong>[2]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            <strong>Percentage Difference = [(DOMS PR - DOMS CWI) / DOMS PR] × 100</strong> [1 mark]<br><br>
+            = [(6.2 - 3.5) / 6.2] × 100<br>
+            = (2.7 / 6.2) × 100<br>
+            = <strong>43.55% lower for CWI compared to PR</strong> [1 mark]
+        </div>
+    </div>
+
+    <div class="dbq-part">
+        <span class="dbq-part-label">Part (c)</span>
+        <p>The study did not control for the participants' sleep quality the night after the workout. <strong>Evaluate</strong> the impact of this limitation on the results. <strong>[2]</strong></p>
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            This is a significant limitation. Sleep is a <strong>critical component of physiological and psychological recovery</strong>, where tissue repair and hormonal regulation occur. <strong>[1 mark]</strong><br><br>
+            If the CWI group coincidentally had better sleep quality than the PR group, their lower DOMS score might be due to the enhanced recovery from sleep, not the CWI. This introduces a <strong>confounding variable</strong>, making it difficult to conclude that CWI was the sole cause of the difference. <strong>[1 mark]</strong>
+        </div>
+    </div>
+</div>
+
+<h3>Paper 2: Extended-Response Questions</h3>
+
+<div class="paper2-container">
+    <span class="paper2-number">Question 1</span>
+    <span class="marks-badge">6 MARKS</span>
+    <div class="mcq-question">Designing a Training Programme</div>
+    
+    <div class="dbq-intro">
+        A 45-year-old individual, who has been largely sedentary, wants to start exercising to improve their health. Using the principles of training, design a basic framework for the first mesocycle (4 weeks) of their programme, justifying your choices.
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            The framework for the first mesocycle should prioritize safety, adherence, and establishing a fitness base.<br><br>
+
+            • <strong>Principle of Specificity:</strong> The goal is general health, so the programme will include cardiovascular and resistance exercises to improve heart health and bone density. <strong>[1 mark]</strong><br><br>
+
+            • <strong>Principle of Progressive Overload:</strong> The initial load will be low to avoid injury and excessive soreness. Progression in the first 4 weeks will focus on increasing duration and frequency rather than intensity. <strong>[1 mark]</strong><br>
+            &nbsp;&nbsp;&nbsp;- Week 1-2: Three 20-minute sessions of brisk walking per week. <strong>[1 mark]</strong><br>
+            &nbsp;&nbsp;&nbsp;- Week 3-4: Progress to four 30-minute sessions of brisk walking per week. This demonstrates a gradual increase in volume. <strong>[1 mark]</strong><br><br>
+
+            • <strong>Principle of Recovery:</strong> The schedule will include rest days between sessions (e.g., training Monday, Wednesday, Friday) to allow for adaptation and reduce injury risk, which is critical for a sedentary individual. <strong>[1 mark]</strong><br><br>
+
+            • <strong>Principle of Variety:</strong> To improve adherence and provide a whole-body stimulus, a simple bodyweight strength routine (e.g., squats, lunges) could be introduced once a week in weeks 3-4, keeping the programme from becoming monotonous. <strong>[1 mark]</strong>
+        </div>
+    </div>
+</div>
+
+<div class="paper2-container">
+    <span class="paper2-number">Question 2</span>
+    <span class="hl-badge">HL ONLY</span>
+    <span class="marks-badge">4 MARKS</span>
+    <div class="mcq-question">Physiological Factors Contributing to Marathon Fatigue</div>
+    
+    <div class="dbq-intro">
+        <strong>Explain</strong> four distinct physiological factors that can contribute to the onset of fatigue during a marathon.
+    </div>
+
+    <div class="model-answer">
+        <span class="model-answer-label">📋 Model Answer:</span>
+        <div class="model-answer-content">
+            Four physiological factors contributing to fatigue during a marathon are:<br><br>
+
+            <strong>1. Muscle and Liver Glycogen Depletion:</strong> The body has limited carbohydrate stores. As these are used up over the course of the marathon, the ability to produce ATP at the required rate diminishes, forcing the athlete to slow down. <strong>[1 mark]</strong><br><br>
+
+            <strong>2. Dehydration:</strong> Significant fluid loss through sweating reduces total blood volume. This increases cardiovascular strain, as the heart must beat faster to maintain cardiac output, and impairs the body's ability to transport oxygen and nutrients. <strong>[1 mark]</strong><br><br>
+
+            <strong>3. Hyperthermia:</strong> Prolonged exercise generates a large amount of metabolic heat. If this heat cannot be dissipated effectively, core body temperature rises, which can impair central nervous system function and enzyme activity, leading to reduced performance and central fatigue. <strong>[1 mark]</strong><br><br>
+
+            <strong>4. Accumulation of Metabolic By-products:</strong> While less of a factor than in sprinting, the accumulation of inorganic phosphate (Pi) from ATP breakdown can interfere with calcium release and cross-bridge cycling within muscle fibres, contributing to peripheral fatigue over the long duration of the race. <strong>[1 mark]</strong>
+        </div>
+    </div>
+</div>
+
+<!-- Section 6: Mathematical Skills -->
+<span class="section-badge">🔢 Section 6</span>
+<h2>Mathematical Skills for A.3</h2>
+
+<p>While Topic A.3 is not heavily mathematical, a strong foundation in quantitative skills is essential for interpreting data and evaluating training effectiveness.</p>
+
+<div class="formula-box">
+    Training Load = Intensity (RPE) × Duration (minutes)
+</div>
+
+<div class="working-steps">
+    <h4>Worked Example</h4>
+    <p><strong>Scenario:</strong> An athlete completes a 75-minute cycling session rated at 8/10 on the RPE scale.</p>
+    
+    <h4 style="margin-top: 1.5rem;">Calculation Steps:</h4>
+    <ol>
+        <li>Identify values: Intensity (RPE) = 8; Duration = 75 minutes</li>
+        <li>Substitute into formula: Training Load = 8 × 75</li>
+        <li>Perform multiplication: Training Load = 600</li>
+    </ol>
+    <p><strong>Final Answer:</strong> The training load for the session is <strong>600 Arbitrary Units (AU)</strong>.</p>
+</div>
+
+<div class="note-box">
+    General mathematical skills such as calculating percentage change are also assessed in Paper 1B, as demonstrated in the practice questions above.
+</div>
+
+<!-- Section 7: Common Errors -->
+<span class="section-badge">⚠️ Section 7</span>
+<h2>Common Errors & Misconceptions</h2>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Confusing Overtraining with Non-Functional Overreaching</div>
+    <div class="error-explanation">Non-functional overreaching (NFO) is severe fatigue that can be resolved with several weeks or months of recovery. Overtraining syndrome (OTS) is much more severe and chronic, where performance decline is prolonged (many months or years) and accompanied by significant physiological and psychological disturbances. The key distinction is duration, severity, and recovery time.</div>
+</div>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Believing 'More is Always Better' Regarding Training Load</div>
+    <div class="error-explanation">This ignores the principles of recovery and reversibility. The body adapts and gets stronger during rest periods, not during training itself. Continuously increasing training load without adequate recovery leads to NFO or OTS. A well-designed, periodized plan with strategic recovery is far more effective.</div>
+</div>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Applying a Single Recovery Strategy Universally (HL)</div>
+    <div class="error-explanation">The effectiveness of a recovery strategy is highly specific to the type of exercise performed, the individual athlete, and the desired outcome. For example, while cold water immersion might reduce perceived soreness, nutritional strategies focusing on glycogen and protein resynthesis may be more critical for physiological recovery. There is no single "best" recovery method.</div>
+</div>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Viewing Fatigue as Only a Peripheral (Muscular) Event (HL)</div>
+    <div class="error-explanation">Fatigue is often simplified to "the muscles getting tired." In reality, it is complex with both peripheral (e.g., acidosis, glycogen depletion in muscle) and central (e.g., altered neurotransmitter levels in brain, hyperthermia affecting CNS) origins. High-scoring answers recognize fatigue can originate anywhere from the brain to the muscle fibre.</div>
+</div>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Misinterpreting Energy Balance as Simply 'Calories In vs. Calories Out'</div>
+    <div class="error-explanation">While the equation is simple, the concept is complex. "Energy consumption" includes basal metabolic rate, thermic effect of food, and non-exercise activity thermogenesis (NEAT), not just exercise. Furthermore, the quality of calories (macronutrient and micronutrient content) is as important for health as the quantity.</div>
+</div>
+
+<div class="error-card">
+    <div class="error-title">❌ Error: Assuming All Benefits of Activity Require High Intensity</div>
+    <div class="error-explanation">Regular, moderate-intensity physical activity provides significant protection against numerous chronic diseases like hypertension and type 2 diabetes. The key for general health is consistency and achieving sufficient total volume of activity, not necessarily high intensity.</div>
+</div>
+
+<!-- Section 8: Linking Questions -->
+<span class="section-badge">🔗 Section 8</span>
+<h2>Making Connections Across Topics</h2>
+
+<div class="linking-card">
+    <div class="linking-question">How does A.3.1 Qualities of Training link to B.3 Injury?</div>
+    <div class="linking-answer">
+        The principles of training from Topic A.3.1 are fundamental to injury prevention strategies. Progressive overload is critical—if training load is increased too rapidly without allowing for adaptation, it can cause cumulative trauma and overuse injuries. Prehabilitation exercises are a direct application of the specificity principle, targeting weaknesses to prevent future injuries. Incorporating adequate recovery into a periodized plan is perhaps the most important intervention for preventing injuries caused by overtraining.
+    </div>
+</div>
+
+<div class="linking-card">
+    <div class="linking-question">How does A.3.3 Fatigue and Recovery (HL) link to C.3 Motivation?</div>
+    <div class="linking-answer">
+        The relationship is bidirectional. High autonomous motivation may lead an athlete to push through early signs of fatigue or adhere more strictly to recovery protocols. Conversely, the physiological state of fatigue can directly impact motivation. An athlete in a state of non-functional overreaching or overtraining syndrome often experiences a significant drop in motivation and mood, making it psychologically difficult to continue training. The perception of fatigue itself is a psychological construct that interacts with an athlete's motivational climate and goal orientation.
+    </div>
+</div>
+
+<div class="linking-card">
+    <div class="linking-question">How does A.3.2 Benefits to health of being active link to A.2 Fuelling?</div>
+    <div class="linking-answer">
+        These topics are intrinsically linked through the concept of energy balance. A.3.2 explains that physical activity increases energy expenditure, which helps prevent obesity. A.2 provides the other side: energy intake through macronutrients. An active lifestyle is most beneficial for health when supported by appropriate fuelling. Furthermore, A.2 introduces Low Energy Availability (LEA) and RED-S—a critical link where an individual may be highly active but under-fuelled, leading to negative health consequences that negate the benefits of their activity.
+    </div>
+</div>
+
+<!-- Section 9: Self-Test Checklist -->
+<span class="section-badge">✅ Section 9</span>
+<h2>Self-Test Checklist</h2>
+
+<p>Use this checklist to audit your understanding of Topic A.3. For any statement you cannot confidently check off, revisit the relevant section.</p>
+
+<ul class="checklist">
+    <li>I can define and differentiate all principles of training (specificity, overload, periodization, etc.)</li>
+    <li>I can explain how a periodized training plan is structured into macro-, meso-, and microcycles</li>
+    <li>I can explain the role of physical activity in reducing the risk of at least three chronic diseases</li>
+    <li>I can apply the concept of energy balance to explain the health benefits of physical activity</li>
+    <li>I can outline key considerations when prescribing exercise for a specific population (e.g., older adults) (HL Only)</li>
+    <li>I can explain the physiological mechanisms of fatigue from at least three different sources (HL Only)</li>
+    <li>I can evaluate the effectiveness of various nutritional and physical recovery strategies (HL Only)</li>
+    <li>I can interpret data from a training log or study to assess progress and identify potential risks</li>
+</ul>
+
+<div style="text-align: center; margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, #004587 0%, #002a52 100%); border-radius: 12px; color: white;">
+    <h3 style="color: #fbba07; margin-bottom: 1rem;">💪 Training Mastered!</h3>
+    <p style="margin: 0;">You've mastered the principles of training, health benefits of activity, and the science of fatigue and recovery. You're now equipped to design evidence-based training programmes!</p>
+</div>
+
+        </div>
+    </div>
+
+    <!-- MCQ Interactive Script -->
+    <script src="../mcq-interaction.js"></script>
+</body>
+</html>
