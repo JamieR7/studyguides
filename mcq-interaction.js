@@ -51,3 +51,40 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('✅ MCQ interactions loaded successfully');
 });
+// ============================================
+// REVEAL ANSWER FUNCTIONALITY (DBQ & Paper 2)
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all reveal buttons
+    const revealButtons = document.querySelectorAll('.reveal-answer-btn');
+    
+    revealButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Find the associated answer content
+            const answerId = this.getAttribute('data-answer-id');
+            const answerContent = document.getElementById(answerId);
+            
+            // Toggle revealed state
+            answerContent.classList.toggle('revealed');
+            this.classList.toggle('revealed');
+            
+            // Update button text
+            if (answerContent.classList.contains('revealed')) {
+                this.innerHTML = '<span class="icon">▼</span> Hide Model Answer';
+            } else {
+                this.innerHTML = '<span class="icon">▶</span> Reveal Model Answer';
+            }
+            
+            // Smooth scroll to answer if revealing
+            if (answerContent.classList.contains('revealed')) {
+                setTimeout(() => {
+                    answerContent.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest' 
+                    });
+                }, 100);
+            }
+        });
+    });
+});
