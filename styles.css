@@ -688,3 +688,59 @@ hr {
         padding: 1.5rem 1rem;
     }
 }
+
+/* ============================================
+   ERROR CARDS (Common Errors Section)
+   ============================================ */
+.error-card {
+    background: #ffe6e6;
+    border-left: 4px solid #cc0000;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.error-card .error-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #cc0000;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.error-card .error-title::before {
+    content: "✕";
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.error-card .error-explanation {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ============================================
+   LINKING CARDS (Linking Questions Section)
+   ============================================ */
+.linking-card {
+    background: #e6f3ff;
+    border-left: 4px solid #004587;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.linking-card .linking-question {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #004587;
+    margin-bottom: 0.75rem;
+}
+
+.linking-card .linking-answer {
+    color: #333;
+    line-height: 1.7;
+}
+
