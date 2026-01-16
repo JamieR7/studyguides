@@ -968,3 +968,59 @@ hr {
         padding: 0.6rem;
     }
 }
+/* ============================================
+   REVEAL ANSWER BUTTON (DBQ & Paper 2)
+   ============================================ */
+
+/* Hide model answers by default */
+.model-answer-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Show when revealed */
+.model-answer-content.revealed {
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 1rem;
+}
+
+/* Reveal button styling */
+.reveal-answer-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0;
+    background: linear-gradient(135deg, #004587 0%, #002a52 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 69, 135, 0.2);
+}
+
+.reveal-answer-btn:hover {
+    background: linear-gradient(135deg, #003870 0%, #001f3f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 69, 135, 0.3);
+}
+
+.reveal-answer-btn:active {
+    transform: translateY(0);
+}
+
+/* Icon rotation when revealed */
+.reveal-answer-btn .icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-right: 0.5rem;
+}
+
+.reveal-answer-btn.revealed .icon {
+    transform: rotate(180deg);
+}
+
