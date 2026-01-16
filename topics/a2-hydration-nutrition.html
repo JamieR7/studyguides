@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A.2 Hydration & Nutrition | IB SEHS 2026</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23004587'/><text x='50' y='70' font-size='60' text-anchor='middle' font-weight='bold' fill='%23fbba07'>S</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <style>
@@ -17,6 +18,7 @@
             font-size: 0.85rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            margin-top: 3rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -25,7 +27,7 @@
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-left: 4px solid #004587;
             padding: 1rem 1.5rem;
-            margin: 0.75rem 0;
+            margin: 1.25rem 0;
             border-radius: 8px;
             transition: transform 0.2s, box-shadow 0.2s;
         }
@@ -52,7 +54,7 @@
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
-            margin: 2rem 0 1rem 0;
+            margin: 2.5rem 0 1.5rem 0;
             font-size: 1.2rem;
             font-weight: 600;
         }
@@ -62,7 +64,7 @@
             border: 3px solid #004587;
             border-radius: 12px;
             padding: 2rem;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             box-shadow: 0 4px 12px rgba(0,69,135,0.15);
         }
 
@@ -107,6 +109,20 @@
             transform: translateX(5px);
         }
 
+        /* Selected option styling */
+        .mcq-options li.selected {
+            background: #cce5ff !important;
+            border-left-color: #004587 !important;
+            font-weight: 600;
+            transform: translateX(5px);
+        }
+
+        .mcq-options li.selected::before {
+            content: "➤ ";
+            color: #004587;
+            font-weight: bold;
+        }
+
         .mcq-answer-box {
             background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
             border-left: 5px solid #28a745;
@@ -136,7 +152,7 @@
             background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
             border-left: 5px solid #fbba07;
             padding: 1.5rem;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(251,186,7,0.2);
         }
@@ -154,7 +170,7 @@
             background: linear-gradient(135deg, #e6f3ff 0%, #cce5ff 100%);
             border-left: 5px solid #004587;
             padding: 1.5rem;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,69,135,0.2);
         }
@@ -171,7 +187,7 @@
         .data-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             border-radius: 8px;
             overflow: hidden;
@@ -209,7 +225,7 @@
             border-radius: 8px;
             font-family: 'Courier New', monospace;
             font-size: 1.1rem;
-            margin: 1.5rem 0;
+            margin: 2.5rem 0;
             text-align: center;
             font-weight: 600;
         }
@@ -218,7 +234,7 @@
             background: #f8f9fa;
             padding: 1.5rem;
             border-radius: 8px;
-            margin: 1rem 0;
+            margin: 2rem 0;
         }
 
         .working-steps ol {
@@ -227,7 +243,7 @@
         }
 
         .working-steps li {
-            margin: 0.75rem 0;
+            margin: 1rem 0;
             font-family: 'Courier New', monospace;
         }
 
@@ -246,7 +262,7 @@
             background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
             padding: 2rem;
             border-radius: 12px;
-            margin: 1.5rem 0;
+            margin: 2.5rem 0;
         }
 
         .mechanism-steps ol {
@@ -259,7 +275,7 @@
             counter-increment: step-counter;
             position: relative;
             padding-left: 3.5rem;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
         }
 
         .mechanism-steps li::before {
@@ -283,7 +299,7 @@
             background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
             border-left: 5px solid #dc3545;
             padding: 1.5rem;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             border-radius: 8px;
         }
 
@@ -296,28 +312,13 @@
             font-size: 0.9rem;
         }
 
-        .progress-indicator {
-            background: #e9ecef;
-            height: 8px;
-            border-radius: 10px;
-            margin: 2rem 0;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            background: linear-gradient(90deg, #004587 0%, #fbba07 100%);
-            height: 100%;
-            border-radius: 10px;
-            transition: width 0.3s ease;
-        }
-
         .checklist {
             list-style: none;
             padding: 0;
         }
 
         .checklist li {
-            padding: 0.75rem 0.75rem 0.75rem 3rem;
+            padding: 1rem 0.75rem 1rem 3rem;
             position: relative;
             border-bottom: 1px solid #dee2e6;
         }
@@ -454,7 +455,7 @@
     </tbody>
 </table>
 
-<!-- Section 3: Command Terms - Shortened for space, include full version -->
+<!-- Section 3: Command Terms -->
 <span class="section-badge">🎯 Section 3</span>
 <h2>Command Terms Mastery</h2>
 
@@ -475,6 +476,14 @@
             <td>
                 <strong>Example:</strong> State one method used to measure hydration status.<br><br>
                 <strong>Model Answer:</strong> Tracking changes in body weight before and after exercise.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Explain</strong></td>
+            <td>Give a detailed account including reasons or causes.</td>
+            <td>
+                <strong>Example:</strong> Explain why the oxidative system is the dominant supplier of ATP at rest.<br><br>
+                <strong>Model Answer:</strong> The oxidative system is the dominant supplier of ATP at rest because it can metabolize fuel sources like fats and carbohydrates in the presence of oxygen to produce large amounts of ATP. This process is highly efficient and sustainable for prolonged periods, meeting the body's low-intensity energy demands without producing fatiguing by-products like lactate.
             </td>
         </tr>
         <tr>
@@ -517,9 +526,19 @@
     While the sensation of thirst is a signal to drink, it is often an unreliable and delayed indicator of the body's actual hydration needs. For exams, focus on objective measures like body weight change or urine colour.
 </div>
 
+<h3>A.2.3 Energy Systems</h3>
+
+<p>The body's capacity to perform any physical task is dictated by its ability to produce adenosine triphosphate (ATP), the universal energy currency of the cell. This is accomplished through three distinct but interconnected energy systems.</p>
+
+<div class="tip-box">
+    All three energy systems (phosphagen, glycolytic, oxidative) are <strong>always active</strong>. The "energy continuum" concept explains that their <em>relative contribution</em> changes based on the intensity and duration of physical activity.
+</div>
+
 <!-- Section 5: Practice Questions -->
 <span class="section-badge">✍️ Section 5</span>
 <h2>Practice Questions</h2>
+
+<p><strong>📌 Click on any answer option to reveal the correct answer and explanation!</strong></p>
 
 <h3>Paper 1A: Multiple Choice Questions</h3>
 
@@ -684,5 +703,8 @@
 
         </div>
     </div>
+
+    <!-- MCQ Interactive Script -->
+    <script src="../mcq-interaction.js"></script>
 </body>
 </html>
