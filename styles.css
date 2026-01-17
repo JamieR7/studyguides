@@ -999,3 +999,86 @@ hr {
         padding: 0.75rem;
     }
 }
+/* =====================================================
+   IMAGE COMPONENTS
+   ===================================================== */
+
+.study-image {
+    margin: 2.5rem auto;
+    padding: 0;
+    max-width: 100%;
+    text-align: center;
+}
+
+.study-image img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 69, 135, 0.2);
+    border: 3px solid #004587;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.study-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 69, 135, 0.3);
+}
+
+.study-image figcaption {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #555;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Image row (for side-by-side images) */
+.image-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2.5rem 0;
+}
+
+.image-row .study-image {
+    margin: 0;
+}
+
+/* Smaller images (add class="small-image" to figure) */
+.study-image.small-image img {
+    max-width: 400px;
+}
+
+/* Large images (add class="large-image" to figure) */
+.study-image.large-image img {
+    max-width: 100%;
+}
+
+/* Image within boxes (tip-box, note-box, etc.) */
+.tip-box .study-image img,
+.note-box .study-image img,
+.real-world-example .study-image img {
+    border-color: rgba(0, 69, 135, 0.3);
+    max-width: 500px;
+}
+
+/* =====================================================
+   RESPONSIVE IMAGE ADJUSTMENTS
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .study-image img {
+        border-width: 2px;
+    }
+    
+    .image-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .study-image figcaption {
+        font-size: 0.85rem;
+    }
+}
+
