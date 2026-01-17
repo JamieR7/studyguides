@@ -3,10 +3,10 @@
    ===================================================== */
 
 /* Reset & Base */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -14,13 +14,64 @@ body {
     background: linear-gradient(135deg, #004587 0%, #002a52 100%);
     color: #fff;
     min-height: 100vh;
-    padding: 2rem 1rem;
+    /* extra space at top for sticky header */
+    padding: 3.5rem 1rem 2rem;
     line-height: 1.6;
 }
 
-.container { 
-    max-width: 1100px; 
-    margin: 0 auto; 
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   STICKY TOPIC HEADER BAR WITH MENU
+   ===================================================== */
+
+.sticky-topic-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #004587 0%, #002a52 100%);
+    color: #fbba07;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.menu-btn {
+    background: rgba(251, 186, 7, 0.15);
+    color: #fbba07;
+    text-decoration: none;
+    padding: 0.35rem 0.9rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(251, 186, 7, 0.3);
+    white-space: nowrap;
+}
+
+.menu-btn:hover {
+    background: rgba(251, 186, 7, 0.25);
+    border-color: #fbba07;
+    transform: translateY(-1px);
+}
+
+.header-topic-title {
+    color: #fbba07;
+    letter-spacing: 0.5px;
+    flex: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    /* visually balances menu on the left */
+    margin-right: 120px;
 }
 
 /* =====================================================
@@ -46,7 +97,7 @@ body {
     font-weight: 300;
 }
 
-/* Topic Navigation Bar */
+/* Topic Navigation Bar (on topic pages) */
 .topic-nav {
     background: rgba(255, 255, 255, 0.1);
     padding: 1rem 1.5rem;
@@ -461,7 +512,6 @@ body {
    MECHANISM STEPS
    ===================================================== */
 
-/* Box */
 .mechanism-steps {
     background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
     padding: 2rem;
@@ -469,7 +519,7 @@ body {
     margin: 2.5rem 0;
 }
 
-/* NUMBERED steps – use <ol> in HTML for these */
+/* NUMBERED steps – use <ol> in HTML */
 .mechanism-steps ol {
     counter-reset: step-counter;
     list-style: none;
@@ -501,7 +551,7 @@ body {
     font-size: 1rem;
 }
 
-/* NORMAL bullet lists inside mechanism-steps */
+/* Bullet lists inside mechanism-steps */
 .mechanism-steps ul {
     list-style: disc;
     margin-left: 1.5rem;
@@ -546,19 +596,31 @@ body {
 
 .working-steps {
     background: #f8f9fa;
+    border: 2px solid #6c757d;
+    border-radius: 10px;
     padding: 1.5rem;
-    border-radius: 8px;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
+}
+
+.working-steps h4 {
+    color: #004587;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
 .working-steps ol {
-    margin-left: 0;
-    padding-left: 1.5rem;
+    margin-left: 1.5rem;
+    line-height: 1.9;
 }
 
 .working-steps li {
-    margin: 1rem 0;
-    font-family: 'Courier New', monospace;
+    margin: 0.75rem 0;
+    color: #2c3e50;
+}
+
+.working-steps li strong {
+    color: #004587;
+    font-weight: 600;
 }
 
 /* =====================================================
@@ -629,69 +691,9 @@ hr {
 }
 
 /* =====================================================
-   RESPONSIVE DESIGN
+   ERROR CARDS (Common Errors)
    ===================================================== */
 
-@media (max-width: 768px) {
-    body {
-        padding: 1rem 0.5rem;
-    }
-    
-    .site-header h1 {
-        font-size: 2rem;
-    }
-    
-    .topic-content-wrapper {
-        padding: 2rem 1.5rem;
-    }
-    
-    .topic-content-wrapper h1 {
-        font-size: 1.8rem;
-    }
-    
-    .topic-content-wrapper h2 {
-        font-size: 1.5rem;
-    }
-    
-    .topic-number {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-    
-    .topic-content-wrapper table,
-    .data-table {
-        font-size: 0.9rem;
-    }
-    
-    .mcq-container {
-        padding: 1.5rem 1rem;
-    }
-    
-    .mechanism-steps ol li {
-        padding-left: 3rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .topic-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .topic-nav {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .topic-content-wrapper {
-        padding: 1.5rem 1rem;
-    }
-}
-
-/* ============================================
-   ERROR CARDS (Common Errors Section)
-   ============================================ */
 .error-card {
     background: #ffe6e6;
     border-left: 4px solid #cc0000;
@@ -721,9 +723,10 @@ hr {
     line-height: 1.6;
 }
 
-/* ============================================
-   LINKING CARDS (Linking Questions Section)
-   ============================================ */
+/* =====================================================
+   LINKING CARDS (Linking Questions)
+   ===================================================== */
+
 .linking-card {
     background: #e6f3ff;
     border-left: 4px solid #004587;
@@ -744,9 +747,9 @@ hr {
     line-height: 1.7;
 }
 
-/* ============================================
+/* =====================================================
    PAPER 1B: DATA-BASED QUESTIONS (DBQ)
-   ============================================ */
+   ===================================================== */
 
 .dbq-container {
     background: #ffffff;
@@ -823,9 +826,9 @@ hr {
     background: #e9f7ef;
 }
 
-/* ============================================
+/* =====================================================
    PAPER 2: EXTENDED RESPONSE QUESTIONS
-   ============================================ */
+   ===================================================== */
 
 .paper2-container {
     background: #ffffff;
@@ -859,9 +862,9 @@ hr {
     letter-spacing: 0.5px;
 }
 
-/* ============================================
-   MODEL ANSWERS (Used in both DBQ and Paper 2)
-   ============================================ */
+/* =====================================================
+   MODEL ANSWERS (DBQ & Paper 2)
+   ===================================================== */
 
 .model-answer {
     background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
@@ -882,10 +885,21 @@ hr {
     margin-bottom: 1rem;
 }
 
+/* hidden by default; JS toggles .revealed */
 .model-answer-content {
     color: #1a1a1a;
     line-height: 1.8;
     font-size: 0.98rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.model-answer-content.revealed {
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 1rem;
 }
 
 .model-answer-content strong {
@@ -893,101 +907,10 @@ hr {
     font-weight: 600;
 }
 
-/* Mark allocation styling within model answers */
-.model-answer-content strong[style*="[1 mark]"]::after {
-    content: " ";
-}
+/* =====================================================
+   REVEAL ANSWER BUTTON
+   ===================================================== */
 
-/* ============================================
-   WORKING STEPS BOX (for calculations)
-   ============================================ */
-
-.working-steps {
-    background: #f8f9fa;
-    border: 2px solid #6c757d;
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-}
-
-.working-steps h4 {
-    color: #004587;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.working-steps ol {
-    margin-left: 1.5rem;
-    line-height: 1.9;
-}
-
-.working-steps li {
-    margin: 0.75rem 0;
-    color: #2c3e50;
-}
-
-.working-steps li strong {
-    color: #004587;
-    font-weight: 600;
-}
-
-/* ============================================
-   RESPONSIVE ADJUSTMENTS
-   ============================================ */
-
-@media (max-width: 768px) {
-    .dbq-container,
-    .paper2-container {
-        padding: 1.25rem;
-        margin: 1.5rem 0;
-    }
-    
-    .dbq-number,
-    .paper2-number {
-        display: block;
-        margin-bottom: 0.75rem;
-        text-align: center;
-    }
-    
-    .marks-badge {
-        display: block;
-        margin-top: 0.5rem;
-        text-align: center;
-    }
-    
-    .model-answer {
-        padding: 1.25rem;
-    }
-    
-    .dbq-data-table {
-        font-size: 0.85rem;
-    }
-    
-    .dbq-data-table th,
-    .dbq-data-table td {
-        padding: 0.6rem;
-    }
-}
-/* ============================================
-   REVEAL ANSWER BUTTON (DBQ & Paper 2)
-   ============================================ */
-
-/* Hide model answers by default */
-.model-answer-content {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.4s ease-in-out;
-}
-
-/* Show when revealed */
-.model-answer-content.revealed {
-    max-height: 2000px;
-    opacity: 1;
-    margin-top: 1rem;
-}
-
-/* Reveal button styling */
 .reveal-answer-btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -1013,7 +936,6 @@ hr {
     transform: translateY(0);
 }
 
-/* Icon rotation when revealed */
 .reveal-answer-btn .icon {
     display: inline-block;
     transition: transform 0.3s ease;
@@ -1024,3 +946,100 @@ hr {
     transform: rotate(180deg);
 }
 
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 3.5rem 0.5rem 1.5rem;
+    }
+
+    .site-header h1 {
+        font-size: 2rem;
+    }
+
+    .topic-content-wrapper {
+        padding: 2rem 1.5rem;
+    }
+
+    .topic-content-wrapper h1 {
+        font-size: 1.8rem;
+    }
+
+    .topic-content-wrapper h2 {
+        font-size: 1.5rem;
+    }
+
+    .topic-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .topic-content-wrapper table,
+    .data-table {
+        font-size: 0.9rem;
+    }
+
+    .mcq-container,
+    .dbq-container,
+    .paper2-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .mechanism-steps ol li {
+        padding-left: 3rem;
+    }
+
+    .sticky-topic-header {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .menu-btn {
+        padding: 0.3rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .header-topic-title {
+        font-size: 0.8rem;
+        margin-right: 90px;
+    }
+
+    .dbq-data-table {
+        font-size: 0.85rem;
+    }
+
+    .dbq-data-table th,
+    .dbq-data-table td {
+        padding: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .topic-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .topic-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .topic-content-wrapper {
+        padding: 1.5rem 1rem;
+    }
+
+    .header-topic-title {
+        font-size: 0.75rem;
+        margin-right: 70px;
+    }
+
+    .menu-btn {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.6rem;
+    }
+}
