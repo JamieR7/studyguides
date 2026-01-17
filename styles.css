@@ -14,7 +14,7 @@ body {
     background: linear-gradient(135deg, #004587 0%, #002a52 100%);
     color: #fff;
     min-height: 100vh;
-    padding: 2rem 1rem;  /* ← RESTORED original padding for index page */
+    padding: 2rem 1rem;
     line-height: 1.6;
 }
 
@@ -69,9 +69,9 @@ body {
     margin: 0 1rem;
 }
 
-/* Push container down when sticky header exists */
+/* Push container down ONLY when sticky header exists */
 .sticky-topic-header ~ .container {
-    margin-top: 60px;  /* ← ADDS space only when sticky header is present */
+    margin-top: 60px;
 }
 
 /* =====================================================
@@ -237,4 +237,765 @@ body {
     line-height: 1.7;
 }
 
-/* ... (REST OF THE CSS REMAINS THE SAME AS BEFORE) ... */
+/* =====================================================
+   TYPOGRAPHY
+   ===================================================== */
+
+.topic-content-wrapper h1 {
+    color: #004587;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.topic-content-wrapper h2 {
+    color: #004587;
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #fbba07;
+}
+
+.topic-content-wrapper h3 {
+    color: #004587;
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.topic-content-wrapper h4 {
+    color: #004587;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.topic-content-wrapper p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.topic-content-wrapper strong {
+    color: #004587;
+    font-weight: 600;
+}
+
+/* =====================================================
+   LISTS
+   ===================================================== */
+
+.topic-content-wrapper ul,
+.topic-content-wrapper ol {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.topic-content-wrapper li {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   TABLES
+   ===================================================== */
+
+.topic-content-wrapper table,
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2.5rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.topic-content-wrapper th,
+.data-table th {
+    background: linear-gradient(135deg, #004587 0%, #003366 100%);
+    color: #fff;
+    padding: 1.25rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.topic-content-wrapper td,
+.data-table td {
+    padding: 1.25rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.topic-content-wrapper tbody tr:hover,
+.data-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.topic-content-wrapper tr:nth-child(even),
+.data-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* =====================================================
+   ENHANCED TOPIC PAGE COMPONENTS
+   ===================================================== */
+
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #fbba07 0%, #e0a800 100%);
+    color: #004587;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.key-term-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 4px solid #004587;
+    padding: 1rem 1.5rem;
+    margin: 1.25rem 0;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.key-term-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0,69,135,0.2);
+}
+
+.term-title {
+    color: #004587;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+}
+
+.term-definition {
+    color: #555;
+    line-height: 1.6;
+}
+
+.subsection-header {
+    background: linear-gradient(135deg, #004587 0%, #003366 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    margin: 2.5rem 0 1.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* =====================================================
+   MCQ STYLING
+   ===================================================== */
+
+.mcq-container {
+    background: #fff;
+    border: 3px solid #004587;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 4px 12px rgba(0,69,135,0.15);
+}
+
+.mcq-number {
+    background: #004587;
+    color: #fbba07;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.mcq-question {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.mcq-options {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.mcq-options li {
+    background: #f8f9fa;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0;
+    border-radius: 8px;
+    border-left: 4px solid #dee2e6;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.mcq-options li:hover {
+    background: #e9ecef;
+    border-left-color: #004587;
+    transform: translateX(5px);
+}
+
+.mcq-answer-box {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border-left: 5px solid #28a745;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.mcq-answer-label {
+    color: #155724;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.mcq-explanation {
+    color: #155724;
+    line-height: 1.7;
+}
+
+.mcq-explanation strong {
+    color: #0d4318;
+}
+
+/* =====================================================
+   TIP & NOTE BOXES
+   ===================================================== */
+
+.tip-box {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+    border-left: 5px solid #fbba07;
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(251,186,7,0.2);
+    color: #333;
+}
+
+.note-box {
+    background: linear-gradient(135deg, #e6f3ff 0%, #cce5ff 100%);
+    border-left: 5px solid #004587;
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,69,135,0.2);
+    color: #333;
+}
+
+/* =====================================================
+   MECHANISM STEPS
+   ===================================================== */
+
+.mechanism-steps {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2.5rem 0;
+}
+
+.mechanism-steps ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mechanism-steps ol li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 3.5rem;
+    margin: 2rem 0;
+}
+
+.mechanism-steps ol li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: -5px;
+    background: #004587;
+    color: #fbba07;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.mechanism-steps ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+}
+
+/* =====================================================
+   REAL-WORLD EXAMPLES
+   ===================================================== */
+
+.real-world-example {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+    border-left: 5px solid #dc3545;
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+    border-radius: 8px;
+    color: #333;
+}
+
+/* =====================================================
+   FORMULA & CALCULATIONS
+   ===================================================== */
+
+.formula-box {
+    background: #f0f0f0;
+    border: 2px solid #004587;
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    margin: 2.5rem 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.working-steps {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.working-steps h4 {
+    color: #004587;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.working-steps ol {
+    margin-left: 0;
+    padding-left: 1.5rem;
+}
+
+.working-steps ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.working-steps li {
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+}
+
+/* =====================================================
+   BADGES & LABELS
+   ===================================================== */
+
+.hl-badge {
+    background: #ff6b6b;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+/* =====================================================
+   CHECKLIST
+   ===================================================== */
+
+.checklist {
+    list-style: none;
+    padding: 0;
+}
+
+.checklist li {
+    padding: 1rem 0.75rem 1rem 3rem;
+    position: relative;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0.75rem;
+    font-size: 1.5rem;
+    color: #004587;
+}
+
+/* ============================================
+   ERROR CARDS (Common Errors Section)
+   ============================================ */
+
+.error-card {
+    background: #ffe6e6;
+    border-left: 4px solid #cc0000;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.error-card .error-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #cc0000;
+    margin-bottom: 0.5rem;
+}
+
+.error-card .error-explanation {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ============================================
+   LINKING CARDS (Linking Questions Section)
+   ============================================ */
+
+.linking-card {
+    background: #e6f3ff;
+    border-left: 4px solid #004587;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.linking-card .linking-question {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #004587;
+    margin-bottom: 0.75rem;
+}
+
+.linking-card .linking-answer {
+    color: #333;
+    line-height: 1.7;
+}
+
+/* ============================================
+   PAPER 1B: DATA-BASED QUESTIONS (DBQ)
+   ============================================ */
+
+.dbq-container {
+    background: #ffffff;
+    border: 3px solid #28a745;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
+}
+
+.dbq-number {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dbq-intro {
+    background: #f8f9fa;
+    padding: 1.25rem;
+    border-left: 4px solid #28a745;
+    margin: 1.5rem 0;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #2c3e50;
+}
+
+.dbq-part {
+    margin: 1.5rem 0 1rem 0;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.dbq-part-label {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 700;
+    margin-right: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.dbq-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.dbq-data-table thead {
+    background: #28a745;
+    color: white;
+}
+
+.dbq-data-table th,
+.dbq-data-table td {
+    padding: 0.9rem;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.dbq-data-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.dbq-data-table tbody tr:hover {
+    background: #e9f7ef;
+}
+
+/* ============================================
+   PAPER 2: EXTENDED RESPONSE QUESTIONS
+   ============================================ */
+
+.paper2-container {
+    background: #ffffff;
+    border: 3px solid #28a745;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 6px 16px rgba(40, 167, 69, 0.2);
+    position: relative;
+}
+
+.paper2-number {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-right: 1rem;
+}
+
+.marks-badge {
+    display: inline-block;
+    background: #fbba07;
+    color: #1a1a1a;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   MODEL ANSWERS (Used in both DBQ and Paper 2)
+   ============================================ */
+
+.model-answer {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
+    border: 2px solid #004587;
+    border-radius: 10px;
+    padding: 1.75rem;
+    margin: 1.5rem 0;
+}
+
+.model-answer-label {
+    display: inline-block;
+    background: #004587;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.model-answer-content {
+    color: #1a1a1a;
+    line-height: 1.8;
+    font-size: 0.98rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.model-answer-content.revealed {
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 1rem;
+}
+
+.model-answer-content strong {
+    color: #004587;
+    font-weight: 600;
+}
+
+/* ============================================
+   REVEAL ANSWER BUTTON (DBQ & Paper 2)
+   ============================================ */
+
+.reveal-answer-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0;
+    background: linear-gradient(135deg, #004587 0%, #002a52 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 69, 135, 0.2);
+}
+
+.reveal-answer-btn:hover {
+    background: linear-gradient(135deg, #003870 0%, #001f3f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 69, 135, 0.3);
+}
+
+.reveal-answer-btn:active {
+    transform: translateY(0);
+}
+
+.reveal-answer-btn .icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-right: 0.5rem;
+}
+
+.reveal-answer-btn.revealed .icon {
+    transform: rotate(180deg);
+}
+
+/* =====================================================
+   HORIZONTAL RULE
+   ===================================================== */
+
+hr {
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 2rem 0;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+    
+    .sticky-topic-header {
+        padding: 0.5rem 1rem;
+        height: auto;
+    }
+    
+    .sticky-topic-header ~ .container {
+        margin-top: 70px;
+    }
+    
+    .header-topic-title {
+        font-size: 0.9rem;
+    }
+    
+    .site-header h1 {
+        font-size: 2rem;
+    }
+    
+    .topic-content-wrapper {
+        padding: 2rem 1.5rem;
+    }
+    
+    .topic-content-wrapper h1 {
+        font-size: 1.8rem;
+    }
+    
+    .topic-content-wrapper h2 {
+        font-size: 1.5rem;
+    }
+    
+    .topic-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .topic-content-wrapper table,
+    .data-table {
+        font-size: 0.9rem;
+    }
+    
+    .mcq-container,
+    .dbq-container,
+    .paper2-container {
+        padding: 1.25rem;
+        margin: 1.5rem 0;
+    }
+    
+    .dbq-number,
+    .paper2-number {
+        display: block;
+        margin-bottom: 0.75rem;
+        text-align: center;
+    }
+    
+    .marks-badge {
+        display: block;
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+    
+    .model-answer {
+        padding: 1.25rem;
+    }
+    
+    .dbq-data-table {
+        font-size: 0.85rem;
+    }
+    
+    .dbq-data-table th,
+    .dbq-data-table td {
+        padding: 0.6rem;
+    }
+    
+    .mechanism-steps ol li {
+        padding-left: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .topic-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .topic-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .topic-content-wrapper {
+        padding: 1.5rem 1rem;
+    }
+    
+    .sticky-topic-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem;
+    }
+}
