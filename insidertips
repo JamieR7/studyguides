@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Strategy & Predictions | IB SEHS 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Extra styling for the prediction tables to highlight importance */
+        .priority-high { color: #d32f2f; font-weight: 700; }
+        .priority-med { color: #f57c00; font-weight: 600; }
+        .priority-skill { color: #0288d1; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="sticky-topic-header">
+        <a href="../index.html" class="menu-btn">☰ Menu</a>
+        <span class="header-topic-title">2026 Exam Strategy Guide</span>
+    </div>
+
+    <div class="container">
+        <nav class="topic-nav">
+            <a href="../index.html" class="back-link">← Back to Home</a>
+            <div class="topic-title-nav">Strategy & Predictions</div>
+        </nav>
+
+        <div class="topic-content-wrapper">
+            <h1>Exam Strategy & Marks Prediction</h1>
+            <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">Where to focus your revision for the 2026 Syllabus.</p>
+
+            <span class="section-badge">📊 Section 1</span>
+            <h2>Projected Exam Weighting</h2>
+            <p>Based on the IB's recommended teaching hours, we can predict where the majority of marks will be allocated. Use this to prioritize your revision time.</p>
+            
+            <div class="note-box">
+                <strong>Strategy Tip:</strong> While <strong>Theme A</strong> has the most content, do not ignore the <strong>Experimental Skills</strong> (Paper 1B). These are "skill-based" marks that do not require rote memorization, only practice.
+            </div>
+
+            <h3>Standard Level (SL) Overview</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Theme</th>
+                        <th>Focus</th>
+                        <th>Projected Marks</th>
+                        <th>Priority Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Theme A</strong></td>
+                        <td>Physiology & Nutrition</td>
+                        <td>~35 - 40 Marks</td>
+                        <td class="priority-high">🟥 Critical</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Theme B</strong></td>
+                        <td>Biomechanics</td>
+                        <td>~25 - 30 Marks</td>
+                        <td class="priority-med">🟧 High</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Theme C</strong></td>
+                        <td>Psychology</td>
+                        <td>~25 - 30 Marks</td>
+                        <td class="priority-med">🟧 High</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Skills</strong></td>
+                        <td>Data Analysis (Paper 1B)</td>
+                        <td>~15 - 20 Marks</td>
+                        <td class="priority-skill">🟦 Skill-Based</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <span class="section-badge">🔮 Section 2</span>
+            <h2>Detailed Sub-Topic Predictions</h2>
+            <p>Below is a breakdown of where specific calculation and long-answer questions are most likely to appear.</p>
+
+            <h3>Theme A: Physiology (The Foundation)</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width:25%">Sub-Topic</th>
+                        <th style="width:20%">Est. Marks</th>
+                        <th>📝 Insider Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A.1 Communication</td>
+                        <td>5 - 8</td>
+                        <td>Focus on <strong>homeostasis</strong> and feedback loops.</td>
+                    </tr>
+                    <tr>
+                        <td>A.2 Hydration</td>
+                        <td>8 - 12</td>
+                        <td>High probability for <strong>Paper 1B</strong> (interpreting hydration studies).</td>
+                    </tr>
+                    <tr>
+                        <td>A.3 Response</td>
+                        <td>12 - 18</td>
+                        <td><strong>The Big One.</strong> Expect a long Paper 2 question on Energy Systems or VO2 max.</td>
+                    </tr>
+                    <tr>
+                        <td>A.4 Adaptations (HL)</td>
+                        <td>10 - 15</td>
+                        <td>HL Only: Master chronic adaptations to training.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Theme B: Biomechanics (The Math)</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width:25%">Sub-Topic</th>
+                        <th style="width:20%">Est. Marks</th>
+                        <th>📝 Insider Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>B.1 Movement</td>
+                        <td>5 - 8</td>
+                        <td>Easy marks if you memorize the <strong>Lever Classes</strong>.</td>
+                    </tr>
+                    <tr>
+                        <td>B.2 Forces</td>
+                        <td>10 - 15</td>
+                        <td><strong>Money Topic.</strong> Almost guaranteed to have a calculation question on Newton's Laws.</td>
+                    </tr>
+                    <tr>
+                        <td>B.3/B.4 (HL)</td>
+                        <td>16 - 24</td>
+                        <td>Fluid Dynamics (Drag/Lift) is a favorite for diagram questions.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <span class="section-badge">🧩 Section 3</span>
+            <h2>What to Expect: Sample Questions</h2>
+            <p>The new 2026 exams are split into three distinct styles. Click below to see examples of what you will face.</p>
+
+            <div class="paper2-container">
+                <span class="paper2-number">Paper 1A | Knowledge</span>
+                <span class="marks-badge">MCQ</span>
+                <div class="mcq-question"><strong>Topic A.1:</strong> Which component of the homeostatic control mechanism is responsible for detecting a deviation from the set point?</div>
+                <ul class="mcq-options">
+                    <li>A. Effector</li>
+                    <li>B. Control Centre</li>
+                    <li>C. Sensor (Receptor)</li>
+                    <li>D. Negative Feedback Loop</li>
+                </ul>
+                <button class="reveal-answer-btn" data-answer-id="demo-q1"><span class="icon">▼</span> Reveal Answer</button>
+                <div class="model-answer">
+                    <span class="model-answer-label">✓ Correct Answer: C</span>
+                    <div class="model-answer-content" id="demo-q1">
+                        <strong>Explanation:</strong> The Sensor (Receptor) detects changes in the internal environment. The Control Centre decides the response, and the Effector carries it out.
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper2-container">
+                <span class="paper2-number">Paper 1B | Data Analysis</span>
+                <span class="marks-badge">3 Marks</span>
+                <div class="dbq-intro">
+                    <strong>Topic A.2 Scenario:</strong> A study compared sleep habits. Elite athletes: 49.5% reported "No problems". Sub-Elite: 25.0% reported "No problems".<br><br>
+                    <strong>(a)</strong> Calculate the difference in percentage between the two groups. [1]<br>
+                    <strong>(b)</strong> Distinguish between the two groups based on the data. [2]
+                </div>
+                <button class="reveal-answer-btn" data-answer-id="demo-q2"><span class="icon">▼</span> Reveal Model Answer</button>
+                <div class="model-answer">
+                    <span class="model-answer-label">✓ Model Answer</span>
+                    <div class="model-answer-content" id="demo-q2">
+                        <strong>(a)</strong> 49.5% - 25.0% = <strong>24.5%</strong><br><br>
+                        <strong>(b)</strong> Elite athletes reported significantly fewer problems staying awake compared to sub-elite athletes. Almost twice as many elite athletes (49.5%) had "no problems" compared to the sub-elite group (25%).
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper2-container">
+                <span class="paper2-number">Paper 2 | Extended Response</span>
+                <span class="marks-badge">4 Marks</span>
+                <div class="mcq-question"><strong>Topic A.3:</strong> Explain the nervous control of ventilation during exercise.</div>
+                <button class="reveal-answer-btn" data-answer-id="demo-q3"><span class="icon">▼</span> Reveal Model Answer</button>
+                <div class="model-answer">
+                    <span class="model-answer-label">✓ Model Answer</span>
+                    <div class="model-answer-content" id="demo-q3">
+                        1. <strong>Detection:</strong> Low pH and high CO2 are detected by chemoreceptors.<br>
+                        2. <strong>Proprioception:</strong> Proprioceptors detect increased muscle movement.<br>
+                        3. <strong>Processing:</strong> Receptors signal the respiratory centre in the medulla oblongata.<br>
+                        4. <strong>Action:</strong> Impulses sent via the phrenic nerve stimulate the diaphragm/intercostals to increase breathing rate/depth.
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin:3rem 0; padding:2rem; background:linear-gradient(135deg,#004587 0%,#002a52 100%); border-radius:12px; color:#fff;">
+                <h3 style="color:#fbba07; margin-bottom:1rem;">Ready to start?</h3>
+                <p style="margin:0;">Select a Topic from the menu to dive into specific content and practice questions.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../mcq-interaction.js"></script>
+</body>
+</html>
