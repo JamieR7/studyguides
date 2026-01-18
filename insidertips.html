@@ -7,10 +7,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        /* Extra styling for the prediction tables to highlight importance */
-        .priority-high { color: #d32f2f; font-weight: 700; }
-        .priority-med { color: #f57c00; font-weight: 600; }
-        .priority-skill { color: #0288d1; font-weight: 600; }
+        /* Priority Labels for Prediction Tables */
+        .priority-high { 
+            color: #d32f2f; 
+            font-weight: 700; 
+            background: rgba(211, 47, 47, 0.08);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            display: inline-block;
+        }
+        .priority-med { 
+            color: #e65100;
+            font-weight: 700; 
+            background: rgba(255, 152, 0, 0.1);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            display: inline-block;
+        }
+        .priority-skill { 
+            color: #0277bd; 
+            font-weight: 700; 
+            background: rgba(3, 169, 244, 0.1);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            display: inline-block;
+        }
+        /* Mobile Table Scrolling */
+        @media (max-width: 768px) {
+            .data-table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .data-table td:last-child {
+                white-space: normal;
+                min-width: 250px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -37,7 +71,6 @@
                 <strong>Strategy Tip:</strong> While <strong>Theme A</strong> has the most content, do not ignore the <strong>Experimental Skills</strong> (Paper 1B). These are "skill-based" marks that do not require rote memorization, only practice.
             </div>
 
-            <h3>Standard Level (SL) Overview</h3>
             <table class="data-table">
                 <thead>
                     <tr>
@@ -77,7 +110,7 @@
 
             <span class="section-badge">🔮 Section 2</span>
             <h2>Detailed Sub-Topic Predictions</h2>
-            <p>Below is a breakdown of where specific calculation and long-answer questions are most likely to appear.</p>
+            <p>Below is a breakdown of where specific calculation and long-answer questions are most likely to appear, based on the textbook chapters.</p>
 
             <h3>Theme A: Physiology (The Foundation)</h3>
             <table class="data-table">
@@ -85,29 +118,24 @@
                     <tr>
                         <th style="width:25%">Sub-Topic</th>
                         <th style="width:20%">Est. Marks</th>
-                        <th>📝 Insider Tip</th>
+                        <th>📝 Insider Tip (Source Based)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>A.1 Communication</td>
+                        <td><strong>A.1 Communication</strong></td>
                         <td>5 - 8</td>
-                        <td>Focus on <strong>homeostasis</strong> and feedback loops.</td>
+                        <td>Focus on <strong>homeostasis</strong>, feedback loops, and up/down regulation.</td>
                     </tr>
                     <tr>
-                        <td>A.2 Hydration</td>
+                        <td><strong>A.2 Hydration & Nutrition</strong></td>
                         <td>8 - 12</td>
-                        <td>High probability for <strong>Paper 1B</strong> (interpreting hydration studies).</td>
+                        <td>High probability for <strong>Paper 1B</strong> (e.g., interpreting hydration studies or energy expenditure tables).</td>
                     </tr>
                     <tr>
-                        <td>A.3 Response</td>
+                        <td><strong>A.3 Response</strong></td>
                         <td>12 - 18</td>
-                        <td><strong>The Big One.</strong> Expect a long Paper 2 question on Energy Systems or VO2 max.</td>
-                    </tr>
-                    <tr>
-                        <td>A.4 Adaptations (HL)</td>
-                        <td>10 - 15</td>
-                        <td>HL Only: Master chronic adaptations to training.</td>
+                        <td><strong>The Big One.</strong> Expect questions on training adaptations, fatigue, and the recovery process.</td>
                     </tr>
                 </tbody>
             </table>
@@ -118,31 +146,69 @@
                     <tr>
                         <th style="width:25%">Sub-Topic</th>
                         <th style="width:20%">Est. Marks</th>
-                        <th>📝 Insider Tip</th>
+                        <th>📝 Insider Tip (Source Based)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>B.1 Movement</td>
+                        <td><strong>B.1 Generating Movement</strong></td>
                         <td>5 - 8</td>
-                        <td>Easy marks if you memorize the <strong>Lever Classes</strong>.</td>
+                        <td>Easy marks if you memorize the <strong>Lever Classes</strong> and planes/axes of movement.</td>
                     </tr>
                     <tr>
-                        <td>B.2 Forces</td>
+                        <td><strong>B.2 Forces & Motion</strong></td>
                         <td>10 - 15</td>
-                        <td><strong>Money Topic.</strong> Almost guaranteed to have a calculation question on Newton's Laws.</td>
+                        <td><strong>Money Topic.</strong> Newton's Laws and Projectile Motion are almost guaranteed to appear.</td>
                     </tr>
                     <tr>
-                        <td>B.3/B.4 (HL)</td>
-                        <td>16 - 24</td>
-                        <td>Fluid Dynamics (Drag/Lift) is a favorite for diagram questions.</td>
+                        <td><strong>B.3 Injury</strong></td>
+                        <td>8 - 12</td>
+                        <td>Focus on the difference between acute/chronic injuries and prevention strategies.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Theme C: Psychology (The Mind)</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width:25%">Sub-Topic</th>
+                        <th style="width:20%">Est. Marks</th>
+                        <th>📝 Insider Tip (Source Based)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>C.1 Individual Differences</strong></td>
+                        <td>5 - 8</td>
+                        <td>Know the definition of <strong>Mental Toughness</strong> and Self-Fulfilling Prophecy.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>C.2 Motor Learning</strong></td>
+                        <td>8 - 12</td>
+                        <td>Transfer of learning and the "Psychological Refractory Period" are key definitions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>C.3 Motivation</strong></td>
+                        <td>8 - 12</td>
+                        <td>Be ready to discuss <strong>Goal Orientation Theory</strong> (Task vs. Ego).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>C.4 Stress & Coping</strong></td>
+                        <td>8 - 12</td>
+                        <td>Arousal/Anxiety curves and coping strategies (e.g., progressive relaxation).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>C.5 Psychological Skills</strong></td>
+                        <td>10 - 15</td>
+                        <td><strong>High Value.</strong> The <strong>PETTLEP</strong> model of imagery and Goal Setting (SMART goals) are classic Paper 2 topics.</td>
                     </tr>
                 </tbody>
             </table>
 
             <span class="section-badge">🧩 Section 3</span>
             <h2>What to Expect: Sample Questions</h2>
-            <p>The new 2026 exams are split into three distinct styles. Click below to see examples of what you will face.</p>
+            <p>The new 2026 exams are split into three distinct styles. Click below to see examples derived from your textbook content.</p>
 
             <div class="paper2-container">
                 <span class="paper2-number">Paper 1A | Knowledge</span>
@@ -184,7 +250,7 @@
             <div class="paper2-container">
                 <span class="paper2-number">Paper 2 | Extended Response</span>
                 <span class="marks-badge">4 Marks</span>
-                <div class="mcq-question"><strong>Topic A.3:</strong> Explain the nervous control of ventilation during exercise.</div>
+                <div class="mcq-question"><strong>Topic A.1:</strong> Explain the nervous control of ventilation during exercise.</div>
                 <button class="reveal-answer-btn" data-answer-id="demo-q3"><span class="icon">▼</span> Reveal Model Answer</button>
                 <div class="model-answer">
                     <span class="model-answer-label">✓ Model Answer</span>
@@ -206,5 +272,6 @@
     </div>
 
     <script src="../mcq-interaction.js"></script>
+    <script src="../navigation.js"></script>
 </body>
 </html>
