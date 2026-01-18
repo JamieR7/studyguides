@@ -1082,3 +1082,84 @@ hr {
     }
 }
 
+/* =====================================================
+   ADDITIONS FOR EXAM STRATEGY PAGE
+   ===================================================== */
+
+/* Priority Labels for Prediction Tables */
+.priority-high { 
+    color: #d32f2f; 
+    font-weight: 700; 
+    background: rgba(211, 47, 47, 0.08); /* Light red bg */
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    display: inline-block;
+}
+
+.priority-med { 
+    color: #e65100; /* Darker orange for better contrast */
+    font-weight: 700; 
+    background: rgba(255, 152, 0, 0.1); /* Light orange bg */
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    display: inline-block;
+}
+
+.priority-skill { 
+    color: #0277bd; 
+    font-weight: 700; 
+    background: rgba(3, 169, 244, 0.1); /* Light blue bg */
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    display: inline-block;
+}
+
+/* Responsive Tables (Scroll horizontally on mobile) */
+@media (max-width: 768px) {
+    .topic-content-wrapper {
+        overflow-x: hidden; /* Prevent page sway */
+    }
+    
+    .data-table, .dbq-data-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Enable horizontal scroll */
+        white-space: nowrap; /* Prevent awkward wrapping */
+        -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+    }
+    
+    /* Allow text to wrap in the "Insider Tip" column specifically */
+    .data-table td:last-child {
+        white-space: normal;
+        min-width: 200px;
+    }
+}
+
+/* =====================================================
+   PRINT STYLES (For students printing guides)
+   ===================================================== */
+@media print {
+    .sticky-topic-header, .topic-nav, .reveal-answer-btn {
+        display: none !important;
+    }
+    
+    .topic-content-wrapper {
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        background: #fff;
+        color: #000;
+        padding: 0;
+    }
+    
+    /* Force expand answers when printing */
+    .model-answer-content {
+        max-height: none !important;
+        opacity: 1 !important;
+        display: block !important;
+    }
+}
+
