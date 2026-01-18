@@ -5,110 +5,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam Strategy & Predictions | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
     
     <style>
-        /* --- METHODOLOGY BOX --- */
+        /* --- METHODOLOGY DASHBOARD --- */
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
         .methodology-box {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-left: 5px solid #004587;
             padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            color: #333;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-        .methodology-title { font-weight: 700; color: #004587; display: block; margin-bottom: 0.5rem; }
-        .calc-row { display: flex; justify-content: space-between; margin: 0.5rem 0; border-bottom: 1px dashed #ccc; padding-bottom: 0.25rem; }
-        .calc-label { color: #555; }
-        .calc-value { font-weight: 700; color: #333; }
 
-        /* --- STRATEGY CARD LAYOUT --- */
-        .strategy-grid { display: grid; gap: 1.5rem; margin: 2rem 0; }
+        .methodology-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #004587;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #cbd5e0;
+            font-size: 0.95rem;
+        }
         
+        .calc-row:last-child { border-bottom: none; }
+        .calc-val { font-weight: 700; color: #2d3748; }
+
+        .key-stat-box {
+            background: #004587;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .stat-value { font-size: 2.5rem; font-weight: 700; color: #fbba07; line-height: 1; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 0.9rem; opacity: 0.9; }
+
+        /* --- STRATEGY CARDS --- */
+        .section-header {
+            margin: 3rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .section-badge-large {
+            background: #004587;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .strategy-grid { display: grid; gap: 1.5rem; }
+
         .strategy-card {
             background: #fff;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .strategy-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
 
-        .card-header {
+        .strategy-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .card-main {
             padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(to right, #ffffff, #f9fbfd);
-            cursor: pointer;
+            cursor: pointer; /* Whole card clickable */
         }
 
-        .topic-info h3 { margin: 0 0 0.5rem 0; color: #004587; font-size: 1.25rem; }
-        
-        .topic-meta { display: flex; gap: 1rem; font-size: 0.9rem; color: #666; align-items: center; flex-wrap: wrap; }
+        .topic-content h3 {
+            margin: 0 0 0.5rem 0;
+            color: #2d3748;
+            font-size: 1.2rem;
+        }
 
-        /* Badges */
-        .badge { padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
-        .badge-sl { background: #e3f2fd; color: #004587; border: 1px solid #bbdefb; }
-        .badge-hl { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
-        .badge-hours { background: #e8f5e9; color: #1b5e20; border: 1px solid #c8e6c9; }
-        .badge-marks { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        .meta-tags {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .tag-sl { background: #ebf8ff; color: #2b6cb0; }
+        .tag-hl { background: #fff5f5; color: #c53030; }
+        .tag-marks { background: #fffff0; color: #b7791f; border: 1px solid #f6e05e; }
 
         .insider-tip {
-            margin-top: 1rem;
-            padding: 0.75rem 1rem;
-            background: #f1f8e9;
-            border-left: 4px solid #7cb342;
-            color: #33691e;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            color: #555;
+            background: #f7fafc;
+            padding: 0.75rem;
+            border-left: 3px solid #fbba07;
             border-radius: 0 4px 4px 0;
         }
 
-        .expand-btn {
-            background: #004587;
-            color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
+        .card-action {
+            min-width: 40px;
+            height: 40px;
+            background: #edf2f7;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            min-width: 140px;
             justify-content: center;
+            color: #004587;
+            font-weight: 700;
+            transition: background 0.2s;
         }
-        .expand-btn:hover { background: #003366; }
+        
+        .strategy-card:hover .card-action { background: #fbba07; color: #004587; }
 
-        .question-drawer {
+        /* --- HIDDEN DRAWER --- */
+        .drawer-content {
             display: none;
-            padding: 0 1.5rem 1.5rem 1.5rem;
-            background: #fafafa;
-            border-top: 1px solid #eee;
+            background: #f8f9fa;
+            border-top: 1px solid #e2e8f0;
+            padding: 1.5rem;
         }
-        .question-drawer.open { display: block; animation: slideDown 0.3s ease; }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
+        
+        .drawer-content.open { display: block; animation: slideIn 0.3s ease; }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-5px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .drawer-section { margin-top: 1.5rem; }
-        .drawer-label { font-size: 0.85rem; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; display: block; }
+        .q-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* --- 1B DATA HUB --- */
+        .data-hub-card { border-left: 5px solid #38a169; }
+        .data-placeholder {
+            border: 2px dashed #cbd5e0;
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
 
         @media (max-width: 768px) {
-            .card-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-            .expand-btn { width: 100%; }
+            .card-main { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .card-action { width: 100%; border-radius: 6px; }
+            .card-action::after { content: " View Questions"; margin-left: 0.5rem; }
         }
     </style>
 </head>
 <body>
+
     <div class="sticky-topic-header">
         <a href="index.html" class="menu-btn">☰ Menu</a>
-        <span class="header-topic-title">2026 Exam Strategy Guide</span>
+        <span class="header-topic-title">2026 Exam Strategy</span>
     </div>
 
     <div class="container">
@@ -120,451 +211,451 @@
         <div class="topic-content-wrapper">
             <h1>Exam Strategy & Marks Prediction</h1>
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">
-                Target your revision based on the 2026 weighting logic.
+                Don't just study hard, study smart. Use the breakdown below to target high-value topics.
             </p>
 
-            <div class="methodology-box">
-                <span class="methodology-title">🧮 How we predicted these marks:</span>
-                <p>The IB allocates exam marks roughly proportional to the <strong>Recommended Teaching Hours</strong> for each topic. We used the official 2026 Syllabus hours to project the mark distribution.</p>
-                <div class="calc-row">
-                    <span class="calc-label">Total Teaching Hours (SL):</span>
-                    <span class="calc-value">150 Hours</span>
+            <div class="dashboard-container">
+                <div class="methodology-box">
+                    <div class="methodology-header">🧮 How we predict marks</div>
+                    <p style="margin-bottom:1rem; font-size:0.9rem;">The IB allocates marks proportional to teaching hours. We use the 2026 Syllabus to project the exam weighting.</p>
+                    <div class="calc-row">
+                        <span>Total Teaching Hours (SL)</span>
+                        <span class="calc-val">150 Hours</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Total Exam Marks (SL)</span>
+                        <span class="calc-val">105 Marks</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Ratio</span>
+                        <span class="calc-val">~0.7 Marks per Hour</span>
+                    </div>
                 </div>
-                <div class="calc-row">
-                    <span class="calc-label">Total Exam Marks (SL):</span>
-                    <span class="calc-value">105 Marks</span>
+
+                <div class="key-stat-box">
+                    <div class="stat-value">~35%</div>
+                    <div class="stat-label">of Total Grade comes from Theme A (Physiology)</div>
                 </div>
-                <div class="calc-row" style="border-bottom:none;">
-                    <span class="calc-label">Prediction Formula:</span>
-                    <span class="calc-value" style="color:#004587;">(Topic Hours ÷ Total Hours) × Total Marks</span>
+
+                <div class="key-stat-box" style="background: #38a169;">
+                    <div class="stat-value">20</div>
+                    <div class="stat-label">Marks purely for Data Analysis (Paper 1B)</div>
                 </div>
             </div>
 
-            <span class="section-badge">🫀 Theme A: Physiology</span>
-            
+            <div class="section-header">
+                <span class="section-badge-large">Theme A</span>
+                <span style="font-size:1.1rem; color:#004587; font-weight:600;">Exercise Physiology & Nutrition</span>
+            </div>
+
             <div class="strategy-grid">
                 
-                <div class="strategy-card">
-                    <div class="card-header">
-                        <div class="topic-info">
+                <div class="strategy-card" onclick="toggleDrawer('d-a1')">
+                    <div class="card-main">
+                        <div class="topic-content">
                             <h3>A.1 Communication</h3>
-                            <div class="topic-meta">
-                                <span class="badge badge-hours">~15 Hours</span>
-                                <span class="badge badge-marks">~5-8 Marks</span>
+                            <div class="meta-tags">
+                                <span class="tag tag-sl">SL/HL</span>
+                                <span class="tag tag-marks">~5-8 Marks</span>
                             </div>
-                            <div class="insider-tip">
-                                💡 <strong>Focus:</strong> Homeostasis, Feedback Loops (Negative vs Positive).
-                            </div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Feedback loops are often tested in MCQs. Know the difference between Negative (stabilizing) and Positive (amplifying).</div>
                         </div>
-                        <button class="expand-btn" onclick="toggleDrawer('drawer-a1')">Sample Q ▼</button>
+                        <div class="card-action">▼</div>
                     </div>
-                    <div id="drawer-a1" class="question-drawer">
-                        <div class="drawer-section">
-                            <span class="drawer-label">Paper 1A (MCQ)</span>
-                            <div class="mcq-question">Which component of the homeostatic control mechanism detects a deviation from the set point?</div>
-                            <button class="reveal-answer-btn" data-answer-id="a1-mcq"><span class="icon">▼</span> Reveal Answer</button>
-                            <div class="model-answer">
-                                <span class="model-answer-label">✓ Correct Answer: Sensor (Receptor)</span>
-                                <div class="model-answer-content" id="a1-mcq">
-                                    <strong>Explanation:</strong> The Sensor detects changes. The Control Centre decides the response. The Effector acts.
-                                </div>
+                    <div id="d-a1" class="drawer-content">
+                        <span class="q-label">Paper 1A Example (MCQ)</span>
+                        <div class="mcq-question">Which component of the homeostatic control mechanism is responsible for detecting a deviation from the set point?</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-a1"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Correct: Sensor (Receptor)</span>
+                            <div class="model-answer-content" id="ans-a1">
+                                <strong>Why:</strong> The Sensor detects the change. The Control Centre decides the response. The Effector carries it out.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="strategy-card">
-                    <div class="card-header">
-                        <div class="topic-info">
+                <div class="strategy-card" onclick="toggleDrawer('d-a2')">
+                    <div class="card-main">
+                        <div class="topic-content">
                             <h3>A.2 Hydration & Nutrition</h3>
-                            <div class="topic-meta">
-                                <span class="badge badge-hours">~20 Hours</span>
-                                <span class="badge badge-marks">~8-12 Marks</span>
+                            <div class="meta-tags">
+                                <span class="tag tag-sl">SL/HL</span>
+                                <span class="tag tag-marks">~8-12 Marks</span>
                             </div>
-                            <div class="insider-tip">
-                                💡 <strong>Focus:</strong> Energy Systems (ATP-PC vs Lactic Acid) & Hydration Studies.
-                            </div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Energy systems (ATP-PC vs Lactic Acid) usually appear in Paper 2.</div>
                         </div>
-                        <button class="expand-btn" onclick="toggleDrawer('drawer-a2')">Sample Q ▼</button>
+                        <div class="card-action">▼</div>
                     </div>
-                    <div id="drawer-a2" class="question-drawer">
-                        <div class="drawer-section">
-                            <span class="drawer-label">Paper 2 (Short Answer)</span>
-                            <div class="mcq-question">Outline the concept of the "Lactate Inflection Point" (LIP). [2 marks]</div>
-                            <button class="reveal-answer-btn" data-answer-id="a2-p2"><span class="icon">▼</span> Reveal Model Answer</button>
-                            <div class="model-answer">
-                                <span class="model-answer-label">✓ Model Answer</span>
-                                <div class="model-answer-content" id="a2-p2">
-                                    The LIP describes the intensity of exercise where lactate production exceeds the rate of removal. Training near this point improves aerobic endurance.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="strategy-card">
-                    <div class="card-header">
-                        <div class="topic-info">
-                            <h3>A.3 Response</h3>
-                            <div class="topic-meta">
-                                <span class="badge badge-hours">~25 Hours</span>
-                                <span class="badge badge-marks">~12-18 Marks</span>
-                            </div>
-                            <div class="insider-tip">
-                                💡 <strong>Focus:</strong> Training adaptations, fatigue, and recovery strategies (EPOC).
-                            </div>
-                        </div>
-                        <button class="expand-btn" onclick="toggleDrawer('drawer-a3')">Sample Q ▼</button>
-                    </div>
-                    <div id="drawer-a3" class="question-drawer">
-                        <div class="drawer-section">
-                            <span class="drawer-label">Paper 2 (Extended Response)</span>
-                            <div class="mcq-question">Explain the physiological causes of peripheral fatigue in high-intensity activities. [4 marks]</div>
-                            <button class="reveal-answer-btn" data-answer-id="a3-p2"><span class="icon">▼</span> Reveal Model Answer</button>
-                            <div class="model-answer">
-                                <span class="model-answer-label">✓ Model Answer</span>
-                                <div class="model-answer-content" id="a3-p2">
-                                    1. Depletion of PC (Phosphocreatine) stores.<br>
-                                    2. Accumulation of Hydrogen ions (H+) leading to acidosis.<br>
-                                    3. Decrease in muscle pH affecting enzyme activity (e.g., PFK).<br>
-                                    4. Impaired calcium release from the sarcoplasmic reticulum.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <span class="section-badge">🦾 Theme B: Biomechanics</span>
-            
-            <div class="strategy-grid">
-                
-                <div class="strategy-card">
-                    <div class="card-header">
-                        <div class="topic-info">
-                            <h3>B.1 Generating Movement</h3>
-                            <div class="topic-meta">
-                                <span class="badge badge-hours">~15 Hours</span>
-                                <span class="badge badge-marks">~5-8 Marks</span>
-                            </div>
-                            <div class="insider-tip">
-                                💡 <strong>Focus:</strong> Levers (1st, 2nd, 3rd Class) & Planes of Motion.
-                            </div>
-                        </div>
-                        <button class="expand-btn" onclick="toggleDrawer('drawer-b1')">Sample Q ▼</button>
-                    </div>
-                    <div id="drawer-b1" class="question-drawer">
-                        <div class="drawer-section">
-                            <span class="drawer-label">Paper 1A (MCQ)</span>
-                            <div class="mcq-question">In a bicep curl (upward phase), which class of lever is operating at the elbow?</div>
-                            <button class="reveal-answer-btn" data-answer-id="b1-mcq"><span class="icon">▼</span> Reveal Answer</button>
-                            <div class="model-answer">
-                                <span class="model-answer-label">✓ Correct Answer: 3rd Class</span>
-                                <div class="model-answer-content" id="b1-mcq">
-                                    <strong>Explanation:</strong> The Effort (bicep insertion) is between the Fulcrum (elbow) and the Load (dumbbell). Most human joints are 3rd class levers.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="strategy-card">
-                    <div class="card-header">
-                        <div class="topic-info">
-                            <h3>B.2 Forces & Motion</h3>
-                            <div class="topic-meta">
-                                <span class="badge badge-hours">~20 Hours</span>
-                                <span class="badge badge-marks">~10-15 Marks</span>
-                            </div>
-                            <div class="insider-tip">
-                                💡 <strong>Focus:</strong> Newton's Laws (F=ma) & Projectile Motion.
-                            </div>
-                        </div>
-                        <button class="expand-btn" onclick="toggleDrawer('drawer-b2')">Sample Q ▼</button>
-                    </div>
-                    <div id="drawer-b2" class="question-drawer">
-                        <div class="drawer-section">
-                            <span class="drawer-label">Paper 2 (Calculations)</span>
-                            <div class="mcq-question">Explain how Newton's 3rd Law applies to a sprinter leaving the blocks. [3 marks]</div>
-                            <button class="reveal-answer-btn" data-answer-id="b2-p2"><span class="icon">▼</span> Reveal Model Answer</button>
-                            <div class="model-answer">
-                                <span class="model-answer-label">✓ Model Answer</span>
-                                <div class="model-answer-content" id="b2-p2">
-                                    Newton's 3rd Law states "For every action there is an equal and opposite reaction."<br>
-                                    1. The sprinter applies a force <strong>backwards</strong> against the blocks (Action).<br>
-                                    2. The blocks apply an equal force <strong>forwards</strong> on the sprinter (Reaction).<br>
-                                    3. This reaction force propels the sprinter forward.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="strategy-card">
-                    <div class="card-header">
-                        <div class="topic-info">
-                            <h3>B.3 Injury</h3>
-                            <div class="topic-meta">
-                                <span class="badge badge-hours">~15 Hours</span>
-                                <span class="badge badge-marks">~5-8 Marks</span>
-                            </div>
-                            <div class="insider-tip">
-                                💡 <strong>Focus:</strong> Acute vs Chronic injuries & Prevention (Warm-up).
-                            </div>
-                        </div>
-                        <button class="expand-btn" onclick="toggleDrawer('drawer-b3')">Sample Q ▼</button>
-                    </div>
-                    <div id="drawer-b3" class="question-drawer">
-                        <div class="drawer-section">
-                            <span class="drawer-label">Paper 1A (MCQ)</span>
-                            <div class="mcq-question">Which of the following is an example of an acute injury?</div>
-                            <button class="reveal-answer-btn" data-answer-id="b3-mcq"><span class="icon">▼</span> Reveal Answer</button>
-                            <div class="model-answer">
-                                <span class="model-answer-label">✓ Correct Answer: Fracture from a tackle</span>
-                                <div class="model-answer-content" id="b3-mcq">
-                                    <strong>Explanation:</strong> Acute injuries result from a sudden trauma (e.g., collision). Stress fractures or tendonitis are chronic (overuse) injuries.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <span class="section-badge">🧠 Theme C: Psychology</span>
-
-            <div class="strategy-grid">
-                
-                <div class="strategy-card">
-                    <div class="card-header">
-                        <div class="topic-info">
-                            <h3>C.1 Individual Differences</h3>
-                            <div class="topic-meta">
-                                <span class="badge badge-hours">~10 Hours</span>
-                                <span class="badge badge-marks">~5-8 Marks</span>
-                            </div>
-                            <div class="insider-tip">
-                                💡 <strong>Focus:</strong> Personality Theory & Mental Toughness.
-                            </div>
-                        </div>
-                        <button class="expand-btn" onclick="toggleDrawer('drawer-c1')">Sample Q ▼</button>
-                    </div>
-                    <div id="drawer-c1" class="question-drawer">
-                        <div class="drawer-section">
-                            <span class="drawer-label">Paper 2 (Short Answer)</span>
-                            <div class="mcq-question">Define the term "Self-Fulfilling Prophecy" in the context of sport. [2 marks]</div>
-                            <button class="reveal-answer-btn" data-answer-id="c1-p2"><span class="icon">▼</span> Reveal Model Answer</button>
-                            <div class="model-answer">
-                                <span class="model-answer-label">✓ Model Answer</span>
-                                <div class="model-answer-content" id="c1-p2">
-                                    It is when an expectation (from a coach or self) influences behaviour in such a way that the expectation becomes true. E.g., a coach expects a player to fail, gives them less attention, and they subsequently perform poorly.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="strategy-card">
-                    <div class="card-header">
-                        <div class="topic-info">
-                            <h3>C.2 Motor Learning</h3>
-                            <div class="topic-meta">
-                                <span class="badge badge-hours">~15 Hours</span>
-                                <span class="badge badge-marks">~8-12 Marks</span>
-                            </div>
-                            <div class="insider-tip">
-                                💡 <strong>Focus:</strong> Stages of Learning & Transfer (Positive/Negative).
-                            </div>
-                        </div>
-                        <button class="expand-btn" onclick="toggleDrawer('drawer-c2')">Sample Q ▼</button>
-                    </div>
-                    <div id="drawer-c2" class="question-drawer">
-                        <div class="drawer-section">
-                            <span class="drawer-label">Paper 1A (MCQ)</span>
-                            <div class="mcq-question">During which stage of learning does a performer make many errors and rely heavily on visual feedback?</div>
-                            <button class="reveal-answer-btn" data-answer-id="c2-mcq"><span class="icon">▼</span> Reveal Answer</button>
-                            <div class="model-answer">
-                                <span class="model-answer-label">✓ Correct Answer: Cognitive Stage</span>
-                                <div class="model-answer-content" id="c2-mcq">
-                                    <strong>Explanation:</strong> The Cognitive (early) stage is characterized by trial-and-error and a need for external guidance. Associative is practice; Autonomous is automatic.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="strategy-card">
-                    <div class="card-header">
-                        <div class="topic-info">
-                            <h3>C.3 Motivation</h3>
-                            <div class="topic-meta">
-                                <span class="badge badge-hours">~10 Hours</span>
-                                <span class="badge badge-marks">~5-8 Marks</span>
-                            </div>
-                            <div class="insider-tip">
-                                💡 <strong>Focus:</strong> Goal Orientation Theory (Task vs Ego).
-                            </div>
-                        </div>
-                        <button class="expand-btn" onclick="toggleDrawer('drawer-c3')">Sample Q ▼</button>
-                    </div>
-                    <div id="drawer-c3" class="question-drawer">
-                        <div class="drawer-section">
-                            <span class="drawer-label">Paper 2 (Short Answer)</span>
-                            <div class="mcq-question">Distinguish between "Task Orientation" and "Ego Orientation". [2 marks]</div>
-                            <button class="reveal-answer-btn" data-answer-id="c3-p2"><span class="icon">▼</span> Reveal Model Answer</button>
-                            <div class="model-answer">
-                                <span class="model-answer-label">✓ Model Answer</span>
-                                <div class="model-answer-content" id="c3-p2">
-                                    <strong>Task Orientation:</strong> Success is defined by personal improvement and effort.<br>
-                                    <strong>Ego Orientation:</strong> Success is defined by comparison to others and winning.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="strategy-card">
-                    <div class="card-header">
-                        <div class="topic-info">
-                            <h3>C.4 Stress & Coping</h3>
-                            <div class="topic-meta">
-                                <span class="badge badge-hours">~15 Hours</span>
-                                <span class="badge badge-marks">~8-12 Marks</span>
-                            </div>
-                            <div class="insider-tip">
-                                💡 <strong>Focus:</strong> Anxiety (State vs Trait) & Coping Strategies.
-                            </div>
-                        </div>
-                        <button class="expand-btn" onclick="toggleDrawer('drawer-c4')">Sample Q ▼</button>
-                    </div>
-                    <div id="drawer-c4" class="question-drawer">
-                        <div class="drawer-section">
-                            <span class="drawer-label">Paper 1A (MCQ)</span>
-                            <div class="mcq-question">Which term describes "good stress" that enhances performance?</div>
-                            <button class="reveal-answer-btn" data-answer-id="c4-mcq"><span class="icon">▼</span> Reveal Answer</button>
-                            <div class="model-answer">
-                                <span class="model-answer-label">✓ Correct Answer: Eustress</span>
-                                <div class="model-answer-content" id="c4-mcq">
-                                    <strong>Explanation:</strong> Eustress is positive/beneficial stress. Distress is negative stress that hampers performance.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="strategy-card" style="border-left: 5px solid #c62828;">
-                    <div class="card-header">
-                        <div class="topic-info">
-                            <h3>C.5 Psychological Skills</h3>
-                            <div class="topic-meta">
-                                <span class="badge badge-hl">HL ONLY</span>
-                                <span class="badge badge-marks">~10-15 Marks</span>
-                            </div>
-                            <div class="insider-tip">
-                                💡 <strong>Focus:</strong> PETTLEP Imagery & Goal Setting (SMART).
-                            </div>
-                        </div>
-                        <button class="expand-btn" onclick="toggleDrawer('drawer-c5')">Sample Q ▼</button>
-                    </div>
-                    <div id="drawer-c5" class="question-drawer">
-                        <div class="drawer-section">
-                            <span class="drawer-label">Paper 2 (Extended Response)</span>
-                            <div class="mcq-question">Explain what the acronym PETTLEP (Holmes, Collins, 2001) stands for when using imagery. [7 marks]</div>
-                            <button class="reveal-answer-btn" data-answer-id="c5-p2"><span class="icon">▼</span> Reveal Model Answer</button>
-                            <div class="model-answer">
-                                <span class="model-answer-label">✓ Model Answer</span>
-                                <div class="model-answer-content" id="c5-p2">
-                                    <strong>P</strong>hysical (nature of the movement)<br>
-                                    <strong>E</strong>nvironment (location)<br>
-                                    <strong>T</strong>ask (the skill itself)<br>
-                                    <strong>T</strong>iming (speed of imagery)<br>
-                                    <strong>L</strong>earning (stage of the athlete)<br>
-                                    <strong>E</strong>motion (feelings associated)<br>
-                                    <strong>P</strong>erspective (internal vs external view)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <span class="section-badge" style="background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%); color:white;">📈 Paper 1B: Data Analysis Hub</span>
-            
-            <div class="note-box">
-                <strong>Paper 1B Strategy:</strong> Use the titles below to locate the specific graphs in your textbook. The exam questions will ask you to calculate differences or describe trends shown in these exact types of visuals.
-            </div>
-
-            <div class="strategy-card" style="border-left: 5px solid #2e7d32;">
-                <div class="card-header">
-                    <div class="topic-info">
-                        <h3>A.2 Data: Energy & HIIT</h3>
-                        <div class="topic-meta">
-                            <span class="badge badge-sl">Skill: Reading Tables</span>
-                        </div>
-                    </div>
-                    <button class="expand-btn" onclick="toggleDrawer('drawer-dbq1')">See DBQ ▼</button>
-                </div>
-                <div id="drawer-dbq1" class="question-drawer">
-                    <div class="graph-placeholder" style="border: 2px dashed #ccc; background: #eee; color: #555; padding: 2rem; text-align: center; border-radius: 8px; margin: 1rem 0;">
-                        [Look for Table 2 in Textbook A.2]<br>
-                        <strong>Title:</strong> "Mean VO2, energy expenditure (EE) during exercise..."<br>
-                    </div>
-                    <div class="drawer-section">
-                        <div class="mcq-question"><strong>(a)</strong> Calculate the difference in mean energy expenditure between HIIT and CONT groups. [1]</div>
-                        <button class="reveal-answer-btn" data-answer-id="dbq1-a"><span class="icon">▼</span> Reveal Answer</button>
+                    <div id="d-a2" class="drawer-content">
+                        <span class="q-label">Paper 2 Example (Short Answer)</span>
+                        <div class="mcq-question">Outline the concept of the "Lactate Inflection Point" (LIP). [2 marks]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-a2"><span class="icon">▶</span> Reveal Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Model Answer</span>
-                            <div class="model-answer-content" id="dbq1-a">
+                            <div class="model-answer-content" id="ans-a2">
+                                The LIP describes the exercise intensity where lactate production exceeds the rate of removal. Training near this point improves aerobic endurance.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card" onclick="toggleDrawer('d-a3')">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>A.3 Response</h3>
+                            <div class="meta-tags">
+                                <span class="tag tag-sl">SL/HL</span>
+                                <span class="tag tag-marks">~12-18 Marks</span>
+                            </div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> This is the biggest topic. Expect long questions on Fatigue, Recovery (EPOC), and Training Adaptations.</div>
+                        </div>
+                        <div class="card-action">▼</div>
+                    </div>
+                    <div id="d-a3" class="drawer-content">
+                        <span class="q-label">Paper 2 Example (Extended Response)</span>
+                        <div class="mcq-question">Explain the physiological causes of peripheral fatigue in high-intensity activities. [4 marks]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-a3"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Model Answer</span>
+                            <div class="model-answer-content" id="ans-a3">
+                                1. Depletion of PC (Phosphocreatine) stores.<br>
+                                2. Accumulation of Hydrogen ions (H+) causing acidosis.<br>
+                                3. Decrease in muscle pH inhibiting enzyme activity (e.g., PFK).<br>
+                                4. Impaired calcium release interfering with muscle contraction.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <span class="section-badge-large">Theme B</span>
+                <span style="font-size:1.1rem; color:#004587; font-weight:600;">Biomechanics</span>
+            </div>
+
+            <div class="strategy-grid">
+                
+                <div class="strategy-card" onclick="toggleDrawer('d-b1')">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>B.1 Generating Movement</h3>
+                            <div class="meta-tags">
+                                <span class="tag tag-sl">SL/HL</span>
+                                <span class="tag tag-marks">~5-8 Marks</span>
+                            </div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Memorize the 1st, 2nd, and 3rd class levers. Most human joints are 3rd class (Speed/ROM advantage).</div>
+                        </div>
+                        <div class="card-action">▼</div>
+                    </div>
+                    <div id="d-b1" class="drawer-content">
+                        <span class="q-label">Paper 1A Example (MCQ)</span>
+                        <div class="mcq-question">In a bicep curl (upward phase), which class of lever is operating at the elbow?</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-b1"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Correct: 3rd Class</span>
+                            <div class="model-answer-content" id="ans-b1">
+                                <strong>Why:</strong> The Effort (bicep insertion) is located between the Fulcrum (elbow) and the Load (dumbbell).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card" onclick="toggleDrawer('d-b2')">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>B.2 Forces & Motion</h3>
+                            <div class="meta-tags">
+                                <span class="tag tag-sl">SL/HL</span>
+                                <span class="tag tag-marks">~10-15 Marks</span>
+                            </div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> The "Money Topic" for calculations. Practice F=ma and Newton's 3rd Law (Action/Reaction).</div>
+                        </div>
+                        <div class="card-action">▼</div>
+                    </div>
+                    <div id="d-b2" class="drawer-content">
+                        <span class="q-label">Paper 2 Example (Calculation)</span>
+                        <div class="mcq-question">Explain how Newton's 3rd Law applies to a sprinter leaving the blocks. [3 marks]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-b2"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Model Answer</span>
+                            <div class="model-answer-content" id="ans-b2">
+                                1. Action: Sprinter applies force <strong>backwards</strong> against the blocks.<br>
+                                2. Reaction: Blocks apply an equal and opposite force <strong>forwards</strong> on the sprinter.<br>
+                                3. Result: This ground reaction force propels the sprinter out of the blocks.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card" onclick="toggleDrawer('d-b3')">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>B.3 Injury</h3>
+                            <div class="meta-tags">
+                                <span class="tag tag-sl">SL/HL</span>
+                                <span class="tag tag-marks">~5-8 Marks</span>
+                            </div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Distinguish clearly between Acute (sudden) and Chronic (overuse) injuries.</div>
+                        </div>
+                        <div class="card-action">▼</div>
+                    </div>
+                    <div id="d-b3" class="drawer-content">
+                        <span class="q-label">Paper 1A Example (MCQ)</span>
+                        <div class="mcq-question">Which of the following is an example of an acute injury?</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-b3"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Correct: Fracture from a tackle</span>
+                            <div class="model-answer-content" id="ans-b3">
+                                <strong>Why:</strong> Acute injuries result from a specific, identifiable traumatic event (like a collision). Tendonitis is chronic.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <span class="section-badge-large">Theme C</span>
+                <span style="font-size:1.1rem; color:#004587; font-weight:600;">Sports Psychology</span>
+            </div>
+
+            <div class="strategy-grid">
+                
+                <div class="strategy-card" onclick="toggleDrawer('d-c1')">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>C.1 Individual Differences</h3>
+                            <div class="meta-tags">
+                                <span class="tag tag-sl">SL/HL</span>
+                                <span class="tag tag-marks">~5-8 Marks</span>
+                            </div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Know the "Self-Fulfilling Prophecy" (how expectations influence performance).</div>
+                        </div>
+                        <div class="card-action">▼</div>
+                    </div>
+                    <div id="d-c1" class="drawer-content">
+                        <span class="q-label">Paper 2 Example (Short Answer)</span>
+                        <div class="mcq-question">Define "Self-Fulfilling Prophecy" in sport. [2 marks]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-c1"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Model Answer</span>
+                            <div class="model-answer-content" id="ans-c1">
+                                When an expectation (by coach or self) influences behavior so that the expectation becomes true. E.g., a coach expects failure, gives less feedback, and the athlete fails.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card" onclick="toggleDrawer('d-c2')">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>C.2 Motor Learning</h3>
+                            <div class="meta-tags">
+                                <span class="tag tag-sl">SL/HL</span>
+                                <span class="tag tag-marks">~8-12 Marks</span>
+                            </div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Stages of Learning (Cognitive -> Associative -> Autonomous) are a staple question.</div>
+                        </div>
+                        <div class="card-action">▼</div>
+                    </div>
+                    <div id="d-c2" class="drawer-content">
+                        <span class="q-label">Paper 1A Example (MCQ)</span>
+                        <div class="mcq-question">Which stage of learning is characterized by trial-and-error and reliance on visual feedback?</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-c2"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Correct: Cognitive Stage</span>
+                            <div class="model-answer-content" id="ans-c2">
+                                <strong>Why:</strong> The beginner (cognitive stage) needs to think about what to do and relies on visual cues.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card" onclick="toggleDrawer('d-c3')">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>C.3 Motivation</h3>
+                            <div class="meta-tags">
+                                <span class="tag tag-sl">SL/HL</span>
+                                <span class="tag tag-marks">~5-8 Marks</span>
+                            </div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Understand "Goal Orientation Theory" (Task-oriented vs Ego-oriented).</div>
+                        </div>
+                        <div class="card-action">▼</div>
+                    </div>
+                    <div id="d-c3" class="drawer-content">
+                        <span class="q-label">Paper 2 Example (Short Answer)</span>
+                        <div class="mcq-question">Distinguish between "Task Orientation" and "Ego Orientation". [2 marks]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-c3"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Model Answer</span>
+                            <div class="model-answer-content" id="ans-c3">
+                                <strong>Task:</strong> Success is defined by personal improvement and effort.<br>
+                                <strong>Ego:</strong> Success is defined by comparison to others and winning.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card" onclick="toggleDrawer('d-c4')">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>C.4 Stress & Coping</h3>
+                            <div class="meta-tags">
+                                <span class="tag tag-sl">SL/HL</span>
+                                <span class="tag tag-marks">~8-12 Marks</span>
+                            </div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Not all stress is bad. Know "Eustress" (positive) vs "Distress" (negative).</div>
+                        </div>
+                        <div class="card-action">▼</div>
+                    </div>
+                    <div id="d-c4" class="drawer-content">
+                        <span class="q-label">Paper 1A Example (MCQ)</span>
+                        <div class="mcq-question">Which term describes "good stress" that enhances performance?</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-c4"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Correct: Eustress</span>
+                            <div class="model-answer-content" id="ans-c4">
+                                <strong>Why:</strong> Eustress provides the focus and energy needed for peak performance.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card" onclick="toggleDrawer('d-c5')" style="border-left: 5px solid #c62828;">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>C.5 Psychological Skills</h3>
+                            <div class="meta-tags">
+                                <span class="tag tag-hl">HL ONLY</span>
+                                <span class="tag tag-marks">~10-15 Marks</span>
+                            </div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> PETTLEP Imagery is high-value for HL. Memorize the acronym.</div>
+                        </div>
+                        <div class="card-action">▼</div>
+                    </div>
+                    <div id="d-c5" class="drawer-content">
+                        <span class="q-label">Paper 2 Example (Extended Response)</span>
+                        <div class="mcq-question">Explain what the acronym PETTLEP (Holmes, Collins) stands for. [7 marks]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-c5"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Model Answer</span>
+                            <div class="model-answer-content" id="ans-c5">
+                                <strong>P</strong>hysical (nature of movement)<br>
+                                <strong>E</strong>nvironment (location)<br>
+                                <strong>T</strong>ask (the skill itself)<br>
+                                <strong>T</strong>iming (speed of imagery)<br>
+                                <strong>L</strong>earning (stage of athlete)<br>
+                                <strong>E</strong>motion (feelings associated)<br>
+                                <strong>P</strong>erspective (internal vs external)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top:4rem;">
+                <span class="section-badge-large" style="background:#38a169;">Paper 1B Hub</span>
+                <span style="font-size:1.1rem; color:#38a169; font-weight:600;">Experimental Skills</span>
+            </div>
+
+            <div class="methodology-box" style="border-left-color: #38a169; margin-bottom: 2rem;">
+                <strong>Strategy:</strong> Find these specific graphs in your textbook using the titles below. The exam questions will ask you to analyze these exact types of trends.
+            </div>
+
+            <div class="strategy-grid">
+                
+                <div class="strategy-card data-hub-card" onclick="toggleDrawer('dbq-1')">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>Topic A.2 Data: HIIT Energy</h3>
+                            <div class="meta-tags">
+                                <span class="tag" style="background:#f0fff4; color:#276749;">Skill: Tables</span>
+                            </div>
+                        </div>
+                        <div class="card-action">▼</div>
+                    </div>
+                    <div id="dbq-1" class="drawer-content">
+                        <div class="data-placeholder">
+                            [Find Table 2 in Textbook A.2]<br>
+                            Title: "Mean VO2, energy expenditure (EE) during exercise..."
+                        </div>
+                        <div class="mcq-question"><strong>(a)</strong> Calculate the difference in mean energy expenditure between HIIT and CONT groups. [1]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-dbq1"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Answer</span>
+                            <div class="model-answer-content" id="ans-dbq1">
                                 10.0 - 7.6 = <strong>2.4 kcal/min</strong>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="strategy-card" style="border-left: 5px solid #2e7d32;">
-                <div class="card-header">
-                    <div class="topic-info">
-                        <h3>B.3 Data: Injury Prevention</h3>
-                        <div class="topic-meta">
-                            <span class="badge badge-sl">Skill: Calculating Rates</span>
+                <div class="strategy-card data-hub-card" onclick="toggleDrawer('dbq-2')">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>Topic B.3 Data: Injury Rates</h3>
+                            <div class="meta-tags">
+                                <span class="tag" style="background:#f0fff4; color:#276749;">Skill: Comparison</span>
+                            </div>
                         </div>
+                        <div class="card-action">▼</div>
                     </div>
-                    <button class="expand-btn" onclick="toggleDrawer('drawer-dbq2')">See DBQ ▼</button>
-                </div>
-                <div id="drawer-dbq2" class="question-drawer">
-                    <div class="graph-placeholder" style="border: 2px dashed #ccc; background: #eee; color: #555; padding: 2rem; text-align: center; border-radius: 8px; margin: 1rem 0;">
-                        [Look for Table 3 in Textbook B.3]<br>
-                        <strong>Title:</strong> "Injury incidence by injury type for both groups"<br>
-                    </div>
-                    <div class="drawer-section">
+                    <div id="dbq-2" class="drawer-content">
+                        <div class="data-placeholder">
+                            [Find Table 3 in Textbook B.3]<br>
+                            Title: "Injury incidence by injury type for both groups"
+                        </div>
                         <div class="mcq-question"><strong>(a)</strong> Identify which group had the lower limb injury rate. [1]</div>
-                        <button class="reveal-answer-btn" data-answer-id="dbq2-a"><span class="icon">▼</span> Reveal Answer</button>
+                        <button class="reveal-answer-btn" data-answer-id="ans-dbq2"><span class="icon">▶</span> Reveal Answer</button>
                         <div class="model-answer">
-                            <span class="model-answer-label">✓ Model Answer</span>
-                            <div class="model-answer-content" id="dbq2-a">
+                            <span class="model-answer-label">✓ Answer</span>
+                            <div class="model-answer-content" id="ans-dbq2">
                                 The <strong>Intervention Group</strong> (35 injuries vs 51 in control).
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="strategy-card data-hub-card" onclick="toggleDrawer('dbq-3')">
+                    <div class="card-main">
+                        <div class="topic-content">
+                            <h3>Topic C.4 Data: Coping & Resilience</h3>
+                            <div class="meta-tags">
+                                <span class="tag" style="background:#f0fff4; color:#276749;">Skill: Trends</span>
+                            </div>
+                        </div>
+                        <div class="card-action">▼</div>
+                    </div>
+                    <div id="dbq-3" class="drawer-content">
+                        <div class="data-placeholder">
+                            [Find Table 4 in Textbook C.4]<br>
+                            Title: "Coping strategy scores... Source: Secades et al."
+                        </div>
+                        <div class="mcq-question"><strong>(a)</strong> Identify the group with the highest score for imagery. [1]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-dbq3"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Answer</span>
+                            <div class="model-answer-content" id="ans-dbq3">
+                                The <strong>High Resilience</strong> group (Score: 3.67).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
     </div>
 
     <script>
-        function toggleDrawer(drawerId) {
-            const drawer = document.getElementById(drawerId);
-            drawer.classList.toggle('open');
-            const btn = drawer.previousElementSibling.querySelector('.expand-btn');
-            if(drawer.classList.contains('open')) {
-                btn.innerHTML = 'Hide Q ▲';
-            } else {
-                btn.innerHTML = 'Sample Q ▼';
-            }
+        function toggleDrawer(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('open');
+            // Optional: Rotate arrow
+            const btn = el.previousElementSibling.querySelector('.card-action');
+            if(el.classList.contains('open')) btn.textContent = '▲';
+            else btn.textContent = '▼';
         }
     </script>
     
