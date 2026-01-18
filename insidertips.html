@@ -9,43 +9,15 @@
     <link rel="stylesheet" href="../styles.css">
     
     <style>
-        /* Priority Labels for Prediction Tables */
-        .priority-high { 
-            color: #d32f2f; 
-            font-weight: 700; 
-            background: rgba(211, 47, 47, 0.08);
-            border-radius: 4px;
-            padding: 0.25rem 0.5rem;
-            display: inline-block;
-        }
-        .priority-med { 
-            color: #e65100;
-            font-weight: 700; 
-            background: rgba(255, 152, 0, 0.1);
-            border-radius: 4px;
-            padding: 0.25rem 0.5rem;
-            display: inline-block;
-        }
-        .priority-skill { 
-            color: #0277bd; 
-            font-weight: 700; 
-            background: rgba(3, 169, 244, 0.1);
-            border-radius: 4px;
-            padding: 0.25rem 0.5rem;
-            display: inline-block;
-        }
-        /* Mobile Table Scrolling */
+        /* Priority Labels */
+        .priority-high { color: #d32f2f; font-weight: 700; background: rgba(211, 47, 47, 0.08); border-radius: 4px; padding: 0.25rem 0.5rem; display: inline-block; }
+        .priority-med { color: #e65100; font-weight: 700; background: rgba(255, 152, 0, 0.1); border-radius: 4px; padding: 0.25rem 0.5rem; display: inline-block; }
+        .priority-skill { color: #0277bd; font-weight: 700; background: rgba(3, 169, 244, 0.1); border-radius: 4px; padding: 0.25rem 0.5rem; display: inline-block; }
+        
+        /* Mobile Fixes */
         @media (max-width: 768px) {
-            .data-table {
-                display: block;
-                width: 100%;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-            .data-table td:last-child {
-                white-space: normal;
-                min-width: 250px;
-            }
+            .data-table { display: block; width: 100%; overflow-x: auto; white-space: nowrap; }
+            .data-table td:last-child { white-space: normal; min-width: 250px; }
         }
     </style>
 </head>
@@ -67,10 +39,8 @@
 
             <span class="section-badge">📊 Section 1</span>
             <h2>Projected Exam Weighting</h2>
-            <p>Based on the IB's recommended teaching hours, we can predict where the majority of marks will be allocated. Use this to prioritize your revision time.</p>
-            
             <div class="note-box">
-                <strong>Strategy Tip:</strong> While <strong>Theme A</strong> has the most content, do not ignore the <strong>Experimental Skills</strong> (Paper 1B). These are "skill-based" marks that do not require rote memorization, only practice.
+                <strong>Strategy Tip:</strong> Do not skip <strong>Paper 1B (Data Analysis)</strong>. It is worth ~20 marks and tests skills (reading graphs), not memory.
             </div>
 
             <table class="data-table">
@@ -79,7 +49,7 @@
                         <th>Theme</th>
                         <th>Focus</th>
                         <th>Projected Marks</th>
-                        <th>Priority Level</th>
+                        <th>Priority</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -103,119 +73,113 @@
                     </tr>
                     <tr>
                         <td><strong>Skills</strong></td>
-                        <td>Data Analysis (Paper 1B)</td>
+                        <td>Paper 1B (Data Analysis)</td>
                         <td>~15 - 20 Marks</td>
-                        <td class="priority-skill">🟦 Skill-Based</td>
+                        <td class="priority-skill">🟦 Skill</td>
                     </tr>
                 </tbody>
             </table>
 
             <span class="section-badge">🔮 Section 2</span>
             <h2>Detailed Sub-Topic Predictions</h2>
-            <p>Below is a breakdown of where specific calculation and long-answer questions are most likely to appear, based on the textbook chapters.</p>
+            <p>Based on the textbook chapters you uploaded, here are the high-value topics.</p>
 
-            <h3>Theme A: Physiology (The Foundation)</h3>
+            <h3>Theme A: Physiology</h3>
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th style="width:25%">Sub-Topic</th>
-                        <th style="width:20%">Est. Marks</th>
+                        <th style="width:25%">Topic</th>
+                        <th style="width:15%">Marks</th>
                         <th>📝 Insider Tip (Source Based)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>A.1 Communication</strong></td>
-                        <td>5 - 8</td>
-                        <td>Focus on <strong>homeostasis</strong>, feedback loops, and up/down regulation.</td>
+                        <td>5-8</td>
+                        <td>Focus on <strong>Homeostasis</strong> and Feedback Loops.</td>
                     </tr>
                     <tr>
-                        <td><strong>A.2 Hydration & Nutrition</strong></td>
-                        <td>8 - 12</td>
-                        <td>High probability for <strong>Paper 1B</strong> (e.g., interpreting hydration studies or energy expenditure tables).</td>
+                        <td><strong>A.2 Hydration</strong></td>
+                        <td>8-12</td>
+                        <td>High chance for Paper 1B. Review <strong>Energy Systems</strong> (ATP-CP vs Lactic Acid).</td>
                     </tr>
                     <tr>
                         <td><strong>A.3 Response</strong></td>
-                        <td>12 - 18</td>
-                        <td><strong>The Big One.</strong> Expect questions on training adaptations, fatigue, and the recovery process.</td>
+                        <td>12-18</td>
+                        <td><strong>Big Topic.</strong> Training adaptations, fatigue, and recovery strategies (e.g., EPOC).</td>
                     </tr>
                 </tbody>
             </table>
 
-            <h3>Theme B: Biomechanics (The Math)</h3>
+            <h3>Theme B: Biomechanics</h3>
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th style="width:25%">Sub-Topic</th>
-                        <th style="width:20%">Est. Marks</th>
+                        <th style="width:25%">Topic</th>
+                        <th style="width:15%">Marks</th>
                         <th>📝 Insider Tip (Source Based)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>B.1 Generating Movement</strong></td>
-                        <td>5 - 8</td>
-                        <td>Easy marks if you memorize the <strong>Lever Classes</strong> and planes/axes of movement.</td>
+                        <td><strong>B.1 Movement</strong></td>
+                        <td>5-8</td>
+                        <td>Memorize the <strong>Lever Classes</strong> (1st, 2nd, 3rd) and planes of movement.</td>
                     </tr>
                     <tr>
-                        <td><strong>B.2 Forces & Motion</strong></td>
-                        <td>10 - 15</td>
-                        <td><strong>Money Topic.</strong> Newton's Laws and Projectile Motion are almost guaranteed to appear.</td>
+                        <td><strong>B.2 Forces</strong></td>
+                        <td>10-15</td>
+                        <td><strong>Money Topic.</strong> Expect a calculation on <strong>Newton's Laws</strong> or Projectile Motion.</td>
                     </tr>
                     <tr>
                         <td><strong>B.3 Injury</strong></td>
-                        <td>8 - 12</td>
-                        <td>Focus on the difference between acute/chronic injuries and prevention strategies.</td>
+                        <td>8-12</td>
+                        <td>Acute vs. Chronic injury and prevention strategies (e.g., warm-ups).</td>
                     </tr>
                 </tbody>
             </table>
 
-            <h3>Theme C: Psychology (The Mind)</h3>
+            <h3>Theme C: Psychology</h3>
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th style="width:25%">Sub-Topic</th>
-                        <th style="width:20%">Est. Marks</th>
+                        <th style="width:25%">Topic</th>
+                        <th style="width:15%">Marks</th>
                         <th>📝 Insider Tip (Source Based)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>C.1 Individual Differences</strong></td>
-                        <td>5 - 8</td>
-                        <td>Know the definition of <strong>Mental Toughness</strong> and Self-Fulfilling Prophecy.</td>
+                        <td><strong>C.1 Differences</strong></td>
+                        <td>5-8</td>
+                        <td>Personality Theory and the <strong>Self-Fulfilling Prophecy</strong>.</td>
                     </tr>
                     <tr>
-                        <td><strong>C.2 Motor Learning</strong></td>
-                        <td>8 - 12</td>
-                        <td>Transfer of learning and the "Psychological Refractory Period" are key definitions.</td>
+                        <td><strong>C.2 Learning</strong></td>
+                        <td>8-12</td>
+                        <td>Transfer of Learning and the <strong>Psychological Refractory Period</strong>.</td>
                     </tr>
                     <tr>
                         <td><strong>C.3 Motivation</strong></td>
-                        <td>8 - 12</td>
-                        <td>Be ready to discuss <strong>Goal Orientation Theory</strong> (Task vs. Ego).</td>
+                        <td>8-12</td>
+                        <td><strong>Goal Orientation Theory</strong> (Task vs. Ego orientation).</td>
                     </tr>
                     <tr>
-                        <td><strong>C.4 Stress & Coping</strong></td>
-                        <td>8 - 12</td>
-                        <td>Arousal/Anxiety curves and coping strategies (e.g., progressive relaxation).</td>
-                    </tr>
-                    <tr>
-                        <td><strong>C.5 Psychological Skills</strong></td>
-                        <td>10 - 15</td>
-                        <td><strong>High Value.</strong> The <strong>PETTLEP</strong> model of imagery and Goal Setting (SMART goals) are classic Paper 2 topics.</td>
+                        <td><strong>C.5 Skills</strong></td>
+                        <td>10-15</td>
+                        <td><strong>High Value.</strong> Know the <strong>PETTLEP</strong> imagery model and Goal Setting (SMART).</td>
                     </tr>
                 </tbody>
             </table>
 
             <span class="section-badge">🧩 Section 3</span>
             <h2>What to Expect: Sample Questions</h2>
-            <p>The new 2026 exams are split into three distinct styles. Click below to see examples derived from your textbook content.</p>
 
             <div class="paper2-container">
                 <span class="paper2-number">Paper 1A | Knowledge</span>
                 <span class="marks-badge">MCQ</span>
-                <div class="mcq-question"><strong>Topic A.1:</strong> Which component of the homeostatic control mechanism is responsible for detecting a deviation from the set point?</div>
+                <div class="mcq-question"><strong>Topic A.1:</strong> Which component of the homeostatic control mechanism detects a deviation from the set point?</div>
                 <ul class="mcq-options">
                     <li>A. Effector</li>
                     <li>B. Control Centre</li>
@@ -226,7 +190,7 @@
                 <div class="model-answer">
                     <span class="model-answer-label">✓ Correct Answer: C</span>
                     <div class="model-answer-content" id="demo-q1">
-                        <strong>Explanation:</strong> The Sensor (Receptor) detects changes in the internal environment. The Control Centre decides the response, and the Effector carries it out.
+                        <strong>Explanation:</strong> The Sensor detects changes. The Control Centre decides the response. The Effector acts.
                     </div>
                 </div>
             </div>
@@ -235,41 +199,24 @@
                 <span class="paper2-number">Paper 1B | Data Analysis</span>
                 <span class="marks-badge">3 Marks</span>
                 <div class="dbq-intro">
-                    <strong>Topic A.2 Scenario:</strong> A study compared sleep habits. Elite athletes: 49.5% reported "No problems". Sub-Elite: 25.0% reported "No problems".<br><br>
-                    <strong>(a)</strong> Calculate the difference in percentage between the two groups. [1]<br>
-                    <strong>(b)</strong> Distinguish between the two groups based on the data. [2]
+                    <strong>Scenario (Topic A.2):</strong> A study compared sleep habits. Elite athletes: 49.5% "No problems". Sub-Elite: 25.0% "No problems".<br><br>
+                    <strong>(a)</strong> Calculate the difference in percentage. [1]<br>
+                    <strong>(b)</strong> Distinguish between the two groups. [2]
                 </div>
                 <button class="reveal-answer-btn" data-answer-id="demo-q2"><span class="icon">▼</span> Reveal Model Answer</button>
                 <div class="model-answer">
                     <span class="model-answer-label">✓ Model Answer</span>
                     <div class="model-answer-content" id="demo-q2">
                         <strong>(a)</strong> 49.5% - 25.0% = <strong>24.5%</strong><br><br>
-                        <strong>(b)</strong> Elite athletes reported significantly fewer problems staying awake compared to sub-elite athletes. Almost twice as many elite athletes (49.5%) had "no problems" compared to the sub-elite group (25%).
-                    </div>
-                </div>
-            </div>
-
-            <div class="paper2-container">
-                <span class="paper2-number">Paper 2 | Extended Response</span>
-                <span class="marks-badge">4 Marks</span>
-                <div class="mcq-question"><strong>Topic A.1:</strong> Explain the nervous control of ventilation during exercise.</div>
-                <button class="reveal-answer-btn" data-answer-id="demo-q3"><span class="icon">▼</span> Reveal Model Answer</button>
-                <div class="model-answer">
-                    <span class="model-answer-label">✓ Model Answer</span>
-                    <div class="model-answer-content" id="demo-q3">
-                        1. <strong>Detection:</strong> Low pH and high CO2 are detected by chemoreceptors.<br>
-                        2. <strong>Proprioception:</strong> Proprioceptors detect increased muscle movement.<br>
-                        3. <strong>Processing:</strong> Receptors signal the respiratory centre in the medulla oblongata.<br>
-                        4. <strong>Action:</strong> Impulses sent via the phrenic nerve stimulate the diaphragm/intercostals to increase breathing rate/depth.
+                        <strong>(b)</strong> Elite athletes had significantly fewer sleep problems. Nearly double the percentage of elites reported "no problems" compared to sub-elites.
                     </div>
                 </div>
             </div>
 
             <div style="text-align:center; margin:3rem 0; padding:2rem; background:linear-gradient(135deg,#004587 0%,#002a52 100%); border-radius:12px; color:#fff;">
                 <h3 style="color:#fbba07; margin-bottom:1rem;">Ready to start?</h3>
-                <p style="margin:0;">Select a Topic from the menu to dive into specific content and practice questions.</p>
+                <p style="margin:0;">Select a Topic from the menu to dive in.</p>
             </div>
-
         </div>
     </div>
 
