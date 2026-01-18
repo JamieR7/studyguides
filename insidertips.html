@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam Strategy & Predictions | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles.css">
     
     <style>
@@ -35,16 +34,18 @@
             gap: 0.5rem;
         }
 
-        .calc-row {
+        .split-row {
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem 0;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
             border-bottom: 1px dashed #cbd5e0;
-            font-size: 0.95rem;
         }
+        .split-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         
-        .calc-row:last-child { border-bottom: none; }
-        .calc-val { font-weight: 700; color: #2d3748; }
+        .split-col { text-align: center; width: 48%; }
+        .split-label { font-size: 0.75rem; text-transform: uppercase; color: #718096; font-weight: 700; display: block; margin-bottom: 0.25rem; }
+        .split-val { font-weight: 700; color: #2d3748; font-size: 1.1rem; }
 
         .key-stat-box {
             background: #004587;
@@ -57,7 +58,7 @@
             text-align: center;
         }
 
-        .stat-value { font-size: 2.5rem; font-weight: 700; color: #fbba07; line-height: 1; margin-bottom: 0.5rem; }
+        .stat-value { font-size: 2.2rem; font-weight: 700; color: #fbba07; line-height: 1; margin-bottom: 0.5rem; }
         .stat-label { font-size: 0.9rem; opacity: 0.9; }
 
         /* --- STRATEGY CARDS --- */
@@ -92,19 +93,18 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
+        /* CARD HEADER (Clickable Area) */
         .card-main {
             padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer; /* Whole card clickable */
+            cursor: pointer; 
+            background: #fff;
         }
+        .card-main:hover { background: #fcfcfc; }
 
-        .topic-content h3 {
-            margin: 0 0 0.5rem 0;
-            color: #2d3748;
-            font-size: 1.2rem;
-        }
+        .topic-content h3 { margin: 0 0 0.5rem 0; color: #2d3748; font-size: 1.2rem; }
 
         .meta-tags {
             display: flex;
@@ -211,35 +211,47 @@
         <div class="topic-content-wrapper">
             <h1>Exam Strategy & Marks Prediction</h1>
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">
-                Don't just study hard, study smart. Use the breakdown below to target high-value topics.
+                Target your revision using the official 2026 weighting logic.
             </p>
 
             <div class="dashboard-container">
                 <div class="methodology-box">
-                    <div class="methodology-header">🧮 How we predict marks</div>
-                    <p style="margin-bottom:1rem; font-size:0.9rem;">The IB allocates marks proportional to teaching hours. We use the 2026 Syllabus to project the exam weighting.</p>
-                    <div class="calc-row">
-                        <span>Total Teaching Hours (SL)</span>
-                        <span class="calc-val">150 Hours</span>
+                    <div class="methodology-header">🧮 Calculating the Weighting</div>
+                    <p style="margin-bottom:1rem; font-size:0.9rem;">Marks are allocated based on teaching hours. Here is the split:</p>
+                    
+                    <div class="split-row">
+                        <div class="split-col">
+                            <span class="split-label">Standard Level</span>
+                            <span class="split-val">150 Hours</span>
+                            <span style="display:block; font-size:0.8rem; color:#666;">Total Teaching</span>
+                        </div>
+                        <div class="split-col">
+                            <span class="split-label">Higher Level</span>
+                            <span class="split-val">240 Hours</span>
+                            <span style="display:block; font-size:0.8rem; color:#666;">Total Teaching</span>
+                        </div>
                     </div>
-                    <div class="calc-row">
-                        <span>Total Exam Marks (SL)</span>
-                        <span class="calc-val">105 Marks</span>
-                    </div>
-                    <div class="calc-row">
-                        <span>Ratio</span>
-                        <span class="calc-val">~0.7 Marks per Hour</span>
+
+                    <div class="split-row">
+                        <div class="split-col">
+                            <span class="split-label">SL Exam</span>
+                            <span class="split-val">105 Marks</span>
+                        </div>
+                        <div class="split-col">
+                            <span class="split-label">HL Exam</span>
+                            <span class="split-val">145 Marks</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="key-stat-box">
                     <div class="stat-value">~35%</div>
-                    <div class="stat-label">of Total Grade comes from Theme A (Physiology)</div>
+                    <div class="stat-label">of the Total Grade comes from <strong>Theme A</strong> (Physiology). It is the heaviest section for both SL & HL.</div>
                 </div>
 
                 <div class="key-stat-box" style="background: #38a169;">
                     <div class="stat-value">20</div>
-                    <div class="stat-label">Marks purely for Data Analysis (Paper 1B)</div>
+                    <div class="stat-label">Marks purely for <strong>Data Analysis (Paper 1B)</strong>. This requires skill practice, not memorization.</div>
                 </div>
             </div>
 
@@ -250,8 +262,8 @@
 
             <div class="strategy-grid">
                 
-                <div class="strategy-card" onclick="toggleDrawer('d-a1')">
-                    <div class="card-main">
+                <div class="strategy-card">
+                    <div class="card-main" onclick="toggleDrawer('d-a1')">
                         <div class="topic-content">
                             <h3>A.1 Communication</h3>
                             <div class="meta-tags">
@@ -275,8 +287,8 @@
                     </div>
                 </div>
 
-                <div class="strategy-card" onclick="toggleDrawer('d-a2')">
-                    <div class="card-main">
+                <div class="strategy-card">
+                    <div class="card-main" onclick="toggleDrawer('d-a2')">
                         <div class="topic-content">
                             <h3>A.2 Hydration & Nutrition</h3>
                             <div class="meta-tags">
@@ -300,8 +312,8 @@
                     </div>
                 </div>
 
-                <div class="strategy-card" onclick="toggleDrawer('d-a3')">
-                    <div class="card-main">
+                <div class="strategy-card">
+                    <div class="card-main" onclick="toggleDrawer('d-a3')">
                         <div class="topic-content">
                             <h3>A.3 Response</h3>
                             <div class="meta-tags">
@@ -336,8 +348,8 @@
 
             <div class="strategy-grid">
                 
-                <div class="strategy-card" onclick="toggleDrawer('d-b1')">
-                    <div class="card-main">
+                <div class="strategy-card">
+                    <div class="card-main" onclick="toggleDrawer('d-b1')">
                         <div class="topic-content">
                             <h3>B.1 Generating Movement</h3>
                             <div class="meta-tags">
@@ -361,8 +373,8 @@
                     </div>
                 </div>
 
-                <div class="strategy-card" onclick="toggleDrawer('d-b2')">
-                    <div class="card-main">
+                <div class="strategy-card">
+                    <div class="card-main" onclick="toggleDrawer('d-b2')">
                         <div class="topic-content">
                             <h3>B.2 Forces & Motion</h3>
                             <div class="meta-tags">
@@ -388,8 +400,8 @@
                     </div>
                 </div>
 
-                <div class="strategy-card" onclick="toggleDrawer('d-b3')">
-                    <div class="card-main">
+                <div class="strategy-card">
+                    <div class="card-main" onclick="toggleDrawer('d-b3')">
                         <div class="topic-content">
                             <h3>B.3 Injury</h3>
                             <div class="meta-tags">
@@ -421,8 +433,8 @@
 
             <div class="strategy-grid">
                 
-                <div class="strategy-card" onclick="toggleDrawer('d-c1')">
-                    <div class="card-main">
+                <div class="strategy-card">
+                    <div class="card-main" onclick="toggleDrawer('d-c1')">
                         <div class="topic-content">
                             <h3>C.1 Individual Differences</h3>
                             <div class="meta-tags">
@@ -446,8 +458,8 @@
                     </div>
                 </div>
 
-                <div class="strategy-card" onclick="toggleDrawer('d-c2')">
-                    <div class="card-main">
+                <div class="strategy-card">
+                    <div class="card-main" onclick="toggleDrawer('d-c2')">
                         <div class="topic-content">
                             <h3>C.2 Motor Learning</h3>
                             <div class="meta-tags">
@@ -471,8 +483,8 @@
                     </div>
                 </div>
 
-                <div class="strategy-card" onclick="toggleDrawer('d-c3')">
-                    <div class="card-main">
+                <div class="strategy-card">
+                    <div class="card-main" onclick="toggleDrawer('d-c3')">
                         <div class="topic-content">
                             <h3>C.3 Motivation</h3>
                             <div class="meta-tags">
@@ -497,8 +509,8 @@
                     </div>
                 </div>
 
-                <div class="strategy-card" onclick="toggleDrawer('d-c4')">
-                    <div class="card-main">
+                <div class="strategy-card">
+                    <div class="card-main" onclick="toggleDrawer('d-c4')">
                         <div class="topic-content">
                             <h3>C.4 Stress & Coping</h3>
                             <div class="meta-tags">
@@ -522,8 +534,8 @@
                     </div>
                 </div>
 
-                <div class="strategy-card" onclick="toggleDrawer('d-c5')" style="border-left: 5px solid #c62828;">
-                    <div class="card-main">
+                <div class="strategy-card" style="border-left: 5px solid #c62828;">
+                    <div class="card-main" onclick="toggleDrawer('d-c5')">
                         <div class="topic-content">
                             <h3>C.5 Psychological Skills</h3>
                             <div class="meta-tags">
@@ -565,8 +577,8 @@
 
             <div class="strategy-grid">
                 
-                <div class="strategy-card data-hub-card" onclick="toggleDrawer('dbq-1')">
-                    <div class="card-main">
+                <div class="strategy-card data-hub-card">
+                    <div class="card-main" onclick="toggleDrawer('dbq-1')">
                         <div class="topic-content">
                             <h3>Topic A.2 Data: HIIT Energy</h3>
                             <div class="meta-tags">
@@ -591,8 +603,8 @@
                     </div>
                 </div>
 
-                <div class="strategy-card data-hub-card" onclick="toggleDrawer('dbq-2')">
-                    <div class="card-main">
+                <div class="strategy-card data-hub-card">
+                    <div class="card-main" onclick="toggleDrawer('dbq-2')">
                         <div class="topic-content">
                             <h3>Topic B.3 Data: Injury Rates</h3>
                             <div class="meta-tags">
@@ -617,8 +629,8 @@
                     </div>
                 </div>
 
-                <div class="strategy-card data-hub-card" onclick="toggleDrawer('dbq-3')">
-                    <div class="card-main">
+                <div class="strategy-card data-hub-card">
+                    <div class="card-main" onclick="toggleDrawer('dbq-3')">
                         <div class="topic-content">
                             <h3>Topic C.4 Data: Coping & Resilience</h3>
                             <div class="meta-tags">
