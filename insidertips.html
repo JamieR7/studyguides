@@ -9,15 +9,121 @@
     <link rel="stylesheet" href="styles.css">
     
     <style>
-        /* Priority Labels */
-        .priority-high { color: #d32f2f; font-weight: 700; background: rgba(211, 47, 47, 0.08); border-radius: 4px; padding: 0.25rem 0.5rem; display: inline-block; }
-        .priority-med { color: #e65100; font-weight: 700; background: rgba(255, 152, 0, 0.1); border-radius: 4px; padding: 0.25rem 0.5rem; display: inline-block; }
-        .priority-skill { color: #0277bd; font-weight: 700; background: rgba(3, 169, 244, 0.1); border-radius: 4px; padding: 0.25rem 0.5rem; display: inline-block; }
+        /* --- STRATEGY CARD LAYOUT --- */
+        .strategy-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .strategy-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .strategy-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Card Header (Visible) */
+        .card-header {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #ffffff, #f9fbfd);
+            cursor: pointer;
+        }
+
+        .topic-info h3 {
+            margin: 0 0 0.5rem 0;
+            color: #004587;
+            font-size: 1.25rem;
+        }
+
+        .topic-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            align-items: center;
+        }
+
+        /* Badges */
+        .badge { padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
+        .badge-sl { background: #e3f2fd; color: #004587; border: 1px solid #bbdefb; }
+        .badge-hl { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
+        .badge-marks { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+
+        /* Insider Tip Box */
+        .insider-tip {
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            background: #f1f8e9;
+            border-left: 4px solid #7cb342;
+            color: #33691e;
+            font-size: 0.95rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* The Dropdown Button */
+        .expand-btn {
+            background: #004587;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .expand-btn:hover { background: #003366; }
+
+        /* Hidden Drawer (Questions) */
+        .question-drawer {
+            display: none; /* Hidden by default */
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+        }
+
+        .question-drawer.open { display: block; animation: slideDown 0.3s ease; }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Question Styling within Drawer */
+        .drawer-section { margin-top: 1.5rem; }
+        .drawer-label { font-size: 0.85rem; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; display: block; }
         
-        /* Mobile Fixes */
+        /* Paper 1B Specifics */
+        .graph-placeholder {
+            border: 2px dashed #ccc;
+            background: #eee;
+            color: #555;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-family: monospace;
+        }
+
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .data-table { display: block; width: 100%; overflow-x: auto; white-space: nowrap; }
-            .data-table td:last-child { white-space: normal; min-width: 250px; }
+            .card-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .expand-btn { width: 100%; justify-content: center; }
+            .topic-meta { flex-wrap: wrap; }
         }
     </style>
 </head>
@@ -35,192 +141,299 @@
 
         <div class="topic-content-wrapper">
             <h1>Exam Strategy & Marks Prediction</h1>
-            <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">Where to focus your revision for the 2026 Syllabus.</p>
+            <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">
+                Target your revision based on the 2026 weighting. 
+                <span class="badge badge-sl" style="font-size:0.9rem; vertical-align:middle; margin-left:10px;">SL = Core</span>
+                <span class="badge badge-hl" style="font-size:0.9rem; vertical-align:middle; margin-left:5px;">HL = Core + AHL</span>
+            </p>
 
-            <span class="section-badge">📊 Section 1</span>
-            <h2>Projected Exam Weighting</h2>
+            <span class="section-badge">🫀 Theme A: Physiology</span>
+            
+            <div class="strategy-grid">
+                
+                <div class="strategy-card">
+                    <div class="card-header">
+                        <div class="topic-info">
+                            <h3>A.1 Communication</h3>
+                            <div class="topic-meta">
+                                <span class="badge badge-sl">SL / HL</span>
+                                <span class="badge badge-marks">~5-8 Marks</span>
+                            </div>
+                            <div class="insider-tip">
+                                💡 <strong>Tip:</strong> Homeostasis & feedback loops are the key definitions here.
+                            </div>
+                        </div>
+                        <button class="expand-btn" onclick="toggleDrawer('drawer-a1')">
+                            See Sample Questions ▼
+                        </button>
+                    </div>
+                    <div id="drawer-a1" class="question-drawer">
+                        <div class="drawer-section">
+                            <span class="drawer-label">Paper 1A (Multiple Choice)</span>
+                            <div class="mcq-question">Which component of the homeostatic control mechanism detects a deviation from the set point?</div>
+                            <button class="reveal-answer-btn" data-answer-id="a1-mcq"><span class="icon">▼</span> Reveal Answer</button>
+                            <div class="model-answer">
+                                <span class="model-answer-label">✓ Correct Answer: Sensor (Receptor)</span>
+                                <div class="model-answer-content" id="a1-mcq">
+                                    <strong>Explanation:</strong> The Sensor detects changes. The Control Centre decides the response. The Effector acts.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="drawer-section">
+                            <span class="drawer-label">Paper 2 (Short Answer)</span>
+                            <div class="mcq-question">Explain the nervous control of ventilation during exercise. [4 marks]</div>
+                            <button class="reveal-answer-btn" data-answer-id="a1-p2"><span class="icon">▼</span> Reveal Model Answer</button>
+                            <div class="model-answer">
+                                <span class="model-answer-label">✓ Model Answer</span>
+                                <div class="model-answer-content" id="a1-p2">
+                                    1. <strong>Detection:</strong> Chemoreceptors detect low pH/high CO2.<br>
+                                    2. <strong>Signalling:</strong> Receptors signal the respiratory centre in the medulla.<br>
+                                    3. <strong>Action:</strong> Impulses sent via the phrenic nerve stimulate the diaphragm to contract more forcefully.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <div class="card-header">
+                        <div class="topic-info">
+                            <h3>A.2 Hydration & Nutrition</h3>
+                            <div class="topic-meta">
+                                <span class="badge badge-sl">SL / HL</span>
+                                <span class="badge badge-marks">~8-12 Marks</span>
+                            </div>
+                            <div class="insider-tip">
+                                💡 <strong>Tip:</strong> High probability for Paper 1B (Data Analysis) on energy expenditure.
+                            </div>
+                        </div>
+                        <button class="expand-btn" onclick="toggleDrawer('drawer-a2')">
+                            See Sample Questions ▼
+                        </button>
+                    </div>
+                    <div id="drawer-a2" class="question-drawer">
+                        <div class="drawer-section">
+                            <span class="drawer-label">Paper 2 (Short Answer)</span>
+                            <div class="mcq-question">Outline the concept of the "Lactate Inflection Point" (LIP). [2 marks]</div>
+                            <button class="reveal-answer-btn" data-answer-id="a2-p2"><span class="icon">▼</span> Reveal Model Answer</button>
+                            <div class="model-answer">
+                                <span class="model-answer-label">✓ Model Answer</span>
+                                <div class="model-answer-content" id="a2-p2">
+                                    The LIP describes the intensity of exercise where lactate production exceeds the rate of removal. Training near this point improves aerobic endurance.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <span class="section-badge">🦾 Theme B: Biomechanics</span>
+            
+            <div class="strategy-grid">
+                
+                <div class="strategy-card">
+                    <div class="card-header">
+                        <div class="topic-info">
+                            <h3>B.1 Generating Movement</h3>
+                            <div class="topic-meta">
+                                <span class="badge badge-sl">SL / HL</span>
+                                <span class="badge badge-marks">~5-8 Marks</span>
+                            </div>
+                            <div class="insider-tip">
+                                💡 <strong>Tip:</strong> Don't mix up Agonist (mover) vs Antagonist.
+                            </div>
+                        </div>
+                        <button class="expand-btn" onclick="toggleDrawer('drawer-b1')">
+                            See Sample Questions ▼
+                        </button>
+                    </div>
+                    <div id="drawer-b1" class="question-drawer">
+                        <div class="drawer-section">
+                            <span class="drawer-label">Paper 1A (Multiple Choice)</span>
+                            <div class="mcq-question">In a push-up, what is the role of the triceps brachii during the upward phase?</div>
+                            <button class="reveal-answer-btn" data-answer-id="b1-mcq"><span class="icon">▼</span> Reveal Answer</button>
+                            <div class="model-answer">
+                                <span class="model-answer-label">✓ Correct Answer: Agonist</span>
+                                <div class="model-answer-content" id="b1-mcq">
+                                    <strong>Explanation:</strong> The triceps contract concentrically to extend the elbow, making them the prime mover (agonist).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-card">
+                    <div class="card-header">
+                        <div class="topic-info">
+                            <h3>B.2 Forces & Motion</h3>
+                            <div class="topic-meta">
+                                <span class="badge badge-sl">SL / HL</span>
+                                <span class="badge badge-marks">~10-15 Marks</span>
+                            </div>
+                            <div class="insider-tip">
+                                💡 <strong>Tip:</strong> Newton's Laws are the "Money Topic" for calculations.
+                            </div>
+                        </div>
+                        <button class="expand-btn" onclick="toggleDrawer('drawer-b2')">
+                            See Sample Questions ▼
+                        </button>
+                    </div>
+                    <div id="drawer-b2" class="question-drawer">
+                        <div class="drawer-section">
+                            <span class="drawer-label">Paper 2 (Calculations)</span>
+                            <div class="mcq-question">Explain how an athlete can increase their acceleration using Newton's Second Law (F=ma). [3 marks]</div>
+                            <button class="reveal-answer-btn" data-answer-id="b2-p2"><span class="icon">▼</span> Reveal Model Answer</button>
+                            <div class="model-answer">
+                                <span class="model-answer-label">✓ Model Answer</span>
+                                <div class="model-answer-content" id="b2-p2">
+                                    Since Acceleration = Force / Mass:<br>
+                                    1. The athlete can increase the <strong>Force</strong> applied to the ground (ground reaction force).<br>
+                                    2. The athlete can reduce their <strong>Mass</strong> (though less practical in competition).<br>
+                                    3. Therefore, applying greater force results in greater acceleration.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <span class="section-badge">🧠 Theme C: Psychology</span>
+
+            <div class="strategy-grid">
+                
+                <div class="strategy-card" style="border-left: 5px solid #c62828;">
+                    <div class="card-header">
+                        <div class="topic-info">
+                            <h3>C.5 Psychological Skills</h3>
+                            <div class="topic-meta">
+                                <span class="badge badge-hl">HL ONLY</span>
+                                <span class="badge badge-marks">~10-15 Marks</span>
+                            </div>
+                            <div class="insider-tip">
+                                💡 <strong>Tip:</strong> PETTLEP imagery and Goal Setting are huge.
+                            </div>
+                        </div>
+                        <button class="expand-btn" onclick="toggleDrawer('drawer-c5')">
+                            See Sample Questions ▼
+                        </button>
+                    </div>
+                    <div id="drawer-c5" class="question-drawer">
+                        <div class="drawer-section">
+                            <span class="drawer-label">Paper 2 (Extended Response)</span>
+                            <div class="mcq-question">Explain what the acronym PETTLEP (Holmes, Collins, 2001) stands for when using imagery. [7 marks]</div>
+                            <button class="reveal-answer-btn" data-answer-id="c5-p2"><span class="icon">▼</span> Reveal Model Answer</button>
+                            <div class="model-answer">
+                                <span class="model-answer-label">✓ Model Answer</span>
+                                <div class="model-answer-content" id="c5-p2">
+                                    <strong>P</strong>hysical (nature of the movement)<br>
+                                    <strong>E</strong>nvironment (location)<br>
+                                    <strong>T</strong>ask (the skill itself)<br>
+                                    <strong>T</strong>iming (speed of imagery)<br>
+                                    <strong>L</strong>earning (stage of the athlete)<br>
+                                    <strong>E</strong>motion (feelings associated)<br>
+                                    <strong>P</strong>erspective (internal vs external view)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <span class="section-badge" style="background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%); color:white;">📈 Paper 1B: Data Analysis Hub</span>
+            
             <div class="note-box">
-                <strong>Strategy Tip:</strong> Do not skip <strong>Paper 1B (Data Analysis)</strong>. It is worth ~20 marks and tests skills (reading graphs), not memory.
+                <strong>How to use:</strong> These questions use specific graphs found in your textbook. You can find the graphs using the <strong>Verbatim Titles</strong> below.
             </div>
 
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Theme</th>
-                        <th>Focus</th>
-                        <th>Projected Marks</th>
-                        <th>Priority</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Theme A</strong></td>
-                        <td>Physiology & Nutrition</td>
-                        <td>~35 - 40 Marks</td>
-                        <td class="priority-high">🟥 Critical</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Theme B</strong></td>
-                        <td>Biomechanics</td>
-                        <td>~25 - 30 Marks</td>
-                        <td class="priority-med">🟧 High</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Theme C</strong></td>
-                        <td>Psychology</td>
-                        <td>~25 - 30 Marks</td>
-                        <td class="priority-med">🟧 High</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Skills</strong></td>
-                        <td>Paper 1B (Data Analysis)</td>
-                        <td>~15 - 20 Marks</td>
-                        <td class="priority-skill">🟦 Skill</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <span class="section-badge">🔮 Section 2</span>
-            <h2>Detailed Sub-Topic Predictions</h2>
-            <p>Based on the textbook chapters you uploaded, here are the high-value topics.</p>
-
-            <h3>Theme A: Physiology</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width:25%">Topic</th>
-                        <th style="width:15%">Marks</th>
-                        <th>📝 Insider Tip (Source Based)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>A.1 Communication</strong></td>
-                        <td>5-8</td>
-                        <td>Focus on <strong>Homeostasis</strong> and Feedback Loops.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>A.2 Hydration</strong></td>
-                        <td>8-12</td>
-                        <td>High chance for Paper 1B. Review <strong>Energy Systems</strong> (ATP-CP vs Lactic Acid).</td>
-                    </tr>
-                    <tr>
-                        <td><strong>A.3 Response</strong></td>
-                        <td>12-18</td>
-                        <td><strong>Big Topic.</strong> Training adaptations, fatigue, and recovery strategies (e.g., EPOC).</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Theme B: Biomechanics</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width:25%">Topic</th>
-                        <th style="width:15%">Marks</th>
-                        <th>📝 Insider Tip (Source Based)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>B.1 Movement</strong></td>
-                        <td>5-8</td>
-                        <td>Memorize the <strong>Lever Classes</strong> (1st, 2nd, 3rd) and planes of movement.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>B.2 Forces</strong></td>
-                        <td>10-15</td>
-                        <td><strong>Money Topic.</strong> Expect a calculation on <strong>Newton's Laws</strong> or Projectile Motion.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>B.3 Injury</strong></td>
-                        <td>8-12</td>
-                        <td>Acute vs. Chronic injury and prevention strategies (e.g., warm-ups).</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Theme C: Psychology</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th style="width:25%">Topic</th>
-                        <th style="width:15%">Marks</th>
-                        <th>📝 Insider Tip (Source Based)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>C.1 Differences</strong></td>
-                        <td>5-8</td>
-                        <td>Personality Theory and the <strong>Self-Fulfilling Prophecy</strong>.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>C.2 Learning</strong></td>
-                        <td>8-12</td>
-                        <td>Transfer of Learning and the <strong>Psychological Refractory Period</strong>.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>C.3 Motivation</strong></td>
-                        <td>8-12</td>
-                        <td><strong>Goal Orientation Theory</strong> (Task vs. Ego orientation).</td>
-                    </tr>
-                    <tr>
-                        <td><strong>C.5 Skills</strong></td>
-                        <td>10-15</td>
-                        <td><strong>High Value.</strong> Know the <strong>PETTLEP</strong> imagery model and Goal Setting (SMART).</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <span class="section-badge">🧩 Section 3</span>
-            <h2>What to Expect: Sample Questions</h2>
-
-            <div class="paper2-container">
-                <span class="paper2-number">Paper 1A | Knowledge</span>
-                <span class="marks-badge">MCQ</span>
-                <div class="mcq-question"><strong>Topic A.1:</strong> Which component of the homeostatic control mechanism detects a deviation from the set point?</div>
-                <ul class="mcq-options">
-                    <li>A. Effector</li>
-                    <li>B. Control Centre</li>
-                    <li>C. Sensor (Receptor)</li>
-                    <li>D. Negative Feedback Loop</li>
-                </ul>
-                <button class="reveal-answer-btn" data-answer-id="demo-q1"><span class="icon">▼</span> Reveal Answer</button>
-                <div class="model-answer">
-                    <span class="model-answer-label">✓ Correct Answer: C</span>
-                    <div class="model-answer-content" id="demo-q1">
-                        <strong>Explanation:</strong> The Sensor detects changes. The Control Centre decides the response. The Effector acts.
+            <div class="strategy-card" style="border-left: 5px solid #2e7d32;">
+                <div class="card-header">
+                    <div class="topic-info">
+                        <h3>A.2 Data: Energy & HIIT</h3>
+                        <div class="topic-meta">
+                            <span class="badge badge-sl">Skill: Reading Tables</span>
+                        </div>
+                    </div>
+                    <button class="expand-btn" onclick="toggleDrawer('drawer-dbq1')">See DBQ ▼</button>
+                </div>
+                <div id="drawer-dbq1" class="question-drawer">
+                    <div class="graph-placeholder">
+                        [INSERT TEXTBOOK FIGURE]<br>
+                        <strong>Title:</strong> "Table 2: Mean VO2, energy expenditure (EE) during exercise, and EPOC..."<br>
+                        <em>(Source: Textbook Section A.2)</em>
+                    </div>
+                    <div class="dbq-intro">
+                        <strong>Scenario:</strong> A study compared Energy Expenditure (EE) in HIIT vs Continuous Training (CONT).<br>
+                        HIIT Mean EE = 10.0 (±1.1) | CONT Mean EE = 7.6 (±1.1)
+                    </div>
+                    <div class="drawer-section">
+                        <div class="mcq-question"><strong>(a)</strong> Calculate the difference in mean energy expenditure between HIIT and CONT. [1]</div>
+                        <button class="reveal-answer-btn" data-answer-id="dbq1-a"><span class="icon">▼</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Model Answer</span>
+                            <div class="model-answer-content" id="dbq1-a">
+                                10.0 - 7.6 = <strong>2.4 kcal/min</strong>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="paper2-container">
-                <span class="paper2-number">Paper 1B | Data Analysis</span>
-                <span class="marks-badge">3 Marks</span>
-                <div class="dbq-intro">
-                    <strong>Scenario (Topic A.2):</strong> A study compared sleep habits. Elite athletes: 49.5% "No problems". Sub-Elite: 25.0% "No problems".<br><br>
-                    <strong>(a)</strong> Calculate the difference in percentage. [1]<br>
-                    <strong>(b)</strong> Distinguish between the two groups. [2]
+            <div class="strategy-card" style="border-left: 5px solid #2e7d32;">
+                <div class="card-header">
+                    <div class="topic-info">
+                        <h3>B.3 Data: Injury Prevention</h3>
+                        <div class="topic-meta">
+                            <span class="badge badge-sl">Skill: Calculating Rates</span>
+                        </div>
+                    </div>
+                    <button class="expand-btn" onclick="toggleDrawer('drawer-dbq2')">See DBQ ▼</button>
                 </div>
-                <button class="reveal-answer-btn" data-answer-id="demo-q2"><span class="icon">▼</span> Reveal Model Answer</button>
-                <div class="model-answer">
-                    <span class="model-answer-label">✓ Model Answer</span>
-                    <div class="model-answer-content" id="demo-q2">
-                        <strong>(a)</strong> 49.5% - 25.0% = <strong>24.5%</strong><br><br>
-                        <strong>(b)</strong> Elite athletes had significantly fewer sleep problems. Nearly double the percentage of elites reported "no problems" compared to sub-elites.
+                <div id="drawer-dbq2" class="question-drawer">
+                    <div class="graph-placeholder">
+                        [INSERT TEXTBOOK FIGURE]<br>
+                        <strong>Title:</strong> "Table 3: Injury incidence by injury type for both groups"<br>
+                        <em>(Source: Textbook Section B.3)</em>
+                    </div>
+                    <div class="dbq-intro">
+                        <strong>Scenario:</strong> Comparing injury rates between an Intervention Group (warm-ups) and Control Group.<br>
+                        Control Lower Limb Injuries = 51 | Intervention Lower Limb Injuries = 35
+                    </div>
+                    <div class="drawer-section">
+                        <div class="mcq-question"><strong>(a)</strong> Identify which group had the lower limb injury rate. [1]</div>
+                        <button class="reveal-answer-btn" data-answer-id="dbq2-a"><span class="icon">▼</span> Reveal Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Model Answer</span>
+                            <div class="model-answer-content" id="dbq2-a">
+                                The <strong>Intervention Group</strong> (35 injuries vs 51 in control).
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div style="text-align:center; margin:3rem 0; padding:2rem; background:linear-gradient(135deg,#004587 0%,#002a52 100%); border-radius:12px; color:#fff;">
-                <h3 style="color:#fbba07; margin-bottom:1rem;">Ready to start?</h3>
-                <p style="margin:0;">Select a Topic from the menu to dive in.</p>
-            </div>
         </div>
     </div>
 
-    <script src="mcq-interaction.js"></script>
-    <script src="navigation.js"></script>
+    <script>
+        // Simple script to toggle the "Drawers"
+        function toggleDrawer(drawerId) {
+            const drawer = document.getElementById(drawerId);
+            drawer.classList.toggle('open');
+            
+            // Optional: Rotate arrow on the button
+            const btn = drawer.previousElementSibling.querySelector('.expand-btn');
+            if(drawer.classList.contains('open')) {
+                btn.innerHTML = 'Hide Questions ▲';
+            } else {
+                btn.innerHTML = 'See Sample Questions ▼';
+            }
+        }
+    </script>
+    
+    <script src="../MCQ%20Interaction.js"></script>
+    <script src="../Navigation%20(1).js"></script>
 </body>
 </html>
