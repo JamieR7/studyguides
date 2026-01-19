@@ -8,139 +8,233 @@
     <link rel="stylesheet" href="styles.css">
     
     <style>
-        /* --- CURRICULUM TABLE --- */
-        .curriculum-table-wrapper {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            overflow: hidden;
+        /* --- THEME CARDS --- */
+        .curriculum-overview {
             margin-bottom: 3rem;
         }
 
-        .table-header-banner {
+        .overview-header {
             background: linear-gradient(135deg, #004587 0%, #003366 100%);
             color: white;
-            padding: 1.5rem;
+            padding: 2rem;
+            border-radius: 12px 12px 0 0;
             text-align: center;
         }
 
-        .table-header-banner h2 {
+        .overview-header h2 {
             margin: 0 0 0.5rem 0;
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.6rem;
         }
 
-        .table-header-banner p {
+        .overview-header p {
             margin: 0;
             opacity: 0.9;
             font-size: 0.95rem;
         }
 
-        .curriculum-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-
-        .curriculum-table thead th {
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
             background: #f8f9fa;
-            padding: 1rem 0.75rem;
-            text-align: left;
-            font-weight: 700;
-            color: #2d3748;
-            border-bottom: 2px solid #004587;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .curriculum-table thead th:first-child {
-            padding-left: 1.5rem;
-        }
-
-        .curriculum-table thead th:not(:first-child):not(:nth-child(2)) {
-            text-align: center;
-        }
-
-        .curriculum-table tbody tr {
             border-bottom: 1px solid #e2e8f0;
-            transition: background 0.2s;
+            flex-wrap: wrap;
         }
 
-        .curriculum-table tbody tr:hover {
-            background: #f8fafc;
-        }
-
-        .curriculum-table tbody tr.theme-row {
-            background: #edf2f7;
-            font-weight: 700;
-            color: #004587;
-        }
-
-        .curriculum-table tbody tr.theme-row:hover {
-            background: #e2e8f0;
-        }
-
-        .curriculum-table tbody td {
-            padding: 0.9rem 0.75rem;
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
             color: #4a5568;
         }
 
-        .curriculum-table tbody td:first-child {
-            padding-left: 1.5rem;
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
         }
 
-        .curriculum-table tbody td:not(:first-child):not(:nth-child(2)) {
-            text-align: center;
+        .dot-sl { background: #3182ce; }
+        .dot-hl { background: #e53e3e; }
+        .dot-1a { background: #805ad5; }
+        .dot-2 { background: #38a169; }
+
+        .theme-cards-container {
+            background: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .theme-card {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .theme-card:last-child {
+            border-bottom: none;
+        }
+
+        .theme-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+            gap: 1rem;
+        }
+
+        .theme-header:hover {
+            background: #f8f9fa;
+        }
+
+        .theme-header.active {
+            background: #edf2f7;
+            border-left: 4px solid #004587;
+        }
+
+        .theme-title-section {
+            flex: 1;
+        }
+
+        .theme-title-section h3 {
+            margin: 0 0 0.25rem 0;
+            color: #2d3748;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .subtopic-count {
+            font-size: 0.8rem;
+            color: #718096;
+            font-weight: 500;
+        }
+
+        .marks-summary {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .mark-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .mark-badge.sl {
+            background: #ebf8ff;
+            color: #2c5282;
+            border: 1px solid #bee3f8;
+        }
+
+        .mark-badge.hl {
+            background: #fff5f5;
+            color: #9b2c2c;
+            border: 1px solid #feb2b2;
+        }
+
+        .expand-icon {
+            color: #718096;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .theme-header.active .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Theme Body */
+        .theme-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            background: #f8f9fa;
+        }
+
+        .theme-body.open {
+            max-height: 2000px;
+        }
+
+        .topic-list {
+            padding: 1rem 1.5rem 1.5rem 1.5rem;
+        }
+
+        .topic-item {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border-radius: 8px;
+            border-left: 3px solid #cbd5e0;
+            transition: all 0.2s;
+        }
+
+        .topic-item:hover {
+            border-left-color: #004587;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .topic-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .topic-name {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .topic-marks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .mark-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 0.5rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .mark-label {
+            color: #718096;
             font-weight: 600;
         }
 
-        .curriculum-table tbody tr.theme-row td {
-            font-size: 0.95rem;
-            padding: 1rem 0.75rem;
-        }
-
-        .curriculum-table tbody tr.theme-row td:first-child {
-            padding-left: 1.5rem;
-        }
-
-        .curriculum-table tfoot td {
-            background: #004587;
-            color: white;
-            padding: 1.25rem 0.75rem;
-            font-weight: 700;
-            font-size: 1rem;
-            text-align: center;
-        }
-
-        .curriculum-table tfoot td:first-child {
-            text-align: left;
-            padding-left: 1.5rem;
-        }
-
-        .mark-cell {
+        .mark-value {
             color: #2d3748;
+            font-weight: 700;
         }
 
-        .mark-cell:empty::after {
-            content: "—";
+        .mark-value.zero {
             color: #cbd5e0;
         }
 
-        /* Responsive table */
         @media (max-width: 768px) {
-            .curriculum-table {
-                font-size: 0.8rem;
-            }
-            
-            .curriculum-table thead th,
-            .curriculum-table tbody td {
-                padding: 0.6rem 0.4rem;
+            .theme-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
             }
 
-            .curriculum-table thead th:first-child,
-            .curriculum-table tbody td:first-child {
-                padding-left: 0.75rem;
+            .marks-summary {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .topic-marks {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -350,334 +444,367 @@
                 Target your revision using the official 2026 weighting logic.
             </p>
 
-            <!-- CURRICULUM TABLE -->
-            <div class="curriculum-table-wrapper">
-                <div class="table-header-banner">
-                    <h2>📊 IB SEHS Curriculum Overview & Mark Allocation</h2>
-                    <p>Complete breakdown of units, topics, and predicted exam marks for 2026</p>
+            <!-- CURRICULUM OVERVIEW WITH COLLAPSIBLE THEMES -->
+            <div class="curriculum-overview">
+                <div class="overview-header">
+                    <h2>📊 IB SEHS Curriculum Breakdown</h2>
+                    <p>Click each theme to see topic-by-topic mark allocations</p>
                 </div>
-                <table class="curriculum-table">
-                    <thead>
-                        <tr>
-                            <th>Topic</th>
-                            <th>Unit</th>
-                            <th>SL</th>
-                            <th>HL</th>
-                            <th>1ASL</th>
-                            <th>1AHL</th>
-                            <th>2SL</th>
-                            <th>2HL</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="theme-row">
-                            <td>How do we move?</td>
-                            <td colspan="7"></td>
-                        </tr>
-                        <tr>
-                            <td>A.2.3 Energy systems SL</td>
-                            <td></td>
-                            <td class="mark-cell">7</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        <tr>
-                            <td>B.1.3 Muscular function</td>
-                            <td></td>
-                            <td class="mark-cell">4</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">1</td>
-                        </tr>
-                        <tr>
-                            <td>B.1.2 Structure and function of connective tissues and joints</td>
-                            <td></td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        <tr>
-                            <td>B.1.4 Levers in movement and sport</td>
-                            <td></td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        <tr>
-                            <td>B.2.1 Newton's laws of motion</td>
-                            <td></td>
-                            <td class="mark-cell">5</td>
-                            <td class="mark-cell">12</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">5</td>
-                        </tr>
-                        <tr>
-                            <td>B.1.1 Anatomical position, planes and movement</td>
-                            <td></td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">1</td>
-                        </tr>
-                        
-                        <tr class="theme-row">
-                            <td>How do we respond to exercise/activity?</td>
-                            <td colspan="7"></td>
-                        </tr>
-                        <tr>
-                            <td>A.1.1 Inter-system communication—but not "reproductive hormones"</td>
-                            <td></td>
-                            <td class="mark-cell">10</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">4</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        <tr>
-                            <td>A.1.2 Maintaining homeostasis, but not A1.2.2</td>
-                            <td></td>
-                            <td class="mark-cell">6</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        <tr>
-                            <td>A.1.3 Transport</td>
-                            <td></td>
-                            <td class="mark-cell">7</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        <tr>
-                            <td>A.2.1 Water and electrolyte balance</td>
-                            <td></td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        <tr>
-                            <td>C.2.2 Attentional control</td>
-                            <td></td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        <tr>
-                            <td>C.4.1 Arousal and anxiety</td>
-                            <td></td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        
-                        <tr class="theme-row">
-                            <td>How can we optimize human performance?</td>
-                            <td colspan="7"></td>
-                        </tr>
-                        <tr>
-                            <td>A.2.2 Fuelling for health and performance</td>
-                            <td></td>
-                            <td class="mark-cell">6</td>
-                            <td class="mark-cell">4</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell">2</td>
-                        </tr>
-                        <tr>
-                            <td>A.2.3 Energy systems HL</td>
-                            <td></td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">1</td>
-                        </tr>
-                        <tr>
-                            <td>A.3.1 Qualities of training</td>
-                            <td></td>
-                            <td class="mark-cell">6</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        <tr>
-                            <td>B.2.3 Movement analysis and its application</td>
-                            <td></td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        <tr>
-                            <td>C.2.1 Motor learning processes</td>
-                            <td></td>
-                            <td class="mark-cell">10</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">4</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        <tr>
-                            <td>C.4.2 Coping</td>
-                            <td></td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">1</td>
-                        </tr>
-                        <tr>
-                            <td>A.1.2.2 The body's response to environment (AHL)</td>
-                            <td></td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">5</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">2</td>
-                        </tr>
-                        
-                        <tr class="theme-row">
-                            <td>What are the factors that affect human performance?</td>
-                            <td colspan="7"></td>
-                        </tr>
-                        <tr>
-                            <td>B.2.2 Fluid mechanics</td>
-                            <td></td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell">8</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">4</td>
-                        </tr>
-                        <tr>
-                            <td>C.1 Individual differences</td>
-                            <td></td>
-                            <td class="mark-cell">4</td>
-                            <td class="mark-cell">6</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">3</td>
-                        </tr>
-                        <tr>
-                            <td>C.3 Motivation</td>
-                            <td></td>
-                            <td class="mark-cell">8</td>
-                            <td class="mark-cell">8</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">4</td>
-                            <td class="mark-cell">4</td>
-                        </tr>
-                        <tr>
-                            <td>C.5 Psychological skills</td>
-                            <td></td>
-                            <td class="mark-cell">4</td>
-                            <td class="mark-cell">5</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">2</td>
-                        </tr>
-                        <tr>
-                            <td>A.1.1.2 The endocrine system—Reproductive hormones only</td>
-                            <td></td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">0</td>
-                        </tr>
-                        
-                        <tr class="theme-row">
-                            <td>What is the connection between exercise and health?</td>
-                            <td colspan="7"></td>
-                        </tr>
-                        <tr>
-                            <td>A.3.3 Fatigue and recovery (AHL)</td>
-                            <td></td>
-                            <td class="mark-cell"></td>
-                            <td class="mark-cell">9</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">4</td>
-                        </tr>
-                        <tr>
-                            <td>B.3 Injury</td>
-                            <td></td>
-                            <td class="mark-cell">7</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">3</td>
-                            <td class="mark-cell">1</td>
-                        </tr>
-                        <tr>
-                            <td>A.3.2 Benefits to health of being active</td>
-                            <td></td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">2</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">0</td>
-                            <td class="mark-cell">1</td>
-                            <td class="mark-cell">1</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>TOTAL MARKS</td>
-                            <td></td>
-                            <td>111</td>
-                            <td>70</td>
-                            <td>22</td>
-                            <td>18</td>
-                            <td>49</td>
-                            <td>31</td>
-                        </tr>
-                    </tfoot>
-                </table>
+
+                <div class="legend">
+                    <div class="legend-item">
+                        <span class="legend-dot dot-sl"></span>
+                        <span><strong>SL/HL:</strong> Total marks</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot dot-1a"></span>
+                        <span><strong>1A:</strong> Paper 1A (MCQ)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot dot-2"></span>
+                        <span><strong>2:</strong> Paper 2 (Short/Extended)</span>
+                    </div>
+                </div>
+
+                <div class="theme-cards-container">
+                    
+                    <!-- THEME 1 -->
+                    <div class="theme-card">
+                        <div class="theme-header" onclick="toggleTheme('theme1')">
+                            <div class="theme-title-section">
+                                <h3>🏃 How do we move?</h3>
+                                <span class="subtopic-count">6 topics • Biomechanics & Energy</span>
+                            </div>
+                            <div class="marks-summary">
+                                <span class="mark-badge sl">SL: 24</span>
+                                <span class="mark-badge hl">HL: 17</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div id="theme1" class="theme-body">
+                            <div class="topic-list">
+                                <div class="topic-item">
+                                    <div class="topic-name">A.2.3 Energy systems SL</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">7</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">B.1.3 Muscular function</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">4</span></div>
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">B.1.2 Structure and function of connective tissues and joints</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">B.1.4 Levers in movement and sport</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">B.2.1 Newton's laws of motion</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">5</span></div>
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">12</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">3</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">5</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">B.1.1 Anatomical position, planes and movement</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">3</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- THEME 2 -->
+                    <div class="theme-card">
+                        <div class="theme-header" onclick="toggleTheme('theme2')">
+                            <div class="theme-title-section">
+                                <h3>💓 How do we respond to exercise/activity?</h3>
+                                <span class="subtopic-count">6 topics • Physiology & Psychology</span>
+                            </div>
+                            <div class="marks-summary">
+                                <span class="mark-badge sl">SL: 31</span>
+                                <span class="mark-badge hl">HL: 0</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div id="theme2" class="theme-body">
+                            <div class="topic-list">
+                                <div class="topic-item">
+                                    <div class="topic-name">A.1.1 Inter-system communication—but not "reproductive hormones"</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">10</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">4</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">A.1.2 Maintaining homeostasis, but not A1.2.2</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">6</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">A.1.3 Transport</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">7</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">A.2.1 Water and electrolyte balance</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">C.2.2 Attentional control</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">C.4.1 Arousal and anxiety</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- THEME 3 -->
+                    <div class="theme-card">
+                        <div class="theme-header" onclick="toggleTheme('theme3')">
+                            <div class="theme-title-section">
+                                <h3>🎯 How can we optimize human performance?</h3>
+                                <span class="subtopic-count">7 topics • Training & Skills</span>
+                            </div>
+                            <div class="marks-summary">
+                                <span class="mark-badge sl">SL: 27</span>
+                                <span class="mark-badge hl">HL: 13</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div id="theme3" class="theme-body">
+                            <div class="topic-list">
+                                <div class="topic-item">
+                                    <div class="topic-name">A.2.2 Fuelling for health and performance</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">6</span></div>
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">4</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">2</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">A.2.3 Energy systems HL</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">A.3.1 Qualities of training</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">6</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">B.2.3 Movement analysis and its application</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">C.2.1 Motor learning processes</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">10</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">4</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">C.4.2 Coping</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">A.1.2.2 The body's response to environment (AHL)</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">5</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">2</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- THEME 4 -->
+                    <div class="theme-card">
+                        <div class="theme-header" onclick="toggleTheme('theme4')">
+                            <div class="theme-title-section">
+                                <h3>🧠 What are the factors that affect human performance?</h3>
+                                <span class="subtopic-count">5 topics • Psychology & Mechanics</span>
+                            </div>
+                            <div class="marks-summary">
+                                <span class="mark-badge sl">SL: 20</span>
+                                <span class="mark-badge hl">HL: 27</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div id="theme4" class="theme-body">
+                            <div class="topic-list">
+                                <div class="topic-item">
+                                    <div class="topic-name">B.2.2 Fluid mechanics</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">8</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">4</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">C.1 Individual differences</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">4</span></div>
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">6</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">3</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">C.3 Motivation</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">8</span></div>
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">8</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">4</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">4</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">C.5 Psychological skills</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">4</span></div>
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">5</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">2</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">A.1.1.2 The endocrine system—Reproductive hormones only</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- THEME 5 -->
+                    <div class="theme-card">
+                        <div class="theme-header" onclick="toggleTheme('theme5')">
+                            <div class="theme-title-section">
+                                <h3>🏥 What is the connection between exercise and health?</h3>
+                                <span class="subtopic-count">3 topics • Health & Injury</span>
+                            </div>
+                            <div class="marks-summary">
+                                <span class="mark-badge sl">SL: 9</span>
+                                <span class="mark-badge hl">HL: 13</span>
+                                <span class="expand-icon">▼</span>
+                            </div>
+                        </div>
+                        <div id="theme5" class="theme-body">
+                            <div class="topic-list">
+                                <div class="topic-item">
+                                    <div class="topic-name">A.3.3 Fatigue and recovery (AHL)</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">9</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">4</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">B.3 Injury</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">7</span></div>
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                                <div class="topic-item">
+                                    <div class="topic-name">A.3.2 Benefits to health of being active</div>
+                                    <div class="topic-marks">
+                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">2</span></div>
+                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
             <div class="dashboard-container">
@@ -1127,6 +1254,14 @@
     </div>
 
     <script>
+        function toggleTheme(themeId) {
+            const body = document.getElementById(themeId);
+            const header = body.previousElementSibling;
+            
+            body.classList.toggle('open');
+            header.classList.toggle('active');
+        }
+
         function toggleDrawer(id) {
             const el = document.getElementById(id);
             el.classList.toggle('open');
