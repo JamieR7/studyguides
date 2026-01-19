@@ -8,6 +8,142 @@
     <link rel="stylesheet" href="styles.css">
     
     <style>
+        /* --- CURRICULUM TABLE --- */
+        .curriculum-table-wrapper {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .table-header-banner {
+            background: linear-gradient(135deg, #004587 0%, #003366 100%);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .table-header-banner h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .table-header-banner p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .curriculum-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .curriculum-table thead th {
+            background: #f8f9fa;
+            padding: 1rem 0.75rem;
+            text-align: left;
+            font-weight: 700;
+            color: #2d3748;
+            border-bottom: 2px solid #004587;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .curriculum-table thead th:first-child {
+            padding-left: 1.5rem;
+        }
+
+        .curriculum-table thead th:not(:first-child):not(:nth-child(2)) {
+            text-align: center;
+        }
+
+        .curriculum-table tbody tr {
+            border-bottom: 1px solid #e2e8f0;
+            transition: background 0.2s;
+        }
+
+        .curriculum-table tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        .curriculum-table tbody tr.theme-row {
+            background: #edf2f7;
+            font-weight: 700;
+            color: #004587;
+        }
+
+        .curriculum-table tbody tr.theme-row:hover {
+            background: #e2e8f0;
+        }
+
+        .curriculum-table tbody td {
+            padding: 0.9rem 0.75rem;
+            color: #4a5568;
+        }
+
+        .curriculum-table tbody td:first-child {
+            padding-left: 1.5rem;
+        }
+
+        .curriculum-table tbody td:not(:first-child):not(:nth-child(2)) {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .curriculum-table tbody tr.theme-row td {
+            font-size: 0.95rem;
+            padding: 1rem 0.75rem;
+        }
+
+        .curriculum-table tbody tr.theme-row td:first-child {
+            padding-left: 1.5rem;
+        }
+
+        .curriculum-table tfoot td {
+            background: #004587;
+            color: white;
+            padding: 1.25rem 0.75rem;
+            font-weight: 700;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .curriculum-table tfoot td:first-child {
+            text-align: left;
+            padding-left: 1.5rem;
+        }
+
+        .mark-cell {
+            color: #2d3748;
+        }
+
+        .mark-cell:empty::after {
+            content: "—";
+            color: #cbd5e0;
+        }
+
+        /* Responsive table */
+        @media (max-width: 768px) {
+            .curriculum-table {
+                font-size: 0.8rem;
+            }
+            
+            .curriculum-table thead th,
+            .curriculum-table tbody td {
+                padding: 0.6rem 0.4rem;
+            }
+
+            .curriculum-table thead th:first-child,
+            .curriculum-table tbody td:first-child {
+                padding-left: 0.75rem;
+            }
+        }
+
         /* --- METHODOLOGY DASHBOARD --- */
         .dashboard-container {
             display: grid;
@@ -213,6 +349,336 @@
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">
                 Target your revision using the official 2026 weighting logic.
             </p>
+
+            <!-- CURRICULUM TABLE -->
+            <div class="curriculum-table-wrapper">
+                <div class="table-header-banner">
+                    <h2>📊 IB SEHS Curriculum Overview & Mark Allocation</h2>
+                    <p>Complete breakdown of units, topics, and predicted exam marks for 2026</p>
+                </div>
+                <table class="curriculum-table">
+                    <thead>
+                        <tr>
+                            <th>Topic</th>
+                            <th>Unit</th>
+                            <th>SL</th>
+                            <th>HL</th>
+                            <th>1ASL</th>
+                            <th>1AHL</th>
+                            <th>2SL</th>
+                            <th>2HL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="theme-row">
+                            <td>How do we move?</td>
+                            <td colspan="7"></td>
+                        </tr>
+                        <tr>
+                            <td>A.2.3 Energy systems SL</td>
+                            <td></td>
+                            <td class="mark-cell">7</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td>B.1.3 Muscular function</td>
+                            <td></td>
+                            <td class="mark-cell">4</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">1</td>
+                        </tr>
+                        <tr>
+                            <td>B.1.2 Structure and function of connective tissues and joints</td>
+                            <td></td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td>B.1.4 Levers in movement and sport</td>
+                            <td></td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td>B.2.1 Newton's laws of motion</td>
+                            <td></td>
+                            <td class="mark-cell">5</td>
+                            <td class="mark-cell">12</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td>B.1.1 Anatomical position, planes and movement</td>
+                            <td></td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">1</td>
+                        </tr>
+                        
+                        <tr class="theme-row">
+                            <td>How do we respond to exercise/activity?</td>
+                            <td colspan="7"></td>
+                        </tr>
+                        <tr>
+                            <td>A.1.1 Inter-system communication—but not "reproductive hormones"</td>
+                            <td></td>
+                            <td class="mark-cell">10</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">4</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td>A.1.2 Maintaining homeostasis, but not A1.2.2</td>
+                            <td></td>
+                            <td class="mark-cell">6</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td>A.1.3 Transport</td>
+                            <td></td>
+                            <td class="mark-cell">7</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td>A.2.1 Water and electrolyte balance</td>
+                            <td></td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td>C.2.2 Attentional control</td>
+                            <td></td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td>C.4.1 Arousal and anxiety</td>
+                            <td></td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        
+                        <tr class="theme-row">
+                            <td>How can we optimize human performance?</td>
+                            <td colspan="7"></td>
+                        </tr>
+                        <tr>
+                            <td>A.2.2 Fuelling for health and performance</td>
+                            <td></td>
+                            <td class="mark-cell">6</td>
+                            <td class="mark-cell">4</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell">2</td>
+                        </tr>
+                        <tr>
+                            <td>A.2.3 Energy systems HL</td>
+                            <td></td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">1</td>
+                        </tr>
+                        <tr>
+                            <td>A.3.1 Qualities of training</td>
+                            <td></td>
+                            <td class="mark-cell">6</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td>B.2.3 Movement analysis and its application</td>
+                            <td></td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td>C.2.1 Motor learning processes</td>
+                            <td></td>
+                            <td class="mark-cell">10</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">4</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        <tr>
+                            <td>C.4.2 Coping</td>
+                            <td></td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">1</td>
+                        </tr>
+                        <tr>
+                            <td>A.1.2.2 The body's response to environment (AHL)</td>
+                            <td></td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">5</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">2</td>
+                        </tr>
+                        
+                        <tr class="theme-row">
+                            <td>What are the factors that affect human performance?</td>
+                            <td colspan="7"></td>
+                        </tr>
+                        <tr>
+                            <td>B.2.2 Fluid mechanics</td>
+                            <td></td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell">8</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">4</td>
+                        </tr>
+                        <tr>
+                            <td>C.1 Individual differences</td>
+                            <td></td>
+                            <td class="mark-cell">4</td>
+                            <td class="mark-cell">6</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td>C.3 Motivation</td>
+                            <td></td>
+                            <td class="mark-cell">8</td>
+                            <td class="mark-cell">8</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">4</td>
+                            <td class="mark-cell">4</td>
+                        </tr>
+                        <tr>
+                            <td>C.5 Psychological skills</td>
+                            <td></td>
+                            <td class="mark-cell">4</td>
+                            <td class="mark-cell">5</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">2</td>
+                        </tr>
+                        <tr>
+                            <td>A.1.1.2 The endocrine system—Reproductive hormones only</td>
+                            <td></td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">0</td>
+                        </tr>
+                        
+                        <tr class="theme-row">
+                            <td>What is the connection between exercise and health?</td>
+                            <td colspan="7"></td>
+                        </tr>
+                        <tr>
+                            <td>A.3.3 Fatigue and recovery (AHL)</td>
+                            <td></td>
+                            <td class="mark-cell"></td>
+                            <td class="mark-cell">9</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">4</td>
+                        </tr>
+                        <tr>
+                            <td>B.3 Injury</td>
+                            <td></td>
+                            <td class="mark-cell">7</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">3</td>
+                            <td class="mark-cell">1</td>
+                        </tr>
+                        <tr>
+                            <td>A.3.2 Benefits to health of being active</td>
+                            <td></td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">2</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">0</td>
+                            <td class="mark-cell">1</td>
+                            <td class="mark-cell">1</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>TOTAL MARKS</td>
+                            <td></td>
+                            <td>111</td>
+                            <td>70</td>
+                            <td>22</td>
+                            <td>18</td>
+                            <td>49</td>
+                            <td>31</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
 
             <div class="dashboard-container">
                 <div class="methodology-box">
