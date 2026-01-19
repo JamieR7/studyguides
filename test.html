@@ -3,383 +3,449 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEHS 2026 | Points & Examples Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>SEHS 2026 | Visual Mark Breakdown</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #004587;      /* IB Navy */
-            --secondary: #00b4d8;    /* Cyan */
-            --light-bg: #f3f6f9;
-            --white: #ffffff;
-            --border: #e0e0e0;
-            --success: #28a745;
-            --text: #2c3e50;
+            --theme-a: #e63946; /* Red for Physiology */
+            --theme-b: #457b9d; /* Blue for Biomechanics */
+            --theme-c: #2a9d8f; /* Green for Psychology */
+            --dark: #1d3557;
+            --light: #f1faee;
+            --grey: #6c757d;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text);
+            background-color: #f8f9fa;
+            color: var(--dark);
             margin: 0;
             padding: 2rem;
-            line-height: 1.5;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        /* HEADER */
-        header {
+        /* --- HERO SECTION --- */
+        .hero {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
         h1 {
-            color: var(--primary);
+            font-size: 2.5rem;
             font-weight: 800;
-            font-size: 2.4rem;
-            margin: 0;
-            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
         }
         .subtitle {
-            color: #666;
-            margin-top: 10px;
             font-size: 1.1rem;
+            color: var(--grey);
         }
 
-        /* SECTION CARDS */
-        .theme-section {
-            background: var(--white);
+        /* --- VISUAL WEIGHTING BAR --- */
+        .weighting-bar-container {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
+        }
+        .bar-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: var(--grey);
+        }
+        .visual-bar {
+            display: flex;
+            height: 25px;
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid var(--border);
+            margin-bottom: 10px;
+        }
+        .bar-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        .legend {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #555;
         }
 
-        .theme-header {
-            background: var(--primary);
-            color: white;
-            padding: 1.2rem 1.5rem;
+        /* --- THEME CARD DESIGN --- */
+        .theme-card {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            overflow: hidden;
+            border: 1px solid #eee;
+            position: relative;
+        }
+        
+        /* Colored Top Borders */
+        .theme-a { border-top: 6px solid var(--theme-a); }
+        .theme-b { border-top: 6px solid var(--theme-b); }
+        .theme-c { border-top: 6px solid var(--theme-c); }
+
+        .card-header {
+            padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: #fff;
+            border-bottom: 1px solid #f1f1f1;
         }
-        .theme-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+        .card-title span { margin-right: 10px; }
+
+        /* --- THE BREAKDOWN GRID --- */
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two distinct columns */
+            divide-x: 1px solid #eee;
         }
         
-        /* POINTS GRID */
-        .points-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            border-bottom: 1px solid var(--border);
-        }
-        .point-box {
+        .paper-section {
             padding: 1.5rem;
-            border-right: 1px solid var(--border);
-            text-align: left;
+            text-align: center;
         }
-        .point-box:last-child {
-            border-right: none;
-        }
-        .point-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #7f8c8d;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .point-value {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--primary);
-        }
-        .badge {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            margin-right: 5px;
-        }
-        .sl-badge { background: #e3f2fd; color: #1565c0; }
-        .hl-badge { background: #fce4ec; color: #c2185b; }
 
-        /* DROPDOWN ACCORDION */
+        .paper-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--grey);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: #f8f9fa;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        /* Big Numbers */
+        .stat-row {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+        .stat-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+        .stat-sub {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 5px;
+            color: var(--grey);
+        }
+        
+        /* Specific Colors for Numbers */
+        .theme-a .stat-number { color: var(--theme-a); }
+        .theme-b .stat-number { color: var(--theme-b); }
+        .theme-c .stat-number { color: var(--theme-c); }
+
+        /* --- ACCORDION --- */
+        .accordion {
+            background: #fafafa;
+            border-top: 1px solid #eee;
+        }
         .accordion-btn {
             width: 100%;
             padding: 1rem;
-            background: #f8f9fa;
+            background: none;
             border: none;
-            border-top: 1px solid var(--border);
             text-align: left;
             font-weight: 600;
-            color: #444;
+            color: var(--dark);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: background 0.2s;
         }
-        .accordion-btn:hover {
-            background: #e9ecef;
-        }
+        .accordion-btn:hover { background: #eee; }
+        
         .accordion-content {
             display: none;
             padding: 1.5rem;
             background: white;
-            border-top: 1px solid var(--border);
-            animation: slideDown 0.3s ease-out;
+            border-top: 1px solid #eee;
         }
-        .accordion-content.show {
-            display: block;
-        }
+        .accordion-content.show { display: block; }
 
-        /* EXAMPLE QUESTION STYLES */
-        .example-box {
-            background: #f8f9fa;
-            border-left: 4px solid var(--secondary);
-            padding: 1rem;
-            margin-bottom: 1rem;
+        /* --- EXAMPLE BOX STYLES --- */
+        .example-tag {
+            background: #212529;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .question-text {
             font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            color: #333;
-        }
-        .model-answer {
-            background: #e8f5e9;
-            border: 1px dashed var(--success);
+            background: #f1f3f5;
             padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            display: none;
-        }
-        .model-answer.visible {
-            display: block;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
         .reveal-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 8px 14px;
-            border-radius: 6px;
-            font-size: 0.85rem;
+            background: white;
+            border: 2px solid var(--dark);
+            color: var(--dark);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.2s;
         }
         .reveal-btn:hover {
-            background: #003366;
+            background: var(--dark);
+            color: white;
         }
+        .answer-reveal {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #e9ecef;
+            border-left: 4px solid var(--dark);
+            border-radius: 4px;
+            display: none;
+        }
+        .answer-reveal.visible { display: block; }
 
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    
-    <header>
-        <h1>SEHS 2026 | Points & Examples</h1>
-        <div class="subtitle">Expected Mark Allocation with Real Specimen Examples</div>
-    </header>
 
-    <div class="theme-section">
-        <div class="theme-header">
-            <div class="theme-title"><span>🫀</span> Theme A: Exercise Physiology</div>
-            <div style="font-size:0.9rem; opacity:0.9;">Focus: Systems, Energy, Fatigue</div>
-        </div>
-        
-        <div class="points-grid">
-            <div class="point-box">
-                <div class="point-label">Paper 1A (MCQs)</div>
-                <div class="point-value"><span class="badge sl-badge">SL</span> 10 Questions</div>
-                <div class="point-value"><span class="badge hl-badge">HL</span> 13 Questions</div>
-            </div>
-            <div class="point-box">
-                <div class="point-label">Paper 2 (Extended)</div>
-                <div class="point-value"><span class="badge sl-badge">SL</span> ~17 Marks</div>
-                <div class="point-value"><span class="badge hl-badge">HL</span> ~27 Marks</div>
-            </div>
-        </div>
+    <div class="hero">
+        <h1>SEHS 2026 Breakdown</h1>
+        <div class="subtitle">Where the marks are hidden in the new syllabus</div>
+    </div>
 
-        <button class="accordion-btn" onclick="toggleAccordion('acc-a')">
-            <span>👁️ View Example Paper 2 Question (Theme A)</span>
-            <span>▼</span>
-        </button>
-        <div id="acc-a" class="accordion-content">
-            <p><strong>Topic: A.3 (Fatigue & Recovery)</strong></p>
-            <div class="example-box">
-                "Explain the physiological causes of fatigue during a high-intensity interval training (HIIT) session." [4 marks]
-            </div>
-            <button class="reveal-btn" onclick="toggleAnswer('ans-a')">Reveal Model Answer</button>
-            <div id="ans-a" class="model-answer">
-                <strong>Key Points (1 mark each):</strong>
-                <ul>
-                    <li>Depletion of Phosphocreatine (PCr) stores.</li>
-                    <li>Accumulation of Hydrogen ions (H+) / Acidosis.</li>
-                    <li>Reduction in enzyme activity (e.g., PFK) due to pH drop.</li>
-                    <li>Disturbance of Calcium (Ca2+) handling in the muscle.</li>
-                </ul>
-                <em style="font-size:0.85rem; color:#666;">Tip: Don't just say "Lactic Acid". The IB prefers "Accumulation of H+ ions" or "Lactate accumulation".</em>
-            </div>
+    <div class="weighting-bar-container">
+        <div class="bar-title">Exam Content Distribution (Approximate)</div>
+        <div class="visual-bar">
+            <div class="bar-segment" style="width: 35%; background: var(--theme-a);">Theme A (35%)</div>
+            <div class="bar-segment" style="width: 35%; background: var(--theme-b);">Theme B (35%)</div>
+            <div class="bar-segment" style="width: 30%; background: var(--theme-c);">Theme C (30%)</div>
+        </div>
+        <div class="legend">
+            <span>Physiology</span>
+            <span>Biomechanics</span>
+            <span>Psychology</span>
         </div>
     </div>
 
-    <div class="theme-section">
-        <div class="theme-header">
-            <div class="theme-title"><span>🦾</span> Theme B: Biomechanics</div>
-            <div style="font-size:0.9rem; opacity:0.9;">Focus: Levers, Force, Injury</div>
+    <div class="theme-card theme-a">
+        <div class="card-header">
+            <div class="card-title"><span>🫀</span> Theme A: Physiology</div>
         </div>
         
-        <div class="points-grid">
-            <div class="point-box">
-                <div class="point-label">Paper 1A (MCQs)</div>
-                <div class="point-value"><span class="badge sl-badge">SL</span> 10 Questions</div>
-                <div class="point-value"><span class="badge hl-badge">HL</span> 13 Questions</div>
-            </div>
-            <div class="point-box">
-                <div class="point-label">Paper 2 (Extended)</div>
-                <div class="point-value"><span class="badge sl-badge">SL</span> ~17 Marks</div>
-                <div class="point-value"><span class="badge hl-badge">HL</span> ~27 Marks</div>
-            </div>
-        </div>
-
-        <button class="accordion-btn" onclick="toggleAccordion('acc-b')">
-            <span>👁️ View Example MCQ (Theme B)</span>
-            <span>▼</span>
-        </button>
-        <div id="acc-b" class="accordion-content">
-            <p><strong>Topic: B.1 (Levers)</strong></p>
-            <div class="example-box">
-                "Which class of lever is the most common in the human body, and what is its mechanical advantage?"
-                <br><br>
-                A. 1st Class / Force Advantage<br>
-                B. 2nd Class / Force Advantage<br>
-                C. 3rd Class / Range of Motion Advantage<br>
-                D. 3rd Class / Force Advantage
-            </div>
-            <button class="reveal-btn" onclick="toggleAnswer('ans-b')">Reveal Answer</button>
-            <div id="ans-b" class="model-answer">
-                <strong>Correct Answer: C</strong>
-                <br><br>
-                <strong>Explanation:</strong> 3rd Class levers (like the bicep curl) are the most common. The effort is between the fulcrum and load. They have a <em>Mechanical Disadvantage</em> (force < load) but provide a <strong>Speed and Range of Motion</strong> advantage.
-            </div>
-        </div>
-    </div>
-
-    <div class="theme-section">
-        <div class="theme-header">
-            <div class="theme-title"><span>🧠</span> Theme C: Psychology</div>
-            <div style="font-size:0.9rem; opacity:0.9;">Focus: Motivation, Learning, Stress</div>
-        </div>
-        
-        <div class="points-grid">
-            <div class="point-box">
-                <div class="point-label">Paper 1A (MCQs)</div>
-                <div class="point-value"><span class="badge sl-badge">SL</span> 10 Questions</div>
-                <div class="point-value"><span class="badge hl-badge">HL</span> 12 Questions</div>
-            </div>
-            <div class="point-box">
-                <div class="point-label">Paper 2 (Extended)</div>
-                <div class="point-value"><span class="badge sl-badge">SL</span> ~16 Marks</div>
-                <div class="point-value"><span class="badge hl-badge">HL</span> ~26 Marks</div>
-            </div>
-        </div>
-
-        <button class="accordion-btn" onclick="toggleAccordion('acc-c')">
-            <span>👁️ View Example Data Question (Theme C)</span>
-            <span>▼</span>
-        </button>
-        <div id="acc-c" class="accordion-content">
-            <p><strong>Topic: C.1 (Personality & Data)</strong></p>
-            <div class="example-box">
-                <strong>Data Source:</strong> Table showing mean "Anxiety Scores" for Novice vs. Elite athletes.<br>
-                Novice: 24.5 (SD ±2.1)<br>
-                Elite: 18.2 (SD ±5.4)<br>
-                <br>
-                "Calculate the difference in mean anxiety scores and comment on the standard deviation."
-            </div>
-            <button class="reveal-btn" onclick="toggleAnswer('ans-c')">Reveal Answer</button>
-            <div id="ans-c" class="model-answer">
-                <strong>Calculation:</strong> 24.5 - 18.2 = <strong>6.3</strong>
-                <br><br>
-                <strong>Comment:</strong> The Elite group has a much higher Standard Deviation (±5.4). This means there is <strong>greater variability</strong> (inconsistency) in how elite athletes experience anxiety compared to novices.
-            </div>
-        </div>
-    </div>
-
-    <div class="theme-section" style="border-left: 5px solid #d63384;">
-        <div class="theme-header" style="background: #d63384;">
-            <div class="theme-title"><span>📉</span> Paper 1B: Data Analysis</div>
-            <div style="font-size:0.9rem; opacity:0.9;">Focus: Methodology & Validity</div>
-        </div>
-        
-        <div class="points-grid">
-            <div class="point-box" style="grid-column: span 2; border-right: none;">
-                <div class="point-label">Total Weighting</div>
-                <div class="point-value">
-                    <span class="badge sl-badge">SL</span> 30 Marks 
-                    <span style="margin: 0 10px; color:#ccc;">|</span> 
-                    <span class="badge hl-badge">HL</span> 40 Marks
+        <div class="breakdown-grid">
+            <div class="paper-section">
+                <div class="paper-label">Paper 1A (MCQs)</div>
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <div class="stat-number">10</div>
+                        <div class="stat-sub">SL Questions</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number">13</div>
+                        <div class="stat-sub">HL Questions</div>
+                    </div>
                 </div>
-                <div style="font-size:0.85rem; color:#666; margin-top:5px;">
-                    *Draws from ALL themes. Focus is on evaluating the study design.
+            </div>
+            
+            <div class="paper-section">
+                <div class="paper-label">Paper 2 (Extended)</div>
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <div class="stat-number">17</div>
+                        <div class="stat-sub">SL Marks</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number">27</div>
+                        <div class="stat-sub">HL Marks</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <button class="accordion-btn" onclick="toggleAccordion('acc-1b')">
-            <span>👁️ View The "Critique" Strategy</span>
-            <span>▼</span>
-        </button>
-        <div id="acc-1b" class="accordion-content">
-            <div class="example-box">
-                <strong>Scenario:</strong> A study claims "Shoe X" improves speed by 4%. The study had 1 participant (n=1) and was funded by the shoe company.<br>
-                <br>
-                "Evaluate the validity of this claim." [3 marks]
-            </div>
-            <button class="reveal-btn" onclick="toggleAnswer('ans-1b')">Reveal Answer</button>
-            <div id="ans-1b" class="model-answer">
-                <strong>Points to hit:</strong>
-                <ol>
-                    <li><strong>Sample Size:</strong> n=1 is anecdotal and not statistically significant.</li>
-                    <li><strong>Bias:</strong> Funded by the manufacturer (Conflict of Interest).</li>
-                    <li><strong>Control:</strong> No mention of a control group or placebo.</li>
-                </ol>
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggle('acc-a')">
+                <span>View Typical Theme A Question</span>
+                <span>▼</span>
+            </button>
+            <div id="acc-a" class="accordion-content">
+                <span class="example-tag">Paper 2 | 4 Marks</span>
+                <div class="question-text">
+                    "Describe the mechanism of ventilation during high-intensity exercise."
+                </div>
+                <button class="reveal-btn" onclick="reveal('ans-a')">Show Breakdown</button>
+                <div id="ans-a" class="answer-reveal">
+                    <strong>Where the 4 marks come from:</strong>
+                    <ul style="margin:5px 0 0 15px; padding:0;">
+                        <li>Accessory muscles (SCM/Pecs) contract (1)</li>
+                        <li>Ribcage moves further up and out (1)</li>
+                        <li>Thoracic pressure decreases significantly (1)</li>
+                        <li>Active exhalation (internal intercostals contract) (1)</li>
+                    </ul>
+                </div>
             </div>
         </div>
+    </div>
+
+    <div class="theme-card theme-b">
+        <div class="card-header">
+            <div class="card-title"><span>🦾</span> Theme B: Biomechanics</div>
+        </div>
+        
+        <div class="breakdown-grid">
+            <div class="paper-section">
+                <div class="paper-label">Paper 1A (MCQs)</div>
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <div class="stat-number">10</div>
+                        <div class="stat-sub">SL Questions</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number">13</div>
+                        <div class="stat-sub">HL Questions</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="paper-section">
+                <div class="paper-label">Paper 2 (Extended)</div>
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <div class="stat-number">17</div>
+                        <div class="stat-sub">SL Marks</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number">27</div>
+                        <div class="stat-sub">HL Marks</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggle('acc-b')">
+                <span>View Typical Theme B Question</span>
+                <span>▼</span>
+            </button>
+            <div id="acc-b" class="accordion-content">
+                <span class="example-tag">Paper 1A | MCQ</span>
+                <div class="question-text">
+                    "Which class of lever provides a range of motion advantage but a mechanical disadvantage?"<br><br>
+                    A. 1st Class<br>B. 2nd Class<br>C. 3rd Class
+                </div>
+                <button class="reveal-btn" onclick="reveal('ans-b')">Show Answer</button>
+                <div id="ans-b" class="answer-reveal">
+                    <strong>Correct: C (3rd Class)</strong><br>
+                    <em>Why?</em> The effort is close to the fulcrum (like a bicep curl). You have to pull hard (force disadvantage) but the hand moves a long way (speed/ROM advantage).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme-card theme-c">
+        <div class="card-header">
+            <div class="card-title"><span>🧠</span> Theme C: Psychology</div>
+        </div>
+        
+        <div class="breakdown-grid">
+            <div class="paper-section">
+                <div class="paper-label">Paper 1A (MCQs)</div>
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <div class="stat-number">10</div>
+                        <div class="stat-sub">SL Questions</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number">12</div>
+                        <div class="stat-sub">HL Questions</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="paper-section">
+                <div class="paper-label">Paper 2 (Extended)</div>
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <div class="stat-number">16</div>
+                        <div class="stat-sub">SL Marks</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number">26</div>
+                        <div class="stat-sub">HL Marks</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggle('acc-c')">
+                <span>View Typical Theme C Question</span>
+                <span>▼</span>
+            </button>
+            <div id="acc-c" class="accordion-content">
+                <span class="example-tag">Paper 2 | Linking Question</span>
+                <div class="question-text">
+                    "Explain how high-intensity training (Theme A) might influence intrinsic motivation (Theme C)."
+                </div>
+                <button class="reveal-btn" onclick="reveal('ans-c')">Show Answer</button>
+                <div id="ans-c" class="answer-reveal">
+                    <strong>High Mark Answer:</strong><br>
+                    Success in HIIT leads to physiological adaptation (e.g. lower resting HR). Seeing this data improves <strong>Self-Efficacy</strong> (Bandura). This feeling of <strong>Competence</strong> (Self-Determination Theory) increases intrinsic motivation.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center; color:#666; font-size:0.9rem; margin-top:2rem;">
+        <strong>Plus: Paper 1B (Data Analysis)</strong><br>
+        Adds another 30 Marks (SL) or 40 Marks (HL) drawn from <em>any</em> theme.
     </div>
 
 </div>
 
 <script>
-    function toggleAccordion(id) {
-        const content = document.getElementById(id);
-        const btn = content.previousElementSibling;
-        const arrow = btn.querySelector('span:last-child');
-        
-        if (content.classList.contains('show')) {
-            content.classList.remove('show');
-            arrow.innerHTML = '▼';
-            btn.style.background = '#f8f9fa';
-        } else {
-            content.classList.add('show');
-            arrow.innerHTML = '▲';
-            btn.style.background = '#e9ecef';
-        }
+    function toggle(id) {
+        var el = document.getElementById(id);
+        el.classList.toggle('show');
     }
-
-    function toggleAnswer(id) {
-        const answer = document.getElementById(id);
-        answer.classList.toggle('visible');
+    function reveal(id) {
+        var el = document.getElementById(id);
+        el.classList.toggle('visible');
     }
 </script>
 
