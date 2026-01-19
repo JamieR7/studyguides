@@ -36,9 +36,9 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
-            padding: 1rem;
+            padding: 1.25rem;
             background: #f8f9fa;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 2px solid #e2e8f0;
             flex-wrap: wrap;
         }
 
@@ -47,19 +47,13 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.85rem;
-            color: #4a5568;
+            color: #2d3748;
+            font-weight: 600;
         }
 
-        .legend-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
+        .legend-icon {
+            font-size: 1.2rem;
         }
-
-        .dot-sl { background: #3182ce; }
-        .dot-hl { background: #e53e3e; }
-        .dot-1a { background: #805ad5; }
-        .dot-2 { background: #38a169; }
 
         .theme-cards-container {
             background: white;
@@ -129,16 +123,10 @@
             white-space: nowrap;
         }
 
-        .mark-badge.sl {
-            background: #ebf8ff;
-            color: #2c5282;
-            border: 1px solid #bee3f8;
-        }
-
-        .mark-badge.hl {
-            background: #fff5f5;
-            color: #9b2c2c;
-            border: 1px solid #feb2b2;
+        .mark-badge.hours {
+            background: #e6fffa;
+            color: #234e52;
+            border: 1px solid #81e6d9;
         }
 
         .expand-icon {
@@ -188,33 +176,75 @@
         .topic-name {
             font-weight: 600;
             color: #2d3748;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             font-size: 0.95rem;
         }
 
-        .topic-marks {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        .topic-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .hours-section {
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #718096;
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        .hours-row {
+            display: flex;
             gap: 0.5rem;
-            font-size: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .hour-badge {
+            padding: 0.3rem 0.6rem;
+            background: #e6fffa;
+            border: 1px solid #81e6d9;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #234e52;
+        }
+
+        .marks-section {
+        }
+
+        .marks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+            gap: 0.5rem;
         }
 
         .mark-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.25rem 0.5rem;
+            padding: 0.35rem 0.6rem;
             background: #f7fafc;
             border-radius: 4px;
+            border: 1px solid #e2e8f0;
         }
 
         .mark-label {
             color: #718096;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 0.75rem;
         }
 
         .mark-value {
             color: #2d3748;
             font-weight: 700;
+            font-size: 0.85rem;
         }
 
         .mark-value.zero {
@@ -233,7 +263,7 @@
                 justify-content: flex-start;
             }
 
-            .topic-marks {
+            .marks-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -448,21 +478,17 @@
             <div class="curriculum-overview">
                 <div class="overview-header">
                     <h2>📊 IB SEHS Curriculum Breakdown</h2>
-                    <p>Click each theme to see topic-by-topic mark allocations</p>
+                    <p>Click each theme to see teaching hours and predicted exam marks per topic</p>
                 </div>
 
                 <div class="legend">
                     <div class="legend-item">
-                        <span class="legend-dot dot-sl"></span>
-                        <span><strong>SL/HL:</strong> Total marks</span>
+                        <span class="legend-icon">⏱️</span>
+                        <span><strong>Teaching Hours:</strong> Recommended contact time per topic</span>
                     </div>
                     <div class="legend-item">
-                        <span class="legend-dot dot-1a"></span>
-                        <span><strong>1A:</strong> Paper 1A (MCQ)</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot dot-2"></span>
-                        <span><strong>2:</strong> Paper 2 (Short/Extended)</span>
+                        <span class="legend-icon">📝</span>
+                        <span><strong>Exam Marks:</strong> Predicted allocation in Paper 1A (MCQ) & Paper 2 (Short/Extended)</span>
                     </div>
                 </div>
 
@@ -476,8 +502,7 @@
                                 <span class="subtopic-count">6 topics • Biomechanics & Energy</span>
                             </div>
                             <div class="marks-summary">
-                                <span class="mark-badge sl">SL: 24</span>
-                                <span class="mark-badge hl">HL: 17</span>
+                                <span class="mark-badge hours">⏱️ SL: 24h | HL: 17h</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                         </div>
@@ -485,57 +510,122 @@
                             <div class="topic-list">
                                 <div class="topic-item">
                                     <div class="topic-name">A.2.3 Energy systems SL</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">7</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 7h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">B.1.3 Muscular function</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">4</span></div>
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 4h</span>
+                                                <span class="hour-badge">HL: 2h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">B.1.2 Structure and function of connective tissues and joints</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 3h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">B.1.4 Levers in movement and sport</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 2h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">B.2.1 Newton's laws of motion</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">5</span></div>
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">12</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">3</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">5</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 5h</span>
+                                                <span class="hour-badge">HL: 12h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">3</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">5</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">B.1.1 Anatomical position, planes and movement</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">3</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 3h</span>
+                                                <span class="hour-badge">HL: 3h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -550,8 +640,7 @@
                                 <span class="subtopic-count">6 topics • Physiology & Psychology</span>
                             </div>
                             <div class="marks-summary">
-                                <span class="mark-badge sl">SL: 31</span>
-                                <span class="mark-badge hl">HL: 0</span>
+                                <span class="mark-badge hours">⏱️ SL: 31h | HL: 0h</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                         </div>
@@ -559,49 +648,114 @@
                             <div class="topic-list">
                                 <div class="topic-item">
                                     <div class="topic-name">A.1.1 Inter-system communication—but not "reproductive hormones"</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">10</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">4</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 10h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">4</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">A.1.2 Maintaining homeostasis, but not A1.2.2</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">6</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 6h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">A.1.3 Transport</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">7</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 7h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">A.2.1 Water and electrolyte balance</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 3h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">C.2.2 Attentional control</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 2h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">C.4.1 Arousal and anxiety</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 3h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -616,8 +770,7 @@
                                 <span class="subtopic-count">7 topics • Training & Skills</span>
                             </div>
                             <div class="marks-summary">
-                                <span class="mark-badge sl">SL: 27</span>
-                                <span class="mark-badge hl">HL: 13</span>
+                                <span class="mark-badge hours">⏱️ SL: 27h | HL: 13h</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                         </div>
@@ -625,63 +778,139 @@
                             <div class="topic-list">
                                 <div class="topic-item">
                                     <div class="topic-name">A.2.2 Fuelling for health and performance</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">6</span></div>
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">4</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">2</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 6h</span>
+                                                <span class="hour-badge">HL: 4h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">2</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">A.2.3 Energy systems HL</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">HL: 2h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">A.3.1 Qualities of training</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">6</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 6h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">B.2.3 Movement analysis and its application</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 3h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">C.2.1 Motor learning processes</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">10</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">4</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 10h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">4</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">C.4.2 Coping</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 2h</span>
+                                                <span class="hour-badge">HL: 2h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">A.1.2.2 The body's response to environment (AHL)</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">5</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">2</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">HL: 5h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">2</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -696,8 +925,7 @@
                                 <span class="subtopic-count">5 topics • Psychology & Mechanics</span>
                             </div>
                             <div class="marks-summary">
-                                <span class="mark-badge sl">SL: 20</span>
-                                <span class="mark-badge hl">HL: 27</span>
+                                <span class="mark-badge hours">⏱️ SL: 20h | HL: 27h</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                         </div>
@@ -705,52 +933,107 @@
                             <div class="topic-list">
                                 <div class="topic-item">
                                     <div class="topic-name">B.2.2 Fluid mechanics</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">3</span></div>
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">8</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">4</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 3h</span>
+                                                <span class="hour-badge">HL: 8h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">4</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">C.1 Individual differences</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">4</span></div>
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">6</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">3</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 4h</span>
+                                                <span class="hour-badge">HL: 6h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">3</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">C.3 Motivation</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">8</span></div>
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">8</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">4</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">4</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 8h</span>
+                                                <span class="hour-badge">HL: 8h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">4</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">4</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">C.5 Psychological skills</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">4</span></div>
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">5</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">2</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 4h</span>
+                                                <span class="hour-badge">HL: 5h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">2</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">A.1.1.2 The endocrine system—Reproductive hormones only</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 1h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">-</span><span class="mark-value zero">0</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -765,8 +1048,7 @@
                                 <span class="subtopic-count">3 topics • Health & Injury</span>
                             </div>
                             <div class="marks-summary">
-                                <span class="mark-badge sl">SL: 9</span>
-                                <span class="mark-badge hl">HL: 13</span>
+                                <span class="mark-badge hours">⏱️ SL: 9h | HL: 13h</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                         </div>
@@ -774,30 +1056,62 @@
                             <div class="topic-list">
                                 <div class="topic-item">
                                     <div class="topic-name">A.3.3 Fatigue and recovery (AHL)</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">9</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">4</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">HL: 9h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">4</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">B.3 Injury</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">7</span></div>
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">1ASL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">1AHL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">3</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 7h</span>
+                                                <span class="hour-badge">HL: 2h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="topic-item">
                                     <div class="topic-name">A.3.2 Benefits to health of being active</div>
-                                    <div class="topic-marks">
-                                        <div class="mark-item"><span class="mark-label">SL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">HL</span><span class="mark-value">2</span></div>
-                                        <div class="mark-item"><span class="mark-label">2SL</span><span class="mark-value">1</span></div>
-                                        <div class="mark-item"><span class="mark-label">2HL</span><span class="mark-value">1</span></div>
+                                    <div class="topic-details">
+                                        <div class="hours-section">
+                                            <span class="section-label">⏱️ Teaching Hours</span>
+                                            <div class="hours-row">
+                                                <span class="hour-badge">SL: 2h</span>
+                                                <span class="hour-badge">HL: 2h</span>
+                                            </div>
+                                        </div>
+                                        <div class="marks-section">
+                                            <span class="section-label">📝 Predicted Exam Marks</span>
+                                            <div class="marks-grid">
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
