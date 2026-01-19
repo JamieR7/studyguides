@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEHS 2026 | Insider Exam Strategy</title>
+    <title>SEHS 2026 | Insider Mark Breakdown</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #004587;
-            --secondary: #00b4d8;
-            --accent: #f72585;
+            --primary: #004587;      /* IB Blue */
+            --secondary: #4dabf7;    /* Light Blue */
+            --accent: #d63384;       /* Highlight Pink */
             --bg-light: #f8f9fa;
             --text-dark: #212529;
-            --text-light: #6c757d;
             --card-bg: #ffffff;
-            --success: #28a745;
+            --border: #e9ecef;
         }
 
         body {
@@ -28,11 +27,11 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
 
-        /* --- HEADER SECTION --- */
+        /* --- HEADER --- */
         header {
             text-align: center;
             margin-bottom: 3rem;
@@ -40,205 +39,136 @@
         h1 {
             color: var(--primary);
             font-weight: 800;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            margin: 0;
         }
         .subtitle {
-            color: var(--text-light);
+            color: #6c757d;
             font-size: 1.1rem;
+            margin-top: 0.5rem;
         }
 
-        /* --- DASHBOARD STATS --- */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-        .stat-card {
+        /* --- MARK BREAKDOWN TABLE (The Core Request) --- */
+        .breakdown-card {
             background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            text-align: center;
-            border-bottom: 4px solid var(--primary);
-        }
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        /* --- PREDICTED MARKS TABLE --- */
-        .prediction-section {
-            background: #fff;
-            padding: 2rem;
             border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border);
         }
-        .section-title {
+        .table-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        th {
+            background-color: #f1f3f5;
+            color: var(--primary);
+            font-weight: 700;
+            text-align: left;
+            padding: 1rem 1.5rem;
+            border-bottom: 2px solid #dee2e6;
+        }
+        td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Badges for SL/HL */
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 5px;
+        }
+        .badge-sl { background-color: #e7f5ff; color: #1971c2; }
+        .badge-hl { background-color: #fff0f6; color: #c2255c; }
+
+        /* --- STRATEGY CARDS --- */
+        .strategy-section-title {
             color: var(--primary);
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 10px;
         }
-        .marks-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.95rem;
-        }
-        .marks-table th {
-            text-align: left;
-            padding: 12px;
-            background-color: #f1f3f5;
-            color: var(--primary);
-            font-weight: 700;
-            border-radius: 6px 6px 0 0;
-        }
-        .marks-table td {
-            padding: 12px;
-            border-bottom: 1px solid #eee;
-        }
-        .marks-table tr:last-child td {
-            border-bottom: none;
-        }
-        .high-yield {
-            background-color: #e6fcf5;
-            color: #0ca678;
-            font-weight: 700;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-        .med-yield {
-            background-color: #fff9db;
-            color: #f59f00;
-            font-weight: 700;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-
-        /* --- STRATEGY ACCORDION --- */
+        
         .strategy-card {
             background: var(--card-bg);
             border-radius: 12px;
             margin-bottom: 1rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border: 1px solid var(--border);
             overflow: hidden;
-            border: 1px solid #eee;
         }
         .card-header {
-            padding: 1.5rem;
+            padding: 1.2rem 1.5rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: linear-gradient(to right, #fff, #f8f9fa);
-            transition: background 0.3s;
+            transition: background 0.2s;
         }
-        .card-header:hover {
-            background: #f1f3f5;
-        }
-        .card-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .icon {
-            font-size: 1.2rem;
-        }
-        .card-action {
-            color: var(--primary);
-            font-weight: bold;
-        }
+        .card-header:hover { background: #f1f3f5; }
+        .card-title { font-weight: 600; color: #343a40; display: flex; align-items: center; gap: 10px; }
         
         .drawer-content {
-            display: none; /* Hidden by default */
+            display: none;
             padding: 1.5rem;
             background: #fff;
-            border-top: 1px solid #eee;
-            animation: slideDown 0.3s ease-out;
+            border-top: 1px solid var(--border);
         }
-        .drawer-content.open {
-            display: block;
-        }
+        .drawer-content.open { display: block; animation: slideDown 0.3s ease-out; }
 
-        /* --- CONTENT STYLES --- */
+        /* --- INTERACTIVE ELEMENTS --- */
         .tip-box {
-            background-color: #eef4fc;
+            background: #eef4fc;
             border-left: 4px solid var(--primary);
             padding: 1rem;
             margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        .strategy-list {
-            padding-left: 1.2rem;
-            margin: 0;
-        }
-        .strategy-list li {
-            margin-bottom: 0.8rem;
-        }
-        .data-placeholder {
-            background: #fafafa;
-            border: 1px solid #ddd;
-            padding: 1rem;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
             font-size: 0.9rem;
-            color: #333;
-            margin-bottom: 1rem;
         }
-
-        /* --- BUTTONS & ANSWERS --- */
-        .reveal-answer-btn {
-            background-color: var(--primary);
+        .reveal-btn {
+            background: var(--primary);
             color: white;
             border: none;
             padding: 8px 16px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 0.9rem;
-            margin-top: 1rem;
-            transition: background 0.2s;
+            margin-top: 0.5rem;
         }
-        .reveal-answer-btn:hover {
-            background-color: #003366;
-        }
-        .model-answer {
+        .answer-box {
+            display: none;
             margin-top: 1rem;
             padding: 1rem;
-            border: 1px dashed var(--success);
+            background: #f0fff4;
+            border: 1px dashed #28a745;
             border-radius: 8px;
-            background-color: #f0fff4;
-            display: none; /* Hidden by default */
         }
-        .model-answer.show {
-            display: block;
-        }
-        .model-answer-label {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--success);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: block;
-            margin-bottom: 5px;
-        }
+        .answer-box.show { display: block; }
 
-        /* Animation */
         @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
+            from { opacity: 0; transform: translateY(-5px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -248,196 +178,158 @@
 <div class="container">
     
     <header>
-        <h1>SEHS 2026 | Insider Guide</h1>
-        <div class="subtitle">Strategic Insights, Predicted Allocations & High-Value Tactics</div>
+        <h1>SEHS 2026 | Predicted Points Matrix</h1>
+        <div class="subtitle">Marks broken down by Paper & Section for SL and HL</div>
     </header>
 
-    <div class="dashboard-grid">
-        <div class="stat-card">
-            <div class="stat-value">36%</div>
-            <div class="stat-label">Paper 1 (A + B)<br>Focus: MCQs & Data Analysis</div>
+    <div class="breakdown-card">
+        <div class="table-header">
+            <span>📊</span> Projected Mark Allocation
         </div>
-        <div class="stat-card">
-            <div class="stat-value">40%</div>
-            <div class="stat-label">Paper 2<br>Focus: Connections & Extended Response</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value">24%</div>
-            <div class="stat-label">Internal Assessment<br>Focus: Scientific Investigation</div>
-        </div>
-    </div>
-
-    <div class="prediction-section">
-        <div class="section-title">
-            <span>📈</span> Predicted Mark Allocation (By Teaching Hours)
-        </div>
-        <p style="margin-bottom:1.5rem; font-size:0.95rem; color:#555;">
-            Based on the 2026 Syllabus teaching hours, this chart predicts where the most marks will likely appear. Prioritize "High Yield" topics.
-        </p>
-        
-        <table class="marks-table">
+        <table>
             <thead>
                 <tr>
-                    <th>Theme / Topic</th>
-                    <th>Est. Teaching Hours (SL/HL)</th>
-                    <th>Exam Weighting</th>
-                    <th>Yield Rating</th>
+                    <th style="width: 30%;">Topic / Theme</th>
+                    <th style="width: 35%;">Paper 1A (MCQ)<br><span style="font-size:0.8rem; font-weight:400;">Total: 30 (SL) / 40 (HL)</span></th>
+                    <th style="width: 35%;">Paper 2 (Extended)<br><span style="font-size:0.8rem; font-weight:400;">Total: 50 (SL) / 80 (HL)</span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Theme A: Exercise Physiology</strong><br><small>A.1 Body Systems, A.2 Energy, A.3 Fatigue</small></td>
-                    <td>50h / 90h</td>
-                    <td>~35%</td>
-                    <td><span class="high-yield">HIGHEST YIELD</span></td>
+                    <td>
+                        <strong>Theme A: Physiology</strong><br>
+                        <span style="font-size:0.85rem; color:#666;">Body Systems, Energy, Fatigue</span>
+                    </td>
+                    <td>
+                        <div style="margin-bottom:4px;"><span class="badge badge-sl">SL</span> ~10 Questions</div>
+                        <div><span class="badge badge-hl">HL</span> ~14 Questions</div>
+                    </td>
+                    <td>
+                        <div style="margin-bottom:4px;"><span class="badge badge-sl">SL</span> ~17 Marks</div>
+                        <div><span class="badge badge-hl">HL</span> ~28 Marks</div>
+                        <div style="margin-top:8px; font-size:0.8rem; font-style:italic;">*High chance of graph analysis here.</div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><strong>Theme B: Biomechanics</strong><br><small>B.1 Muscle/Bone, B.2 Force/Motion, B.3 Injury</small></td>
-                    <td>50h / 90h</td>
-                    <td>~35%</td>
-                    <td><span class="high-yield">HIGHEST YIELD</span></td>
+                    <td>
+                        <strong>Theme B: Biomechanics</strong><br>
+                        <span style="font-size:0.85rem; color:#666;">Levers, Force, Injury</span>
+                    </td>
+                    <td>
+                        <div style="margin-bottom:4px;"><span class="badge badge-sl">SL</span> ~10 Questions</div>
+                        <div><span class="badge badge-hl">HL</span> ~14 Questions</div>
+                    </td>
+                    <td>
+                        <div style="margin-bottom:4px;"><span class="badge badge-sl">SL</span> ~17 Marks</div>
+                        <div><span class="badge badge-hl">HL</span> ~28 Marks</div>
+                        <div style="margin-top:8px; font-size:0.8rem; font-style:italic;">*Calculations likely in Section A.</div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><strong>Theme C: Psychology</strong><br><small>C.1 Personality, C.2 Learning, C.3 Motivation</small></td>
-                    <td>50h / 80h</td>
-                    <td>~30%</td>
-                    <td><span class="med-yield">MEDIUM YIELD</span></td>
+                    <td>
+                        <strong>Theme C: Psychology</strong><br>
+                        <span style="font-size:0.85rem; color:#666;">Skill Learning, Motivation, Stress</span>
+                    </td>
+                    <td>
+                        <div style="margin-bottom:4px;"><span class="badge badge-sl">SL</span> ~10 Questions</div>
+                        <div><span class="badge badge-hl">HL</span> ~12 Questions</div>
+                    </td>
+                    <td>
+                        <div style="margin-bottom:4px;"><span class="badge badge-sl">SL</span> ~16 Marks</div>
+                        <div><span class="badge badge-hl">HL</span> ~24 Marks</div>
+                        <div style="margin-top:8px; font-size:0.8rem; font-style:italic;">*Often linked to Theme A/B in 6-mark Qs.</div>
+                    </td>
                 </tr>
             </tbody>
         </table>
-        <div style="margin-top:1rem; font-size:0.85rem; font-style:italic; color:#777;">
-            *Note: Paper 1A covers all themes. Paper 2 will require linking themes (e.g., Physiology + Psychology).
+        <div style="padding: 1rem; background: #fafafa; font-size: 0.85rem; color: #555; text-align: center;">
+            Note: Paper 1B (Data Analysis) is separate and draws randomly from all themes (30 marks SL / 40 marks HL).
         </div>
     </div>
 
-    <div class="section-title">
-        <span>🧠</span> Exam Strategy & "Inside" Tips
+    <div class="strategy-section-title">
+        <span>⚡</span> Insider Tactics by Section
     </div>
 
     <div class="strategy-card">
-        <div class="card-header" onclick="toggleDrawer('drawer-1')">
-            <div class="card-title"><span class="icon">⚡</span> Paper 1A: The "Distractor" Strategy</div>
+        <div class="card-header" onclick="toggleDrawer('d-p1a')">
+            <div class="card-title">
+                <span class="icon">📝</span> Paper 1A: The "Definitive" MCQs
+            </div>
             <span class="card-action">▼</span>
         </div>
-        <div id="drawer-1" class="drawer-content">
-            <p>Paper 1A is multiple choice. The "Insider" tip is to identify the <strong>Distractor</strong>—the answer that looks right but is scientifically slightly off.</p>
-            <ul class="strategy-list">
-                <li><strong>Definitions Matter:</strong> Don't confuse <em>Strength</em> (Max force) with <em>Power</em> (Force × Velocity). This is a common trap.</li>
-                <li><strong>Standard Deviation (SD):</strong> 
-                    <ul>
-                        <li>Small SD = Data is clustered (consistent).</li>
-                        <li>Large SD = Data is spread out (inconsistent).</li>
-                        <li><strong>Rule:</strong> If SD error bars overlap on a graph, the difference is likely <em>not significant</em>.</li>
-                    </ul>
-                </li>
-                <li><strong>New Vocab:</strong> Terms like <em>Constraint-Led Approach</em> (Theme C) and <em>Lactate Inflection Point</em> (Theme A) are now fair game for MCQs.</li>
+        <div id="d-p1a" class="drawer-content">
+            <p><strong>What to expect:</strong> 30 (SL) or 40 (HL) questions. <br>
+            The new syllabus integrates Psychology into the core, meaning you will face Psychology MCQs for the first time.</p>
+            
+            <div class="tip-box">
+                <strong>Insider Tip:</strong> Memorize the <strong>Command Terms</strong>. 
+                <br>"Identify" = Pick from the list.
+                <br>"Distinguish" = State the difference.
+            </div>
+
+            <ul>
+                <li><strong>Theme A Trap:</strong> Confusing <em>Pulmonary Artery</em> (Blue/Deoxygenated) vs <em>Pulmonary Vein</em> (Red/Oxygenated).</li>
+                <li><strong>Theme B Trap:</strong> Confusing <em>First Class</em> (Seesaw) vs <em>Second Class</em> (Wheelbarrow) levers.</li>
+                <li><strong>Theme C Trap:</strong> Confusing <em>Performance Goals</em> (Self-referenced) vs <em>Outcome Goals</em> (Winning).</li>
             </ul>
         </div>
     </div>
 
     <div class="strategy-card">
-        <div class="card-header" onclick="toggleDrawer('drawer-2')">
-            <div class="card-title"><span class="icon">📊</span> Paper 1B: The "Critique" Strategy</div>
+        <div class="card-header" onclick="toggleDrawer('d-p1b')">
+            <div class="card-title">
+                <span class="icon">📉</span> Paper 1B: The "Methodology" Data
+            </div>
             <span class="card-action">▼</span>
         </div>
-        <div id="drawer-2" class="drawer-content">
-            <div class="tip-box">
-                <strong>Major Change:</strong> You aren't just calculating anymore. You must <strong>evaluate the methodology</strong>.
-            </div>
+        <div id="d-p1b" class="drawer-content">
+            <p><strong>What to expect:</strong> You will be given an unseen study. You must analyze the <strong>Validity</strong>.</p>
             
-            <div class="data-placeholder">
-                <strong>Data Source: Specimen Paper 1B (CFP Shoes Study)</strong><br>
-                <em>Table 1: 10km Running Times</em><br>
-                <ul style="margin-top:5px; padding-left:20px;">
-                    <li><strong>Standard Shoe:</strong> 40 min 03 sec (40.05 min)</li>
-                    <li><strong>Carbon Fibre Plate (CFP) Shoe:</strong> 38 min 59 sec (38.98 min)</li>
-                </ul>
+            <div style="background:#f8f9fa; padding:15px; border-radius:8px; border:1px solid #ddd; font-family:monospace; margin-bottom:15px;">
+                <strong>DATA SOURCE: Specimen Paper 1B (CFP Shoes)</strong><br>
+                Study: n=1 (Sample Size One)<br>
+                Result: 2.67% improvement in running economy.
             </div>
 
-            <p><strong>Practice Question:</strong> Calculate the percentage reduction in time.</p>
+            <p><strong>Question:</strong> Discuss the validity of the conclusion that CFP shoes improve performance.</p>
             
-            <button class="reveal-answer-btn" onclick="toggleAnswer('ans-1')">Reveal Answer & Tip</button>
-            <div id="ans-1" class="model-answer">
-                <span class="model-answer-label">✓ Model Answer</span>
-                <strong>Calculation:</strong> (40.05 - 38.98) ÷ 40.05 × 100 = <strong>2.67%</strong>
-                <br><br>
-                <span class="model-answer-label">⚡ Insider Tip</span>
-                <p>If a follow-up asks for a <em>Limitation</em> of this study, look for:</p>
+            <button class="reveal-btn" onclick="toggleAnswer('ans-p1b')">Show Model Answer</button>
+            <div id="ans-p1b" class="answer-box">
+                <strong>Points to hit:</strong>
                 <ul>
-                    <li><strong>Small Sample Size:</strong> "n=1" means results are anecdotal.</li>
-                    <li><strong>Bias:</strong> Who funded the study? (Shoe company?)</li>
-                    <li><strong>Placebo:</strong> Was there a control group?</li>
+                    <li><strong>Low Validity:</strong> The sample size (n=1) is too small to generalize.</li>
+                    <li><strong>No Statistics:</strong> No standard deviation is provided, so we cannot know if the difference is significant.</li>
+                    <li><strong>Result:</strong> While the data shows improvement, the <em>conclusion</em> is weak due to study design.</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="strategy-card">
-        <div class="card-header" onclick="toggleDrawer('drawer-3')">
-            <div class="card-title"><span class="icon">🔗</span> Paper 2: The "Cross-Link" Strategy</div>
+        <div class="card-header" onclick="toggleDrawer('d-p2')">
+            <div class="card-title">
+                <span class="icon">🔗</span> Paper 2: The "Integrated" Extended Response
+            </div>
             <span class="card-action">▼</span>
         </div>
-        <div id="drawer-3" class="drawer-content">
-            <p>The highest marks in 2026 go to students who can <strong>link themes</strong>. You must connect Physiology (A), Biomechanics (B), and Psychology (C).</p>
+        <div id="d-p2" class="drawer-content">
+            <p><strong>What to expect:</strong> Section B contains extended response questions (6+ marks). In 2026, these will likely mix themes.</p>
             
             <div class="tip-box">
-                <strong>The "Biopsychosocial" Formula:</strong><br>
-                When answering a 6-mark question, try to hit all three angles.
+                <strong>The "Theme Linking" Strategy:</strong><br>
+                If a question asks about "Fatigue" (Theme A), you can gain marks by linking it to "Injury Risk" (Theme B) or "Loss of Concentration" (Theme C).
             </div>
 
-            <p><strong>Example Prompt:</strong> "Explain how fatigue affects performance in a tennis match."</p>
-
-            <button class="reveal-answer-btn" onclick="toggleAnswer('ans-2')">See "High Mark" Structure</button>
-            <div id="ans-2" class="model-answer">
-                <span class="model-answer-label">✓ High-Scoring Response Structure</span>
+            <p><strong>Practice:</strong> "Explain how feedback affects learning a new skill." (Theme C)</p>
+            
+            <button class="reveal-btn" onclick="toggleAnswer('ans-p2')">Show Key Points</button>
+            <div id="ans-p2" class="answer-box">
                 <ul>
-                    <li><strong>Biological (Theme A):</strong> Depletion of PCr and accumulation of H+ ions leads to acidosis, reducing muscle contraction force.</li>
-                    <li><strong>Mechanical (Theme B):</strong> Fatigue alters technique (kinematics), reducing the efficiency of the lever systems (serving arm), increasing injury risk.</li>
-                    <li><strong>Psychological (Theme C):</strong> Fatigue reduces <em>cue utilization</em> (attention), leading to missed visual cues and poor decision making.</li>
+                    <li><strong>Cognitive Stage (Theme C):</strong> Beginners need <em>extrinsic</em> feedback (coach telling them what to do).</li>
+                    <li><strong>Biomechanics Link (Theme B):</strong> Video feedback allows analysis of <em>joint angles</em> and <em>force application</em>.</li>
+                    <li><strong>Motivation Link (Theme C):</strong> Positive feedback increases <em>Self-Efficacy</em> (Bandura).</li>
                 </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="strategy-card">
-        <div class="card-header" onclick="toggleDrawer('drawer-4')">
-            <div class="card-title"><span class="icon">🧘</span> Theme C Deep Dive: Psychology Data</div>
-            <span class="card-action">▼</span>
-        </div>
-        <div id="drawer-4" class="drawer-content">
-            <p>Psychology is now a core topic. Be ready to interpret data on "intangible" things like Resilience or Anxiety.</p>
-
-            <div class="data-placeholder">
-                <strong>Data Source: Secades et al. (2016)</strong><br>
-                <em>Table 4: Coping Strategy Scores (Mean ± SD)</em>
-                <table style="width:100%; margin-top:10px; font-size:0.85rem;">
-                    <tr>
-                        <th style="text-align:left;">Strategy</th>
-                        <th>Low Resilience</th>
-                        <th>High Resilience</th>
-                    </tr>
-                    <tr>
-                        <td>Imagery</td>
-                        <td>3.08 (±0.75)</td>
-                        <td>3.67 (±0.73)</td>
-                    </tr>
-                    <tr>
-                        <td>Relaxation</td>
-                        <td>2.93 (±0.72)</td>
-                        <td>3.42 (±1.37)</td>
-                    </tr>
-                </table>
-            </div>
-
-            <p><strong>Question:</strong> Identify which group reported higher use of imagery.</p>
-
-            <button class="reveal-answer-btn" onclick="toggleAnswer('ans-3')">Reveal Answer</button>
-            <div id="ans-3" class="model-answer">
-                <span class="model-answer-label">✓ Answer</span>
-                The <strong>High Resilience</strong> group (Score: 3.67).
-                <br><br>
-                <span class="model-answer-label">⚡ Critical Thinking Point</span>
-                Note the <strong>Standard Deviation</strong> for "Relaxation" in the High Resilience group is very high (±1.37). This means there is a huge variation—some high resilience athletes use it a lot, others don't. A good evaluation point!
             </div>
         </div>
     </div>
@@ -449,7 +341,7 @@
         const drawer = document.getElementById(id);
         drawer.classList.toggle('open');
         
-        // Toggle arrow icon
+        // Toggle arrow
         const header = drawer.previousElementSibling;
         const arrow = header.querySelector('.card-action');
         if (drawer.classList.contains('open')) {
@@ -457,13 +349,13 @@
             header.style.backgroundColor = '#f1f3f5';
         } else {
             arrow.textContent = '▼';
-            header.style.backgroundColor = ''; // Reset
+            header.style.backgroundColor = ''; 
         }
     }
 
     function toggleAnswer(id) {
-        const answerBox = document.getElementById(id);
-        answerBox.classList.toggle('show');
+        const box = document.getElementById(id);
+        box.classList.toggle('show');
     }
 </script>
 
