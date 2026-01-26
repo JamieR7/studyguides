@@ -1456,7 +1456,7 @@ div.topic-accordion-card:nth-of-type(15) .accordion-header {
 
 /* Nested Accordions (for Practice Questions etc) */
 .sub-accordion-card {
-    background: #f8f9fa;
+    background: #fff;
     border: 1px solid #e9ecef;
     border-radius: 8px;
     margin-bottom: 1rem;
@@ -1464,21 +1464,32 @@ div.topic-accordion-card:nth-of-type(15) .accordion-header {
 }
 
 .sub-accordion-card .accordion-header {
-    background: #eef2f7;
-    color: #004587;
+    background: #004587;
+    /* Dark blue for contrast */
+    color: #ffffff;
+    /* White text as requested */
     padding: 1rem 1.5rem;
-    border-left: 4px solid #004587;
-    font-size: 0.9em;
+    border-left: 4px solid #fbba07;
+    /* Match main accent */
+    font-size: 0.95em;
+    font-weight: 500;
 }
 
 .sub-accordion-card .accordion-header:hover {
-    background: #e2e6ea;
+    background: #003366;
+    /* Slightly darker on hover */
 }
 
 .sub-accordion-card .accordion-icon {
+    color: #ffffff;
     filter: none;
-    /* Use original color (black/dark blue) */
-    color: #004587;
+    opacity: 0.9;
+}
+
+.sub-accordion-card.active .accordion-content {
+    max-height: 3000px;
+    /* Allow expansion */
+    transition: max-height 0.5s ease-in-out;
 }
 
 .sub-accordion-card .accordion-body {
