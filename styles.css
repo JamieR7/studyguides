@@ -1338,6 +1338,70 @@ hr {
     background: linear-gradient(135deg, #0056a3 0%, #004080 100%);
 }
 
+/* Gradient Steps for Topic Accordions (Dark to Light Blue) */
+/* Base: #004587 */
+
+div.topic-accordion-card:nth-of-type(1) .accordion-header {
+    background: linear-gradient(135deg, #004587 0%, #003366 100%);
+}
+
+div.topic-accordion-card:nth-of-type(2) .accordion-header {
+    background: linear-gradient(135deg, #084c8f 0%, #053b70 100%);
+}
+
+div.topic-accordion-card:nth-of-type(3) .accordion-header {
+    background: linear-gradient(135deg, #105497 0%, #0a427a 100%);
+}
+
+div.topic-accordion-card:nth-of-type(4) .accordion-header {
+    background: linear-gradient(135deg, #185b9f 0%, #104a85 100%);
+}
+
+div.topic-accordion-card:nth-of-type(5) .accordion-header {
+    background: linear-gradient(135deg, #2063a7 0%, #15518f 100%);
+}
+
+div.topic-accordion-card:nth-of-type(6) .accordion-header {
+    background: linear-gradient(135deg, #296baf 0%, #1a5999 100%);
+}
+
+div.topic-accordion-card:nth-of-type(7) .accordion-header {
+    background: linear-gradient(135deg, #3172b7 0%, #2060a3 100%);
+}
+
+div.topic-accordion-card:nth-of-type(8) .accordion-header {
+    background: linear-gradient(135deg, #397abf 0%, #2568ad 100%);
+}
+
+div.topic-accordion-card:nth-of-type(9) .accordion-header {
+    background: linear-gradient(135deg, #4181c7 0%, #2a6fb8 100%);
+}
+
+div.topic-accordion-card:nth-of-type(10) .accordion-header {
+    background: linear-gradient(135deg, #4a89cf 0%, #3077c2 100%);
+}
+
+div.topic-accordion-card:nth-of-type(11) .accordion-header {
+    background: linear-gradient(135deg, #5290d7 0%, #357ecc 100%);
+}
+
+div.topic-accordion-card:nth-of-type(12) .accordion-header {
+    background: linear-gradient(135deg, #5a98df 0%, #3a86d6 100%);
+}
+
+div.topic-accordion-card:nth-of-type(13) .accordion-header {
+    background: linear-gradient(135deg, #629fe7 0%, #408de0 100%);
+}
+
+div.topic-accordion-card:nth-of-type(14) .accordion-header {
+    background: linear-gradient(135deg, #6ba7ef 0%, #4595ea 100%);
+}
+
+div.topic-accordion-card:nth-of-type(15) .accordion-header {
+    background: linear-gradient(135deg, #73aff7 0%, #4b9ce4 100%);
+}
+
+
 .accordion-title {
     font-size: 1.3rem;
     font-weight: 600;
