@@ -3,10 +3,10 @@
    ===================================================== */
 
 /* Reset & Base */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -18,9 +18,9 @@ body {
     line-height: 1.6;
 }
 
-.container { 
-    max-width: 1100px; 
-    margin: 0 auto; 
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* =====================================================
@@ -70,7 +70,7 @@ body {
 }
 
 /* Push container down ONLY when sticky header exists */
-.sticky-topic-header ~ .container {
+.sticky-topic-header~.container {
     margin-top: 60px;
 }
 
@@ -86,14 +86,14 @@ body {
 .site-header h1 {
     font-size: 2.5rem;
     color: #fbba07;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .subtitle {
     font-size: 1.1rem;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 300;
 }
 
@@ -176,7 +176,7 @@ body {
     align-items: center;
     gap: 1.5rem;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     margin-bottom: 1.25rem;
 }
 
@@ -219,9 +219,9 @@ body {
     text-align: center;
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 0.9rem;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* =====================================================
@@ -233,7 +233,7 @@ body {
     color: #333;
     padding: 3rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     line-height: 1.7;
 }
 
@@ -304,7 +304,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin: 2.5rem 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
 }
@@ -364,7 +364,7 @@ body {
 
 .key-term-card:hover {
     transform: translateX(5px);
-    box-shadow: 0 4px 8px rgba(0,69,135,0.2);
+    box-shadow: 0 4px 8px rgba(0, 69, 135, 0.2);
 }
 
 .term-title {
@@ -399,7 +399,7 @@ body {
     border-radius: 12px;
     padding: 2rem;
     margin: 2.5rem 0;
-    box-shadow: 0 4px 12px rgba(0,69,135,0.15);
+    box-shadow: 0 4px 12px rgba(0, 69, 135, 0.15);
 }
 
 .mcq-number {
@@ -478,7 +478,7 @@ body {
     padding: 1.5rem;
     margin: 2.5rem 0;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(251,186,7,0.2);
+    box-shadow: 0 2px 8px rgba(251, 186, 7, 0.2);
     color: #333;
 }
 
@@ -488,7 +488,7 @@ body {
     padding: 1.5rem;
     margin: 2.5rem 0;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,69,135,0.2);
+    box-shadow: 0 2px 8px rgba(0, 69, 135, 0.2);
     color: #333;
 }
 
@@ -739,7 +739,7 @@ body {
     border-collapse: collapse;
     margin: 1.5rem 0;
     font-size: 0.95rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .dbq-data-table thead {
@@ -899,80 +899,80 @@ hr {
     body {
         padding: 1rem 0.5rem;
     }
-    
+
     .sticky-topic-header {
         padding: 0.5rem 1rem;
         height: auto;
     }
-    
-    .sticky-topic-header ~ .container {
+
+    .sticky-topic-header~.container {
         margin-top: 70px;
     }
-    
+
     .header-topic-title {
         font-size: 0.9rem;
     }
-    
+
     .site-header h1 {
         font-size: 2rem;
     }
-    
+
     .topic-content-wrapper {
         padding: 2rem 1.5rem;
     }
-    
+
     .topic-content-wrapper h1 {
         font-size: 1.8rem;
     }
-    
+
     .topic-content-wrapper h2 {
         font-size: 1.5rem;
     }
-    
+
     .topic-number {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
     }
-    
+
     .topic-content-wrapper table,
     .data-table {
         font-size: 0.9rem;
     }
-    
+
     .mcq-container,
     .dbq-container,
     .paper2-container {
         padding: 1.25rem;
         margin: 1.5rem 0;
     }
-    
+
     .dbq-number,
     .paper2-number {
         display: block;
         margin-bottom: 0.75rem;
         text-align: center;
     }
-    
+
     .marks-badge {
         display: block;
         margin-top: 0.5rem;
         text-align: center;
     }
-    
+
     .model-answer {
         padding: 1.25rem;
     }
-    
+
     .dbq-data-table {
         font-size: 0.85rem;
     }
-    
+
     .dbq-data-table th,
     .dbq-data-table td {
         padding: 0.6rem;
     }
-    
+
     .mechanism-steps ol li {
         padding-left: 3rem;
     }
@@ -983,22 +983,23 @@ hr {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .topic-nav {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .topic-content-wrapper {
         padding: 1.5rem 1rem;
     }
-    
+
     .sticky-topic-header {
         flex-direction: column;
         gap: 0.5rem;
         padding: 0.75rem;
     }
 }
+
 /* =====================================================
    IMAGE COMPONENTS
    ===================================================== */
@@ -1071,12 +1072,12 @@ hr {
     .study-image img {
         border-width: 2px;
     }
-    
+
     .image-row {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .study-image figcaption {
         font-size: 0.85rem;
     }
@@ -1087,28 +1088,32 @@ hr {
    ===================================================== */
 
 /* Priority Labels for Prediction Tables */
-.priority-high { 
-    color: #d32f2f; 
-    font-weight: 700; 
-    background: rgba(211, 47, 47, 0.08); /* Light red bg */
+.priority-high {
+    color: #d32f2f;
+    font-weight: 700;
+    background: rgba(211, 47, 47, 0.08);
+    /* Light red bg */
     border-radius: 4px;
     padding: 0.25rem 0.5rem;
     display: inline-block;
 }
 
-.priority-med { 
-    color: #e65100; /* Darker orange for better contrast */
-    font-weight: 700; 
-    background: rgba(255, 152, 0, 0.1); /* Light orange bg */
+.priority-med {
+    color: #e65100;
+    /* Darker orange for better contrast */
+    font-weight: 700;
+    background: rgba(255, 152, 0, 0.1);
+    /* Light orange bg */
     border-radius: 4px;
     padding: 0.25rem 0.5rem;
     display: inline-block;
 }
 
-.priority-skill { 
-    color: #0277bd; 
-    font-weight: 700; 
-    background: rgba(3, 169, 244, 0.1); /* Light blue bg */
+.priority-skill {
+    color: #0277bd;
+    font-weight: 700;
+    background: rgba(3, 169, 244, 0.1);
+    /* Light blue bg */
     border-radius: 4px;
     padding: 0.25rem 0.5rem;
     display: inline-block;
@@ -1117,17 +1122,22 @@ hr {
 /* Responsive Tables (Scroll horizontally on mobile) */
 @media (max-width: 768px) {
     .topic-content-wrapper {
-        overflow-x: hidden; /* Prevent page sway */
+        overflow-x: hidden;
+        /* Prevent page sway */
     }
-    
-    .data-table, .dbq-data-table {
+
+    .data-table,
+    .dbq-data-table {
         display: block;
         width: 100%;
-        overflow-x: auto; /* Enable horizontal scroll */
-        white-space: nowrap; /* Prevent awkward wrapping */
-        -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+        overflow-x: auto;
+        /* Enable horizontal scroll */
+        white-space: nowrap;
+        /* Prevent awkward wrapping */
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scroll on iOS */
     }
-    
+
     /* Allow text to wrap in the "Insider Tip" column specifically */
     .data-table td:last-child {
         white-space: normal;
@@ -1139,22 +1149,25 @@ hr {
    PRINT STYLES (For students printing guides)
    ===================================================== */
 @media print {
-    .sticky-topic-header, .topic-nav, .reveal-answer-btn {
+
+    .sticky-topic-header,
+    .topic-nav,
+    .reveal-answer-btn {
         display: none !important;
     }
-    
+
     .topic-content-wrapper {
         box-shadow: none;
         padding: 0;
         margin: 0;
     }
-    
+
     body {
         background: #fff;
         color: #000;
         padding: 0;
     }
-    
+
     /* Force expand answers when printing */
     .model-answer-content {
         max-height: none !important;
@@ -1188,7 +1201,7 @@ hr {
     transform-style: preserve-3d;
     transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .flashcard.flipped {
@@ -1202,7 +1215,8 @@ hr {
     transform-style: preserve-3d;
 }
 
-.flashcard-front, .flashcard-back {
+.flashcard-front,
+.flashcard-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1247,14 +1261,14 @@ hr {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .control-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .control-btn:active {
@@ -1290,3 +1304,88 @@ hr {
     font-weight: 500;
 }
 
+
+/* =====================================================
+   ACCORDION SECTIONS
+   ===================================================== */
+.topic-accordion-card {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.topic-accordion-card:hover {
+    box-shadow: 0 8px 12px rgba(0, 69, 135, 0.15);
+}
+
+.accordion-header {
+    background: linear-gradient(135deg, #004587 0%, #003366 100%);
+    padding: 1.25rem 2rem;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: background 0.2s ease;
+    border-left: 5px solid #fbba07;
+}
+
+.accordion-header:hover {
+    background: linear-gradient(135deg, #0056a3 0%, #004080 100%);
+}
+
+.accordion-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.accordion-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1);
+    /* Make sure icon is white */
+    opacity: 0.8;
+}
+
+.topic-accordion-card.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+    background: #fff;
+}
+
+.topic-accordion-card.active .accordion-content {
+    max-height: 5000px;
+    /* Arbitrary large height to allow expansion */
+    transition: max-height 0.5s ease-in-out;
+}
+
+.accordion-body {
+    padding: 2rem;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Ensure existing content looks good inside accordion */
+.accordion-body h2 {
+    margin-top: 0;
+    /* Remove top margin for the first heading inside */
+    border-bottom: none;
+    /* Remove duplicate border if header has it */
+}
+
+/* Hide the section badges inside the accordion since the header acts as badge */
+.accordion-body .section-badge {
+    display: none;
+}
