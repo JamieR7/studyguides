@@ -1389,3 +1389,36 @@ hr {
 .accordion-body .section-badge {
     display: none;
 }
+
+/* Nested Accordions (for Practice Questions etc) */
+.sub-accordion-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.sub-accordion-card .accordion-header {
+    background: #eef2f7;
+    color: #004587;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #004587;
+    font-size: 0.9em;
+}
+
+.sub-accordion-card .accordion-header:hover {
+    background: #e2e6ea;
+}
+
+.sub-accordion-card .accordion-icon {
+    filter: none;
+    /* Use original color (black/dark blue) */
+    color: #004587;
+}
+
+.sub-accordion-card .accordion-body {
+    padding: 1.5rem;
+    background: #fff;
+    border-top: 1px solid #e9ecef;
+}
