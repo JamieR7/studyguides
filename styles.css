@@ -1484,6 +1484,11 @@ div.topic-accordion-card:nth-of-type(15) .accordion-header {
     color: #ffffff;
     filter: none;
     opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+
+.sub-accordion-card.active .accordion-icon {
+    transform: rotate(180deg);
 }
 
 .sub-accordion-card.active .accordion-content {

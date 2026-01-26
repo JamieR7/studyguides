@@ -1,23 +1,23 @@
 /**
  * Accordion Logic
  * Handles the opening and closing of topic sections.
+ * Uses event delegation to handle both main and nested accordions robustly.
  */
-document.addEventListener('DOMContentLoaded', () => {
-    // Select all headers (both main and sub)
-    const headers = document.querySelectorAll('.accordion-header');
+document.addEventListener('click', (e) => {
+    // Check if the clicked element is (or is inside) an accordion header
+    const header = e.target.closest('.accordion-header');
 
-    headers.forEach(header => {
-        header.addEventListener('click', (e) => {
-            // Stop click from bubbling up to parent accordions
-            e.stopPropagation();
+    if (header) {
+        // Prevent default action (useful if headers are anchors, though they are divs here)
+        e.preventDefault();
 
-            // Find the parent card for THIS header
-            // (We look for the closest '.topic-accordion-card' OR '.sub-accordion-card')
-            const card = header.closest('.topic-accordion-card, .sub-accordion-card');
+        // Find the closest card container (parent of this header)
+        // This handles both '.topic-accordion-card' and '.sub-accordion-card'
+        const card = header.closest('.topic-accordion-card, .sub-accordion-card');
 
-            if (card) {
-                card.classList.toggle('active');
-            }
-        });
-    });
+        if (card) {
+            // Toggle the active state on the card
+            card.classList.toggle('active');
+        }
+    }
 });
