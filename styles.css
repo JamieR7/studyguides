@@ -1456,8 +1456,8 @@ div.topic-accordion-card:nth-of-type(15)>.accordion-header {
 
 /* Nested Accordions (for Practice Questions etc) */
 .sub-accordion-card {
-    background: #fff;
-    border: 1px solid #e9ecef;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     margin-bottom: 1rem;
     overflow: hidden;
@@ -1499,6 +1499,6 @@ div.topic-accordion-card:nth-of-type(15)>.accordion-header {
 
 .sub-accordion-card .accordion-body {
     padding: 1.5rem;
-    background: #fff;
-    border-top: 1px solid #e9ecef;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
