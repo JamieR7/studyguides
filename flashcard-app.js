@@ -8,10 +8,18 @@ window.FlashcardApp = class FlashcardApp {
         this.containerId = config.containerId;
         this.data = config.data; // Array of { question, answer }
         this.queue = [...this.data]; // Copy of data to manage state
+        this.shuffleQueue(); // Randomize the order
         this.currentCard = null;
         this.isFlipped = false;
 
         this.init();
+    }
+
+    shuffleQueue() {
+        for (let i = this.queue.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.queue[i], this.queue[j]] = [this.queue[j], this.queue[i]];
+        }
     }
 
     init() {
@@ -61,8 +69,8 @@ window.FlashcardApp = class FlashcardApp {
 
         // Small delay to allow flip animation to reset if needed
         setTimeout(() => {
-            this.frontElement.textContent = this.currentCard.question;
-            this.backElement.textContent = this.currentCard.answer;
+            this.frontElement.innerHTML = this.currentCard.question;
+            this.backElement.innerHTML = this.currentCard.answer;
             this.updateProgress();
         }, 200);
     }
