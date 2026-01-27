@@ -323,3 +323,7 @@ const c3Params = {
         }
     ]
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    new FlashcardApp(c3Params);
+});

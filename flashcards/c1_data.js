@@ -347,3 +347,7 @@ const c1Params = {
         }
     ]
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    new FlashcardApp(c1Params);
+});
