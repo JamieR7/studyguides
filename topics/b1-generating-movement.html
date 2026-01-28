@@ -7,6 +7,7 @@
     <title>Topic B.1 Generating Movement in the Body | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
 
 <body>
@@ -14,6 +15,17 @@
     <div class="sticky-topic-header">
         <a href="../index.html" class="menu-btn">☰ Menu</a>
         <span class="header-topic-title">Topic B.1 Generating Movement in the Body Study Guide</span>
+        <div class="search-container header-search-container">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search concepts (e.g., Newton's laws, ATP etc.)"
+                autocomplete="off"
+            >
+            <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
     </div>
 
     <div class="container">
@@ -23,7 +35,7 @@
         </nav>
 
         <div class="topic-content-wrapper">
-            <h1>Topic B.1 Generating Movement in the Body</h1>
+            <h1 id="topic-b1-generating-movement-in-the-body">Topic B.1 Generating Movement in the Body</h1>
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">IB SEHS (2026) Study Guide</p>
 
             <!-- TOPIC EXPLAINERS -->
@@ -333,7 +345,7 @@
                             core
                             content for Topic B.1.</p>
 
-                        <h3>B.1.1 Anatomical position, planes and movement</h3>
+                        <h3 id="b11-anatomical-position-planes-and-movement">B.1.1 Anatomical position, planes and movement</h3>
                         <p>A standardized anatomical language is the foundation for analyzing all human movement,
                             ensuring clear and
                             universal communication among scientists and practitioners. This system of terminology
@@ -408,7 +420,7 @@
                             tissues and
                             joints that hold this framework together and enable it to move.</p>
 
-                        <h3>B.1.2 Structure and function of connective tissues and joints</h3>
+                        <h3 id="b12-structure-and-function-of-connective-tissues-and-joints">B.1.2 Structure and function of connective tissues and joints</h3>
                         <p>The intricate interaction between stability and mobility in the human body is governed by the
                             properties
                             of its connective tissues and the specific design of its joints. Some joints are built for
@@ -475,7 +487,7 @@
                             contraction of
                             muscles that generates the force to create it.</p>
 
-                        <h3>B.1.3 Muscular function</h3>
+                        <h3 id="b13-muscular-function">B.1.3 Muscular function</h3>
                         <p>Understanding muscular contractions is of strategic importance as they are the "engine" of
                             all human
                             movement. From the microscopic interaction of protein filaments at the cellular level to the
@@ -546,7 +558,7 @@
                             levers to
                             create movement.</p>
 
-                        <h3>B.1.4 Levers in movement and sport</h3>
+                        <h3 id="b14-levers-in-movement-and-sport">B.1.4 Levers in movement and sport</h3>
                         <p>The principles of mechanical levers, fundamental to physics and engineering, can be directly
                             applied to
                             the human musculoskeletal system and to sports equipment. Analyzing the body as a system of
@@ -1111,7 +1123,7 @@
 
             <div
                 style="text-align:center; margin:3rem 0; padding:2rem; background:linear-gradient(135deg,#004587 0%,#002a52 100%); border-radius:12px; color:#fff;">
-                <h3 style="color:#fbba07; margin-bottom:1rem;">🎉 Topic B.1 Mastered!</h3>
+                <h3 style="color:#fbba07; margin-bottom:1rem;" id="topic-b1-mastered">🎉 Topic B.1 Mastered!</h3>
                 <p style="margin:0;">You've completed the study guide for Generating Movement in the Body. Keep
                     practicing
                     with exam-style questions to solidify your understanding!</p>
@@ -1124,6 +1136,12 @@
     <script src="../flashcards/b1_data.js"></script>
     <script src="../mcq-interaction.js"></script>
     <script src="../accordion.js"></script>
+    
+    <script src="../search.js"></script>
+    <script>
+        // Initialize search for topic page
+        initSearch('topic');
+    </script>
 </body>
 
 </html>

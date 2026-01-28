@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IB SEHS 2026 Study Guides</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23004587'/><text x='50' y='70' font-size='60' text-anchor='middle' font-weight='bold' fill='%23fbba07'>S</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23004587'/><text x='50' y='70' font-size='60' text-anchor='middle' font-weight='bold' fill='%23fbba07'>S</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
+
 <body>
     <div class="container">
         <header class="site-header">
@@ -17,15 +21,35 @@
 
         <div class="instructions">
             <strong>Welcome!</strong>
-            <p>Notebook LM is a powerful study tool that can transform your learning experience. By analyzing the sources you provide, it generates comprehensive reports on any topic—and what you'll find here are those AI-generated reports, formatted and enhanced for easier reading and engagement.</p>
-            
-            <p><strong>A word of caution:</strong> while these reports are helpful study aids, they're not infallible. AI can occasionally misinterpret information or make errors. That's where your critical thinking comes in! As you review these materials, approach them with a discerning eye. If you spot any inaccuracies, questionable claims, or confusing explanations, please <a href="https://forms.office.com/e/sBCQfNP4KZ" target="_blank" style="font-weight: 600;">fill out this form</a>. We'll discuss these findings together in class, turning potential mistakes into valuable learning opportunities.</p>
-            
-            <p>Remember: these reports are meant to supplement your learning, not replace your own analysis and understanding of the material.</p>
-            
+            <p>Notebook LM is a powerful study tool that can transform your learning experience. By analyzing the
+                sources you provide, it generates comprehensive reports on any topic—and what you'll find here are those
+                AI-generated reports, formatted and enhanced for easier reading and engagement.</p>
+
+            <p><strong>A word of caution:</strong> while these reports are helpful study aids, they're not infallible.
+                AI can occasionally misinterpret information or make errors. That's where your critical thinking comes
+                in! As you review these materials, approach them with a discerning eye. If you spot any inaccuracies,
+                questionable claims, or confusing explanations, please <a href="https://forms.office.com/e/sBCQfNP4KZ"
+                    target="_blank" style="font-weight: 600;">fill out this form</a>. We'll discuss these findings
+                together in class, turning potential mistakes into valuable learning opportunities.</p>
+
+            <p>Remember: these reports are meant to supplement your learning, not replace your own analysis and
+                understanding of the material.</p>
+
             <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;">
-            
-            <p style="margin-top: 20px;"><strong>How to use these study guides:</strong> These resources are aligned with the 2026 syllabus (first assessment 2026) and designed to support both SL and HL students. Each topic guide includes key terms, exam format guidance, command term examples, detailed content summaries, practice questions with model answers, and common errors to avoid. Click on any topic below to begin your focused revision.</p>
+
+            <p style="margin-top: 20px;"><strong>How to use these study guides:</strong> These resources are aligned
+                with the 2026 syllabus (first assessment 2026) and designed to support both SL and HL students. Each
+                topic guide includes key terms, exam format guidance, command term examples, detailed content summaries,
+                practice questions with model answers, and common errors to avoid. Click on any topic below to begin
+                your focused revision.</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container index-search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-input" class="search-input"
+                placeholder="Search concepts (e.g., Newton's laws, ATP etc.)" autocomplete="off">
+            <div id="search-dropdown" class="search-dropdown"></div>
         </div>
 
         <!-- A. Exercise physiology and nutrition of the human body -->
@@ -76,7 +100,8 @@
                     <div class="topic-content">
                         <h3>Generating movement in the body</h3>
                         <p class="topic-desc">
-                            Anatomical position and planes, connective tissues and joints, muscular function, and levers.
+                            Anatomical position and planes, connective tissues and joints, muscular function, and
+                            levers.
                         </p>
                     </div>
                 </a>
@@ -96,7 +121,8 @@
                     <div class="topic-content">
                         <h3>Injury</h3>
                         <p class="topic-desc">
-                            Causes of injury and interventions related to injury, including prevention and rehabilitation.
+                            Causes of injury and interventions related to injury, including prevention and
+                            rehabilitation.
                         </p>
                     </div>
                 </a>
@@ -166,8 +192,11 @@
         <section class="topic-section">
             <h2>Insider Tips</h2>
             <div class="instructions">
-                <p><strong>Let's have an informed think about what might come up in the exam. No guarantees!</strong></p>
-                <p style="text-align: center; margin-top: 30px;"><a href="insidertips.html" style="font-weight: 600; font-size: 2em; color: white; text-decoration: none;">View Insider Tips →</a></p>
+                <p><strong>Let's have an informed think about what might come up in the exam. No guarantees!</strong>
+                </p>
+                <p style="text-align: center; margin-top: 30px;"><a href="insidertips.html"
+                        style="font-weight: 600; font-size: 2em; color: white; text-decoration: none;">View Insider Tips
+                        →</a></p>
             </div>
         </section>
 
@@ -175,5 +204,12 @@
             © 2026 IB SEHS Study Guides – aligned with the 2026 syllabus (first assessment 2026)
         </footer>
     </div>
+
+    <script src="search.js"></script>
+    <script>
+        // Initialize search for index page
+        initSearch('index');
+    </script>
 </body>
+
 </html>

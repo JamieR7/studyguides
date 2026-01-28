@@ -7,6 +7,7 @@
     <title>Topic A.3: Response | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
 
 <body>
@@ -14,6 +15,17 @@
     <div class="sticky-topic-header">
         <a href="../index.html" class="menu-btn">☰ Menu</a>
         <span class="header-topic-title">Topic A.3 Response Study Guide</span>
+        <div class="search-container header-search-container">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search concepts (e.g., Newton's laws, ATP etc.)"
+                autocomplete="off"
+            >
+            <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
     </div>
 
     <div class="container">
@@ -23,7 +35,7 @@
         </nav>
 
         <div class="topic-content-wrapper">
-            <h1>Topic A.3: Response</h1>
+            <h1 id="topic-a3-response">Topic A.3: Response</h1>
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">IB SEHS Study Guide</p>
 
             <!-- TOPIC EXPLAINERS -->
@@ -318,7 +330,7 @@
                             activity,
                             and manages fatigue and recovery.</p>
 
-                        <h3>4.1 Sub-topic A.3.1: Qualities of training</h3>
+                        <h3 id="41-sub-topic-a31-qualities-of-training">4.1 Sub-topic A.3.1: Qualities of training</h3>
 
                         <p><strong>Overview:</strong> This sub-topic covers the essential principles for designing safe
                             and
@@ -389,7 +401,7 @@
                             acceleration and a faster start. (Source: IB SEHS Sample Exam Answers.docx, Paper 2, Q1.e)
                         </div>
 
-                        <h3>4.2 Sub-topic A.3.2: Benefits to health of being active</h3>
+                        <h3 id="42-sub-topic-a32-benefits-to-health-of-being-active">4.2 Sub-topic A.3.2: Benefits to health of being active</h3>
 
                         <p><strong>Overview:</strong> This sub-topic shifts the focus from athletic performance to
                             general
@@ -436,7 +448,7 @@
                             discipline in public health. (Source: SEHS Guide.pdf, "Why study SEHS?")
                         </div>
 
-                        <h3>4.3 Sub-topic A.3.3: Fatigue and recovery (Higher Level Only)</h3>
+                        <h3 id="43-sub-topic-a33-fatigue-and-recovery-higher-level-only">4.3 Sub-topic A.3.3: Fatigue and recovery (Higher Level Only)</h3>
 
                         <p><strong>Overview:</strong> This higher-level sub-topic examines the complex physiological and
                             psychological causes of fatigue during exercise. It also evaluates the various strategies
@@ -1242,7 +1254,7 @@
 
             <div
                 style="text-align:center; margin:3rem 0; padding:2rem; background:linear-gradient(135deg,#004587 0%,#002a52 100%); border-radius:12px; color:#fff;">
-                <h3 style="color:#fbba07; margin-bottom:1rem;">🎉 Topic A.3: Response Mastered!</h3>
+                <h3 style="color:#fbba07; margin-bottom:1rem;" id="topic-a3-response-mastered">🎉 Topic A.3: Response Mastered!</h3>
                 <p style="margin:0;">You now have the knowledge and exam strategies to excel in questions on training
                     principles, health benefits of activity, and fatigue & recovery. Apply these concepts to optimize
                     performance and promote lifelong health!</p>
@@ -1255,6 +1267,12 @@
     <script src="../flashcards/a3_data.js"></script>
     <script src="../mcq-interaction.js"></script>
     <script src="../accordion.js"></script>
+    
+    <script src="../search.js"></script>
+    <script>
+        // Initialize search for topic page
+        initSearch('topic');
+    </script>
 </body>
 
 </html>

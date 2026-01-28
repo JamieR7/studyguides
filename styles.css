@@ -1502,3 +1502,196 @@ div.topic-accordion-card:nth-of-type(15)>.accordion-header {
     background: transparent;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* =====================================================
+   SEARCH BAR & AUTOCOMPLETE
+   ===================================================== */
+
+/* Search container - flexible positioning */
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Search container on index page */
+.index-search-container {
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+/* Search container in sticky header (topic pages) */
+.header-search-container {
+    flex: 0 0 auto;
+    max-width: 350px;
+    margin-left: auto;
+}
+
+/* Search input field */
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid rgba(251, 186, 7, 0.3);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #fbba07;
+    box-shadow: 0 4px 12px rgba(251, 186, 7, 0.3);
+    background: #fff;
+}
+
+.search-input::placeholder {
+    color: #999;
+    font-weight: 300;
+}
+
+/* Search icon */
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #666;
+    pointer-events: none;
+}
+
+/* Autocomplete dropdown */
+.search-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 2px solid #fbba07;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1001;
+    display: none;
+}
+
+/* Search result item */
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover,
+.search-result-item.active {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 4px solid #fbba07;
+    padding-left: calc(1rem - 4px);
+}
+
+.search-result-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.search-result-title {
+    flex: 1;
+    font-weight: 500;
+    color: #004587;
+    font-size: 0.95rem;
+}
+
+.search-result-unit {
+    background: linear-gradient(135deg, #004587 0%, #003366 100%);
+    color: #fbba07;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* No results message */
+.search-no-results {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Highlight effect for scrolled-to elements */
+.search-highlight {
+    animation: highlightPulse 2s ease-in-out;
+    scroll-margin-top: 80px; /* Account for sticky header */
+}
+
+@keyframes highlightPulse {
+    0% {
+        background-color: rgba(251, 186, 7, 0.3);
+    }
+    50% {
+        background-color: rgba(251, 186, 7, 0.5);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-search-container {
+        max-width: 250px;
+    }
+    
+    .search-input {
+        font-size: 0.9rem;
+        padding: 0.625rem 0.875rem 0.625rem 2.25rem;
+    }
+    
+    .search-icon {
+        font-size: 1rem;
+    }
+    
+    .search-result-title {
+        font-size: 0.875rem;
+    }
+    
+    .search-result-unit {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* On very small screens, make search full width on sticky header */
+    .sticky-topic-header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 0.75rem 1rem;
+    }
+    
+    .header-search-container {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 0.5rem;
+        order: 3;
+    }
+    
+    .index-search-container {
+        max-width: 100%;
+    }
+}

@@ -7,6 +7,7 @@
     <title>Topic B2 - Forces, Motion and Movement | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
 
 <body>
@@ -14,6 +15,17 @@
     <div class="sticky-topic-header">
         <a href="../index.html" class="menu-btn">☰ Menu</a>
         <span class="header-topic-title">Topic B2 - Forces, Motion and Movement Study Guide</span>
+        <div class="search-container header-search-container">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search concepts (e.g., Newton's laws, ATP etc.)"
+                autocomplete="off"
+            >
+            <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
     </div>
 
     <div class="container">
@@ -23,7 +35,7 @@
         </nav>
 
         <div class="topic-content-wrapper">
-            <h1>Topic B2 - Forces, Motion and Movement</h1>
+            <h1 id="topic-b2-forces-motion-and-movement">Topic B2 - Forces, Motion and Movement</h1>
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">IB SEHS 2026 Study Guide</p>
 
             <!-- TOPIC EXPLAINERS -->
@@ -278,7 +290,7 @@
                             biomechanics, from basic calculations to interpreting graphical data.</p>
 
                         <div class="mechanism-steps">
-                            <h4>Units and Conversions</h4>
+                            <h4 id="units-and-conversions">Units and Conversions</h4>
                             <p><strong>Q:</strong> Convert a velocity of 36 km h⁻¹ to m s⁻¹.</p>
                             <p><strong>A:</strong></p>
                             <p>1 km = 1000 m</p>
@@ -287,7 +299,7 @@
                         </div>
 
                         <div class="mechanism-steps">
-                            <h4>Using Formulas (e.g., F=ma, Power=Work/Time)</h4>
+                            <h4 id="using-formulas-eg-fma-powerworktime">Using Formulas (e.g., F=ma, Power=Work/Time)</h4>
                             <p><strong>Q:</strong> A weightlifter lifts a 100 kg barbell 2 meters in 1.5 seconds.
                                 Calculate the
                                 power generated (g = 9.81 m s⁻²).</p>
@@ -298,7 +310,7 @@
                         </div>
 
                         <div class="mechanism-steps">
-                            <h4>Calculating Averages and Percentages</h4>
+                            <h4 id="calculating-averages-and-percentages">Calculating Averages and Percentages</h4>
                             <p><strong>Q:</strong> A swimmer completes 5 laps in 25s, 26s, 24s, 27s, and 23s. Calculate
                                 the average
                                 lap time and the percentage improvement from the slowest to the fastest lap.</p>
@@ -310,7 +322,7 @@
                         </div>
 
                         <div class="mechanism-steps">
-                            <h4>Interpreting Graphs (e.g., Displacement-Time, Velocity-Time)</h4>
+                            <h4 id="interpreting-graphs-eg-displacement-time-velocity-time">Interpreting Graphs (e.g., Displacement-Time, Velocity-Time)</h4>
                             <p><strong>Q:</strong> Describe the motion of an object represented by a horizontal line on
                                 a
                                 velocity-time graph.</p>
@@ -346,7 +358,7 @@
                             understanding
                             of the mechanics of sport and exercise.</p>
 
-                        <h3>B2.1 Newton's Laws of Motion</h3>
+                        <h3 id="b21-newtons-laws-of-motion">B2.1 Newton's Laws of Motion</h3>
                         <p>Sir Isaac Newton's three laws of motion are the bedrock of biomechanics. They provide a
                             complete
                             framework for understanding how forces create, change, and control movement in all sporting
@@ -415,7 +427,7 @@
                             on the gravitational field <span class="page-ref">p.315</span>.
                         </div>
 
-                        <h3>B2.2 Fluid Mechanics</h3>
+                        <h3 id="b22-fluid-mechanics">B2.2 Fluid Mechanics</h3>
                         <p>Once an athlete or object is in motion, they must contend with forces from the surrounding
                             fluid (air or
                             water). This section analyzes how these forces—drag, lift, and buoyancy—affect performance
@@ -491,7 +503,7 @@
                             optimal angle is lower (e.g., 35-42°) <span class="page-ref">p.336-337</span>.
                         </div>
 
-                        <h3>B2.3 Movement Analysis and Its Applications</h3>
+                        <h3 id="b23-movement-analysis-and-its-applications">B2.3 Movement Analysis and Its Applications</h3>
                         <p>Movement analysis is a systematic approach to improving performance and preventing injury. By
                             breaking
                             down complex skills into distinct phases, coaches and athletes can observe and quantify
@@ -1512,28 +1524,28 @@
                             cyclist.</p>
 
                         <div class="working-steps">
-                            <h4>Step 1: Identify the known variables.</h4>
+                            <h4 id="step-1-identify-the-known-variables">Step 1: Identify the known variables.</h4>
                             <ul>
                                 <li>Force (F) = 40 N</li>
                                 <li>velocity (v) = 12 m s⁻¹</li>
                             </ul>
 
-                            <h4>Step 2: State the formula.</h4>
+                            <h4 id="step-2-state-the-formula">Step 2: State the formula.</h4>
                             <ul>
                                 <li>P = Fv</li>
                             </ul>
 
-                            <h4>Step 3: Substitute the values into the formula.</h4>
+                            <h4 id="step-3-substitute-the-values-into-the-formula">Step 3: Substitute the values into the formula.</h4>
                             <ul>
                                 <li>P = 40 N × 12 m s⁻¹</li>
                             </ul>
 
-                            <h4>Step 4: Calculate the result and include units.</h4>
+                            <h4 id="step-4-calculate-the-result-and-include-units">Step 4: Calculate the result and include units.</h4>
                             <ul>
                                 <li>P = 480 W</li>
                             </ul>
 
-                            <h4>Conclusion</h4>
+                            <h4 id="conclusion">Conclusion</h4>
                             <p>Answer: The power output of the cyclist is 480 Watts.</p>
                         </div>
 
@@ -1827,7 +1839,7 @@
 
             <div
                 style="text-align:center; margin:3rem 0; padding:2rem; background:linear-gradient(135deg,#004587 0%,#002a52 100%); border-radius:12px; color:#fff;">
-                <h3 style="color:#fbba07; margin-bottom:1rem;">🎉 Topic B2 - Forces, Motion and Movement
+                <h3 style="color:#fbba07; margin-bottom:1rem;" id="topic-b2-forces-motion-and-movement-mastered">🎉 Topic B2 - Forces, Motion and Movement
                     Mastered!</h3>
                 <p style="margin:0;">You've completed your study of biomechanics. With this foundational
                     knowledge,
@@ -1842,6 +1854,12 @@
     <script src="../flashcards/b2_data.js"></script>
     <script src="../mcq-interaction.js"></script>
     <script src="../accordion.js"></script>
+    
+    <script src="../search.js"></script>
+    <script>
+        // Initialize search for topic page
+        initSearch('topic');
+    </script>
 </body>
 
 </html>

@@ -7,6 +7,7 @@
     <title>Topic C.2: Motor Learning | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
 
 <body>
@@ -14,6 +15,17 @@
     <div class="sticky-topic-header">
         <a href="../index.html" class="menu-btn">☰ Menu</a>
         <span class="header-topic-title">Topic C2 - Motor Learning</span>
+        <div class="search-container header-search-container">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search concepts (e.g., Newton's laws, ATP etc.)"
+                autocomplete="off"
+            >
+            <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
     </div>
 
     <div class="container">
@@ -23,7 +35,7 @@
         </nav>
 
         <div class="topic-content-wrapper">
-            <h1>Topic C2 - Motor Learning</h1>
+            <h1 id="topic-c2-motor-learning">Topic C2 - Motor Learning</h1>
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">A comprehensive study guide covering the
                 principles of skill acquisition in IB SEHS 2026.</p>
 
@@ -454,7 +466,7 @@
                 <div class="accordion-content">
                     <div class="accordion-body">
 
-                        <h3>C.2.1 Motor learning processes</h3>
+                        <h3 id="c21-motor-learning-processes">C.2.1 Motor learning processes</h3>
                         <p>This sub-topic establishes the foundational principles of how we acquire and
                             refine motor
                             skills. It
@@ -589,7 +601,7 @@
                             are seen in soccer and boxing. <span class="page-ref">p.456</span>
                         </div>
 
-                        <h3>C.2.2 Attentional control</h3>
+                        <h3 id="c22-attentional-control">C.2.2 Attentional control</h3>
                         <p>This sub-topic delves into the cognitive mechanisms that govern focus and
                             concentration,
                             which are
@@ -1610,12 +1622,12 @@
                         </div>
 
                         <div class="working-steps">
-                            <h4>Working</h4>
+                            <h4 id="working">Working</h4>
                             <ul>
                                 <li>Improvement = 12.8 – 7.7</li>
                             </ul>
 
-                            <h4>Answer</h4>
+                            <h4 id="answer">Answer</h4>
                             <p>The improvement is 5.1. (Note: A larger positive result indicates greater
                                 improvement, as
                                 higher
@@ -1906,7 +1918,7 @@
 
             <div
                 style="text-align:center; margin:3rem 0; padding:2rem; background:linear-gradient(135deg,#004587 0%,#002a52 100%); border-radius:12px; color:#fff;">
-                <h3 style="color:#fbba07; margin-bottom:1rem;">🎉 Topic C2 - Motor Learning Mastered!</h3>
+                <h3 style="color:#fbba07; margin-bottom:1rem;" id="topic-c2-motor-learning-mastered">🎉 Topic C2 - Motor Learning Mastered!</h3>
                 <p style="margin:0;">You have successfully completed your comprehensive review of motor
                     learning. Keep
                     practicing with exam-style questions to reinforce your understanding.</p>
@@ -1919,6 +1931,12 @@
     <script src="../flashcards/c2_data.js"></script>
     <script src="../mcq-interaction.js"></script>
     <script src="../accordion.js"></script>
+    
+    <script src="../search.js"></script>
+    <script>
+        // Initialize search for topic page
+        initSearch('topic');
+    </script>
 </body>
 
 </html>

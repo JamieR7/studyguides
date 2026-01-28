@@ -7,6 +7,7 @@
     <title>Topic C.5 Psychological Skills | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
 
 <body>
@@ -14,6 +15,17 @@
     <div class="sticky-topic-header">
         <a href="../index.html" class="menu-btn">☰ Menu</a>
         <span class="header-topic-title">Topic C5 - Psychological Skills</span>
+        <div class="search-container header-search-container">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search concepts (e.g., Newton's laws, ATP etc.)"
+                autocomplete="off"
+            >
+            <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
     </div>
 
     <div class="container">
@@ -23,7 +35,7 @@
         </nav>
 
         <div class="topic-content-wrapper">
-            <h1>Topic C5 - Psychological Skills</h1>
+            <h1 id="topic-c5-psychological-skills">Topic C5 - Psychological Skills</h1>
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">A comprehensive study guide covering goal
                 setting and imagery in IB SEHS 2026.</p>
 
@@ -341,7 +353,7 @@
                             Higher
                             Level.</p>
 
-                        <h3>C.5.1 Goal Setting (SL/HL)</h3>
+                        <h3 id="c51-goal-setting-slhl">C.5.1 Goal Setting (SL/HL)</h3>
                         <p>Goal setting is a fundamental psychological skill used to direct an individual's
                             attention and effort
                             towards a specific objective. In sport, exercise, and health, it is a powerful tool for
@@ -411,7 +423,7 @@
                                 class="page-ref">p.50</span>
                         </div>
 
-                        <h3>C.5.1.2 Goal Setting (HL Only)</h3>
+                        <h3 id="c512-goal-setting-hl-only">C.5.1.2 Goal Setting (HL Only)</h3>
                         <p>For Higher Level students, the study of goal setting becomes more nuanced, exploring the
                             potential
                             downsides and the critical importance of flexibility. This includes understanding
@@ -480,7 +492,7 @@
                             <span class="page-ref">p.50</span>
                         </div>
 
-                        <h3>C.5.2 Imagery (HL Only)</h3>
+                        <h3 id="c52-imagery-hl-only">C.5.2 Imagery (HL Only)</h3>
                         <p>Imagery, often referred to as visualization or mental rehearsal, is a cognitive process
                             that mimics a
                             real experience. It is a powerful psychological skill that involves using a combination
@@ -1673,7 +1685,7 @@
 
             <div
                 style="text-align:center; margin:4rem 0 2rem 0; padding:2rem; background:linear-gradient(135deg,#004587 0%,#002a52 100%); border-radius:12px; color:#fff;">
-                <h3 style="color:#fbba07; margin-bottom:1rem;">🎉 Topic C5 - Psychological Skills Mastered!</h3>
+                <h3 style="color:#fbba07; margin-bottom:1rem;" id="topic-c5-psychological-skills-mastered">🎉 Topic C5 - Psychological Skills Mastered!</h3>
                 <p style="margin:0;">You have completed the comprehensive study guide for Topic C.5.</p>
             </div>
         </div>
@@ -1684,6 +1696,12 @@
     <script src="../flashcards/c5_data.js"></script>
     <script src="../mcq-interaction.js"></script>
     <script src="../accordion.js"></script>
+    
+    <script src="../search.js"></script>
+    <script>
+        // Initialize search for topic page
+        initSearch('topic');
+    </script>
 </body>
 
 </html>

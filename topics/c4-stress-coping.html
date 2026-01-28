@@ -7,6 +7,7 @@
     <title>Topic C.4 Stress and Coping | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
 
 <body>
@@ -14,6 +15,17 @@
     <div class="sticky-topic-header">
         <a href="../index.html" class="menu-btn">☰ Menu</a>
         <span class="header-topic-title">Topic C.4 Stress and Coping Study Guide</span>
+        <div class="search-container header-search-container">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search concepts (e.g., Newton's laws, ATP etc.)"
+                autocomplete="off"
+            >
+            <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
     </div>
 
     <div class="container">
@@ -23,7 +35,7 @@
         </nav>
 
         <div class="topic-content-wrapper">
-            <h1>Topic C.4 Stress and Coping</h1>
+            <h1 id="topic-c4-stress-and-coping">Topic C.4 Stress and Coping</h1>
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">IB SEHS Study Guide</p>
 
             <!-- TOPIC EXPLAINERS -->
@@ -466,7 +478,7 @@
                                     <p style="font-style:italic;">(Source: Created based on facts in the SEHS Support
                                         Material)</p>
 
-                                    <h3>Paper 1A: Multiple Choice Questions (MCQs)</h3>
+                                    <h3 id="paper-1a-multiple-choice-questions-mcqs">Paper 1A: Multiple Choice Questions (MCQs)</h3>
 
                                     <div class="mcq-container">
                                         <span class="mcq-number">Question 1</span>
@@ -874,7 +886,7 @@
                             questionnaires
                             to improve assessment validity.</p>
 
-                        <h3>Worked Example: Heart Rate Variability (HRV) Change</h3>
+                        <h3 id="worked-example-heart-rate-variability-hrv-change">Worked Example: Heart Rate Variability (HRV) Change</h3>
                         <p>An athlete's HRV (measured in milliseconds) drops during a high-pressure
                             penalty.</p>
 
@@ -888,22 +900,22 @@
                         </div>
 
                         <div class="working-steps">
-                            <h4>Step 1: Calculate the difference</h4>
+                            <h4 id="step-1-calculate-the-difference">Step 1: Calculate the difference</h4>
                             <ul>
                                 <li>52 - 85 = -33</li>
                             </ul>
 
-                            <h4>Step 2: Divide by original value</h4>
+                            <h4 id="step-2-divide-by-original-value">Step 2: Divide by original value</h4>
                             <ul>
                                 <li>-33 / 85 = -0.3882</li>
                             </ul>
 
-                            <h4>Step 3: Convert to percentage</h4>
+                            <h4 id="step-3-convert-to-percentage">Step 3: Convert to percentage</h4>
                             <ul>
                                 <li>-0.3882 x 100 = -38.8%</li>
                             </ul>
 
-                            <h4>Conclusion</h4>
+                            <h4 id="conclusion">Conclusion</h4>
                             <p>Final Answer: 38.8% decrease in HRV.</p>
                         </div>
 
@@ -1045,7 +1057,7 @@
 
             <div
                 style="text-align:center; margin:3rem 0; padding:2rem; background:linear-gradient(135deg,#004587 0%,#002a52 100%); border-radius:12px; color:#fff;">
-                <h3 style="color:#fbba07; margin-bottom:1rem;">🎉 Topic C.4 Stress and Coping Mastered!</h3>
+                <h3 style="color:#fbba07; margin-bottom:1rem;" id="topic-c4-stress-and-coping-mastered">🎉 Topic C.4 Stress and Coping Mastered!</h3>
                 <p style="margin:0;">Continue to review and apply these foundational concepts, as they will reappear and
                     provide context for many other topics throughout the SEHS course.</p>
             </div>
@@ -1058,6 +1070,12 @@
     <script src="../flashcards/c4_data.js"></script>
     <script src="../mcq-interaction.js"></script>
     <script src="../accordion.js"></script>
+    
+    <script src="../search.js"></script>
+    <script>
+        // Initialize search for topic page
+        initSearch('topic');
+    </script>
 </body>
 
 </html>

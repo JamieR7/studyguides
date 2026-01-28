@@ -7,6 +7,7 @@
     <title>Topic C.1: Individual Differences | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
 
 <body>
@@ -14,6 +15,17 @@
     <div class="sticky-topic-header">
         <a href="../index.html" class="menu-btn">☰ Menu</a>
         <span class="header-topic-title">Topic C1 - Individual Differences</span>
+        <div class="search-container header-search-container">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search concepts (e.g., Newton's laws, ATP etc.)"
+                autocomplete="off"
+            >
+            <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
     </div>
 
     <div class="container">
@@ -23,7 +35,7 @@
         </nav>
 
         <div class="topic-content-wrapper">
-            <h1>Topic C1 - Individual Differences</h1>
+            <h1 id="topic-c1-individual-differences">Topic C1 - Individual Differences</h1>
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">A comprehensive study guide covering
                 personality and mental toughness in IB SEHS 2026.</p>
 
@@ -265,7 +277,7 @@
                             differently and how
                             psychological resilience can be developed.</p>
 
-                        <h3>C.1.1 Personality</h3>
+                        <h3 id="c11-personality">C.1.1 Personality</h3>
                         <p>Personality refers to the stable, enduring characteristics that make an
                             individual unique. In
                             sport,
@@ -326,7 +338,7 @@
                             archery, shooting) to avoid over-arousal.
                         </div>
 
-                        <h3>C.1.2 Mental Toughness</h3>
+                        <h3 id="c12-mental-toughness">C.1.2 Mental Toughness</h3>
                         <p>Mental toughness is the psychological edge that allows athletes to cope better
                             than their
                             opponents with
@@ -731,7 +743,7 @@
                             is interpreting this data, particularly understanding the <strong>Standard
                                 Deviation</strong>.</p>
 
-                        <h3>Interpreting Standard Deviation in Personality Tests</h3>
+                        <h3 id="interpreting-standard-deviation-in-personality-tests">Interpreting Standard Deviation in Personality Tests</h3>
                         <p>Standard Deviation (SD) measures how spread out the scores are from the mean
                             (average).</p>
                         <ul>
@@ -947,6 +959,12 @@
     <script src="../flashcards/c1_data.js"></script>
     <script src="../mcq-interaction.js"></script>
     <script src="../accordion.js"></script>
+    
+    <script src="../search.js"></script>
+    <script>
+        // Initialize search for topic page
+        initSearch('topic');
+    </script>
 </body>
 
 </html>

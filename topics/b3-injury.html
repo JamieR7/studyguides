@@ -7,6 +7,7 @@
     <title>Topic B.3: Injury | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
 
 <body>
@@ -14,6 +15,17 @@
     <div class="sticky-topic-header">
         <a href="../index.html" class="menu-btn">☰ Menu</a>
         <span class="header-topic-title">Topic B3 - Injury</span>
+        <div class="search-container header-search-container">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search concepts (e.g., Newton's laws, ATP etc.)"
+                autocomplete="off"
+            >
+            <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
     </div>
 
     <div class="container">
@@ -23,7 +35,7 @@
         </nav>
 
         <div class="topic-content-wrapper">
-            <h1>Topic B3 - Injury</h1>
+            <h1 id="topic-b3-injury">Topic B3 - Injury</h1>
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">A comprehensive study guide covering injury
                 risk, classification, and management for IB SEHS 2026.</p>
 
@@ -435,7 +447,7 @@
 
                         <hr style="border:none; border-top:2px solid #004587; margin:2rem 0;">
 
-                        <h3>B.3.1 Causes of Injury</h3>
+                        <h3 id="b31-causes-of-injury">B.3.1 Causes of Injury</h3>
                         <p>Understanding the complex interaction of various risk factors is the first step
                             toward
                             effective injury
@@ -473,7 +485,7 @@
                         </ul>
 
                         <div class="mechanism-steps">
-                            <h4>Mechanism Explained: How Previous Injury Increases Future Injury Risk</h4>
+                            <h4 id="mechanism-explained-how-previous-injury-increases-future-injury-risk">Mechanism Explained: How Previous Injury Increases Future Injury Risk</h4>
                             <ol>
                                 <li>An athlete sustains an initial injury (e.g., an ankle sprain).</li>
                                 <li>Even after the pain subsides, rehabilitation may be incomplete, leading
@@ -521,7 +533,7 @@
 
                         <hr style="border:none; border-top:2px solid #004587; margin:2rem 0;">
 
-                        <h3>B.3.2 Interventions Related to Injury</h3>
+                        <h3 id="b32-interventions-related-to-injury">B.3.2 Interventions Related to Injury</h3>
                         <p>Once the causes of injury are understood, targeted interventions can be designed
                             and
                             implemented to
@@ -564,7 +576,7 @@
                         </ul>
 
                         <div class="mechanism-steps">
-                            <h4>Mechanism Explained: How the POLICE Protocol Facilitates Healing</h4>
+                            <h4 id="mechanism-explained-how-the-police-protocol-facilitates-healing">Mechanism Explained: How the POLICE Protocol Facilitates Healing</h4>
                             <ol>
                                 <li><strong>Protection:</strong> The injured area is protected from further
                                     damage
@@ -1477,7 +1489,7 @@
                             primary
                             calculation you will encounter in this topic.</p>
 
-                        <h3>Calculating Injury Incidence Rate</h3>
+                        <h3 id="calculating-injury-incidence-rate">Calculating Injury Incidence Rate</h3>
                         <p>This calculation allows for a standardized comparison of injury risk between
                             different groups
                             or over
@@ -1491,7 +1503,7 @@
                             (The most common standardized time unit is per 1,000 hours of participation.)
                         </div>
 
-                        <h4>Worked Example:</h4>
+                        <h4 id="worked-example">Worked Example:</h4>
                         <p>A study on youth rugby finds that in a season with a total of 2,000 hours of
                             player
                             participation (all
@@ -1501,25 +1513,25 @@
                             1,000 hours.</p>
 
                         <div class="working-steps">
-                            <h4>Step 1: Identify the variables</h4>
+                            <h4 id="step-1-identify-the-variables">Step 1: Identify the variables</h4>
                             <ul>
                                 <li>Total number of injuries = 50</li>
                                 <li>Total exposure time = 2,000 hours</li>
                                 <li>Standardized time unit = 1,000 hours</li>
                             </ul>
 
-                            <h4>Step 2: Apply the formula</h4>
+                            <h4 id="step-2-apply-the-formula">Step 2: Apply the formula</h4>
                             <ul>
                                 <li>Incidence Rate = (50 / 2,000) * 1,000</li>
                             </ul>
 
-                            <h4>Step 3: Calculate the result</h4>
+                            <h4 id="step-3-calculate-the-result">Step 3: Calculate the result</h4>
                             <ul>
                                 <li>Incidence Rate = 0.025 * 1,000</li>
                                 <li>Incidence Rate = 25</li>
                             </ul>
 
-                            <h4>Conclusion</h4>
+                            <h4 id="conclusion">Conclusion</h4>
                             <p>The injury incidence rate is 25 concussions per 1,000 hours of play. (Concept
                                 from <span class="page-ref">p.370</span>).</p>
                         </div>
@@ -1827,7 +1839,7 @@
             </div>
             <div
                 style="text-align:center; margin:3rem 0; padding:2rem; background:linear-gradient(135deg,#004587 0%,#002a52 100%); border-radius:12px; color:#fff;">
-                <h3 style="color:#fbba07; margin-bottom:1rem;">🎉 Topic B3 - Injury Mastered!</h3>
+                <h3 style="color:#fbba07; margin-bottom:1rem;" id="topic-b3-injury-mastered">🎉 Topic B3 - Injury Mastered!</h3>
                 <p style="margin:0;">You've completed the comprehensive study guide for injury in IB SEHS.
                     Keep
                     practicing with past papers and revisiting key concepts to maintain your expertise!</p>
@@ -1840,6 +1852,12 @@
     <script src="../flashcards/b3_data.js"></script>
     <script src="../mcq-interaction.js"></script>
     <script src="../accordion.js"></script>
+    
+    <script src="../search.js"></script>
+    <script>
+        // Initialize search for topic page
+        initSearch('topic');
+    </script>
 </body>
 
 </html>

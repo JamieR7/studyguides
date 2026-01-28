@@ -7,6 +7,7 @@
     <title>Topic C.3 Motivation | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
 
 <body>
@@ -14,6 +15,17 @@
     <div class="sticky-topic-header">
         <a href="../index.html" class="menu-btn">☰ Menu</a>
         <span class="header-topic-title">Topic C3 - Motivation</span>
+        <div class="search-container header-search-container">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search concepts (e.g., Newton's laws, ATP etc.)"
+                autocomplete="off"
+            >
+            <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
     </div>
 
     <div class="container">
@@ -23,7 +35,7 @@
         </nav>
 
         <div class="topic-content-wrapper">
-            <h1>Topic C3 - Motivation</h1>
+            <h1 id="topic-c3-motivation">Topic C3 - Motivation</h1>
             <p style="font-size:1.15rem; color:#666; margin-bottom:2rem;">A comprehensive study guide covering
                 achievement motivation and self-determination in IB SEHS 2026.</p>
 
@@ -417,7 +429,7 @@
                             will need to
                             master for the exam.</p>
 
-                        <h3>C.3.1 Achievement Motivation</h3>
+                        <h3 id="c31-achievement-motivation">C.3.1 Achievement Motivation</h3>
                         <p>Achievement motivation refers to an individual's efforts to master a task,
                             achieve
                             excellence, overcome
@@ -432,7 +444,7 @@
                             personality and the
                             environment.</p>
 
-                        <h4>Key Concepts</h4>
+                        <h4 id="key-concepts">Key Concepts</h4>
                         <ul>
                             <li><strong>Motivation:</strong> Defined by its direction (what an individual
                                 seeks out,
@@ -469,7 +481,7 @@
                                 superior ability).</li>
                         </ul>
 
-                        <h4>Mechanism: How Need Achievement Predicts Behaviour</h4>
+                        <h4 id="mechanism-how-need-achievement-predicts-behaviour">Mechanism: How Need Achievement Predicts Behaviour</h4>
                         <div class="mechanism-steps">
                             <ol>
                                 <li>An individual's personality contains a motive to achieve success (Nach)
@@ -548,7 +560,7 @@
                             competition.
                         </div>
 
-                        <h3>C.3.2 Self-Determination Theory (SDT)</h3>
+                        <h3 id="c32-self-determination-theory-sdt">C.3.2 Self-Determination Theory (SDT)</h3>
                         <p>Self-Determination Theory (SDT) is a broad meta-theory that provides a modern,
                             nuanced view
                             of
@@ -599,7 +611,7 @@
                             </li>
                         </ul>
 
-                        <h4>Mechanism: Fostering Autonomous Motivation</h4>
+                        <h4 id="mechanism-fostering-autonomous-motivation">Mechanism: Fostering Autonomous Motivation</h4>
                         <div class="mechanism-steps">
                             <ol>
                                 <li>A coach or teacher creates an autonomy-supportive environment by
@@ -677,7 +689,7 @@
                             likely to undermine and decrease intrinsic motivation.
                         </div>
 
-                        <h3>C.3.3 Motivational Climate</h3>
+                        <h3 id="c33-motivational-climate">C.3.3 Motivational Climate</h3>
                         <p>The motivational climate is the psychological environment engineered by a coach,
                             teacher, or
                             parent. This
@@ -717,7 +729,7 @@
                                 mastery-oriented motivational climate.</li>
                         </ul>
 
-                        <h4>Mechanism: The TARGET Approach in Action</h4>
+                        <h4 id="mechanism-the-target-approach-in-action">Mechanism: The TARGET Approach in Action</h4>
                         <div class="mechanism-steps">
                             <ol>
                                 <li><strong>Task:</strong> The coach designs a variety of tasks that
@@ -1520,12 +1532,12 @@
                             in tables,
                             a key skill for Paper 1B data-based questions.</p>
 
-                        <h3>Skill: Calculating the Mean</h3>
+                        <h3 id="skill-calculating-the-mean">Skill: Calculating the Mean</h3>
                         <div class="formula-box">
                             <strong>Formula:</strong> Mean = (Sum of all values) ÷ (Number of values)
                         </div>
 
-                        <h4>Worked Example (Topic C.3)</h4>
+                        <h4 id="worked-example-topic-c3">Worked Example (Topic C.3)</h4>
                         <p><strong>Context:</strong> Using the data from the DBQ in Table 3 on page <span
                                 class="page-ref">p.523</span> of the textbook, calculate the mean task
                             orientation score
@@ -1538,7 +1550,7 @@
                             4.13.</p>
 
                         <div class="working-steps">
-                            <h4>Calculation Steps:</h4>
+                            <h4 id="calculation-steps">Calculation Steps:</h4>
                             <ol>
                                 <li><strong>Sum the values:</strong> 4.53 + 2.97 + 4.13 = 11.63</li>
                                 <li><strong>Count the number of values:</strong> There are 3 students.</li>
@@ -1549,7 +1561,7 @@
                                     is 3.88.</li>
                             </ol>
 
-                            <h4>Conclusion</h4>
+                            <h4 id="conclusion">Conclusion</h4>
                             <p><strong>Units:</strong> These scores are based on a rating scale and have no
                                 units.</p>
                         </div>
@@ -1880,7 +1892,7 @@
 
             <div
                 style="text-align:center; margin:3rem 0; padding:2rem; background:linear-gradient(135deg,#004587 0%,#002a52 100%); border-radius:12px; color:#fff;">
-                <h3 style="color:#fbba07; margin-bottom:1rem;">🎉 Topic C3 - Motivation Mastered!</h3>
+                <h3 style="color:#fbba07; margin-bottom:1rem;" id="topic-c3-motivation-mastered">🎉 Topic C3 - Motivation Mastered!</h3>
                 <p style="margin:0;">You now have the foundational knowledge, practical application skills,
                     and exam
                     strategies to excel in Topic C.3. Keep practicing with exam-style questions and refine
@@ -1896,6 +1908,12 @@
     <script src="../flashcards/c3_data.js"></script>
     <script src="../mcq-interaction.js"></script>
     <script src="../accordion.js"></script>
+    
+    <script src="../search.js"></script>
+    <script>
+        // Initialize search for topic page
+        initSearch('topic');
+    </script>
 </body>
 
 </html>
