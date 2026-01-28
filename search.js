@@ -208,8 +208,20 @@ function navigateToResult(page, anchor) {
         // Same page - smooth scroll with highlight
         scrollToAnchor(anchor);
     } else {
-        // Different page - navigate with anchor
-        window.location.href = page + anchor;
+        // Different page - need to construct the correct URL
+        // Determine if we're on index page or a topic page
+        const isOnIndexPage = currentPage === 'index.html' || currentPage === '';
+
+        let targetUrl;
+        if (isOnIndexPage) {
+            // From index page, use the page path as-is
+            targetUrl = page + anchor;
+        } else {
+            // From a topic page, just use the filename (we're already in topics/)
+            targetUrl = targetPage + anchor;
+        }
+
+        window.location.href = targetUrl;
     }
 }
 
