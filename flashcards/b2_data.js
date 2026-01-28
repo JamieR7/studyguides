@@ -45,7 +45,7 @@ const b2Params = {
         { question: "Interpret a coefficient of restitution (e) value of 1.", answer: "The collision is perfectly elastic, meaning no energy is lost to heat or sound." },
         { question: "Define friction.", answer: "Friction is a force that acts against the motion of two surfaces that are in contact, acting parallel to the plane of contact." },
         { question: "Distinguish between static friction and dynamic friction.", answer: "Static friction acts between two surfaces that are not moving relative to each other, while dynamic friction acts once the object is in motion." },
-        { question: "Formula: Maximum static friction (F<sub>f</sub>).", answer: "F<sub>f</sub> = &mu;<sub>s</sub>R, where &mu;<sub>s</sub> is the coefficient of static friction and R is the normal reaction force." },
+        { question: "Formula: Maximum static friction (Ff).", answer: "F<sub>f</sub> = &mu;<sub>s</sub>R, where &mu;<sub>s</sub> is the coefficient of static friction and R is the normal reaction force." },
         { question: "Compare the magnitude of static friction and dynamic friction for the same surfaces.", answer: "The coefficient of dynamic friction is lower than the coefficient of static friction, so dynamic friction is generally less." },
         { question: "Define mechanical work (W).", answer: "Work results from the application of a force (F) over a distance (d or s), expressed as W = Fd." },
         { question: "Define power (P) in terms of work.", answer: "Power is the rate at which work is performed, expressed as P = &Delta;W / &Delta;t." },
