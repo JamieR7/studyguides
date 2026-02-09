@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam Strategy & Predictions | IB SEHS 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    
+    <link rel="stylesheet" href="../styles.css">
+
     <style>
         /* --- THEME CARDS --- */
         .curriculum-overview {
@@ -58,7 +59,7 @@
         .theme-cards-container {
             background: white;
             border-radius: 0 0 12px 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             overflow: hidden;
         }
 
@@ -101,9 +102,10 @@
             align-items: center;
             gap: 0.5rem;
         }
+
         .overview-header h2 {
-    color: #fbba07;
-}
+            color: #fbba07;
+        }
 
         .subtopic-count {
             font-size: 0.8rem;
@@ -169,7 +171,7 @@
 
         .topic-item:hover {
             border-left-color: #004587;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
         .topic-item:last-child {
@@ -220,8 +222,7 @@
             color: #234e52;
         }
 
-        .marks-section {
-        }
+        .marks-section {}
 
         .marks-grid {
             display: grid;
@@ -284,7 +285,7 @@
             border-left: 5px solid #004587;
             padding: 1.5rem;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
         .methodology-header {
@@ -304,11 +305,32 @@
             padding-bottom: 0.75rem;
             border-bottom: 1px dashed #cbd5e0;
         }
-        .split-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        
-        .split-col { text-align: center; width: 48%; }
-        .split-label { font-size: 0.75rem; text-transform: uppercase; color: #718096; font-weight: 700; display: block; margin-bottom: 0.25rem; }
-        .split-val { font-weight: 700; color: #2d3748; font-size: 1.1rem; }
+
+        .split-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .split-col {
+            text-align: center;
+            width: 48%;
+        }
+
+        .split-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #718096;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .split-val {
+            font-weight: 700;
+            color: #2d3748;
+            font-size: 1.1rem;
+        }
 
         .key-stat-box {
             background: #004587;
@@ -321,8 +343,18 @@
             text-align: center;
         }
 
-        .stat-value { font-size: 2.2rem; font-weight: 700; color: #fbba07; line-height: 1; margin-bottom: 0.5rem; }
-        .stat-label { font-size: 0.9rem; opacity: 0.9; }
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fbba07;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
 
         /* --- STRATEGY CARDS --- */
         .section-header {
@@ -331,7 +363,7 @@
             align-items: center;
             gap: 1rem;
         }
-        
+
         .section-badge-large {
             background: #004587;
             color: white;
@@ -341,7 +373,10 @@
             font-size: 1.1rem;
         }
 
-        .strategy-grid { display: grid; gap: 1.5rem; }
+        .strategy-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
 
         .strategy-card {
             background: #fff;
@@ -353,7 +388,7 @@
 
         .strategy-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
         }
 
         /* CARD HEADER (Clickable Area) */
@@ -362,12 +397,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer; 
+            cursor: pointer;
             background: #fff;
         }
-        .card-main:hover { background: #fcfcfc; }
 
-        .topic-content h3 { margin: 0 0 0.5rem 0; color: #2d3748; font-size: 1.2rem; }
+        .card-main:hover {
+            background: #fcfcfc;
+        }
+
+        .topic-content h3 {
+            margin: 0 0 0.5rem 0;
+            color: #2d3748;
+            font-size: 1.2rem;
+        }
 
         .meta-tags {
             display: flex;
@@ -384,9 +426,21 @@
             text-transform: uppercase;
         }
 
-        .tag-sl { background: #ebf8ff; color: #2b6cb0; }
-        .tag-hl { background: #fff5f5; color: #c53030; }
-        .tag-marks { background: #fffff0; color: #b7791f; border: 1px solid #f6e05e; }
+        .tag-sl {
+            background: #ebf8ff;
+            color: #2b6cb0;
+        }
+
+        .tag-hl {
+            background: #fff5f5;
+            color: #c53030;
+        }
+
+        .tag-marks {
+            background: #fffff0;
+            color: #b7791f;
+            border: 1px solid #f6e05e;
+        }
 
         .insider-tip {
             font-size: 0.9rem;
@@ -409,8 +463,11 @@
             font-weight: 700;
             transition: background 0.2s;
         }
-        
-        .strategy-card:hover .card-action { background: #fbba07; color: #004587; }
+
+        .strategy-card:hover .card-action {
+            background: #fbba07;
+            color: #004587;
+        }
 
         /* --- HIDDEN DRAWER --- */
         .drawer-content {
@@ -419,12 +476,22 @@
             border-top: 1px solid #e2e8f0;
             padding: 1.5rem;
         }
-        
-        .drawer-content.open { display: block; animation: slideIn 0.3s ease; }
-        
+
+        .drawer-content.open {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
         @keyframes slideIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .q-label {
@@ -438,7 +505,10 @@
         }
 
         /* --- 1B DATA HUB --- */
-        .data-hub-card { border-left: 5px solid #38a169; }
+        .data-hub-card {
+            border-left: 5px solid #38a169;
+        }
+
         .data-placeholder {
             border: 2px dashed #cbd5e0;
             background: #edf2f7;
@@ -452,12 +522,25 @@
         }
 
         @media (max-width: 768px) {
-            .card-main { flex-direction: column; align-items: flex-start; gap: 1rem; }
-            .card-action { width: 100%; border-radius: 6px; }
-            .card-action::after { content: " View Questions"; margin-left: 0.5rem; }
+            .card-main {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .card-action {
+                width: 100%;
+                border-radius: 6px;
+            }
+
+            .card-action::after {
+                content: " View Questions";
+                margin-left: 0.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="sticky-topic-header">
@@ -482,8 +565,9 @@
                 <div class="overview-header">
                     <h2>📊 IB SEHS Curriculum Breakdown</h2>
                     <p>Click each theme to see teaching hours and predicted exam marks per topic<br>
-                    This is all purely guesswork, but it should at least give you an idea of what to expect on the big day.<br>
-                    Please use this alongside (not instead of) your Kerboodle textbook.</p>
+                        This is all purely guesswork, but it should at least give you an idea of what to expect on the
+                        big day.<br>
+                        Please use this alongside (not instead of) your Kerboodle textbook.</p>
                 </div>
 
                 <div class="legend">
@@ -493,12 +577,13 @@
                     </div>
                     <div class="legend-item">
                         <span class="legend-icon">📝</span>
-                        <span><strong>Exam Marks:</strong> Predicted allocation in Paper 1A (MCQ) & Paper 2 (Short/Extended)</span>
+                        <span><strong>Exam Marks:</strong> Predicted allocation in Paper 1A (MCQ) & Paper 2
+                            (Short/Extended)</span>
                     </div>
                 </div>
 
                 <div class="theme-cards-container">
-                    
+
                     <!-- THEME 1 -->
                     <div class="theme-card">
                         <div class="theme-header" onclick="toggleTheme('theme1')">
@@ -525,8 +610,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">3</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -545,16 +632,20 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">2</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="topic-item">
-                                    <div class="topic-name">B.1.2 Structure and function of connective tissues and joints</div>
+                                    <div class="topic-name">B.1.2 Structure and function of connective tissues and
+                                        joints</div>
                                     <div class="topic-details">
                                         <div class="hours-section">
                                             <span class="section-label">⏱️ Teaching Hours</span>
@@ -565,8 +656,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -584,7 +677,8 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -603,10 +697,14 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">3</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">2</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">5</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">3</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">5</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -625,10 +723,14 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -652,7 +754,8 @@
                         <div id="theme2" class="theme-body">
                             <div class="topic-list">
                                 <div class="topic-item">
-                                    <div class="topic-name">A.1.1 Inter-system communication—but not "reproductive hormones"</div>
+                                    <div class="topic-name">A.1.1 Inter-system communication—but not "reproductive
+                                        hormones"</div>
                                     <div class="topic-details">
                                         <div class="hours-section">
                                             <span class="section-label">⏱️ Teaching Hours</span>
@@ -663,8 +766,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">2</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">4</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">4</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -682,8 +787,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">3</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -701,8 +808,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">2</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">3</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -720,8 +829,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -739,7 +850,8 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -757,8 +869,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -794,10 +908,14 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">3</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">2</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -815,8 +933,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -834,8 +954,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">3</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -853,8 +975,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -872,9 +996,12 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">4</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">4</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -893,8 +1020,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -912,8 +1041,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">2</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -949,10 +1080,14 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">2</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">4</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">4</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -971,10 +1106,14 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">2</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">3</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">3</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -993,10 +1132,14 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">2</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">2</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">4</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">4</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">4</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">4</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1015,17 +1158,22 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">2</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">2</span></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="topic-item">
-                                    <div class="topic-name">A.1.1.2 The endocrine system—Reproductive hormones only</div>
+                                    <div class="topic-name">A.1.1.2 The endocrine system—Reproductive hormones only
+                                    </div>
                                     <div class="topic-details">
                                         <div class="hours-section">
                                             <span class="section-label">⏱️ Teaching Hours</span>
@@ -1036,7 +1184,8 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">-</span><span class="mark-value zero">0</span></div>
+                                                <div class="mark-item"><span class="mark-label">-</span><span
+                                                        class="mark-value zero">0</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1071,8 +1220,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">2</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">4</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">2</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">4</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1091,10 +1242,14 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">3</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 1A HL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">3</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1113,8 +1268,10 @@
                                         <div class="marks-section">
                                             <span class="section-label">📝 Predicted Exam Marks</span>
                                             <div class="marks-grid">
-                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span class="mark-value">1</span></div>
-                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 SL</span><span
+                                                        class="mark-value">1</span></div>
+                                                <div class="mark-item"><span class="mark-label">Paper 2 HL</span><span
+                                                        class="mark-value">1</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1129,8 +1286,9 @@
             <div class="dashboard-container">
                 <div class="methodology-box">
                     <div class="methodology-header">🧮 Calculating the Weighting</div>
-                    <p style="margin-bottom:1rem; font-size:0.9rem;">Marks are allocated based on teaching hours. Here is the split:</p>
-                    
+                    <p style="margin-bottom:1rem; font-size:0.9rem;">Marks are allocated based on teaching hours. Here
+                        is the split:</p>
+
                     <div class="split-row">
                         <div class="split-col">
                             <span class="split-label">Standard Level</span>
@@ -1158,12 +1316,14 @@
 
                 <div class="key-stat-box">
                     <div class="stat-value">~35%</div>
-                    <div class="stat-label">of the Total Grade comes from <strong>Theme A</strong> (Physiology). It is the heaviest section for both SL & HL.</div>
+                    <div class="stat-label">of the Total Grade comes from <strong>Theme A</strong> (Physiology). It is
+                        the heaviest section for both SL & HL.</div>
                 </div>
 
                 <div class="key-stat-box" style="background: #38a169;">
                     <div class="stat-value">20</div>
-                    <div class="stat-label">Marks purely for <strong>Data Analysis (Paper 1B)</strong>. This requires skill practice, not memorization.</div>
+                    <div class="stat-label">Marks purely for <strong>Data Analysis (Paper 1B)</strong>. This requires
+                        skill practice, not memorization.</div>
                 </div>
             </div>
 
@@ -1173,7 +1333,7 @@
             </div>
 
             <div class="strategy-grid">
-                
+
                 <div class="strategy-card">
                     <div class="card-main" onclick="toggleDrawer('d-a1')">
                         <div class="topic-content">
@@ -1182,20 +1342,129 @@
                                 <span class="tag tag-sl">SL/HL</span>
                                 <span class="tag tag-marks">~5-8 Marks</span>
                             </div>
-                            <div class="insider-tip">💡 <strong>Tip:</strong> Feedback loops are often tested in MCQs. Know the difference between Negative (stabilizing) and Positive (amplifying).</div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Feedback loops are often tested in MCQs.
+                                Know the difference between Negative (stabilizing) and Positive (amplifying).</div>
                         </div>
                         <div class="card-action">▼</div>
                     </div>
                     <div id="d-a1" class="drawer-content">
-                        <span class="q-label">Paper 1A Example (MCQ)</span>
-                        <div class="mcq-question">Which component of the homeostatic control mechanism is responsible for detecting a deviation from the set point?</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-a1"><span class="icon">▶</span> Reveal Answer</button>
+
+                        <p style="margin-bottom: 1.5rem; color: #555; font-size: 0.95rem;">
+                            <strong>Expected Mark Allocation:</strong><br>
+                            • <strong>Paper 1A (MCQ):</strong> SL: ~2-3 marks | HL: ~3-4 marks<br>
+                            • <strong>Paper 2 (Extended Response):</strong> SL: ~3-4 marks | HL: ~4-7 marks
+                        </p>
+
+                        <!-- A.1.1 Inter-system communication -->
+                        <span class="q-label">Topic A.1.1: Inter-system communication</span>
+                        <p style="margin: 0.5rem 0 1rem 0; color: #666; font-style: italic;">You will likely get 1-2 MCQ
+                            questions testing your understanding of receptors and hormonal responses.</p>
+
+                        <div class="mcq-question"><strong>Specimen Question Example (Paper 1A MCQ):</strong><br>
+                            What is measured by a baroreceptor?</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-a1-1"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
-                            <span class="model-answer-label">✓ Correct: Sensor (Receptor)</span>
-                            <div class="model-answer-content" id="ans-a1">
-                                <strong>Why:</strong> The Sensor detects the change. The Control Centre decides the response. The Effector carries it out.
+                            <span class="model-answer-label">✓ Answer: A. Blood pressure</span>
+                            <div class="model-answer-content" id="ans-a1-1">
+                                <strong>Why this matters:</strong> Baroreceptors are mechanoreceptors that detect
+                                changes in blood pressure, sending signals to help maintain homeostasis.
                             </div>
                         </div>
+
+                        <div class="mcq-question" style="margin-top: 1rem;"><strong>Specimen Question Example (Paper 1A
+                                MCQ):</strong><br>
+                            How does epinephrine cause an increase in cardiac output?</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-a1-2"><span class="icon">▶</span> Reveal
+                            Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Answer: C. It increases the contraction force in the
+                                myocardium</span>
+                            <div class="model-answer-content" id="ans-a1-2">
+                                <strong>Key concept:</strong> Epinephrine (adrenaline) increases both heart rate AND
+                                stroke volume by increasing myocardial contractility.
+                            </div>
+                        </div>
+
+                        <!-- A.1.2 Maintaining homeostasis (HL) -->
+                        <span class="q-label" style="margin-top: 2rem; display: block;">Topic A.1.2: Maintaining
+                            homeostasis (HL Only)</span>
+                        <p style="margin: 0.5rem 0 1rem 0; color: #666; font-style: italic;">HL students can expect
+                            questions on acclimatization and physiological responses to environmental stress.</p>
+
+                        <div class="mcq-question"><strong>Specimen Question Example (Paper 1B):</strong><br>
+                            Context: Carbon fibre plate (CFP) shoes study<br><br>
+                            <em>Explain why the study selected only races taking place at sea level. [2 marks]</em>
+                        </div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-a1-3"><span class="icon">▶</span> Reveal
+                            Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Model Answer (2 marks)</span>
+                            <div class="model-answer-content" id="ans-a1-3">
+                                • altitude affects performance; [1 mark]<br>
+                                • controlled variable; [1 mark]<br><br>
+                                <strong>Why this matters:</strong> Paper 1B questions test your understanding of
+                                experimental design and controlling variables.
+                            </div>
+                        </div>
+
+                        <div class="mcq-question" style="margin-top: 1rem;"><strong>Specimen Question Example (Paper
+                                2):</strong><br>
+                            Context: Rowing training in hot/humid conditions<br><br>
+                            <em>Explain the body's acute responses to the stresses caused by hot and humid environment
+                                during training. [4 marks]</em>
+                        </div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-a1-4"><span class="icon">▶</span> Reveal
+                            Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Model Answer (4 marks)</span>
+                            <div class="model-answer-content" id="ans-a1-4">
+                                Each complete point (with AND) = 1 mark:<br><br>
+                                • earlier sweat response/greater volume of sweat AND to maintain core body temperature
+                                at 37°C;<br><br>
+                                • sweat does not evaporate from body/cooling effect lost AND body temperature increases
+                                faster;<br><br>
+                                • vasodilation of skin blood vessels occurs earlier AND to cool blood;<br><br>
+                                • working heart rates higher AND to move blood to the skin earlier for cooling;
+                            </div>
+                        </div>
+
+                        <!-- A.1.3 Transport -->
+                        <span class="q-label" style="margin-top: 2rem; display: block;">Topic A.1.3: Transport</span>
+                        <p style="margin: 0.5rem 0 1rem 0; color: #666; font-style: italic;">Expect questions on
+                            cardiovascular and respiratory adaptations to training.</p>
+
+                        <div class="mcq-question"><strong>Specimen Question Example (Paper 1A MCQ):</strong><br>
+                            Which cardiovascular adaptation to endurance training will help to increase cardiac output?
+                        </div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-a1-5"><span class="icon">▶</span> Reveal
+                            Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Answer: C. The increase in size of the heart
+                                muscle</span>
+                            <div class="model-answer-content" id="ans-a1-5">
+                                <strong>Key concept:</strong> Cardiac hypertrophy increases stroke volume, which
+                                directly increases cardiac output (CO = HR × SV).
+                            </div>
+                        </div>
+
+                        <div class="mcq-question" style="margin-top: 1rem;"><strong>Specimen Question Example (Paper
+                                2):</strong><br>
+                            Context: Rowing race preparation<br><br>
+                            <em>Explain how endurance training influences VO2max. [3 marks]</em>
+                        </div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-a1-6"><span class="icon">▶</span> Reveal
+                            Answer</button>
+                        <div class="model-answer">
+                            <span class="model-answer-label">✓ Model Answer (3 marks maximum)</span>
+                            <div class="model-answer-content" id="ans-a1-6">
+                                • stimulates physiological adaptations;<br><br>
+                                • increases heart stroke volume/cardiac output OR increases capillarisation of the
+                                muscles;<br><br>
+                                • improves oxygen transport rate around the body;
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -1207,18 +1476,22 @@
                                 <span class="tag tag-sl">SL/HL</span>
                                 <span class="tag tag-marks">~8-12 Marks</span>
                             </div>
-                            <div class="insider-tip">💡 <strong>Tip:</strong> Energy systems (ATP-PC vs Lactic Acid) usually appear in Paper 2.</div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Energy systems (ATP-PC vs Lactic Acid)
+                                usually appear in Paper 2.</div>
                         </div>
                         <div class="card-action">▼</div>
                     </div>
                     <div id="d-a2" class="drawer-content">
                         <span class="q-label">Paper 2 Example (Short Answer)</span>
-                        <div class="mcq-question">Outline the concept of the "Lactate Inflection Point" (LIP). [2 marks]</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-a2"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="mcq-question">Outline the concept of the "Lactate Inflection Point" (LIP). [2 marks]
+                        </div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-a2"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Model Answer</span>
                             <div class="model-answer-content" id="ans-a2">
-                                The LIP describes the exercise intensity where lactate production exceeds the rate of removal. Training near this point improves aerobic endurance.
+                                The LIP describes the exercise intensity where lactate production exceeds the rate of
+                                removal. Training near this point improves aerobic endurance.
                             </div>
                         </div>
                     </div>
@@ -1232,14 +1505,17 @@
                                 <span class="tag tag-sl">SL/HL</span>
                                 <span class="tag tag-marks">~12-18 Marks</span>
                             </div>
-                            <div class="insider-tip">💡 <strong>Tip:</strong> This is the biggest topic. Expect long questions on Fatigue, Recovery (EPOC), and Training Adaptations.</div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> This is the biggest topic. Expect long
+                                questions on Fatigue, Recovery (EPOC), and Training Adaptations.</div>
                         </div>
                         <div class="card-action">▼</div>
                     </div>
                     <div id="d-a3" class="drawer-content">
                         <span class="q-label">Paper 2 Example (Extended Response)</span>
-                        <div class="mcq-question">Explain the physiological causes of peripheral fatigue in high-intensity activities. [4 marks]</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-a3"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="mcq-question">Explain the physiological causes of peripheral fatigue in
+                            high-intensity activities. [4 marks]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-a3"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Model Answer</span>
                             <div class="model-answer-content" id="ans-a3">
@@ -1259,7 +1535,7 @@
             </div>
 
             <div class="strategy-grid">
-                
+
                 <div class="strategy-card">
                     <div class="card-main" onclick="toggleDrawer('d-b1')">
                         <div class="topic-content">
@@ -1268,18 +1544,22 @@
                                 <span class="tag tag-sl">SL/HL</span>
                                 <span class="tag tag-marks">~5-8 Marks</span>
                             </div>
-                            <div class="insider-tip">💡 <strong>Tip:</strong> Memorize the 1st, 2nd, and 3rd class levers. Most human joints are 3rd class (Speed/ROM advantage).</div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Memorize the 1st, 2nd, and 3rd class
+                                levers. Most human joints are 3rd class (Speed/ROM advantage).</div>
                         </div>
                         <div class="card-action">▼</div>
                     </div>
                     <div id="d-b1" class="drawer-content">
                         <span class="q-label">Paper 1A Example (MCQ)</span>
-                        <div class="mcq-question">In a bicep curl (upward phase), which class of lever is operating at the elbow?</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-b1"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="mcq-question">In a bicep curl (upward phase), which class of lever is operating at
+                            the elbow?</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-b1"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Correct: 3rd Class</span>
                             <div class="model-answer-content" id="ans-b1">
-                                <strong>Why:</strong> The Effort (bicep insertion) is located between the Fulcrum (elbow) and the Load (dumbbell).
+                                <strong>Why:</strong> The Effort (bicep insertion) is located between the Fulcrum
+                                (elbow) and the Load (dumbbell).
                             </div>
                         </div>
                     </div>
@@ -1293,19 +1573,23 @@
                                 <span class="tag tag-sl">SL/HL</span>
                                 <span class="tag tag-marks">~10-15 Marks</span>
                             </div>
-                            <div class="insider-tip">💡 <strong>Tip:</strong> The "Money Topic" for calculations. Practice F=ma and Newton's 3rd Law (Action/Reaction).</div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> The "Money Topic" for calculations.
+                                Practice F=ma and Newton's 3rd Law (Action/Reaction).</div>
                         </div>
                         <div class="card-action">▼</div>
                     </div>
                     <div id="d-b2" class="drawer-content">
                         <span class="q-label">Paper 2 Example (Calculation)</span>
-                        <div class="mcq-question">Explain how Newton's 3rd Law applies to a sprinter leaving the blocks. [3 marks]</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-b2"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="mcq-question">Explain how Newton's 3rd Law applies to a sprinter leaving the blocks.
+                            [3 marks]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-b2"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Model Answer</span>
                             <div class="model-answer-content" id="ans-b2">
                                 1. Action: Sprinter applies force <strong>backwards</strong> against the blocks.<br>
-                                2. Reaction: Blocks apply an equal and opposite force <strong>forwards</strong> on the sprinter.<br>
+                                2. Reaction: Blocks apply an equal and opposite force <strong>forwards</strong> on the
+                                sprinter.<br>
                                 3. Result: This ground reaction force propels the sprinter out of the blocks.
                             </div>
                         </div>
@@ -1320,18 +1604,21 @@
                                 <span class="tag tag-sl">SL/HL</span>
                                 <span class="tag tag-marks">~5-8 Marks</span>
                             </div>
-                            <div class="insider-tip">💡 <strong>Tip:</strong> Distinguish clearly between Acute (sudden) and Chronic (overuse) injuries.</div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Distinguish clearly between Acute (sudden)
+                                and Chronic (overuse) injuries.</div>
                         </div>
                         <div class="card-action">▼</div>
                     </div>
                     <div id="d-b3" class="drawer-content">
                         <span class="q-label">Paper 1A Example (MCQ)</span>
                         <div class="mcq-question">Which of the following is an example of an acute injury?</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-b3"><span class="icon">▶</span> Reveal Answer</button>
+                        <button class="reveal-answer-btn" data-answer-id="ans-b3"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Correct: Fracture from a tackle</span>
                             <div class="model-answer-content" id="ans-b3">
-                                <strong>Why:</strong> Acute injuries result from a specific, identifiable traumatic event (like a collision). Tendonitis is chronic.
+                                <strong>Why:</strong> Acute injuries result from a specific, identifiable traumatic
+                                event (like a collision). Tendonitis is chronic.
                             </div>
                         </div>
                     </div>
@@ -1344,7 +1631,7 @@
             </div>
 
             <div class="strategy-grid">
-                
+
                 <div class="strategy-card">
                     <div class="card-main" onclick="toggleDrawer('d-c1')">
                         <div class="topic-content">
@@ -1353,18 +1640,21 @@
                                 <span class="tag tag-sl">SL/HL</span>
                                 <span class="tag tag-marks">~5-8 Marks</span>
                             </div>
-                            <div class="insider-tip">💡 <strong>Tip:</strong> Know the "Self-Fulfilling Prophecy" (how expectations influence performance).</div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Know the "Self-Fulfilling Prophecy" (how
+                                expectations influence performance).</div>
                         </div>
                         <div class="card-action">▼</div>
                     </div>
                     <div id="d-c1" class="drawer-content">
                         <span class="q-label">Paper 2 Example (Short Answer)</span>
                         <div class="mcq-question">Define "Self-Fulfilling Prophecy" in sport. [2 marks]</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-c1"><span class="icon">▶</span> Reveal Answer</button>
+                        <button class="reveal-answer-btn" data-answer-id="ans-c1"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Model Answer</span>
                             <div class="model-answer-content" id="ans-c1">
-                                When an expectation (by coach or self) influences behavior so that the expectation becomes true. E.g., a coach expects failure, gives less feedback, and the athlete fails.
+                                When an expectation (by coach or self) influences behavior so that the expectation
+                                becomes true. E.g., a coach expects failure, gives less feedback, and the athlete fails.
                             </div>
                         </div>
                     </div>
@@ -1378,18 +1668,22 @@
                                 <span class="tag tag-sl">SL/HL</span>
                                 <span class="tag tag-marks">~8-12 Marks</span>
                             </div>
-                            <div class="insider-tip">💡 <strong>Tip:</strong> Stages of Learning (Cognitive -> Associative -> Autonomous) are a staple question.</div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Stages of Learning (Cognitive ->
+                                Associative -> Autonomous) are a staple question.</div>
                         </div>
                         <div class="card-action">▼</div>
                     </div>
                     <div id="d-c2" class="drawer-content">
                         <span class="q-label">Paper 1A Example (MCQ)</span>
-                        <div class="mcq-question">Which stage of learning is characterized by trial-and-error and reliance on visual feedback?</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-c2"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="mcq-question">Which stage of learning is characterized by trial-and-error and
+                            reliance on visual feedback?</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-c2"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Correct: Cognitive Stage</span>
                             <div class="model-answer-content" id="ans-c2">
-                                <strong>Why:</strong> The beginner (cognitive stage) needs to think about what to do and relies on visual cues.
+                                <strong>Why:</strong> The beginner (cognitive stage) needs to think about what to do and
+                                relies on visual cues.
                             </div>
                         </div>
                     </div>
@@ -1403,14 +1697,17 @@
                                 <span class="tag tag-sl">SL/HL</span>
                                 <span class="tag tag-marks">~5-8 Marks</span>
                             </div>
-                            <div class="insider-tip">💡 <strong>Tip:</strong> Understand "Goal Orientation Theory" (Task-oriented vs Ego-oriented).</div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Understand "Goal Orientation Theory"
+                                (Task-oriented vs Ego-oriented).</div>
                         </div>
                         <div class="card-action">▼</div>
                     </div>
                     <div id="d-c3" class="drawer-content">
                         <span class="q-label">Paper 2 Example (Short Answer)</span>
-                        <div class="mcq-question">Distinguish between "Task Orientation" and "Ego Orientation". [2 marks]</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-c3"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="mcq-question">Distinguish between "Task Orientation" and "Ego Orientation". [2
+                            marks]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-c3"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Model Answer</span>
                             <div class="model-answer-content" id="ans-c3">
@@ -1429,18 +1726,21 @@
                                 <span class="tag tag-sl">SL/HL</span>
                                 <span class="tag tag-marks">~8-12 Marks</span>
                             </div>
-                            <div class="insider-tip">💡 <strong>Tip:</strong> Not all stress is bad. Know "Eustress" (positive) vs "Distress" (negative).</div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> Not all stress is bad. Know "Eustress"
+                                (positive) vs "Distress" (negative).</div>
                         </div>
                         <div class="card-action">▼</div>
                     </div>
                     <div id="d-c4" class="drawer-content">
                         <span class="q-label">Paper 1A Example (MCQ)</span>
                         <div class="mcq-question">Which term describes "good stress" that enhances performance?</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-c4"><span class="icon">▶</span> Reveal Answer</button>
+                        <button class="reveal-answer-btn" data-answer-id="ans-c4"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Correct: Eustress</span>
                             <div class="model-answer-content" id="ans-c4">
-                                <strong>Why:</strong> Eustress provides the focus and energy needed for peak performance.
+                                <strong>Why:</strong> Eustress provides the focus and energy needed for peak
+                                performance.
                             </div>
                         </div>
                     </div>
@@ -1454,14 +1754,17 @@
                                 <span class="tag tag-hl">HL ONLY</span>
                                 <span class="tag tag-marks">~10-15 Marks</span>
                             </div>
-                            <div class="insider-tip">💡 <strong>Tip:</strong> PETTLEP Imagery is high-value for HL. Memorize the acronym.</div>
+                            <div class="insider-tip">💡 <strong>Tip:</strong> PETTLEP Imagery is high-value for HL.
+                                Memorize the acronym.</div>
                         </div>
                         <div class="card-action">▼</div>
                     </div>
                     <div id="d-c5" class="drawer-content">
                         <span class="q-label">Paper 2 Example (Extended Response)</span>
-                        <div class="mcq-question">Explain what the acronym PETTLEP (Holmes, Collins) stands for. [7 marks]</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-c5"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="mcq-question">Explain what the acronym PETTLEP (Holmes, Collins) stands for. [7
+                            marks]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-c5"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Model Answer</span>
                             <div class="model-answer-content" id="ans-c5">
@@ -1484,11 +1787,12 @@
             </div>
 
             <div class="methodology-box" style="border-left-color: #38a169; margin-bottom: 2rem;">
-                <strong>Strategy:</strong> Find these specific graphs in your textbook using the titles below. The exam questions will ask you to analyze these exact types of trends.
+                <strong>Strategy:</strong> Find these specific graphs in your textbook using the titles below. The exam
+                questions will ask you to analyze these exact types of trends.
             </div>
 
             <div class="strategy-grid">
-                
+
                 <div class="strategy-card data-hub-card">
                     <div class="card-main" onclick="toggleDrawer('dbq-1')">
                         <div class="topic-content">
@@ -1504,8 +1808,10 @@
                             [Find Table 2 in Textbook A.2]<br>
                             Title: "Mean VO2, energy expenditure (EE) during exercise..."
                         </div>
-                        <div class="mcq-question"><strong>(a)</strong> Calculate the difference in mean energy expenditure between HIIT and CONT groups. [1]</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-dbq1"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="mcq-question"><strong>(a)</strong> Calculate the difference in mean energy
+                            expenditure between HIIT and CONT groups. [1]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-dbq1"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Answer</span>
                             <div class="model-answer-content" id="ans-dbq1">
@@ -1530,8 +1836,10 @@
                             [Find Table 3 in Textbook B.3]<br>
                             Title: "Injury incidence by injury type for both groups"
                         </div>
-                        <div class="mcq-question"><strong>(a)</strong> Identify which group had the lower limb injury rate. [1]</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-dbq2"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="mcq-question"><strong>(a)</strong> Identify which group had the lower limb injury
+                            rate. [1]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-dbq2"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Answer</span>
                             <div class="model-answer-content" id="ans-dbq2">
@@ -1556,8 +1864,10 @@
                             [Find Table 4 in Textbook C.4]<br>
                             Title: "Coping strategy scores... Source: Secades et al."
                         </div>
-                        <div class="mcq-question"><strong>(a)</strong> Identify the group with the highest score for imagery. [1]</div>
-                        <button class="reveal-answer-btn" data-answer-id="ans-dbq3"><span class="icon">▶</span> Reveal Answer</button>
+                        <div class="mcq-question"><strong>(a)</strong> Identify the group with the highest score for
+                            imagery. [1]</div>
+                        <button class="reveal-answer-btn" data-answer-id="ans-dbq3"><span class="icon">▶</span> Reveal
+                            Answer</button>
                         <div class="model-answer">
                             <span class="model-answer-label">✓ Answer</span>
                             <div class="model-answer-content" id="ans-dbq3">
@@ -1576,7 +1886,7 @@
         function toggleTheme(themeId) {
             const body = document.getElementById(themeId);
             const header = body.previousElementSibling;
-            
+
             body.classList.toggle('open');
             header.classList.toggle('active');
         }
@@ -1586,12 +1896,13 @@
             el.classList.toggle('open');
             // Optional: Rotate arrow
             const btn = el.previousElementSibling.querySelector('.card-action');
-            if(el.classList.contains('open')) btn.textContent = '▲';
+            if (el.classList.contains('open')) btn.textContent = '▲';
             else btn.textContent = '▼';
         }
     </script>
-    
-    <script src="mcq-interaction.js"></script>
-    <script src="navigation.js"></script>
+
+    <script src="../mcq-interaction.js"></script>
+    <script src="../navigation.js"></script>
 </body>
+
 </html>
