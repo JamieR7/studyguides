@@ -1431,7 +1431,7 @@ div.topic-accordion-card:nth-of-type(15)>.accordion-header {
 }
 
 .topic-accordion-card.active>.accordion-content {
-    max-height: 5000px;
+    max-height: 20000px;
     /* Arbitrary large height to allow expansion */
     transition: max-height 0.5s ease-in-out;
 }
@@ -1636,16 +1636,19 @@ div.topic-accordion-card:nth-of-type(15)>.accordion-header {
 /* Highlight effect for scrolled-to elements */
 .search-highlight {
     animation: highlightPulse 2s ease-in-out;
-    scroll-margin-top: 80px; /* Account for sticky header */
+    scroll-margin-top: 80px;
+    /* Account for sticky header */
 }
 
 @keyframes highlightPulse {
     0% {
         background-color: rgba(251, 186, 7, 0.3);
     }
+
     50% {
         background-color: rgba(251, 186, 7, 0.5);
     }
+
     100% {
         background-color: transparent;
     }
@@ -1656,20 +1659,20 @@ div.topic-accordion-card:nth-of-type(15)>.accordion-header {
     .header-search-container {
         max-width: 250px;
     }
-    
+
     .search-input {
         font-size: 0.9rem;
         padding: 0.625rem 0.875rem 0.625rem 2.25rem;
     }
-    
+
     .search-icon {
         font-size: 1rem;
     }
-    
+
     .search-result-title {
         font-size: 0.875rem;
     }
-    
+
     .search-result-unit {
         font-size: 0.75rem;
         padding: 0.2rem 0.5rem;
@@ -1677,20 +1680,21 @@ div.topic-accordion-card:nth-of-type(15)>.accordion-header {
 }
 
 @media (max-width: 480px) {
+
     /* On very small screens, make search full width on sticky header */
     .sticky-topic-header {
         flex-wrap: wrap;
         height: auto;
         padding: 0.75rem 1rem;
     }
-    
+
     .header-search-container {
         max-width: 100%;
         width: 100%;
         margin-top: 0.5rem;
         order: 3;
     }
-    
+
     .index-search-container {
         max-width: 100%;
     }
